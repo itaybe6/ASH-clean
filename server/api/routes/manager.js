@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { addBranch,addRegularEmployee ,getBranchesByCustomer,
         addCustomer,getAllCustomers,
-        getCleaningsByBranch , addCleaningForEmployee} = require('../controller/manager');
+        getCleaningsByBranch , addCleaningForEmployee } = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
