@@ -1,5 +1,6 @@
 const Branch = require('../models/branch');
 const Employee = require('../models/employee');
+const bcrypt = require('bcrypt');
 
 // 1 admin add new bracnh + add the branch to customer branches list
 const addBranch = async (req, res) => {
@@ -30,11 +31,13 @@ const addBranch = async (req, res) => {
 //2 admin add a new worker
 const addRegularEmployee = async (req, res) => {
     try {
+        console.log(req.body)
         const { phone, password, fullName, city } = req.body; // הוספת קליטת העיר מהבקשה
 
         const salt = await bcrypt.genSalt(10); 
         const hashedPassword = await bcrypt.hash(password, salt); 
 
+        console.log(city)
         const newEmployee = new Employee({
             phone,
             password: hashedPassword,
@@ -49,7 +52,6 @@ const addRegularEmployee = async (req, res) => {
         res.status(500).json({ message: 'Error adding employee', error });
     }
 };
-
 
 
 //3 admin add a new customer

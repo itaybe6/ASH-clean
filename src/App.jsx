@@ -77,7 +77,7 @@ function App() {
       />
       {/* רכיב 4 */}
       <Route
-        path="/manager-add-worker"
+        path="/manager-add-worker"           
         element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />}
       />
       

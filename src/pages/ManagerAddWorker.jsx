@@ -20,7 +20,7 @@ const ManagerAddWorker = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/manager/add-worker", {
+      const response = await axios.post("http://localhost:5000/manager/add-worker", {
         fullName,
         phone: phoneNumber,
         city,

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./ManagerAddWorkerIphone.css";
 
 const ManagerAddWorkerIphone = () => {
@@ -17,15 +18,33 @@ const ManagerAddWorkerIphone = () => {
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
   // פונקציה לדוגמה לטיפול בשליחת הטופס
-  const handleSubmit = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת
-    console.log({
-      fullName,
-      city,
-      phoneNumber,
-      password,
-      confirmPassword,
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // למנוע רענון דף
+
+    // בדיקה אם הסיסמאות תואמות
+    if (password !== confirmPassword) {
+      alert("הסיסמאות אינן תואמות!");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:5000/manager/add-worker", {
+        fullName,
+        phone: phoneNumber,
+        city,
+        password
+      });
+
+      alert("המשתמש נוסף בהצלחה!");
+      setFullName("");
+      setPhoneNumber("");
+      setCity("");
+      setPassword("");
+      setPasswordVerification("");
+    } catch (error) {
+      console.error("Error adding employee:", error);
+      alert(`שגיאה בהוספת משתמש: ${error.response?.data?.message || "שגיאה לא ידועה"}`);
+    }
   };
 
   return (
