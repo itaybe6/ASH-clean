@@ -3,7 +3,7 @@ const router = express.Router();
 const { getBranchesByCustomer,getCleaningsByBranch 
     ,getCustomerById,editCustomerDetails ,getAllCleaningsForCustomer
     ,deleteBranchAndCleanings} = require('../controller/costumer');
-const { isAuthenticated } = require('../../middleware/authMiddleware');
+const { isAuthenticated } = require('../middleware/authMiddleware');
 
 
 // 1 get all the cleaning of branch  ----------------> ????

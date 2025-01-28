@@ -30,17 +30,17 @@ const addBranch = async (req, res) => {
 //2 admin add a new worker
 const addRegularEmployee = async (req, res) => {
     try {
-        const { phone, password,fullName } = req.body;
+        const { phone, password, fullName, city } = req.body; // הוספת קליטת העיר מהבקשה
 
-        // הצפנת הסיסמה
-        const salt = await bcrypt.genSalt(10);  // יצירת salt
-        const hashedPassword = await bcrypt.hash(password, salt);  // הצפנת הסיסמה
+        const salt = await bcrypt.genSalt(10); 
+        const hashedPassword = await bcrypt.hash(password, salt); 
 
         const newEmployee = new Employee({
             phone,
             password: hashedPassword,
             role: 'Regular',
-            fullName
+            fullName,
+            city // הוספת העיר לאובייקט העובד
         });
 
         const savedEmployee = await newEmployee.save();
@@ -49,6 +49,7 @@ const addRegularEmployee = async (req, res) => {
         res.status(500).json({ message: 'Error adding employee', error });
     }
 };
+
 
 
 //3 admin add a new customer

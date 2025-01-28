@@ -9,16 +9,33 @@ const ManagerAddWorker = () => {
   const [password, setPassword] = useState("");
   const [passwordVerification, setPasswordVerification] = useState("");
 
-  const handleSubmit = () => {
-    // Add logic to handle form submission
-    console.log({
-      fullName,
-      phoneNumber,
-      city,
-      password,
-      passwordVerification,
-    });
-    alert("משתמש נוסף בהצלחה!");
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // למנוע רענון דף
+
+    // בדיקה אם הסיסמאות תואמות
+    if (password !== passwordVerification) {
+      alert("הסיסמאות אינן תואמות!");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:4000/manager/add-worker", {
+        fullName,
+        phone: phoneNumber,
+        city,
+        password
+      });
+
+      alert("המשתמש נוסף בהצלחה!");
+      setFullName("");
+      setPhoneNumber("");
+      setCity("");
+      setPassword("");
+      setPasswordVerification("");
+    } catch (error) {
+      console.error("Error adding employee:", error);
+      alert(`שגיאה בהוספת משתמש: ${error.response?.data?.message || "שגיאה לא ידועה"}`);
+    }
   };
 
   return (

@@ -3,7 +3,7 @@ import { TextField, Icon } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import Search from "../components/Search";
-import "./ManagerBusinessSearch.css";
+import "./ManagerJobs.css";
 
 const ManagerJobs = () => {
   const [groupDateTimePickerValue, setGroupDateTimePickerValue] =

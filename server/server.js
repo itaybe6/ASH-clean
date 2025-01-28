@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
+const authRoutes = require('./api/routes/auth');
+const custumerRoutes = require('./api/routes/costumer');
+const workerRoutes = require('./api/routes/worker');
+const managerRoutes = require('./api/routes/manager');
+
+
 dotenv.config();
 const app = express();
 
@@ -20,8 +26,12 @@ mongoose.connect(MONGODB_URI, {
     .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-const authRoutes = require('./api/routes/auth');
 app.use('/auth', authRoutes);
+app.use('/manager', managerRoutes);
+app.use('/customer', custumerRoutes);
+app.use('/worker', workerRoutes);
+
+
 
 // Start server
 const PORT = process.env.PORT || 4000;

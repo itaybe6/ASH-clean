@@ -5,7 +5,7 @@ const { getCleaningsByEmployee ,getAllCustomers,
      updateCleaningWithImage , getEmployeeById,
      updateEmployeeDetails , cancelCleaning} = require('../controller/worker');
 
-const { isAuthenticated } = require('../../middleware/authMiddleware');
+const { isAuthenticated } = require('../middleware/authMiddleware');
 
 
 

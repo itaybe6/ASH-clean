@@ -15,6 +15,10 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    city: { // הוספת עיר
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true

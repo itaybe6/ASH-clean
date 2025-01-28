@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
 import ManagerRegistrationAddB from "./pages/ManagerRegistrationAddB";
 import HomePageIphone from "./pages/HomePageIphone";
-import ManagerJobs from "./pages/ManagerBusinessSearch";
+import ManagerJobs from "./pages/ManagerJobs";
 import ManagerJobsMobile from "./pages/ManagerJobsMobile";
 import ManagerAddWorker from "./pages/ManagerAddWorker";
 import ManagerDisplayCustomers from "./pages/ManagerDisplayCustomers";
@@ -62,7 +62,7 @@ function App() {
     <Routes>
       {/* רכיב 1 */}
       <Route
-        path="/"
+        path="/" // fix width side bar
         element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />}
       />
       {/* רכיב 2 */}
