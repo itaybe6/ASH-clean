@@ -75,7 +75,7 @@ function App() {
         path="/manager-jobs"
         element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />}
       />
-      {/* רכיב 4 */}
+      {/*##### רכיב 4 ##### */}
       <Route
         path="/manager-add-worker"           
         element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />}
@@ -169,7 +169,7 @@ function App() {
           isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />
         }
       />
-      {/* רכיב 17 */}
+      {/* ##### רכיב 17 ##### */}
       <Route
         path="/login"
         element={isMobile ? <LoginMobile /> : <Login />}

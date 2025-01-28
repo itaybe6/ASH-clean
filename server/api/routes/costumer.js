@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { getBranchesByCustomer,getCleaningsByBranch 
     ,getCustomerById,editCustomerDetails ,getAllCleaningsForCustomer
-    ,deleteBranchAndCleanings} = require('../controller/costumer');
+    ,deleteBranchAndCleanings, sendContactEmail } = require('../controller/costumer');
 const { isAuthenticated } = require('../middleware/authMiddleware');
 
 
@@ -30,5 +30,7 @@ router.delete('/:customerId/branches/:branchId', deleteBranchAndCleanings);
 router.get('/:customerId/cleanings', getAllCleaningsForCustomer);
 
 
-// 
+// send mail contact us 
+router.post("/contact", sendContactEmail);
+
 module.exports = router;

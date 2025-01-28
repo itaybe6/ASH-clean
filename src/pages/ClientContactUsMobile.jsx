@@ -1,25 +1,35 @@
 import { useState } from "react";
 import "./ClientContactUsMobile.css";
+import axios from "axios";
 
 const ClientContactUsMobile = () => {
-  // הגדרת state לכל שדה קלט
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const [message, setMessage] = useState("");
 
-  // פונקציה לטיפול בשליחת הטופס
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // כאן ניתן להוסיף את הלוגיקה לשליחת הנתונים
-    console.log({ fullName, phoneNumber, city, message });
 
-    // איפוס השדות לאחר השליחה (אופציונלי)
-    setFullName("");
-    setPhoneNumber("");
-    setCity("");
-    setMessage("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      fullName,
+      phoneNumber,
+      city,
+      message,
+    };
+    try {
+      const response = await axios.post("http://localhost:5000/customer/contact", formData);
+      alert(response.data.message);
+      setFullName("");
+      setPhoneNumber("");
+      setCity("");
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("שגיאה בשליחת ההודעה");
+    }
   };
+
 
   return (
     <div className="client-contact-us-mobile">

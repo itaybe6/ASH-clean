@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./ClientContactUs.css";
+import axios from "axios";
 
 const ClientContactUs = () => {
-  // הגדרת state לכל שדה קלט
   const [message, setMessage] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -37,11 +37,30 @@ const ClientContactUs = () => {
     };
   }, []);
 
-  // פונקציה לטיפול בשליחת הטופס (ניתן להרחיב לפי הצורך)
-  const handleSubmit = (e) => {
+ 
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // כאן ניתן להוסיף את הלוגיקה לשליחת הנתונים
-    console.log({ fullName, phoneNumber, city, message });
+  
+    const formData = {
+      fullName,
+      phoneNumber,
+      city,
+      message,
+    };
+  
+    try {
+      const response = await axios.post("http://localhost:5000/customer/contact", formData);
+      alert(response.data.message);
+      setFullName("");
+      setPhoneNumber("");
+      setCity("");
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("שגיאה בשליחת ההודעה");
+    }
   };
 
   return (

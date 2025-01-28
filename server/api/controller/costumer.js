@@ -1,5 +1,6 @@
 const Customer = require('../models/costumer');
 const Branch = require('../models/branch');
+const nodemailer = require("nodemailer");
 
 // 1 get all the cleaning of brunch 
 const getCleaningsByBranch = async (req, res) => {
@@ -105,6 +106,36 @@ const getAllCleaningsForCustomer = async (req, res) => {
     }
 };
 
+const sendContactEmail = async (req, res) => {
+    const { fullName, phoneNumber, city, message } = req.body;
+  
+    console.log(req.body)
+    // הגדרת פרטי השליחה
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "itaybenyair99@gmail.com", // שים את המייל שלך
+        pass: "ypxz vuwi kkjs lluu", // השתמש בסיסמה ייעודית (App Passwords)
+      },
+    });
+  
+    const mailOptions = {
+      from: "itaybenyair99@gmail.com",
+      to: "bokobzadir@gmail.com", // המייל של מנהל האתר
+      subject: "פנייה חדשה מהאתר",
+      text: `שם מלא: ${fullName}\nטלפון: ${phoneNumber}\nעיר: ${city}\n\nהודעה:\n${message}`,
+    };
+  
+    try {
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ message: "ההודעה נשלחה בהצלחה!" });
+    } catch (error) {
+      console.error("Email error:", error);
+      res.status(500).json({ error: "שגיאה בשליחת המייל" });
+    }
+  };
+
+
 
 module.exports = {
       getCleaningsByBranch
@@ -113,4 +144,5 @@ module.exports = {
      ,editCustomerDetails
      ,deleteBranchAndCleanings 
      ,getAllCleaningsForCustomer
-     };
+     ,sendContactEmail 
+};
