@@ -1,0 +1,227 @@
+.manager-registration-add-b-child1 {
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 335.75px);
+  right: 0%;
+  left: 0%;
+  background-color: var(--color-gray-100);
+  height: 745px;
+  z-index: 0;
+}
+.div109 {
+  width: 186px;
+  position: absolute;
+  margin: 0 !important;
+  top: 118px;
+  left: calc(50% - 21.5px);
+  line-height: 146.39%;
+  font-weight: 500;
+  color: var(--color-black);
+  display: inline-block;
+  z-index: 1;
+}
+.div110 {
+  width: 229px;
+  position: absolute;
+  margin: 0 !important;
+  top: 150px;
+  left: calc(50% - 64.5px);
+  font-size: var(--font-size-smi);
+  line-height: 146.39%;
+  font-weight: 300;
+  color: var(--color-black);
+  display: inline-block;
+  z-index: 2;
+}
+.b51 {
+  width: 247px;
+  position: absolute;
+  margin: 0 !important;
+  top: 230px;
+  left: calc(50% - 98.5px);
+  line-height: 146.39%;
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  z-index: 3;
+}
+.div111 {
+  width: 287px;
+  position: absolute;
+  margin: 0 !important;
+  top: 260px;
+  left: calc(50% - 144.5px);
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 4;
+}
+.icbaseline-person-icon1 {
+  width: 56px;
+  position: absolute;
+  margin: 0 !important;
+  top: 187px;
+  left: calc(50% + 94.5px);
+  height: 56px;
+  z-index: 5;
+}
+.icon25 {
+  width: 135px;
+  position: absolute;
+  margin: 0 !important;
+  top: 16px;
+  right: 25px;
+  height: 47px;
+  object-fit: cover;
+  z-index: 6;
+}
+.vector-icon49 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 23.3px;
+  height: 15.5px;
+}
+.vector-wrapper40 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 23.3px;
+  position: absolute;
+  margin: 0 !important;
+  top: 32px;
+  left: 51px;
+  height: 15.5px;
+  z-index: 7;
+}
+.div112 {
+  position: absolute;
+  width: 98.63%;
+  top: calc(50% - 106.5px);
+  left: 0%;
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+}
+.group-child87 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 99.66%;
+  top: calc(50% - 81.5px);
+  right: 0%;
+  left: 0.34%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+}
+.group-child88 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 99.66%;
+  top: calc(50% - 27.5px);
+  right: 0%;
+  left: 0.34%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+}
+.group-child89 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 99.66%;
+  top: calc(50% + 26.5px);
+  right: 0%;
+  left: 0.34%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+}
+.div113 {
+  position: absolute;
+  width: 90.72%;
+  top: calc(50% + 83.5px);
+  left: 5.84%;
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+}
+.group-wrapper4 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 106.5px);
+  right: 0%;
+  left: 0%;
+  height: 213px;
+}
+.manager-registration-add-b-inner1 {
+  width: 74.05%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 99.75px);
+  right: 12.21%;
+  left: 13.74%;
+  height: 213px;
+  z-index: 8;
+  font-size: var(--font-size-base);
+}
+.group-child90 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 19.85px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  background-color: var(--color-darkorange-200);
+  height: 39.7px;
+}
+.b52 {
+  position: absolute;
+  width: 88.72%;
+  top: calc(50% - 10.65px);
+  left: 5.95%;
+  font-size: var(--font-size-mini);
+  display: inline-block;
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+  height: 18.3px;
+}
+.rectangle-parent42 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 37.66%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% + 162.25px);
+  right: 13.23%;
+  left: 49.11%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 39.7px;
+  z-index: 9;
+}
+.manager-registration-add-b1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 817.5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 18px 162px;
+  text-align: right;
+  font-size: var(--font-size-5xl);
+  color: var(--color-darkslategray-200);
+  font-family: var(--font-heebo);
+}

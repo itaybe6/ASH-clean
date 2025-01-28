@@ -1,0 +1,146 @@
+.frame-child36 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xs);
+  background-color: var(--color-white);
+}
+.b125 {
+  position: absolute;
+  display: none;
+  width: 29.8px;
+  height: 13px;
+}
+.group-child217 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-limegreen);
+  width: 1.5px;
+  height: 3px;
+  display: none;
+}
+.parent75 {
+  position: absolute;
+  top: 59.46%;
+  left: 167.45%;
+  width: 0px;
+  height: 0px;
+}
+.b126 {
+  position: absolute;
+  width: 99.54%;
+  top: 0%;
+  left: 0%;
+  display: inline-block;
+}
+.div327 {
+  position: absolute;
+  width: 77.82%;
+  top: 47.62%;
+  left: 22.18%;
+  color: var(--color-darkslategray-100);
+  display: inline-block;
+}
+.group-wrapper11 {
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 30%;
+  left: 0%;
+}
+.div328 {
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  display: inline-block;
+}
+.group-wrapper12 {
+  position: absolute;
+  height: 36.67%;
+  width: 70.59%;
+  top: 63.33%;
+  right: 0.46%;
+  bottom: 0%;
+  left: 28.95%;
+  color: var(--color-darkslategray-100);
+}
+.group-parent49 {
+  position: absolute;
+  height: 81.08%;
+  width: 44.09%;
+  top: 9.46%;
+  right: 5.32%;
+  bottom: 9.46%;
+  left: 50.59%;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+}
+.group-child218 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xs);
+  background-color: var(--color-darkorange-200);
+}
+.b127 {
+  position: absolute;
+  width: 79.79%;
+  top: 14.63%;
+  left: 10.11%;
+  font-size: var(--font-size-xl);
+  line-height: 146.39%;
+  display: flex;
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.rectangle-parent112 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 55.41%;
+  width: 25.31%;
+  top: 18.92%;
+  right: 70.96%;
+  bottom: 25.68%;
+  left: 3.73%;
+}
+.rectangle-parent111 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+}
+.feturejobworker {
+  width: 441.8px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 169px);
+  left: calc(50% - 151.5px);
+  height: 74px;
+  z-index: 8;
+  text-align: right;
+  font-size: var(--font-size-2xs);
+  color: var(--color-limegreen);
+  font-family: var(--font-heebo);
+}

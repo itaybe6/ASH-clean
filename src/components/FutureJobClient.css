@@ -1,0 +1,62 @@
+.group-child222 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+}
+.futurejobclient-inner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+}
+.div343 {
+  position: absolute;
+  top: 23.08%;
+  left: 41.17%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div344 {
+  position: absolute;
+  top: 23.08%;
+  left: 27.52%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div345 {
+  position: absolute;
+  top: 23.08%;
+  left: 64.25%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div346 {
+  position: absolute;
+  top: 23.08%;
+  left: 82.45%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.futurejobclient {
+  width: 64.1%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 13px);
+  right: 25.97%;
+  left: 9.93%;
+  height: 65px;
+  z-index: 4;
+  text-align: right;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}

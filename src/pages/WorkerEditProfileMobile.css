@@ -1,0 +1,207 @@
+.worker-edit-profile-mobile-child {
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 320.75px);
+  right: 0%;
+  left: 0%;
+  background-color: var(--color-gray-100);
+  height: 730px;
+  z-index: 0;
+}
+.div118 {
+  width: 171px;
+  position: absolute;
+  margin: 0 !important;
+  top: 118px;
+  left: calc(50% - 6.5px);
+  font-size: var(--font-size-5xl);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+  z-index: 1;
+}
+.div119 {
+  width: 229px;
+  position: absolute;
+  margin: 0 !important;
+  top: 150px;
+  left: calc(50% - 64.5px);
+  font-size: var(--font-size-smi);
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 2;
+}
+.div120 {
+  width: 115px;
+  position: absolute;
+  margin: 0 !important;
+  top: 204px;
+  left: calc(50% + 21.5px);
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+  height: 33px;
+  z-index: 3;
+}
+.div121 {
+  width: 181px;
+  position: absolute;
+  margin: 0 !important;
+  top: 240px;
+  left: calc(50% - 44.5px);
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 4;
+}
+.group-child93 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 26px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  background-color: var(--color-darkorange-200);
+  height: 52px;
+}
+.b55 {
+  position: absolute;
+  width: 82.71%;
+  top: calc(50% - 15px);
+  left: 8.27%;
+  font-size: var(--font-size-xl);
+  display: inline-block;
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+}
+.rectangle-parent45 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  width: 48.72%;
+  top: calc(50% + 164.5px);
+  right: 0%;
+  left: 51.28%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 52px;
+}
+.group-child94 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 216.5px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child95 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% + 23.5px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child96 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 148.5px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child97 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 80.5px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.div122 {
+  position: absolute;
+  width: 79.49%;
+  top: calc(50% - 7.5px);
+  left: 16.12%;
+  line-height: 146.39%;
+  display: inline-block;
+}
+.group-parent22 {
+  width: 69.47%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 101.75px);
+  right: 15.27%;
+  left: 15.27%;
+  height: 433px;
+  z-index: 5;
+}
+.icon28 {
+  width: 135px;
+  position: absolute;
+  margin: 0 !important;
+  top: 24px;
+  right: 26px;
+  height: 47px;
+  object-fit: cover;
+  z-index: 6;
+}
+.vector-icon54 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 23.3px;
+  height: 15.5px;
+}
+.vector-wrapper45 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 23.3px;
+  position: absolute;
+  margin: 0 !important;
+  top: 40px;
+  left: 60px;
+  height: 15.5px;
+  z-index: 7;
+}
+.worker-edit-profile-mobile {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 817.5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 18px 171px;
+  text-align: right;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}

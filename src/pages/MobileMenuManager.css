@@ -1,0 +1,113 @@
+.mobile-menu-manager-child {
+  position: absolute;
+  width: 71.5%;
+  top: calc(50% - 426px);
+  right: 0%;
+  left: 28.5%;
+  background-color: var(--color-whitesmoke-300);
+  height: 852px;
+}
+.vector-icon84 {
+  position: absolute;
+  top: calc(50% - 18.8px);
+  left: calc(50% - 72.35px);
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-wrapper75 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% + 43.05px);
+  left: calc(50% - 53.4px);
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-icon85 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  left: calc(50% - 73.9px);
+  width: 147.8px;
+  height: 47px;
+}
+.vector-wrapper76 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 80.65px);
+  left: calc(50% - 51.3px);
+  width: 147.8px;
+  height: 47px;
+}
+.div216 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  left: calc(50% - 103.5px);
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-darkslategray-200);
+  text-align: right;
+}
+.icbaseline-people-alt-icon7 {
+  position: absolute;
+  top: calc(50% - 27.5px);
+  left: calc(50% + 48.5px);
+  width: 55px;
+  height: 55px;
+}
+.parent49 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 23.65px);
+  left: calc(50% - 103.5px);
+  width: 207px;
+  height: 55px;
+}
+.group-parent42 {
+  position: absolute;
+  top: calc(50% - 187px);
+  left: calc(50% - 47.5px);
+  width: 207px;
+  height: 161.3px;
+}
+.vector-icon86 {
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 66.5px);
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper77 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  bottom: 59px;
+  left: calc(50% - 8.5px);
+  width: 133px;
+  height: 52px;
+}
+.icon52 {
+  position: absolute;
+  top: 33px;
+  left: calc(50% - 36.5px);
+  width: 189px;
+  height: 66px;
+  object-fit: cover;
+}
+.mobile-menu-manager {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 852px;
+  overflow: hidden;
+}

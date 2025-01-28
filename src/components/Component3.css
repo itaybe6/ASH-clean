@@ -1,0 +1,27 @@
+.component-2-inner {
+  position: absolute;
+  height: 45.71%;
+  width: 70.71%;
+  top: 54.29%;
+  right: 14.5%;
+  bottom: 0%;
+  left: 14.79%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-xl);
+}
+.component-2 {
+  width: 338px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% + 994px);
+  left: calc(50% - 169.5px);
+  height: 978px;
+  z-index: 24;
+  text-align: right;
+  font-size: var(--font-size-281xl);
+  color: var(--color-white);
+  font-family: var(--font-heebo);
+}

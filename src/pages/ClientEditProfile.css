@@ -1,0 +1,338 @@
+.group-child113 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  background-color: var(--color-white);
+  width: 301px;
+  height: 1024px;
+}
+.vector-icon63 {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper54 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  right: 90px;
+  bottom: 93px;
+  width: 133px;
+  height: 52px;
+}
+.icon32 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 232px;
+  height: 81px;
+  object-fit: cover;
+}
+.vector-icon64 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 154px;
+  height: 37.6px;
+}
+.vector-wrapper55 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 110.7px;
+  right: 8.2px;
+  width: 154px;
+  height: 37.6px;
+}
+.vector-icon65 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 147.8px;
+  height: 47px;
+}
+.vector-wrapper56 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  width: 147.8px;
+  height: 47px;
+}
+.div144 {
+  position: absolute;
+  top: 0px;
+  right: 61px;
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-darkslategray-200);
+  text-align: right;
+  display: inline-block;
+  width: 118px;
+}
+.icbaseline-contact-mail-icon1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 47px;
+  height: 47px;
+}
+.parent34 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 54px;
+  right: 0px;
+  width: 179px;
+  height: 47px;
+}
+.group-parent28 {
+  position: absolute;
+  top: 221px;
+  right: 75px;
+  width: 179px;
+  height: 148.3px;
+}
+.rectangle-parent53 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  width: 301px;
+  height: 1024px;
+}
+.group-child114 {
+  position: absolute;
+  width: calc(100% - 300px); /* מקטין את הרוחב בהתאם לרוחב הסיידבר */
+  height: 100vh; /* גובה מלא של המסך */
+  top: 0; /* מיקום למעלה */
+  left: 0; /* מתפרס מהצד השמאלי */
+  background-color: var(--color-gray-100); /* צבע רקע */
+  z-index: 0; /* ודא שהרקע נמצא מאחורי האלמנטים */
+}
+.group-child115 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  max-height: 100%;
+  width: 239px;
+  object-fit: contain;
+}
+.div145 {
+  position: absolute;
+  top: 57px;
+  left: calc(50% + 71px);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+  width: 263px;
+}
+.div146 {
+  position: absolute;
+  top: 104px;
+  left: calc(50% + 45px);
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+  width: 289px;
+}
+.div147 {
+  align-self: stretch;
+  position: relative;
+  line-height: 146.39%;
+  font-weight: 500;
+}
+.div148 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.parent35 {
+  position: absolute;
+  top: calc(50% - 199px);
+  left: calc(50% + 49.5px);
+  width: 314px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.div149 {
+  position: absolute;
+  top: calc(50% - 26px);
+  left: calc(50% + 134.5px);
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+  width: 217px;
+}
+.frame-child5 {
+  width: 133px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 26px);
+  right: 0px;
+  border-radius: var(--br-smi);
+  background-color: var(--color-darkorange-200);
+  height: 52px;
+  z-index: 0;
+}
+.b62 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+  z-index: 1;
+}
+.rectangle-parent54 {
+  position: absolute;
+  top: calc(50% - 26px);
+  left: calc(50% - 66.5px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 133px;
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-2xs);
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+}
+.frame-wrapper {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% + 147px);
+  left: calc(50% + 219.5px);
+  width: 133px;
+  height: 52px;
+}
+.group-child116 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 31.77%;
+  top: calc(50% - 107.5px);
+  right: 0%;
+  left: 68.23%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child117 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 3.5px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child118 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% + 60.5px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child119 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 31.77%;
+  top: calc(50% - 107.5px);
+  right: 34.11%;
+  left: 34.11%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.group-child120 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 31.77%;
+  top: calc(50% - 107.5px);
+  right: 68.23%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  height: 47px;
+}
+.frame-parent3 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 95px);
+  right: 0%;
+  left: 0%;
+  height: 215px;
+}
+.frame-parent2 {
+  position: absolute;
+  top: calc(50% - 255px);
+  left: calc(50% - 481px);
+  width: 727px;
+  height: 398px;
+}
+.group-child121 {
+  position: absolute;
+  top: 421px;
+  left: 1142px;
+  width: 17px;
+  height: 17px;
+}
+.group-parent27 {
+  width: 1440px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 512px);
+  right: 0px;
+  height: 1024px;
+  z-index: 0;
+}
+.client-edit-profile {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1024px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  text-align: right;
+  font-size: var(--font-size-13xl);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}

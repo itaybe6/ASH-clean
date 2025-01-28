@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-heebo: Heebo;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-5xl: 24px;
+  --font-size-sm: 14px;
+  --font-size-xl: 20px;
+  --font-size-13xl: 32px;
+  --font-size-281xl: 300px;
+  --font-size-mini: 15px;
+  --font-size-smi: 13px;
+  --font-size-17xl: 36px;
+  --font-size-29xl: 48px;
+  --font-size-mid: 17px;
+  --font-size-2xs: 11px;
+  --font-size-45xl: 64px;
+  --font-size-21xl: 40px;
+  --font-size-xs: 12px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-whitesmoke-100: #f9f9f9;
+  --color-whitesmoke-200: #f5f5f5;
+  --color-whitesmoke-300: #f3f3f3;
+  --color-whitesmoke-400: #f0f0f0;
+  --color-steelblue: #719fde;
+  --color-darkorange-100: #f7892a;
+  --color-darkorange-200: #f6892a;
+  --color-black: #000;
+  --color-royalblue: #5169df;
+  --color-lightgray: #d2d2d2;
+  --color-gray-100: #fafafa;
+  --color-gray: #2b2b2b;
+  --color-gray-200: #202020;
+  --color-darkslategray-100: #444343;
+  --color-darkslategray-300: #434343;
+  --color-darkslategray-200: #313131;
+  --color-gainsboro: #e4e4e4;
+  --color-limegreen-100: #52d241;
+  --color-limegreen: #18c302;
+
+  /* Gaps */
+  --gap-2xs: 11px;
+  --gap-3xs: 10px;
+  --gap-0: 0px;
+  --gap-mid: 17px;
+  --gap-lg: 18px;
+  --gap-10xs: 3px;
+  --gap-lgi: 19px;
+  --gap-2xl: 21px;
+  --gap-lg-7: 18.7px;
+  --gap-7xs: 6px;
+  --gap-11xl-5: 30.5px;
+  --gap-3xs-8: 9.8px;
+  --gap-6xs-9: 6.9px;
+  --gap-10xs-8: 2.8px;
+  --gap-10xs-7: 2.7px;
+  --gap-6xs-8: 6.8px;
+  --gap-89xl: 108px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-9xl: 28px;
+  --padding-mid: 17px;
+  --padding-xs: 12px;
+  --padding-9xs: 4px;
+  --padding-12xs: 1px;
+  --padding-2xs: 11px;
+  --padding-13xl: 32px;
+  --padding-2xl: 21px;
+  --padding-5xs: 8px;
+  --padding-4xs: 9px;
+  --padding-sm: 14px;
+  --padding-6xl-1: 25.1px;
+  --padding-lgi: 19px;
+  --padding-xs-8: 11.8px;
+  --padding-29xl: 48px;
+  --padding-23xl: 42px;
+  --padding-24xl: 43px;
+  --padding-11xs: 2px;
+  --padding-lgi-4: 19.4px;
+  --padding-7xl: 26px;
+  --padding-2xl-9: 21.9px;
+  --padding-mid-1: 17.1px;
+  --padding-lgi-5: 19.5px;
+  --padding-lg-3: 18.3px;
+  --padding-11xs-2: 1.2px;
+  --padding-smi: 13px;
+  --padding-6xs: 7px;
+
+  /* Border radiuses */
+  --br-lgi: 19px;
+  --br-smi: 13px;
+  --br-19xl: 38px;
+  --br-15xl: 34px;
+  --br-2xs: 11px;
+  --br-4xs: 9px;
+  --br-3xs: 10px;
+  --br-xl: 20px;
+  --br-xs: 12px;
+  --br-7xl: 26px;
+  --br-mid: 17px;
+  --br-6xs: 7px;
+  --br-5xs: 8px;
+  --br-mini: 15px;
+}
+button {
+  transition: transform 0.6s ease; /* משך מעבר אחיד בכל המצבים */
+}
+
+button:hover {
+  transform: scale(0.9); /* כיווץ הכפתור */
+}
+input {
+  direction: rtl; /* מגדיר את הכיוון מימין לשמאל */
+  text-align: right; /* מוודא שגם הטקסט מיושר לימין */
+}

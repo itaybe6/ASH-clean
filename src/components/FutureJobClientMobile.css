@@ -1,0 +1,179 @@
+.group-child223 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-whitesmoke-400);
+  box-sizing: border-box;
+}
+.div347 {
+  position: absolute;
+  width: 49.66%;
+  top: 43.67%;
+  left: 3.06%;
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+}
+.div348 {
+  position: absolute;
+  width: 20.41%;
+  top: 59.18%;
+  left: 32.31%;
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+}
+.div349 {
+  position: absolute;
+  width: 22.45%;
+  top: 28.16%;
+  left: 30.27%;
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+}
+.div350 {
+  position: absolute;
+  width: 47.62%;
+  top: 13.92%;
+  left: 5.1%;
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+}
+.div351 {
+  position: absolute;
+  width: 16.33%;
+  top: 14.56%;
+  left: 76.87%;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+}
+.div352 {
+  position: absolute;
+  width: 12.93%;
+  top: 30.06%;
+  left: 80.27%;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+}
+.div353 {
+  position: absolute;
+  width: 28.91%;
+  top: 45.57%;
+  left: 64.29%;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+}
+.div354 {
+  position: absolute;
+  width: 18.03%;
+  top: 61.08%;
+  left: 75.17%;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+}
+.group-child224 {
+  position: absolute;
+  height: 0.32%;
+  width: 100.34%;
+  top: 26.27%;
+  right: -0.34%;
+  bottom: 73.42%;
+  left: 0%;
+  border-top: 1px solid var(--color-whitesmoke-400);
+  box-sizing: border-box;
+}
+.group-child225 {
+  position: absolute;
+  height: 0.32%;
+  width: 100.34%;
+  top: 41.14%;
+  right: -0.34%;
+  bottom: 58.54%;
+  left: 0%;
+  border-top: 1px solid var(--color-whitesmoke-400);
+  box-sizing: border-box;
+}
+.group-child226 {
+  position: absolute;
+  height: 0.32%;
+  width: 100.34%;
+  top: 57.28%;
+  right: -0.34%;
+  bottom: 42.41%;
+  left: 0%;
+  border-top: 1px solid var(--color-whitesmoke-400);
+  box-sizing: border-box;
+}
+.group-child227 {
+  position: absolute;
+  height: 0.32%;
+  width: 100.34%;
+  top: 72.15%;
+  right: -0.34%;
+  bottom: 27.53%;
+  left: 0%;
+  border-top: 1px solid var(--color-whitesmoke-400);
+  box-sizing: border-box;
+}
+.group-child228 {
+  position: absolute;
+  height: 72.47%;
+  width: 0.34%;
+  top: 0%;
+  right: 37.07%;
+  bottom: 27.53%;
+  left: 62.59%;
+  border-right: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+}
+.futurejobclientmobile-inner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+}
+.futurejobclientmobile-child {
+  position: absolute;
+  height: 0.63%;
+  width: 31.29%;
+  top: 86.39%;
+  right: 35.71%;
+  bottom: 12.97%;
+  left: 32.99%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.futurejobclientmobile {
+  width: 294px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% + 7.25px);
+  left: calc(50% - 143.5px);
+  height: 316px;
+  z-index: 8;
+  text-align: right;
+  font-size: var(--font-size-mid);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}

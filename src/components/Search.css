@@ -1,0 +1,101 @@
+.search-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+}
+.div263 {
+  position: absolute;
+  top: 27.69%;
+  left: 30.44%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div264 {
+  position: absolute;
+  top: 27.69%;
+  left: 19.83%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div265 {
+  position: absolute;
+  top: 27.69%;
+  left: 85.7%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div266 {
+  position: absolute;
+  top: 27.69%;
+  left: 47.24%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div267 {
+  position: absolute;
+  top: 27.69%;
+  left: 72.26%;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.group-child192 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: var(--color-darkorange-200);
+  position: absolute;
+  height: 100%;
+  width: 99.6%;
+  top: 0%;
+  right: 0.4%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: var(--br-3xs);
+}
+.div268 {
+  position: absolute;
+  width: 100%;
+  top: 14.88%;
+  left: 0%;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rectangle-parent95 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 51.69%;
+  width: 13.54%;
+  top: 24.62%;
+  right: 85.05%;
+  bottom: 23.69%;
+  left: 1.41%;
+}
+.search {
+  width: 64.1%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 212px);
+  right: 28.33%;
+  left: 7.57%;
+  height: 65px;
+  z-index: 2;
+  text-align: right;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}

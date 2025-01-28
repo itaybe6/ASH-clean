@@ -1,0 +1,235 @@
+.manager-jobs-child {
+  width: 79.17%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 512px);
+  right: 20.83%;
+  left: 0%;
+  background-color: var(--color-gray-100);
+  height: 1024px;
+  z-index: 0;
+}
+.div14 {
+  position: relative;
+  line-height: 146.39%;
+  font-weight: 500;
+}
+.div15 {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 300;
+  margin-top: -1px;
+}
+.parent5 {
+  margin: 0 !important;
+  position: absolute;
+  top: 75px;
+  left: calc(50% + 10px);
+  height: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.wrapper1 {
+  width: 194px;
+  position: absolute;
+  margin: 0 !important;
+  top: 177px;
+  left: calc(50% + 98px);
+  z-index: 3;
+}
+.group-child11 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  background-color: var(--color-white);
+  width: 301px;
+  height: 1024px;
+}
+.vector-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 879px;
+  right: 90px;
+  width: 133px;
+  height: 52px;
+}
+.icon6 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 232px;
+  height: 81px;
+  object-fit: cover;
+}
+.vector-icon1 {
+  position: absolute;
+  top: calc(50% - 18.8px);
+  right: 0px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-container {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% + 43.05px);
+  right: 12.2px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-icon2 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  right: 0px;
+  width: 156.7px;
+  height: 47px;
+}
+.vector-frame {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 80.65px);
+  right: 7px;
+  width: 156.7px;
+  height: 47px;
+}
+.div16 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  right: 65px;
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-darkslategray-200);
+  text-align: right;
+}
+.icbaseline-people-alt-icon {
+  position: absolute;
+  top: calc(50% - 27.5px);
+  right: 0px;
+  width: 55px;
+  height: 55px;
+}
+.parent6 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 23.65px);
+  right: 0px;
+  width: 207px;
+  height: 55px;
+}
+.group-parent2 {
+  position: absolute;
+  top: calc(50% - 291px);
+  right: 47px;
+  width: 207px;
+  height: 161.3px;
+}
+.rectangle-parent7 {
+  width: 301px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 512px);
+  right: 0px;
+  height: 1024px;
+  z-index: 4;
+}
+.div17 {
+  position: absolute;
+  top: 0px;
+  left: 95.01%;
+  text-decoration: underline;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div18 {
+  position: absolute;
+  top: 0px;
+  left: 63.3%;
+  text-decoration: underline;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div19 {
+  position: absolute;
+  top: 0px;
+  left: 76.65%;
+  text-decoration: underline;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div20 {
+  position: absolute;
+  top: 0px;
+  left: 28.21%;
+  text-decoration: underline;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div21 {
+  position: absolute;
+  top: 0px;
+  left: 11.61%;
+  text-decoration: underline;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.div22 {
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  text-decoration: underline;
+  line-height: 146.39%;
+  font-weight: 300;
+}
+.parent7 {
+  width: 55.63%;
+  position: absolute;
+  margin: 0 !important;
+  top: 268px;
+  right: 30.21%;
+  left: 14.17%;
+  height: 23px;
+  z-index: 5;
+  font-size: var(--font-size-base);
+}
+.manager-jobs {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1024px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 0px 61px;
+  text-align: right;
+  font-size: var(--font-size-13xl);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}

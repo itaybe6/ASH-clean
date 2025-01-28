@@ -1,0 +1,113 @@
+.mobile-menu-client-child {
+  position: absolute;
+  width: 71.5%;
+  top: calc(50% - 426px);
+  right: 0%;
+  left: 28.5%;
+  background-color: var(--color-whitesmoke-300);
+  height: 852px;
+}
+.vector-icon87 {
+  position: absolute;
+  top: calc(50% - 26px);
+  left: calc(50% - 66.5px);
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper78 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% + 315px);
+  left: calc(50% - 8.5px);
+  width: 133px;
+  height: 52px;
+}
+.icon53 {
+  position: absolute;
+  top: calc(50% - 393px);
+  left: calc(50% - 36.5px);
+  width: 189px;
+  height: 66px;
+  object-fit: cover;
+}
+.vector-icon88 {
+  position: absolute;
+  top: calc(50% - 18.8px);
+  left: calc(50% - 72.35px);
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-wrapper79 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% + 36.55px);
+  left: calc(50% - 66.4px);
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-icon89 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  left: calc(50% - 73.9px);
+  width: 147.8px;
+  height: 47px;
+}
+.vector-wrapper80 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 74.15px);
+  left: calc(50% - 64.3px);
+  width: 147.8px;
+  height: 47px;
+}
+.div217 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  left: calc(50% - 86.5px);
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-darkslategray-200);
+  text-align: right;
+}
+.icbaseline-contact-mail-icon4 {
+  position: absolute;
+  top: calc(50% - 23.5px);
+  left: calc(50% + 39.5px);
+  width: 47px;
+  height: 47px;
+}
+.parent50 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 20.15px);
+  left: calc(50% - 86.5px);
+  width: 173px;
+  height: 47px;
+}
+.group-parent43 {
+  position: absolute;
+  top: calc(50% - 185px);
+  left: calc(50% - 30.5px);
+  width: 173px;
+  height: 148.3px;
+}
+.mobile-menu-client {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 852px;
+  overflow: hidden;
+}

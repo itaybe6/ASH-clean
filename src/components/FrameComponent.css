@@ -1,0 +1,45 @@
+.div253 {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: left;
+}
+.mdiaccount-icon1 {
+  position: absolute;
+  top: 0px;
+  left: 55px;
+  border-radius: var(--br-2xs);
+  width: 26px;
+  height: 26px;
+}
+.parent71 {
+  width: 81px;
+  position: absolute;
+  margin: 0 !important;
+  top: 1px;
+  left: 8px;
+  height: 26px;
+  z-index: 0;
+}
+.homepage-mobile-inner2 {
+  cursor: pointer;
+  border: none;
+  padding: 0px var(--padding-9xs);
+  background-color: var(--color-darkorange-200);
+  width: 93px;
+  margin: 0 !important;
+  position: absolute;
+  top: 37px;
+  left: 26px;
+  border-radius: var(--br-2xs);
+  height: 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  z-index: 4;
+}

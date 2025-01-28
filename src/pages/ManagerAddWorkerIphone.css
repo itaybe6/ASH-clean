@@ -1,0 +1,227 @@
+.manager-add-worker-iphone-child {
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 335.75px);
+  right: 0%;
+  left: 0%;
+  background-color: var(--color-gray-100);
+  height: 745px;
+  z-index: 0;
+}
+.div88 {
+  width: 186px;
+  position: absolute;
+  margin: 0 !important;
+  top: 118px;
+  left: calc(50% - 21.5px);
+  line-height: 146.39%;
+  font-weight: 500;
+  display: inline-block;
+  z-index: 1;
+}
+.div89 {
+  width: 229px;
+  position: absolute;
+  margin: 0 !important;
+  top: 150px;
+  left: calc(50% - 64.5px);
+  font-size: var(--font-size-smi);
+  line-height: 146.39%;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 2;
+}
+.b42 {
+  width: 247px;
+  position: absolute;
+  margin: 0 !important;
+  top: 263px;
+  left: calc(50% - 98.5px);
+  line-height: 146.39%;
+  display: inline-block;
+  color: var(--color-darkslategray-200);
+  text-align: center;
+  height: 30px;
+  z-index: 3;
+}
+.div90 {
+  width: 287px;
+  position: absolute;
+  margin: 0 !important;
+  top: 293px;
+  left: calc(50% - 144.5px);
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+  font-weight: 300;
+  color: var(--color-darkslategray-200);
+  display: inline-block;
+  z-index: 4;
+}
+.icbaseline-person-icon {
+  width: 56px;
+  position: absolute;
+  margin: 0 !important;
+  top: 220px;
+  left: calc(50% + 94.5px);
+  height: 56px;
+  z-index: 5;
+}
+.icon20 {
+  width: 135px;
+  position: absolute;
+  margin: 0 !important;
+  top: 16px;
+  right: 25px;
+  height: 47px;
+  object-fit: cover;
+  z-index: 6;
+}
+.vector-icon38 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 23.3px;
+  height: 15.5px;
+}
+.vector-wrapper30 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 23.3px;
+  position: absolute;
+  margin: 0 !important;
+  top: 32px;
+  left: 51px;
+  height: 15.5px;
+  z-index: 7;
+}
+.group-child56 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 79px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+}
+.group-child57 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 22px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+}
+.group-child58 {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  position: absolute;
+  width: 100%;
+  top: calc(50% + 35px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+}
+.rectangle-parent33 {
+  width: 73.79%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 78.75px);
+  right: 13.23%;
+  left: 12.98%;
+  height: 158px;
+  z-index: 8;
+}
+.manager-add-worker-iphone-item {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  width: 73.79%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% + 93.25px);
+  right: 13.74%;
+  left: 12.47%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+  z-index: 9;
+}
+.manager-add-worker-iphone-inner {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  width: 73.79%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% + 150.25px);
+  right: 13.74%;
+  left: 12.47%;
+  border-radius: var(--br-4xs);
+  height: 44px;
+  z-index: 10;
+}
+.group-child59 {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 19.85px);
+  right: 0%;
+  left: 0%;
+  border-radius: var(--br-smi);
+  background-color: var(--color-darkorange-200);
+  height: 39.7px;
+}
+.b43 {
+  position: absolute;
+  width: 88.72%;
+  top: calc(50% - 10.65px);
+  left: 5.95%;
+  font-size: var(--font-size-mini);
+  display: inline-block;
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+}
+.rectangle-parent34 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 37.66%;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% + 231.25px);
+  right: 13.23%;
+  left: 49.11%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 39.7px;
+  z-index: 11;
+}
+.manager-add-worker-iphone {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 817.5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 18px 162px;
+  text-align: right;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-heebo);
+}
