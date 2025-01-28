@@ -14,6 +14,7 @@ const login = async (req, res) => {
 
         user = await Employee.findOne({ phone });
         userType = 'employee';
+        
 
         if (!user) {
             user = await Customer.findOne({ phone });
@@ -25,14 +26,14 @@ const login = async (req, res) => {
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
+
         if (!isMatch) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
-
         const payload = {
-            id: user._id,
+            name: user.name,
             role: user.role || 'customer',
-            userType
+            phone : phone
         };
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {

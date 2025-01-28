@@ -66,6 +66,7 @@ const ManagerAddWorkerIphone = () => {
       <div className="rectangle-parent33">
         <input
           className="group-child56"
+          name="fullName"
           placeholder="שם מלא"
           type="text"
           value={fullName}
@@ -74,6 +75,7 @@ const ManagerAddWorkerIphone = () => {
         <input
           className="group-child57"
           placeholder="עיר"
+          name="city"
           type="text"
           value={city}
           onChange={handleCityChange}
@@ -81,6 +83,7 @@ const ManagerAddWorkerIphone = () => {
         <input
           className="group-child58"
           placeholder="מספר פלאפון"
+          name="phone"
           type="tel"
           value={phoneNumber}
           onChange={handlePhoneNumberChange}
