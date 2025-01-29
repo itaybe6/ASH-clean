@@ -119,7 +119,7 @@ function App() {
           isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />
         }
       />
-      {/* רכיב 10 */}
+      {/* ##### רכיב 10  ##### */}
       <Route
         path="/manager-registration-add-customer"
         element={
@@ -194,6 +194,7 @@ function App() {
           isMobile ? <ClientBranchIphone /> : <ClientJobs />
         }
       />
+      {/* ##### רכיב 21 #####*/}
 
       <Route
         path="/manager-registration-add-branches"

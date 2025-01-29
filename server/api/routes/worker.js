@@ -26,7 +26,7 @@ router.get('/:employeeId', getEmployeeById);
 
 
 // 6 edit details emplpyee
-router.put('/:employeeId', updateEmployeeDetails);
+router.put('/updateDetails/:employeeId', updateEmployeeDetails);
 
 // 7 worker cancel the cleaning
 router.put('/cleanings/:cleaningId/cancel', cancelCleaning);

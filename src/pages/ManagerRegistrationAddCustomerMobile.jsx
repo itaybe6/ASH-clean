@@ -21,7 +21,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
-  const handleContinue = (e) => {
+  const handleContinue = (e) => { 
     e.preventDefault();
     const userData = {
       businessName,

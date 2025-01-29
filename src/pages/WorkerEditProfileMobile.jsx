@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./WorkerEditProfileMobile.css";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const WorkerEditProfileMobile = () => {
   // הגדרת state לכל שדה קלט
@@ -7,17 +9,42 @@ const WorkerEditProfileMobile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const navigate = useNavigate();
 
-  // פונקציה לעדכון הפרטים
-  const handleUpdate = () => {
-    // כאן ניתן להוסיף את הלוגיקה לעדכון הפרטים, כמו שליחה לשרת
-    console.log({
-      fullName,
-      newPassword,
-      phoneNumber,
-      city,
-    });
+  //func to Encryption the token
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
+    } catch (error) {
+      return null;
+    }
   };
+  const handleUpdate = async () => {
+    try {
+      const token = parseJwt(localStorage.getItem("token"));
+      const employeeId = token.id;
+      const res = await axios.put(`http://localhost:5000/worker/updateDetails/${employeeId}`, {
+        fullName,
+        newPassword,
+        phoneNumber,
+        city
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}` // שליחת התוקן לצורך אימות
+        }
+      });
+      if (res.status === 200) {
+        alert("הפרופיל עודכן בהצלחה!");
+        navigate("/worker-future-jobs");
+      }
+    } catch (error) {
+      console.error("שגיאה בעדכון הפרופיל:", error);
+      alert("אירעה שגיאה בעדכון הפרופיל. נסה שוב מאוחר יותר.");
+    }
+  };
+
 
   return (
     <div className="worker-edit-profile-mobile">

@@ -1,5 +1,6 @@
 const Employee = require('../models/employee');
 const Cleaning = require('../models/cleaning');
+const bcrypt = require('bcrypt');
 
 // 1 fecth cleaning for worker
 const getCleaningsByEmployee = async (req, res) => {
@@ -66,18 +67,18 @@ const getEmployeeById = async (req, res) => {
 // 6 edit details Employe
 const updateEmployeeDetails = async (req, res) => {
     const { employeeId } = req.params;
-    const { phone, password , fullName } = req.body;
+    const { phoneNumber, newPassword , fullName ,city } = req.body;
 
-    // הכנת אובייקט לעדכון
+
     const updateData = {};
-    if (phone) updateData.phone = phone;
+    if (phoneNumber) updateData.phone = phoneNumber;
     if(fullName) updateData.fullName = fullName;
-    if (password) {
+    if(city) updateData.city = city;
+    if (newPassword) {
         const salt = await bcrypt.genSalt(10);
-        updateData.password = await bcrypt.hash(password, salt);
+        updateData.password = await bcrypt.hash(newPassword, salt);
     }
  
-    // המשתנים שיש ב updateData אלו המשתנים שמתעדכנים
     const updatedEmployee = await Employee.findByIdAndUpdate(
         employeeId,
         updateData,
