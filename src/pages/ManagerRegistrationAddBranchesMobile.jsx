@@ -1,6 +1,58 @@
+import React, { useState } from "react";
 import "./ManagerRegistrationAddBranchesMobile.css";
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 const ManagerRegistrationAddBranchesMobile = () => {
+  const [branchName, setBranchName] = useState("");
+  const [branchAddress, setBranchAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const handleBranchNameChange = (e) => setBranchName(e.target.value);
+  const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
+  const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
+  const [branches, setBranches] = useState([]); 
+  const navigate = useNavigate();
+
+  const handleAddUser = async () => {
+    const  userData =  JSON.parse(sessionStorage.getItem("userData"));
+    console.log(userData);
+    try {
+      const userDataToSend = {
+        fullName: userData.fullName,
+        phoneNumber: userData.phoneNumber,
+        password: userData.password,
+        businessName: userData.businessName,
+        address: userData.address,
+        city: userData.city,
+        branches: branches, 
+      };
+      console.log(userDataToSend);
+
+      const response = await axios.post("http://localhost:5000/manager/add-customer", userDataToSend);
+
+      console.log("Success Add Customer");
+      alert("לקוח נוסף בהצלחה")
+    } catch (error) {
+      console.error("Error Add Customer", error.response ? error.response.data : error.message);
+    }
+  };
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
+  const handleAddBranch = () => {
+    const newBranch = {
+      branchName,
+      phoneNumber,
+      branchAddress,
+    };
+    setBranches([...branches, newBranch]);
+    setBranchName("");
+    setPhoneNumber("");
+    setBranchAddress("");
+  };
+
   return (
     <div className="manager-registration-add-b1">
       <div className="manager-registration-add-b-child1" />
@@ -20,29 +72,64 @@ const ManagerRegistrationAddBranchesMobile = () => {
       <div className="manager-registration-add-b-inner1">
         <div className="group-wrapper4">
           <div className="group-wrapper4">
-            <div className="div112">סניף 1</div>
             <input
               className="group-child87"
               placeholder="שם סניף"
               type="text"
+              value={branchName}
+              onChange={handleBranchNameChange}
+              required
             />
             <input
               className="group-child88"
               placeholder="כתובת סניף"
               type="text"
+              value={branchAddress}
+              onChange={handleBranchAddressChange}
+              required
             />
             <input
               className="group-child89"
               placeholder="מספר פלאפון"
               type="tel"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              required
             />
-            <div className="div113">{`+ הוספת סניף נוסף `}</div>
+            <button className="div113" onClick={handleAddBranch}>{`+ הוספת סניף נוסף `}</button>
+
           </div>
         </div>
       </div>
-      <button className="rectangle-parent42">
+      <button
+        className="rectangle-parent42"
+        onClick={handleAddUser}
+      >
         <div className="group-child90" />
         <b className="b52">הוספת משתמש</b>
+      </button>
+      <button
+        className="rectangle-parent40"
+        onClick={handleBack}
+      >
+        {branches.length > 0 && (
+          <div className="branches-container">
+            <h3 className="branches-title">📌 סניפים שנוספו:</h3>
+            <ul className="branches-list">
+              {branches.map((branch, index) => (
+                <li key={index} className="branch-item">
+                  <div className="branch-card">
+                    <b>🛠 {branch.branchName}</b>
+                    <p>📞 {branch.phoneNumber}</p>
+                    <p>📍 {branch.branchAddress}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="group-child81" />
+        <b className="b48">חזרה</b>
       </button>
     </div>
   );

@@ -4,32 +4,6 @@ const Customer = require('../models/costumer');
 
 const bcrypt = require('bcrypt');
 
-// deleteeeeeeeeeeeeee
-// 1 admin add new bracnh + add the branch to customer branches list
-const addBranch = async (req, res) => {
-    try {
-        const { customer, address } = req.body;
-
-        // יצירת סניף חדש
-        const newBranch = new Branch({
-            customer,
-            address
-        });
-
-        const savedBranch = await newBranch.save();
-
-        // הוספת הסניף לרשימת הסניפים של הלקוח
-        await Customer.findByIdAndUpdate(
-            customer,
-            { $push: { branches: savedBranch._id } },
-            { new: true }
-        );
-
-        res.status(201).json(savedBranch);
-    } catch (error) {
-        res.status(500).json({ message: 'Error adding branch', error });
-    }
-};
 
 //2 admin add a new worker
 const addRegularEmployee = async (req, res) => {
@@ -72,7 +46,7 @@ const addCustomer = async (req, res) => {
 
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
-        
+
         const newCustomer = new Customer({
             fullName,
             phone: phoneNumber,
@@ -222,7 +196,7 @@ const updateManagerDetails = async (req, res) => {
 
 
 module.exports = {
-    addBranch, addRegularEmployee
+    addRegularEmployee
     , getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee

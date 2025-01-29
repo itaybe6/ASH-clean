@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { addBranch,addRegularEmployee ,getBranchesByCustomer,
+const { addRegularEmployee ,getBranchesByCustomer,
         addCustomer,getAllCustomers,
         getCleaningsByBranch , addCleaningForEmployee,
         updateManagerDetails  } = require('../controller/manager');
@@ -8,8 +8,6 @@ const { addBranch,addRegularEmployee ,getBranchesByCustomer,
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
 
-// 1 admin add new bracnh + add the branch to customer branches list
-router.post('/add-branch',isAuthenticated, isManager, addBranch);
 
 
 // 2 admin add a new worker

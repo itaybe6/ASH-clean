@@ -225,3 +225,120 @@
   color: var(--color-darkslategray-200);
   font-family: var(--font-heebo);
 }
+.rectangle-parent40 {
+  margin-top: -50px;
+  position: fixed;
+  bottom: 20px; /* הצמדת הכפתור לתחתית */
+  left: 20px; /* הצמדה לצד שמאל */
+  width: 120px; /* רוחב הכפתור */
+  height: 40px; /* גובה הכפתור */
+  background-color: #333; /* צבע רקע כהה */
+  border-radius: 10px; /* פינות מעוגלות */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* הוספת צל */
+}
+
+.rectangle-parent40:hover {
+  background-color: #444; /* שינוי צבע בלחיצה */
+}
+
+.b48 {
+  color: white; /* טקסט בצבע לבן */
+  font-size: 16px; /* גודל טקסט מותאם לנייד */
+  font-weight: bold;
+  text-align: center;
+}
+
+.branches-container {
+  position: fixed;
+  top: 80px; /* מרווח מהחלק העליון */
+  left: 10px; /* ריווח מהשוליים */
+  width: 90%; /* התאמה למסך קטן */
+  margin-top: 550px;
+  max-width: 320px; /* מקסימום רוחב */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  overflow-y: auto; /* מאפשר גלילה */
+  max-height: 300px; /* גובה מקסימלי לפני שמתחילה גלילה */
+}
+
+.branches-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.branches-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.branch-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.branch-card {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.branch-card b {
+  display: block;
+  font-size: 16px;
+  color: #222;
+}
+
+.branch-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branch-card p i {
+  margin-right: 5px;
+  color: #ff6600;
+}
+
+/* התאמה לטלפונים קטנים */
+@media (max-width: 480px) {
+  .branches-container {
+    width: 95%;
+    left: 2.5%;
+    max-height: 250px; /* להקטין עוד קצת את הגובה */
+  }
+
+  .branch-card {
+    padding: 8px;
+  }
+
+  .branches-title {
+    font-size: 16px;
+  }
+
+  .branch-card b {
+    font-size: 14px;
+  }
+
+  .branch-card p {
+    font-size: 12px;
+  }
+}

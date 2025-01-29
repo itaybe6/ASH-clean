@@ -16,7 +16,7 @@ const ManagerRegistrationAddB = () => {
 
 
   const handleAddUser = async () => {
-    const  userData =  JSON.parse(sessionStorage.getItem("userData"));
+    const userData = JSON.parse(sessionStorage.getItem("userData"));
     console.log(userData);
     try {
       const userDataToSend = {
@@ -26,7 +26,7 @@ const ManagerRegistrationAddB = () => {
         businessName: userData.businessName,
         address: userData.address,
         city: userData.city,
-        branches: branches, 
+        branches: branches,
       };
       console.log(userDataToSend);
 
@@ -38,7 +38,7 @@ const ManagerRegistrationAddB = () => {
       console.error("Error Add Customer", error.response ? error.response.data : error.message);
     }
   };
-  
+
 
   const handleBack = () => {
     navigate(-1);
@@ -86,8 +86,8 @@ const ManagerRegistrationAddB = () => {
           <img className="vector-icon47" alt="" src="/vector9.svg" />
         </button>
         <button className="group-wrapper3">
-            <div className="div103">משתמשים</div>
-            <img className="group-child76" alt="" src="/group-401.svg" />
+          <div className="div103">משתמשים</div>
+          <img className="group-child76" alt="" src="/group-401.svg" />
         </button>
       </div>
       <div className="group-parent18">
@@ -118,13 +118,14 @@ const ManagerRegistrationAddB = () => {
               required
             />
           </div>
-          <button className="div104" onClick={handleAddBranch}>{`+ הוספת סניף נוסף `}</button>        </div>
+          <button className="div104" onClick={handleAddBranch}>{`+ הוספת סניף נוסף `}</button>
+        </div>
         <button
           className="rectangle-parent39"
           onClick={handleAddUser}
         >
 
-           {/* הצגת רשימת הסניפים שנוספו */}
+          {/* הצגת רשימת הסניפים שנוספו */}
           <div className="group-child80" />
           <b className="b47">הוספת משתמש</b>
         </button>
@@ -143,7 +144,7 @@ const ManagerRegistrationAddB = () => {
               {branches.map((branch, index) => (
                 <li key={index} className="branch-item">
                   <div className="branch-card">
-                    <b>🛠 {branch.branchName}</b>  
+                    <b>🛠 {branch.branchName}</b>
                     <p>📞 {branch.phoneNumber}</p>
                     <p>📍 {branch.branchAddress}</p>
                   </div>

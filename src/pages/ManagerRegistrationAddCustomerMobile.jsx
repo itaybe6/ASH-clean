@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./ManagerRegistrationAddCustomerMobile.css";
+import { useNavigate } from 'react-router-dom';
 
 const ManagerRegistrationAddCustomerMobile = () => {
-  // הגדרת state לכל שדה קלט
   const [businessName, setBusinessName] = useState("");
   const [fullName, setFullName] = useState("");
   const [city, setCity] = useState("");
@@ -10,8 +10,9 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
-  // פונקציות לטיפול בשינוי ערכים בשדות הקלט
+
   const handleBusinessNameChange = (e) => setBusinessName(e.target.value);
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
@@ -20,28 +21,36 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
-  // פונקציה לטיפול בלחיצת כפתור "המשך לסניפים"
-  const handleContinue = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת או ניווט לדף אחר
-    console.log({
+  const handleContinue = (e) => {
+    e.preventDefault();
+    const userData = {
       businessName,
       fullName,
+      phoneNumber,
       city,
       address,
-      phoneNumber,
       password,
-      confirmPassword,
-    });
-
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setBusinessName("");
-    // setFullName("");
-    // setCity("");
-    // setAddress("");
-    // setPhoneNumber("");
-    // setPassword("");
-    // setConfirmPassword("");
+      confirmPassword
+    };
+    sessionStorage.setItem("userData", JSON.stringify(userData));
+    navigate("/manager-registration-add-branches");
+  
   };
+
+    useEffect(() => {
+      const savedData = sessionStorage.getItem("userData");
+      if (savedData) {
+        const parsedData = JSON.parse(savedData);
+        setBusinessName(parsedData.businessName || "");
+        setFullName(parsedData.fullName || "");
+        setPhoneNumber(parsedData.phoneNumber || "");
+        setCity(parsedData.city || "");
+        setAddress(parsedData.address || "");
+        setPassword(parsedData.password || "");
+        setConfirmPassword(parsedData.confirmPassword || "");
+      }
+    }, []); // רץ פעם אחת כשהקומפוננט נטען
+  
 
   return (
     <div className="manager-registration-add-c1">
