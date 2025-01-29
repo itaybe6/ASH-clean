@@ -130,7 +130,7 @@ function App() {
           )
         }
       />
-      {/* רכיב 11 */}
+      {/*##### רכיב 11 #####*/}
       <Route
         path="/manager-edit-profile"
         element={
@@ -144,7 +144,7 @@ function App() {
           isMobile ? <WorkerBranchSearchIphon /> : <WorkerFutureJobs />
         }
       />
-      {/* רכיב 13 */}
+      {/*  ##### רכיב 13 ##### */}
       <Route
         path="/worker-edit-profile"
         element={

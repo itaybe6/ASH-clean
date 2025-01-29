@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ManagerEditProfileIphone.css";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const ManagerEditProfileIphone = () => {
   // הגדרת state לכל שדה קלט
@@ -9,30 +11,51 @@ const ManagerEditProfileIphone = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
 
-  // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
   const handleConfirmNewPasswordChange = (e) => setConfirmNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
 
-  // פונקציה לטיפול בלחיצת כפתור "עדכן פרטים"
-  const handleUpdateDetails = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת
-    console.log({
-      fullName,
-      newPassword,
-      confirmNewPassword,
-      phoneNumber,
-      city,
-    });
 
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setFullName("");
-    // setNewPassword("");
-    // setConfirmNewPassword("");
-    // setPhoneNumber("");
-    // setCity("");
+  const navigate = useNavigate();
+
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
+    } catch (error) {
+      return null;
+    }
+  };
+  const handleUpdateDetails = async () => {
+
+    if(newPassword != confirmNewPassword){
+      alert("סיסמאות לא תואמות");
+      setNewPassword("");
+      setConfirmNewPassword("");
+      return;
+    }
+
+    const token = parseJwt(localStorage.getItem("token"));
+    if(token.role != "Manager"){
+      alert("אתה לא מנהל , אנא פנה למנהלי האתר")
+      return
+    }
+    try {
+      const response = await axios.put(
+        "http://localhost:5000/manager/update",
+        { fullName, phoneNumber, city, newPassword },
+        { headers: { Authorization: `Bearer ${token.id}` } } // שליחת ה-Token
+      );
+      alert(response.data.message);
+      navigate("/manager-jobs");
+
+    } catch (error) {
+      console.error("Error updating manager:", error);
+      alert("שגיאה בעדכון הפרטים");
+    }
   };
 
   return (

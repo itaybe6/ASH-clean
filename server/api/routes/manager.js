@@ -35,7 +35,7 @@ router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);
 router.get('/:workerId/cleanings', addCleaningForEmployee);
 
 // edit details
-router.put("/update",isManager, updateManagerDetails);
+router.put("/update", updateManagerDetails);
 
 
 module.exports = router;

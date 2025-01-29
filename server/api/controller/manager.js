@@ -167,8 +167,12 @@ const addCleaningForEmployee = async (req, res) => {
 //edit personal details
 const updateManagerDetails = async (req, res) => {
     const { fullName, phoneNumber, city, newPassword } = req.body;
-    const managerId = req.user.id; // מזהה המנהל (נניח שהוא מגיע מתוך authMiddleware)
+    const managerId = req.headers.authorization?.split(" ")[1]; 
 
+    if (!managerId) {
+        return res.status(401).json({ message: "חסר מזהה מנהל בבקשה" });
+    }
+    
     try {
         const manager = await Employee.findById(managerId);
         if (!manager) {
