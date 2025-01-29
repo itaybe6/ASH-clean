@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { addBranch,addRegularEmployee ,getBranchesByCustomer,
         addCustomer,getAllCustomers,
-        getCleaningsByBranch , addCleaningForEmployee } = require('../controller/manager');
+        getCleaningsByBranch , addCleaningForEmployee,
+        updateManagerDetails  } = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -13,10 +14,11 @@ router.post('/add-branch',isAuthenticated, isManager, addBranch);
 
 // 2 admin add a new worker
 router.post('/add-worker', addRegularEmployee);
-//, isAuthenticated, isManager --- להוסיף אוטנטיקציה 
+// isAuthenticated, isManager --- להוסיף אוטנטיקציה 
 
 // 3 admin add a new customer
-router.post('/add-customer', isAuthenticated, isManager, addCustomer);
+router.post('/add-customer', addCustomer);
+//, isAuthenticated, isManager --- להוסיף אוטנטיקציה 
 
 
 // 4 get all the customers
@@ -34,6 +36,8 @@ router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);
 // 7 Manager add cleaning to worker 
 router.get('/:workerId/cleanings', addCleaningForEmployee);
 
+// edit details
+router.put("/update",isManager, updateManagerDetails);
 
 
 module.exports = router;

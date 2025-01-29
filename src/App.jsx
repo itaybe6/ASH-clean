@@ -46,7 +46,6 @@ import MobileMenuClient from "./pages/MobileMenuClient";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-
   const checkScreenSize = () => {
     const mobileBreakpoint = 768; // גודל מסך למובייל
     setIsMobile(window.innerWidth <= mobileBreakpoint);
@@ -77,10 +76,10 @@ function App() {
       />
       {/*##### רכיב 4 ##### */}
       <Route
-        path="/manager-add-worker"           
+        path="/manager-add-worker"
         element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />}
       />
-      
+
       {/* רכיב 5 */}
       <Route
         path="/manager-display-customers"
@@ -157,7 +156,7 @@ function App() {
         path="/worker-job-suc"
         element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />}
       />
-      {/* רכיב 15 */}
+      {/* ##### רכיב 15 ##### */}
       <Route
         path="/client-contact-us"
         element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />}
@@ -194,6 +193,11 @@ function App() {
         element={     //change the name 
           isMobile ? <ClientBranchIphone /> : <ClientJobs />
         }
+      />
+
+      <Route
+        path="/manager-registration-add-branches"
+        element={ isMobile ? <ManagerRegistrationAddBranchesMobile/> : <ManagerRegistrationAddB />}
       />
     </Routes>
   );

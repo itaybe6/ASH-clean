@@ -2,21 +2,36 @@ const Employee = require('../models/employee');
 
 const isManager = async (req, res, next) => {
     try {
-        const userId = req.user.id;  // נניח שהמשתמש מאומת ומזהה המשתמש נמצא ב-req.user
-        const employee = await Employee.findById(userId);
+        // קבלת ה-Token מה-Header
+        const token = req.header("Authorization");
+    
+        if (!token) {
+          return res.status(401).json({ message: "גישה נדחתה - אין טוקן" });
+        }
+        console.log(process.env.JWT_SECRET)
 
+        const decoded = jwt.verify(token.replace("Bearer ", ""),process.env.JWT_SECRET); 
+        
+        console.log(process.env.JWT_SECRET)
+
+        // חיפוש המשתמש במסד הנתונים
+        const employee = await Employee.findById(decoded.id);
+    
         if (!employee) {
-            return res.status(404).json({ message: 'User not found' });
+          return res.status(404).json({ message: "משתמש לא נמצא" });
         }
 
-        if (employee.role !== 'Manager') {
-            return res.status(403).json({ message: 'Access denied. Only managers can perform this action' });
+        // בדיקה האם התפקיד הוא "Manager"
+        if (employee.role !== "Manager") {
+          return res.status(403).json({ message: "גישה נדחתה. רק מנהלים יכולים לבצע פעולה זו" });
         }
-
-        next();  // המשתמש הוא מנהל, המשך לנתיב הבא
-    } catch (error) {
-        res.status(500).json({ message: 'Authorization error', error });
-    }
+    
+        req.user = employee;
+    
+        next(); // ממשיכים לפונקציה שמשנה סיסמה
+      } catch (error) {
+        res.status(401).json({ message: "טוקן לא תקין", error });
+      }
 };
 
 const isAuthenticated = (req, res, next) => {

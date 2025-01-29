@@ -362,3 +362,32 @@
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
+
+
+.branches-container {
+  max-height: 300px; /* גובה מקסימלי של הקוביה */
+  overflow-y: auto; /* יצירת גלילה כאשר יש יותר מדי סניפים */
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 300px;
+  border: 1px solid #ddd;
+}
+
+.branches-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.branch-item {
+  margin-bottom: 10px;
+}
+
+.branch-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}

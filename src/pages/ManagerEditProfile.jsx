@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ManagerEditProfile.css";
+import axios from "axios";
 
 const ManagerEditProfile = () => {
   // הגדרת state לכל שדה קלט
@@ -16,25 +17,29 @@ const ManagerEditProfile = () => {
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
 
-  // פונקציה לטיפול בלחיצת כפתור "עדכן פרטים"
-  const handleUpdateDetails = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת
-    console.log({
-      fullName,
-      newPassword,
-      confirmNewPassword,
-      phoneNumber,
-      city,
-    });
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    
+    if(newPassword != confirmNewPassword){
+      alert("סיסמאות לא תואמות");
+      setNewPassword("");
+      setConfirmNewPassword("");
+      return;
+    }
 
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setFullName("");
-    // setNewPassword("");
-    // setConfirmNewPassword("");
-    // setPhoneNumber("");
-    // setCity("");
+    try {
+      const response = await axios.put(
+        "http://localhost:5000/manager/update",
+        { newPassword },
+        { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } } // שליחת ה-Token
+      );
+
+      alert(response.data.message);
+    } catch (error) {
+      console.error("Error updating manager:", error);
+      alert("שגיאה בעדכון הפרטים");
+    }
   };
-
   return (
     <div className="manager-edit-profile">
       <div className="manager-edit-profile-child" />
@@ -45,7 +50,7 @@ const ManagerEditProfile = () => {
         <div className="div97">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
       </div>
       <div className="group-parent16">
-        <button className="vector-wrapper32"  onClick={handleUpdateDetails}>
+        <button className="vector-wrapper32"  onClick={handleUpdate}>
           <img className="vector-icon40" alt="" src="/vector20.svg" />
         </button>
         <input

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import "./ManagerRegistrationAddCustomer.css";
+import { useNavigate } from 'react-router-dom';
 
 const ManagerRegistrationAddCustomer = () => {
   // הגדרת state לכל שדה קלט
@@ -11,6 +12,8 @@ const ManagerRegistrationAddCustomer = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const navigate = useNavigate();
+
   // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleBusinessNameChange = (e) => setBusinessName(e.target.value);
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -20,28 +23,37 @@ const ManagerRegistrationAddCustomer = () => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
-  // פונקציה לטיפול בלחיצת כפתור "המשך לסניפים"
-  const handleContinue = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת או ניווט לדף אחר
-    console.log({
+  const handleContinue = (e) => {
+    e.preventDefault();
+    const userData = {
       businessName,
       fullName,
       phoneNumber,
       city,
       address,
       password,
-      confirmPassword,
-    });
-
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setBusinessName("");
-    // setFullName("");
-    // setPhoneNumber("");
-    // setCity("");
-    // setAddress("");
-    // setPassword("");
-    // setConfirmPassword("");
+      confirmPassword
+    };
+    sessionStorage.setItem("userData", JSON.stringify(userData));
+    navigate("/manager-registration-add-branches");
+  
   };
+
+
+  useEffect(() => {
+    const savedData = sessionStorage.getItem("userData");
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      setBusinessName(parsedData.businessName || "");
+      setFullName(parsedData.fullName || "");
+      setPhoneNumber(parsedData.phoneNumber || "");
+      setCity(parsedData.city || "");
+      setAddress(parsedData.address || "");
+      setPassword(parsedData.password || "");
+      setConfirmPassword(parsedData.confirmPassword || "");
+    }
+  }, []); // רץ פעם אחת כשהקומפוננט נטען
+
 
   return (
     <div className="manager-registration-add-c">

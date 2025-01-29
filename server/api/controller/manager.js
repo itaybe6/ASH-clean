@@ -1,7 +1,10 @@
 const Branch = require('../models/branch');
 const Employee = require('../models/employee');
+const Customer = require('../models/costumer');
+
 const bcrypt = require('bcrypt');
 
+// deleteeeeeeeeeeeeee
 // 1 admin add new bracnh + add the branch to customer branches list
 const addBranch = async (req, res) => {
     try {
@@ -34,8 +37,8 @@ const addRegularEmployee = async (req, res) => {
         console.log(req.body)
         const { phone, password, fullName, city } = req.body; // הוספת קליטת העיר מהבקשה
 
-        const salt = await bcrypt.genSalt(10); 
-        const hashedPassword = await bcrypt.hash(password, salt); 
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
         const newEmployee = new Employee({
             phone,
@@ -56,23 +59,62 @@ const addRegularEmployee = async (req, res) => {
 //3 admin add a new customer
 const addCustomer = async (req, res) => {
     try {
-        const { fullName, phone, password, businessName } = req.body;
+        const {
+            fullName,
+            phoneNumber,
+            password,
+            businessName,
+            address,
+            city,
+            branches, // מערך הסניפים שמתקבל מהלקוח (כולל מספרי טלפון)
+        } = req.body;
+        console.log(password)
 
-        // הצפנת הסיסמה
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
-
+        
         const newCustomer = new Customer({
             fullName,
-            phone,
+            phone: phoneNumber,
             password: hashedPassword,
-            businessName
+            businessName,
+            address,
+            city,
+            branches: [],
         });
 
         const savedCustomer = await newCustomer.save();
-        res.status(201).json(savedCustomer);
+        console.log("✅ לקוח נשמר בהצלחה:", savedCustomer);
+
+        for (const branch of branches) {
+            try {
+                const newBranch = new Branch({
+                    customer: savedCustomer._id,
+                    address: branch.branchAddress,
+                    phone: branch.phoneNumber,
+                    name: branch.branchName,
+                    cleaningSchedules: [],
+                });
+
+                const savedBranch = await newBranch.save();
+
+                // עדכון רשימת הסניפים של הלקוח
+                await Customer.findByIdAndUpdate(
+                    savedCustomer._id,
+                    { $push: { branches: savedBranch._id } },
+                    { new: true }
+                );
+
+                console.log(`✅ סניף "${savedBranch.name}" נוסף בהצלחה`);
+            } catch (error) {
+                console.error("❌ שגיאה בשמירת סניף:", error);
+            }
+        }
+
+        res.status(201).json({ message: "✅ לקוח וסניפים נשמרו בהצלחה", customer: savedCustomer });
     } catch (error) {
-        res.status(500).json({ message: 'Error adding customer', error });
+        console.error("❌ שגיאה כללית בהוספת לקוח:", error);
+        res.status(500).json({ message: "Error adding customer", error });
     }
 };
 
@@ -148,5 +190,40 @@ const addCleaningForEmployee = async (req, res) => {
 };
 
 
+//edit personal details
+const updateManagerDetails = async (req, res) => {
+    const { fullName, phoneNumber, city, newPassword } = req.body;
+    const managerId = req.user.id; // מזהה המנהל (נניח שהוא מגיע מתוך authMiddleware)
 
-module.exports = { addBranch,addRegularEmployee,getAllCustomers,addCustomer,getBranchesByCustomer ,getCleaningsByBranch,addCleaningForEmployee};
+    try {
+        const manager = await Employee.findById(managerId);
+        if (!manager) {
+            return res.status(404).json({ message: "מנהל לא נמצא" });
+        }
+
+        // עדכון הנתונים החדשים
+        if (fullName) manager.fullName = fullName;
+        if (phoneNumber) manager.phoneNumber = phoneNumber;
+        if (city) manager.city = city;
+        if (newPassword) {
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(newPassword, salt);
+            manager.password = hashedPassword;
+        }
+
+        await manager.save();
+
+        res.status(200).json({ message: "פרטי המנהל עודכנו בהצלחה!" });
+    } catch (error) {
+        console.error("Error updating manager:", error);
+        res.status(500).json({ message: "שגיאה בעדכון פרטי המנהל" });
+    }
+};
+
+
+module.exports = {
+    addBranch, addRegularEmployee
+    , getAllCustomers, addCustomer,
+    getBranchesByCustomer, getCleaningsByBranch,
+    updateManagerDetails, addCleaningForEmployee
+};
