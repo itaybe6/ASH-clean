@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ClientEditProfile.css";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const ClientEditProfile = () => {
   // הגדרת state לכל שדה קלט
@@ -14,22 +16,39 @@ const ClientEditProfile = () => {
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
 
-  // פונקציה לטיפול בשליחת הטופס
-  const handleSubmit = (e) => {
-    e.preventDefault(); // מניעת רענון הדף
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת
-    console.log({
-      fullName,
-      newPassword,
-      phoneNumber,
-      city,
-    });
+  const navigate = useNavigate();
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
+    } catch (error) {
+      return null;
+    }
+  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setFullName("");
-    // setNewPassword("");
-    // setPhoneNumber("");
-    // setCity("");
+    const token = parseJwt(localStorage.getItem("token"));
+    if (token.role !== "customer") {
+        alert("אינך לקוח, אינך רשאי לבצע פעולה זו!");
+        return;
+    }
+
+    try {
+        const response = await axios.put(
+            `http://localhost:5000/customer/${token.id}/edit`, 
+            { fullName, phoneNumber, city, newPassword },
+            { headers: { Authorization: `Bearer ${token.id}` } }
+        );
+
+        alert( "פרטייך עודכנו בהצלחה");
+        navigate("/client-jobs"); // ניתוב לדף הלקוח לאחר עדכון
+    } catch (error) {
+        console.error("Error updating customer:", error);
+        alert("שגיאה בעדכון הפרטים");
+    }
   };
 
   return (

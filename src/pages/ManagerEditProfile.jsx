@@ -7,13 +7,11 @@ const ManagerEditProfile = () => {
   // הגדרת state לכל שדה קלט
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
-  const handleConfirmNewPasswordChange = (e) => setConfirmNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
 
@@ -91,14 +89,7 @@ const ManagerEditProfile = () => {
           onChange={handleNewPasswordChange}
           required
         />
-        <input
-          className="group-child71"
-          placeholder="אמת סיסמא חדשה"
-          type="password"
-          value={confirmNewPassword}
-          onChange={handleConfirmNewPasswordChange}
-          required
-        />
+      
         <input
           className="group-child72"
           placeholder="מספר פלאפון"

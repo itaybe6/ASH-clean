@@ -18,7 +18,7 @@ router.get('/:customerId/branches', isAuthenticated, getBranchesByCustomer);
 router.get('/:customerId', getCustomerById);
 
 
-// 4 edit customer details
+// 4 edit customer details 555 
 router.put('/:customerId/edit', editCustomerDetails);
 
 
@@ -30,7 +30,7 @@ router.delete('/:customerId/branches/:branchId', deleteBranchAndCleanings);
 router.get('/:customerId/cleanings', getAllCleaningsForCustomer);
 
 
-// send mail contact us 
+// send mail contact us 555
 router.post("/contact", sendContactEmail);
 
 module.exports = router;

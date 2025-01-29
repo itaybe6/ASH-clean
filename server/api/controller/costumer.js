@@ -1,6 +1,7 @@
 const Customer = require('../models/costumer');
 const Branch = require('../models/branch');
 const nodemailer = require("nodemailer");
+const bcrypt = require('bcrypt');
 
 // 1 get all the cleaning of brunch 
 const getCleaningsByBranch = async (req, res) => {
@@ -39,16 +40,19 @@ const getCustomerById = async (req, res) => {
 };
 
 
-// 4 edit customer details
+// 4 edit customer details 555
 const editCustomerDetails = async (req, res) => {
     const { customerId } = req.params;
-    const { fullName, phone, businessName } = req.body;
+    const { fullName, phoneNumber, newPassword } = req.body;
 
-    // הכנת אובייקט לעדכון
     const updateData = {};
     if (fullName) updateData.fullName = fullName;
-    if (phone) updateData.phone = phone;
-    if (businessName) updateData.businessName = businessName;
+    if (phoneNumber) updateData.phone = phoneNumber;
+    if (newPassword) {
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+        updateData.password = hashedPassword;
+    }
 
     const updatedCustomer = await Customer.findByIdAndUpdate(
         customerId,
@@ -106,43 +110,44 @@ const getAllCleaningsForCustomer = async (req, res) => {
     }
 };
 
+//555
 const sendContactEmail = async (req, res) => {
     const { fullName, phoneNumber, city, message } = req.body;
-  
+
     console.log(req.body)
     // הגדרת פרטי השליחה
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "itaybenyair99@gmail.com", // שים את המייל שלך
-        pass: "ypxz vuwi kkjs lluu", // השתמש בסיסמה ייעודית (App Passwords)
-      },
+        service: "gmail",
+        auth: {
+            user: "itaybenyair99@gmail.com", // שים את המייל שלך
+            pass: "ypxz vuwi kkjs lluu", // השתמש בסיסמה ייעודית (App Passwords)
+        },
     });
-  
+
     const mailOptions = {
-      from: "itaybenyair99@gmail.com",
-      to: "bokobzadir@gmail.com", // המייל של מנהל האתר
-      subject: "פנייה חדשה מהאתר",
-      text: `שם מלא: ${fullName}\nטלפון: ${phoneNumber}\nעיר: ${city}\n\nהודעה:\n${message}`,
+        from: "itaybenyair99@gmail.com",
+        to: "bokobzadir@gmail.com", // המייל של מנהל האתר
+        subject: "פנייה חדשה מהאתר",
+        text: `שם מלא: ${fullName}\nטלפון: ${phoneNumber}\nעיר: ${city}\n\nהודעה:\n${message}`,
     };
-  
+
     try {
-      await transporter.sendMail(mailOptions);
-      res.status(200).json({ message: "ההודעה נשלחה בהצלחה!" });
+        await transporter.sendMail(mailOptions);
+        res.status(200).json({ message: "ההודעה נשלחה בהצלחה!" });
     } catch (error) {
-      console.error("Email error:", error);
-      res.status(500).json({ error: "שגיאה בשליחת המייל" });
+        console.error("Email error:", error);
+        res.status(500).json({ error: "שגיאה בשליחת המייל" });
     }
-  };
+};
 
 
 
 module.exports = {
-      getCleaningsByBranch
-     ,getBranchesByCustomer
-     ,getCustomerById 
-     ,editCustomerDetails
-     ,deleteBranchAndCleanings 
-     ,getAllCleaningsForCustomer
-     ,sendContactEmail 
+    getCleaningsByBranch
+    , getBranchesByCustomer
+    , getCustomerById
+    , editCustomerDetails
+    , deleteBranchAndCleanings
+    , getAllCleaningsForCustomer
+    , sendContactEmail
 };
