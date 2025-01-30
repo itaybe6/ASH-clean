@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
+import {  Router, Routes, Route, useLocation } from "react-router-dom";
 import ManagerRegistrationAddB from "./pages/ManagerRegistrationAddB";
 import HomePageIphone from "./pages/HomePageIphone";
 import ManagerJobs from "./pages/ManagerJobs";
@@ -44,10 +44,34 @@ import MobileMenuWorker from "./pages/MobileMenuWorker";
 import MobileMenuManager from "./pages/MobileMenuManager";
 import MobileMenuClient from "./pages/MobileMenuClient";
 
+
+import Loader from "./components/Loader";
+
+function PageTransition({ children }) {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+      setLoading(true);
+      const timer = setTimeout(() => setLoading(false), 1000); // זמן טעינה קצר
+
+      return () => clearTimeout(timer);
+  }, [location]);
+
+  return (
+      <>
+          {loading && <Loader />}
+          <div className="page-transition">{children}</div> {/* הוספנו את האנימציה */}
+      </>
+  );
+  
+}
+
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+  
   const checkScreenSize = () => {
-    const mobileBreakpoint = 768; // גודל מסך למובייל
+    const mobileBreakpoint = 768;
     setIsMobile(window.innerWidth <= mobileBreakpoint);
   };
 
@@ -58,173 +82,33 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      {/* רכיב 1 */}
-      <Route
-        path="/" // fix width side bar
-        element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />}
-      />
-      {/* רכיב 2 */}
-      <Route
-        path="/homepage-mobile"
-        element={isMobile ? <HomePageIphone /> : <HomePage />}
-      />
-      {/* רכיב 3 */}
-      <Route
-        path="/manager-jobs"
-        element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />}
-      />
-      {/*##### רכיב 4 ##### */}
-      <Route
-        path="/manager-add-worker"
-        element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />}
-      />
-
-      {/* רכיב 5 */}
-      <Route
-        path="/manager-display-customers"
-        element={
-          isMobile ? <ManagerDisplayCustomersMobile /> : <ManagerDisplayCustomers />
-        }
-      />
-      {/* רכיב 6 */}
-      <Route
-        path="/manager-display-workers"
-        element={
-          isMobile ? <ManagerDisplayWorkersMobile /> : <ManagerDisplayWorkers />
-        }
-      />
-      {/* רכיב 7 */}
-      <Route
-        path="/manager-customer-jobs-done"
-        element={
-          isMobile ? (
-            <ManagerCustomerJobsDoneMobile />
-          ) : (
-            <ManagerCustomerJobsDone />
-          )
-        }
-      />
-      {/* רכיב 8 */}
-      <Route
-        path="/manager-customer-jobs"
-        element={
-          isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />
-        }
-      />
-      {/* רכיב 9 */}
-      <Route
-        path="/manager-edit-branch"
-        element={
-          isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />
-        }
-      />
-      {/* ##### רכיב 10  ##### */}
-      <Route
-        path="/manager-registration-add-customer"
-        element={
-          isMobile ? (
-            <ManagerRegistrationAddCustomerMobile />
-          ) : (
-            <ManagerRegistrationAddCustomer />
-          )
-        }
-      />
-      {/*##### רכיב 11 #####*/}
-      <Route
-        path="/manager-edit-profile"
-        element={
-          isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />
-        }
-      />
-      {/* רכיב 12 */}
-      <Route
-        path="/worker-future-jobs"
-        element={       // change the name 
-          isMobile ? <WorkerBranchSearchIphon /> : <WorkerFutureJobs />
-        }
-      />
-      {/*  ##### רכיב 13 ##### */}
-      <Route
-        path="/worker-edit-profile"
-        element={
-          isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />
-        }
-      />
-      {/* רכיב 14 */}
-      <Route
-        path="/worker-job-suc"
-        element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />}
-      />
-      {/* ##### רכיב 15 ##### */}
-      <Route
-        path="/client-contact-us"
-        element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />}
-      />
-      {/* רכיב 16 */}
-      <Route
-        path="/client-jobs"
-        element={
-          isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />
-        }
-      />
-      {/* ##### רכיב 17 ##### */}
-      <Route
-        path="/login"
-        element={isMobile ? <LoginMobile /> : <Login />}
-      />
-      {/* רכיב 18 */}
-      <Route
-        path="/accessibility-desktop"
-        element={
-          isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />
-        }
-      />
-      {/* רכיב 19 */}
-      <Route
-        path="/mobile-menu-worker"
-        element={
-          isMobile ? <MobileMenuWorker /> : <MobileMenuManager />
-        }
-      />
-      {/* רכיב 20 */}
-      <Route
-        path="/clientJobs"
-        element={     //change the name 
-          isMobile ? <ClientBranchIphone /> : <ClientJobs />
-        }
-      />
-      {/* ##### רכיב 21 #####*/}
-
-      <Route
-        path="/manager-registration-add-branches"
-        element={ isMobile ? <ManagerRegistrationAddBranchesMobile/> : <ManagerRegistrationAddB />}
-      />
-    </Routes>
+      <PageTransition>
+        <Routes>
+          <Route path="/" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
+          <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
+          <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
+          <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
+          <Route path="/manager-display-customers" element={isMobile ? <ManagerDisplayCustomersMobile /> : <ManagerDisplayCustomers />} />
+          <Route path="/manager-display-workers" element={isMobile ? <ManagerDisplayWorkersMobile /> : <ManagerDisplayWorkers />} />
+          <Route path="/manager-customer-jobs-done" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
+          <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />
+          <Route path="/manager-edit-branch" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
+          <Route path="/manager-registration-add-customer" element={isMobile ? <ManagerRegistrationAddCustomerMobile /> : <ManagerRegistrationAddCustomer />} />
+          <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />
+          <Route path="/worker-future-jobs" element={isMobile ? <WorkerBranchSearchIphon /> : <WorkerFutureJobs />} />
+          <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
+          <Route path="/worker-job-suc" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
+          <Route path="/client-contact-us" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
+          <Route path="/client-jobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
+          <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
+          <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
+          <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
+          <Route path="/clientJobs" element={isMobile ? <ClientBranchIphone /> : <ClientJobs />} />
+          <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
+        </Routes>
+      </PageTransition>
   );
 }
 
 export default App;
 
-
-{/* <Routes>
-
-
-
-
-
-
-<Route
-  path="/manager-registration-add-branches-mobile"
-  element={<ManagerRegistrationAddBranchesMobile />}
-/>
-
-
-
-
-
-<Route path="/mobile-menu-worker" element={<MobileMenuWorker />} />
-<Route path="/mobile-menu-manager" element={<MobileMenuManager />} />
-<Route path="/mobile-menu-client" element={<MobileMenuClient />} />
-</Routes>
-); */}
