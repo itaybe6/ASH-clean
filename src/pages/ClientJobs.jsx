@@ -1,8 +1,18 @@
 import { Switch, FormControlLabel } from "@mui/material";
 import JobOptionClient from "../components/JobOptionClient";
 import "./ClientJobs.css";
+import { useNavigate } from 'react-router-dom';
 
 const ClientJobs = () => {
+  const navigate = useNavigate();
+
+  
+  const Conatct = () => {
+    navigate("/client-contact-us");
+  }
+  const Edit = () => {
+    navigate("/client-edit-profile");
+  }
   return (
     <div className="client-jobs">
       <div className="client-jobs-child" />
@@ -49,13 +59,13 @@ const ClientJobs = () => {
         </button>
         <img className="icon34" alt="" src="/-02-13@2x.png" />
         <div className="group-parent29">
-          <button className="vector-wrapper59">
+          <button className="vector-wrapper59" onClick={Edit}>
             <img className="vector-icon68" alt="" src="/vector2.svg" />
           </button>
           <button className="vector-wrapper60">
             <img className="vector-icon69" alt="" src="/vector22.svg" />
           </button>
-          <button className="parent38">
+          <button className="parent38" onClick={Conatct}>
             <div className="div163">צור קשר</div>
             <img
               className="icbaseline-contact-mail-icon2"

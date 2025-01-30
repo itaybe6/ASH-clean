@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import "./ClientContactUs.css";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const ClientContactUs = () => {
   const [message, setMessage] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
@@ -63,6 +65,12 @@ const ClientContactUs = () => {
     }
   };
 
+  const Edit = () => {
+    navigate("/client-edit-profile");
+  }
+  const Jobs = () => {
+    navigate("/clientJobs");
+  }
   return (
     <div className="client-contact-us" data-animate-on-scroll>
       <div className="client-contact-us-child" />
@@ -128,10 +136,10 @@ const ClientContactUs = () => {
           </button>
           <img className="icon30" alt="" src="/-02-13@2x.png" />
           <div className="group-parent25">
-            <button className="vector-wrapper51">
+            <button className="vector-wrapper51" onClick={Edit}>
               <img className="vector-icon60" alt="" src="/vector2.svg" />
             </button>
-            <button className="vector-wrapper52">
+            <button className="vector-wrapper52" onClick={Jobs}>
               <img className="vector-icon61" alt="" src="/vector9.svg" />
             </button>
             <button className="parent33">

@@ -84,7 +84,7 @@ function App() {
   return (
       <PageTransition>
         <Routes>
-          <Route path="/" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
+          <Route path="/client-edit-profile" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
           <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
           <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
           <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
@@ -99,7 +99,7 @@ function App() {
           <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
           <Route path="/worker-job-suc" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
           <Route path="/client-contact-us" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
-          <Route path="/client-jobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
+          <Route path="/client-future-jobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
           <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
           <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
           <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
