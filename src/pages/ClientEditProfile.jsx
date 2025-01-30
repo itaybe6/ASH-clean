@@ -51,6 +51,12 @@ const ClientEditProfile = () => {
     }
   };
 
+  const Conatct = () => {
+    navigate("/client-contact-us");
+  }
+  const Jobs = () => {
+    navigate("/clientJobs");
+  }
   return (
     <div className="client-edit-profile">
       <div className="group-parent27">
@@ -65,10 +71,10 @@ const ClientEditProfile = () => {
               <img className="vector-icon64" alt="" src="/vector23.svg" />
             </button>
             <button className="vector-wrapper56">
-              <img className="vector-icon65" alt="" src="/vector9.svg" />
+              <img className="vector-icon65" onClick={Jobs} alt="" src="/vector9.svg" />
             </button>
             <button className="parent34">
-              <div className="div144">צור קשר</div>
+              <div className="div144" onClick={Conatct}>צור קשר</div>
               <img
                 className="icbaseline-contact-mail-icon1"
                 alt=""

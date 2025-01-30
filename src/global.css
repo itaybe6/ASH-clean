@@ -126,3 +126,18 @@ input {
   direction: rtl; /* מגדיר את הכיוון מימין לשמאל */
   text-align: right; /* מוודא שגם הטקסט מיושר לימין */
 }
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* מחלקה שתוסיף את האנימציה */
+.page-transition {
+  animation: fadeIn 0.5s ease-in-out;
+}
