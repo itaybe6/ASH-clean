@@ -1,12 +1,13 @@
-import { Switch, FormControlLabel } from "@mui/material";
 import JobOptionClient from "../components/JobOptionClient";
 import "./ClientJobs.css";
 import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+
+import CustomToggleButton from "../components/CustomToggleButton";
 
 const ClientJobs = () => {
+  const [active, setActive] = useState(true);
   const navigate = useNavigate();
-
-  
   const Conatct = () => {
     navigate("/client-contact-us");
   }
@@ -48,10 +49,7 @@ const ClientJobs = () => {
         namew="ליאור שם טוב"
         done="נעשה"
       />
-      <FormControlLabel
-        className="client-jobs-inner"
-        control={<Switch color="primary" />}
-      />
+    
       <div className="rectangle-parent58">
         <div className="group-child126" />
         <button className="vector-wrapper58">
@@ -75,6 +73,7 @@ const ClientJobs = () => {
           </button>
         </div>
       </div>
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"80vh"}/>;
     </div>
   );
 };

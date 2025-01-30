@@ -11,7 +11,6 @@ const WorkerEditProfileMobile = () => {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
 
-  //func to Encryption the token
   const parseJwt = (token) => {
     try {
       const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT

@@ -1,8 +1,10 @@
-import { Switch, FormControlLabel } from "@mui/material";
 import FeatureJobCustomer from "../components/FeatureJobCustomer";
 import "./ManagerCustomerJobs.css";
+import CustomToggleButton from "../components/CustomToggleButton.jsx";
+import { useState } from "react";
 
 const ManagerCustomerJobs = () => {
+  const [active, setActive] = useState(true);
   return (
     <div className="manager-customer-jobs">
       <div className="manager-customer-jobs-child" />
@@ -34,10 +36,6 @@ const ManagerCustomerJobs = () => {
         <div className="group-child33" />
         <b className="b31">בחירת סניף</b>
       </button>
-      <FormControlLabel
-        className="manager-customer-jobs-child1"
-        control={<Switch color="primary" />}
-      />
       <div className="rectangle-parent22">
         <div className="group-child32" />
         <button className="vector-wrapper17">
@@ -68,6 +66,8 @@ const ManagerCustomerJobs = () => {
         <div className="div67">סטטוס</div>
         <div className="div68">אישור</div>
       </div>
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"80vh"} />;
+
     </div>
   );
 };

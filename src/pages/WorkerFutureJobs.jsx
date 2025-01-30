@@ -1,8 +1,16 @@
-import { Switch, FormControlLabel } from "@mui/material";
 import FetureJobWorker from "../components/FetureJobWorker";
 import "./WorkerFutureJobs.css";
+import CustomToggleButton from "../components/CustomToggleButton.jsx";
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const WorkerFutureJobs = () => {
+  const [active, setActive] = useState(true);
+  const navigate = useNavigate();
+
+  const setting = () => {
+    navigate("/worker-edit-profile");
+  }
   return (
     <div className="worker-future-jobs">
       <div className="worker-future-jobs-child" />
@@ -23,17 +31,15 @@ const WorkerFutureJobs = () => {
         address="באר שבע, נחל פרת 9"
       />
       <div className="group-parent21">
-        <button className="vector-wrapper43">
+        <button className="vector-wrapper43" onClick={setting}>
           <img className="vector-icon52" alt="" src="/vector2.svg" />
         </button>
         <button className="vector-wrapper44">
           <img className="vector-icon53" alt="" src="/vector22.svg" />
         </button>
       </div>
-      <FormControlLabel
-        className="worker-future-jobs-child1"
-        control={<Switch color="primary" />}
-      />
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"58vh"}/>;
+
     </div>
   );
 };

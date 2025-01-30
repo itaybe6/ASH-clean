@@ -54,6 +54,9 @@ const WorkerEditProfile = () => {
     }
   };
 
+  const jobs = () => {
+    navigate("/worker-future-jobs");
+  }
 
   return (
     <div className="worker-edit-profile">
@@ -70,7 +73,7 @@ const WorkerEditProfile = () => {
         <button className="vector-wrapper47">
           <img className="vector-icon56" alt="" src="/vector23.svg" />
         </button>
-        <button className="vector-wrapper48">
+        <button className="vector-wrapper48" onClick={jobs}>
           <img className="vector-icon57" alt="" src="/vector9.svg" />
         </button>
       </div>
