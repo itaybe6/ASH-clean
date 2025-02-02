@@ -3,11 +3,13 @@ import "./ManagerDisplayUsers.css";
 import CustomToggleButton from "../components/CustomToggleButton.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const ManagerDisplayUsers = () => {
   const [active, setActive] = useState(true);
   const [customers, setCustomers] = useState([]);
   const [workers, setWorkers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:5000/manager/getAll")
@@ -25,7 +27,12 @@ const ManagerDisplayUsers = () => {
       .catch((error) => console.error("Error fetching customers:", error));
   }, []);
 
-
+  const jobs = () => {
+    navigate(`/manager-jobs`)
+  }
+  const edit = () => {
+    navigate(`/manager-edit-profile`)
+  }
   return (
     <div className="manager-display-customers">
       <div className="manager-display-customers-inner">
@@ -79,10 +86,10 @@ const ManagerDisplayUsers = () => {
         </button>
         <img className="icon9" alt="" src="/-02-13@2x.png" />
         <div className="group-parent5">
-          <button className="vector-wrapper6">
+          <button className="vector-wrapper6" onClick={edit}>
             <img className="vector-icon9" alt="" src="/vector2.svg" />
           </button>
-          <button className="vector-wrapper7">
+          <button className="vector-wrapper7" onClick={jobs}>
             <img className="vector-icon10" alt="" src="/vector9.svg" />
           </button>
           <button className="parent10">

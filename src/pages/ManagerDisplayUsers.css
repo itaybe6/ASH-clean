@@ -4,6 +4,7 @@
   background-color: var(--color-gray-100);
   height: 1024px;
 }
+
 .manager-display-customers-inner {
   width: 79.17%;
   margin: 0 !important;
@@ -17,6 +18,7 @@
   justify-content: flex-start;
   z-index: 0;
 }
+
 .manager-display-customers-child {
   width: 239px;
   position: relative;
@@ -24,6 +26,7 @@
   object-fit: contain;
   z-index: 1;
 }
+
 .div29 {
   width: 263px;
   position: absolute;
@@ -35,6 +38,7 @@
   display: inline-block;
   z-index: 2;
 }
+
 .div30 {
   width: 289px;
   position: absolute;
@@ -47,6 +51,7 @@
   display: inline-block;
   z-index: 3;
 }
+
 .manager-display-customers-item {
   border: none;
   outline: none;
@@ -61,6 +66,7 @@
   height: 46px;
   z-index: 4;
 }
+
 .group-formcontrollabel {
   width: 280px;
   position: absolute;
@@ -69,6 +75,7 @@
   left: calc(50% - 280px);
   z-index: 5;
 }
+
 .group-child19 {
   position: absolute;
   top: 10px;
@@ -78,6 +85,7 @@
   width: 52px;
   height: 52px;
 }
+
 .b20 {
   position: absolute;
   top: 0px;
@@ -87,6 +95,7 @@
   color: var(--color-white);
   text-align: center;
 }
+
 .rectangle-parent11 {
   cursor: pointer;
   border: none;
@@ -100,6 +109,7 @@
   height: 71px;
   z-index: 6;
 }
+
 .customeroption-wrapper {
   width: 64.1%;
   position: absolute;
@@ -110,6 +120,7 @@
   height: 108px;
   z-index: 7;
 }
+
 .div31 {
   position: absolute;
   top: 0%;
@@ -117,6 +128,7 @@
   text-decoration: underline;
   line-height: 146.39%;
 }
+
 .div32 {
   position: absolute;
   top: 0%;
@@ -124,6 +136,7 @@
   text-decoration: underline;
   line-height: 146.39%;
 }
+
 .div33 {
   position: absolute;
   top: 0%;
@@ -131,6 +144,7 @@
   text-decoration: underline;
   line-height: 146.39%;
 }
+
 .div34 {
   position: absolute;
   top: 0%;
@@ -138,6 +152,7 @@
   text-decoration: underline;
   line-height: 146.39%;
 }
+
 .parent9 {
   width: 45.69%;
   position: absolute;
@@ -151,6 +166,7 @@
   font-size: var(--font-size-xl);
   color: var(--color-darkslategray-100);
 }
+
 .group-child20 {
   position: absolute;
   top: calc(50% - 512px);
@@ -159,6 +175,7 @@
   width: 301px;
   height: 1024px;
 }
+
 .vector-icon8 {
   position: absolute;
   right: 0px;
@@ -166,6 +183,7 @@
   width: 133px;
   height: 52px;
 }
+
 .vector-wrapper5 {
   cursor: pointer;
   border: none;
@@ -177,6 +195,7 @@
   width: 133px;
   height: 52px;
 }
+
 .icon9 {
   position: absolute;
   top: 50px;
@@ -185,6 +204,7 @@
   height: 81px;
   object-fit: cover;
 }
+
 .vector-icon9 {
   position: absolute;
   top: 0px;
@@ -192,6 +212,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-wrapper6 {
   cursor: pointer;
   border: none;
@@ -203,6 +224,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-icon10 {
   position: absolute;
   top: 0px;
@@ -210,6 +232,7 @@
   width: 147.8px;
   height: 47px;
 }
+
 .vector-wrapper7 {
   cursor: pointer;
   border: none;
@@ -221,6 +244,7 @@
   width: 147.8px;
   height: 47px;
 }
+
 .div35 {
   position: absolute;
   top: 4px;
@@ -232,6 +256,7 @@
   color: var(--color-darkslategray-200);
   text-align: right;
 }
+
 .icbaseline-people-alt-icon1 {
   position: absolute;
   top: 0px;
@@ -239,6 +264,7 @@
   width: 55px;
   height: 55px;
 }
+
 .parent10 {
   cursor: pointer;
   border: none;
@@ -250,6 +276,7 @@
   width: 221px;
   height: 55px;
 }
+
 .group-parent5 {
   position: absolute;
   top: 221px;
@@ -257,6 +284,7 @@
   width: 221px;
   height: 161.3px;
 }
+
 .rectangle-parent12 {
   width: 301px;
   position: absolute;
@@ -266,32 +294,31 @@
   height: 1024px;
   z-index: 9;
 }
+
 .manager-display-customers {
   width: 100%;
   position: relative;
   background: linear-gradient(#fff, #fff), #fff;
   height: 1024px;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items:  flex-end;
   justify-content: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
-  gap: 0px 61px;
+  gap: 0px 69px;
   text-align: right;
   font-size: var(--font-size-13xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  
 }
 
 .search-list-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  overflow-y: auto;
+  max-height: 800px;
   width: 100%;
-  margin-top: -100px;
-  margin-left: -300px;
-  max-height: 800px; /* גובה מקסימלי */
-  overflow-y: auto; /* גלילה אם הכרטיסים ארוכים */
+  margin-top: 100px; /* במקום flex-grow */
+
 }

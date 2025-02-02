@@ -208,6 +208,7 @@ const getAllWorkers = async (req, res) => {
     }
 };
 
+// manager edit user profile
 const managerEditUser = async (req, res) => {
     try {
         const { id } = req.params;

@@ -59,6 +59,15 @@ const ManagerEditProfile = () => {
       alert("שגיאה בעדכון הפרטים");
     }
   };
+
+
+  const jobs = () => {
+    navigate(`/manager-jobs`)
+  }
+  const users = () => {
+    navigate(`/manager-display-users`)
+  }
+
   return (
     <div className="manager-edit-profile">
       <div className="manager-edit-profile-child" />
@@ -117,10 +126,10 @@ const ManagerEditProfile = () => {
           <button className="vector-wrapper34" >
             <img className="vector-icon42" alt="" src="/vector21.svg"  />
           </button>
-          <button className="vector-wrapper35" >
+          <button className="vector-wrapper35" onClick={jobs} >
             <img className="vector-icon43" alt="" src="/vector9.svg"  />
           </button>
-          <button className="parent26" >
+          <button className="parent26" onClick={users} >
             <div className="div99">משתמשים</div>
             <img
               className="icbaseline-people-alt-icon6"

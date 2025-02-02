@@ -170,8 +170,7 @@
 }
 .customeroptionmobile {
   width: 294px;
-  margin: 0 !important;
-  top: calc(50% - 50px);
+  top: calc(50% - 150px);
   left: calc(50% - 117.5px);
   height: 223px;
   z-index: 7;
