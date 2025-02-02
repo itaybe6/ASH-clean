@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./ManagerAddWorkerIphone.css";
+import MobileMenuManager from "./MobileMenuManager";
 
 const ManagerAddWorkerIphone = () => {
   // הגדרת state לכל שדה קלט
@@ -9,15 +10,14 @@ const ManagerAddWorkerIphone = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [displayMenu,setDisplayMenu] = useState(false)
 
-  // פונקציה לטיפול בשינוי ערכים בשדות הקלט
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
-  // פונקציה לדוגמה לטיפול בשליחת הטופס
   const handleSubmit = async (e) => {
     e.preventDefault(); // למנוע רענון דף
 
@@ -46,9 +46,21 @@ const ManagerAddWorkerIphone = () => {
       alert(`שגיאה בהוספת משתמש: ${error.response?.data?.message || "שגיאה לא ידועה"}`);
     }
   };
+  
+  const menu = () =>{
+    setDisplayMenu(!displayMenu)
+  }
+    // פונקציית סגירת תפריט
+    const closeMenu = () => {
+      setDisplayMenu(false);
+    };
 
   return (
     <div className="manager-add-worker-iphone">
+
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu ={closeMenu}/> : null}
+   
+
       <div className="manager-add-worker-iphone-child" />
       <div className="div88">שלום (שם מנהל)</div>
       <div className="div89">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -60,7 +72,7 @@ const ManagerAddWorkerIphone = () => {
         src="/icbaselineperson.svg"
       />
       <img className="icon20" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper30">
+      <button className="vector-wrapper30" onClick={menu}>
         <img className="vector-icon38" alt="" src="/vector10.svg" />
       </button>
       <div className="rectangle-parent33">

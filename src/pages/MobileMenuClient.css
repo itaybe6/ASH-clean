@@ -7,6 +7,7 @@
   background-color: var(--color-whitesmoke-300);
   height: 852px;
 }
+
 .vector-icon87 {
   position: absolute;
   top: calc(50% - 26px);
@@ -14,6 +15,7 @@
   width: 133px;
   height: 52px;
 }
+
 .vector-wrapper78 {
   cursor: pointer;
   border: none;
@@ -25,6 +27,7 @@
   width: 133px;
   height: 52px;
 }
+
 .icon53 {
   position: absolute;
   top: calc(50% - 393px);
@@ -33,6 +36,7 @@
   height: 66px;
   object-fit: cover;
 }
+
 .vector-icon88 {
   position: absolute;
   top: calc(50% - 18.8px);
@@ -40,6 +44,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-wrapper79 {
   cursor: pointer;
   border: none;
@@ -51,6 +56,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-icon89 {
   position: absolute;
   top: calc(50% - 23.5px);
@@ -58,6 +64,7 @@
   width: 147.8px;
   height: 47px;
 }
+
 .vector-wrapper80 {
   cursor: pointer;
   border: none;
@@ -69,6 +76,7 @@
   width: 147.8px;
   height: 47px;
 }
+
 .div217 {
   position: absolute;
   top: calc(50% - 23.5px);
@@ -79,6 +87,7 @@
   color: var(--color-darkslategray-200);
   text-align: right;
 }
+
 .icbaseline-contact-mail-icon4 {
   position: absolute;
   top: calc(50% - 23.5px);
@@ -86,6 +95,7 @@
   width: 47px;
   height: 47px;
 }
+
 .parent50 {
   cursor: pointer;
   border: none;
@@ -97,6 +107,7 @@
   width: 173px;
   height: 47px;
 }
+
 .group-parent43 {
   position: absolute;
   top: calc(50% - 185px);
@@ -104,10 +115,18 @@
   width: 173px;
   height: 148.3px;
 }
+
 .mobile-menu-client {
   width: 100%;
   position: relative;
   background-color: var(--color-white);
   height: 852px;
   overflow: hidden;
+  z-index: 1000;
+  transform: translateX(300px);
+}
+
+.mobile-menu-client.open {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }

@@ -82,4 +82,11 @@
   background-color: var(--color-white);
   height: 852px;
   overflow: hidden;
+  transform: translateX(300px);
+  z-index: 1000;
+
+}
+.mobile-menu-worker.open {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
