@@ -1,187 +1,89 @@
-.customeroptionmobile-child {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-xl);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.div286 {
-  position: absolute;
-  top: 7.17%;
-  left: 73.81%;
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div287 {
-  position: absolute;
-  top: 29.15%;
-  left: 73.81%;
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div288 {
-  position: absolute;
-  top: 51.12%;
-  left: 77.21%;
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.customeroptionmobile-item {
-  position: absolute;
-  height: 0.45%;
-  width: 100.34%;
-  top: 24.89%;
-  right: -0.17%;
-  bottom: 74.66%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.customeroptionmobile-inner {
-  position: absolute;
-  height: 0.45%;
-  width: 100.34%;
-  top: 45.96%;
-  right: -0.17%;
-  bottom: 53.59%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.customeroptionmobile-child1 {
-  position: absolute;
-  height: 0.45%;
-  width: 100.34%;
-  top: 68.83%;
-  right: -0.17%;
-  bottom: 30.72%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.customeroptionmobile-child2 {
-  position: absolute;
-  height: 69.51%;
-  width: 0.34%;
-  top: -0.22%;
-  right: 37.24%;
-  bottom: 30.72%;
-  left: 62.41%;
-  border-right: 1px solid var(--color-gainsboro);
-  box-sizing: border-box;
-}
-.div289 {
-  position: absolute;
-  top: 4.48%;
-  left: 37.76%;
-  font-size: var(--font-size-xl);
-  line-height: 146.39%;
-  font-weight: 300;
-  color: var(--color-darkslategray-100);
-}
-.div290 {
-  position: absolute;
-  top: 27.35%;
-  left: 27.55%;
-  font-size: var(--font-size-xl);
-  line-height: 146.39%;
-  font-weight: 300;
-  color: var(--color-darkslategray-100);
-}
-.div291 {
-  position: absolute;
-  top: 49.78%;
-  left: 47.28%;
-  font-size: var(--font-size-xl);
-  line-height: 146.39%;
-  font-weight: 300;
-  color: var(--color-darkslategray-100);
-  text-align: center;
-}
-.group-child198 {
-  position: absolute;
-  width: 100%;
-  top: calc(50% - 21px);
-  right: 0%;
-  left: 0%;
-  border-radius: var(--br-smi);
-  background-color: var(--color-darkorange-200);
-  height: 42px;
-}
-.b118 {
-  position: absolute;
-  width: 82.87%;
-  top: calc(50% - 14px);
-  left: 8.61%;
-  font-size: var(--font-size-xl);
-  display: inline-block;
-  font-family: var(--font-heebo);
-  color: var(--color-white);
-  text-align: center;
-}
-.rectangle-parent101 {
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  position: absolute;
-  width: 45.82%;
-  top: calc(50% - 21px);
-  right: 54.18%;
-  left: 0%;
-  height: 42px;
-}
-.group-child199 {
-  position: absolute;
-  width: 100%;
-  top: calc(50% - 21px);
-  right: 0%;
-  left: 0%;
-  border-radius: var(--br-smi);
-  background-color: var(--color-darkslategray-300);
-  height: 42px;
-}
-.rectangle-parent102 {
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  position: absolute;
-  width: 45.82%;
-  top: calc(50% - 21px);
-  right: 0%;
-  left: 54.18%;
-  height: 42px;
-}
-.group-parent45 {
-  position: absolute;
-  width: 85.37%;
-  top: calc(50% + 54.5px);
-  right: 6.46%;
-  left: 8.16%;
-  height: 42px;
-}
 .customeroptionmobile {
-  width: 294px;
-  top: calc(50% - 150px);
-  left: calc(50% - 117.5px);
-  height: 223px;
-  z-index: 7;
-  text-align: right;
-  font-size: var(--font-size-base);
-  color: var(--color-black);
-  font-family: var(--font-heebo);
-  position: relative; 
-  /* אם היה top / left / right / bottom – להסיר אותם */
-  /* אפשר להוסיף קצת רקע ו-padding לצורך עיצוב */
-  background: #fff;
+  /* עוטף ראשי של הרכיב */
+  display: inline-block;
+  /* אפשר למקם כמה כרטיסים זה ליד זה או אחד מתחת לשני */
+  margin: 0 auto; 
+  /* ריווח פנימי בסיסי */
   padding: 1rem;
-  border-radius: 8px;
+}
+
+/* זהו ה־"כרטיס" עצמו: רקע לבן, הצללה, שוליים מעוגלים וכו’. */
+.customeroptionmobile-child {
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-xl);
+  border: 1px solid var(--color-whitesmoke-400);
+
+  /* רוחב קשיח לדוגמה – אפשר להגדיל/להקטין בהתאם */
+  width: 300px;
+
+  /* כדי למרכז או לתת מרווח פנימי */
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  font-family: var(--font-heebo);
+  direction: rtl; /* אם התוכן בעברית */
+}
+
+/* כל שורה בטבלה (3 שורות) */
+.customeroptionmobile-row {
+  display: flex;
+  /* קו עליון בין השורות:
+     נוריד בשורה הראשונה, כדי שלא יהיה קו עליון מיותר */
+  border-top: 1px solid var(--color-whitesmoke-400);
+}
+.customeroptionmobile-row:first-child {
+  border-top: none;
+}
+
+/* תא אחד בשורה */
+.customeroptionmobile-cell {
+  flex: 1;                  /* כל תא יתרחב */
+  text-align: center;       /* מרכז טקסט בתא */
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  line-height: 146.39%;
+
+  /* קו הפרדה אנכי בין התאים */
+  border-right: 1px solid var(--color-gainsboro);
+}
+
+/* בתא הימני לא צריך קו ימני נוסף */
+.customeroptionmobile-cell.right {
+  border-right: none;
+}
+
+/* אזור הכפתורים בתחתית */
+.customeroptionmobile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  /* קו הפרדה עליון לפני הכפתורים */
+  border-top: 1px solid var(--color-whitesmoke-400);
+  padding-top: 1rem;
+}
+
+/* כפתור עריכה */
+.edit-btn {
+  background-color: var(--color-darkorange-200);
+  border: none;
+  border-radius: var(--br-smi);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+
+/* כפתור עבודות */
+.work-btn {
+  background-color: var(--color-darkslategray-300);
+  border: none;
+  border-radius: var(--br-smi);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: var(--font-size-base);
 }

@@ -33,6 +33,16 @@ const ManagerDisplayUsers = () => {
   const edit = () => {
     navigate(`/manager-edit-profile`)
   }
+
+  const addUser = () => {
+    if(active){
+      navigate(`/manager-add-worker`)
+    }
+    else {
+      navigate(`/manager-add-customer`)
+    }
+  }
+
   return (
     <div className="manager-display-customers">
       <div className="manager-display-customers-inner">
@@ -52,7 +62,7 @@ const ManagerDisplayUsers = () => {
       />
       <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" left="440px"/>;
 
-      <button className="rectangle-parent11">
+      <button className="rectangle-parent11" onClick={addUser}>
         <div className="group-child19" />
         <b className="b20">+</b>
       </button>

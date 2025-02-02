@@ -3,11 +3,13 @@ import "./ManagerDisplayUsersMobile.css";
 import CustomToggleButton from "../components/CustomToggleButton.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const ManagerDisplayUsersMobile = () => {
   const [active, setActive] = useState(true);
   const [customers, setCustomers] = useState([]);
   const [workers, setWorkers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:5000/manager/getAll")
@@ -21,11 +23,20 @@ const ManagerDisplayUsersMobile = () => {
     axios.get("http://localhost:5000/manager/workers")
       .then((res) => {
         setWorkers(res.data);
-        console.log(workers)
 
       })
       .catch((error) => console.error("Error fetching customers:", error));
   }, []);
+
+
+  const addUser = () => {
+    if(active){
+      navigate(`/manager-add-worker`)
+    }
+    else {
+      navigate(`/manager-add-customer`)
+    }
+  }
 
   return (
     <div className="manager-display-customers-mo">
@@ -42,7 +53,7 @@ const ManagerDisplayUsersMobile = () => {
       </div>
       <div className="group-parent7">
         <img className="group-child24" alt="" src="/group-275.svg" />
-        <b className="b23">+</b>
+        <b className="b23" onClick={addUser}>+</b>
       </div>
       <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"70vh"} name1="עובדים" name2="לקוחות" left={"130px"} />;
         
@@ -53,7 +64,8 @@ const ManagerDisplayUsersMobile = () => {
               key={index}
               bname={item.fullName}
               id = {item._id}
-              type = "עובד"
+              type = {"עובד"}
+              numbranch="0"
 
             />
           ))
