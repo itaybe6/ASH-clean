@@ -1,10 +1,22 @@
 import { Switch, FormControlLabel } from "@mui/material";
 import DoneJobCustomerMobile from "../components/DoneJobCustomerMobile";
 import "./ManagerCustomerJobsDoneMobile.css";
+import MobileMenuManager from "./MobileMenuManager";
+import React, { useState } from "react";
 
 const ManagerCustomerJobsDoneMobile = () => {
+  const [displayMenu, setDisplayMenu] = useState(false)
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   return (
     <div className="manager-customer-jobs-done-m">
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
       <div className="manager-customer-jobs-done-m-child" />
       <div className="manager-customer-jobs-done-m-item" />
       <b className="b28">שלום (שם מנהל)</b>
@@ -15,7 +27,7 @@ const ManagerCustomerJobsDoneMobile = () => {
         src="/group-247.svg"
       />
       <img className="icon14" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper16">
+      <button className="vector-wrapper16" onClick={menu}>
         <img className="vector-icon21" alt="" src="/vector10.svg" />
       </button>
       <DoneJobCustomerMobile

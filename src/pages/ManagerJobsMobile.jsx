@@ -3,9 +3,12 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import JobOptionMobile from "../components/JobOptionMobile";
 import "./ManagerJobsMobile.css";
+import MobileMenuManager from "./MobileMenuManager";
 
 const ManagerJobsMobile = () => {
   const [groupDateTimePickerValue, setGroupDateTimePickerValue] = useState(null);
+  const [displayMenu, setDisplayMenu] = useState(false)
+
   const searchItems = [
     {
       worker: "ליאור שם טוב",
@@ -37,9 +40,19 @@ const ManagerJobsMobile = () => {
 
     // אפשר להוסיף כאן עוד אובייקטים כרצונך
   ];
+
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="manager-jobs-mobile">
+        {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
         <div className="manager-jobs-mobile-inner">
           <div className="frame-child1" />
         </div>
@@ -79,7 +92,7 @@ const ManagerJobsMobile = () => {
             />
           ))}
         </div>
-        <button className="vector-wrapper67" >
+        <button className="vector-wrapper67" onClick={menu} >
           <img className="vector-icon76" alt="" src="/vector10.svg" />
         </button>
         <img className="icon7" alt="" src="/-02-11@2x.png" />

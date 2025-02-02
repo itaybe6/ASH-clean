@@ -1,10 +1,12 @@
 import "./MobileMenuManager.css";
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const MobileMenuManager = ({ closeMenu, isOpen }) => {
-  const [translate, setTranslate] = useState(300); 
+  const [translate, setTranslate] = useState(300);
   const [touchStartX, setTouchStartX] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpen) {
@@ -64,23 +66,26 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
     transition: transitionStyle,
   };
 
+  const users = () => {
+    navigate("/manager-display-users");
+  }
+  const jobs = () => {
+    navigate("/manager-jobs");
+  }
+  const setting = () => {
+    navigate("/manager-edit-profile");
+  }
   return (
-    <div
-    className="mobile-menu-manager"
-    style={menuStyle}
-    onTouchStart={handleTouchStart}
-    onTouchMove={handleTouchMove}
-    onTouchEnd={handleTouchEnd}
-  >
+    <div className="mobile-menu-manager" style={menuStyle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}onTouchEnd={handleTouchEnd} >
       <div className="mobile-menu-manager-child" />
       <div className="group-parent42">
-        <button className="vector-wrapper75">
+        <button className="vector-wrapper75" onClick={setting}>
           <img className="vector-icon84" alt="" src="/vector2.svg" />
         </button>
-        <button className="vector-wrapper76">
+        <button className="vector-wrapper76" onClick={jobs}>
           <img className="vector-icon85" alt="" src="/vector9.svg" />
         </button>
-        <button className="parent49">
+        <button className="parent49" onClick={users}>
           <div className="div216">משתמשים</div>
           <img
             className="icbaseline-people-alt-icon7"

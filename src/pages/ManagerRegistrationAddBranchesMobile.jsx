@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ManagerRegistrationAddBranchesMobile.css";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import MobileMenuManager from "./MobileMenuManager";
 
 const ManagerRegistrationAddBranchesMobile = () => {
   const [branchName, setBranchName] = useState("");
@@ -10,11 +11,12 @@ const ManagerRegistrationAddBranchesMobile = () => {
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
-  const [branches, setBranches] = useState([]); 
+  const [branches, setBranches] = useState([]);
   const navigate = useNavigate();
+  const [displayMenu, setDisplayMenu] = useState(false)
 
   const handleAddUser = async () => {
-    const  userData =  JSON.parse(sessionStorage.getItem("userData"));
+    const userData = JSON.parse(sessionStorage.getItem("userData"));
     console.log(userData);
     try {
       const userDataToSend = {
@@ -24,7 +26,7 @@ const ManagerRegistrationAddBranchesMobile = () => {
         businessName: userData.businessName,
         address: userData.address,
         city: userData.city,
-        branches: branches, 
+        branches: branches,
       };
       console.log(userDataToSend);
 
@@ -40,7 +42,13 @@ const ManagerRegistrationAddBranchesMobile = () => {
   const handleBack = () => {
     navigate(-1);
   };
-
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   const handleAddBranch = () => {
     const newBranch = {
       branchName,
@@ -55,6 +63,7 @@ const ManagerRegistrationAddBranchesMobile = () => {
 
   return (
     <div className="manager-registration-add-b1">
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="manager-registration-add-b-child1" />
       <div className="div109">שלום (שם מנהל)</div>
       <div className="div110">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -66,7 +75,7 @@ const ManagerRegistrationAddBranchesMobile = () => {
         src="/icbaselineperson.svg"
       />
       <img className="icon25" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper40">
+      <button className="vector-wrapper40" onClick={menu}>
         <img className="vector-icon49" alt="" src="/vector10.svg" />
       </button>
       <div className="manager-registration-add-b-inner1">

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./ManagerEditBranchMobile.css";
+import MobileMenuManager from "./MobileMenuManager";
 
 const ManagerEditBranchMobile = () => {
   // הגדרת state לכל שדה קלט
   const [branchName, setBranchName] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [displayMenu, setDisplayMenu] = useState(false)
 
   // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
@@ -26,9 +28,17 @@ const ManagerEditBranchMobile = () => {
     // setBranchAddress("");
     // setPhoneNumber("");
   };
-
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   return (
     <div className="manager-edit-branch-mobile">
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
       <div className="manager-edit-branch-mobile-child" />
       <b className="b37">שלום (שם מנהל)</b>
       <div className="div79">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -67,7 +77,7 @@ const ManagerEditBranchMobile = () => {
         <img className="vector-icon32" alt="" src="/vector18.svg" />
       </button>
       <img className="icon18" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper26">
+      <button className="vector-wrapper26" onClick={menu}>
         <img className="vector-icon33" alt="" src="/vector10.svg" />
       </button>
     </div>

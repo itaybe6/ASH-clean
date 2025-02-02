@@ -90,7 +90,7 @@ function App() {
           <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
           <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
           <Route path="/manager-customer-jobs-done" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
-          <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />
+          {/* <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />  */}
           <Route path="/manager-edit-branch" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
           <Route path="/manager-add-customer" element={isMobile ? <ManagerRegistrationAddCustomerMobile /> : <ManagerRegistrationAddCustomer />} />
           <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />

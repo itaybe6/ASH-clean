@@ -1,6 +1,7 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./ManagerRegistrationAddCustomerMobile.css";
 import { useNavigate } from 'react-router-dom';
+import MobileMenuManager from "./MobileMenuManager";
 
 const ManagerRegistrationAddCustomerMobile = () => {
   const [businessName, setBusinessName] = useState("");
@@ -10,6 +11,8 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [displayMenu, setDisplayMenu] = useState(false)
+
   const navigate = useNavigate();
 
 
@@ -21,7 +24,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
-  const handleContinue = (e) => { 
+  const handleContinue = (e) => {
     e.preventDefault();
     const userData = {
       businessName,
@@ -34,26 +37,34 @@ const ManagerRegistrationAddCustomerMobile = () => {
     };
     sessionStorage.setItem("userData", JSON.stringify(userData));
     navigate("/manager-registration-add-branches");
-  
+
   };
 
-    useEffect(() => {
-      const savedData = sessionStorage.getItem("userData");
-      if (savedData) {
-        const parsedData = JSON.parse(savedData);
-        setBusinessName(parsedData.businessName || "");
-        setFullName(parsedData.fullName || "");
-        setPhoneNumber(parsedData.phoneNumber || "");
-        setCity(parsedData.city || "");
-        setAddress(parsedData.address || "");
-        setPassword(parsedData.password || "");
-        setConfirmPassword(parsedData.confirmPassword || "");
-      }
-    }, []); // רץ פעם אחת כשהקומפוננט נטען
-  
+  useEffect(() => {
+    const savedData = sessionStorage.getItem("userData");
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      setBusinessName(parsedData.businessName || "");
+      setFullName(parsedData.fullName || "");
+      setPhoneNumber(parsedData.phoneNumber || "");
+      setCity(parsedData.city || "");
+      setAddress(parsedData.address || "");
+      setPassword(parsedData.password || "");
+      setConfirmPassword(parsedData.confirmPassword || "");
+    }
+  }, []); // רץ פעם אחת כשהקומפוננט נטען
 
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   return (
     <div className="manager-registration-add-c1">
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
       <div className="manager-registration-add-c-child1" />
       <div className="div91">שלום (שם מנהל)</div>
       <div className="div92">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -65,7 +76,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
         </div>
       </div>
       <img className="icon21" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper31">
+      <button className="vector-wrapper31" onClick={menu}>
         <img className="vector-icon39" alt="" src="/vector10.svg" />
       </button>
       <div className="group-parent14">

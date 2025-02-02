@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ManagerEditProfileIphone.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import MobileMenuManager from "./MobileMenuManager";
 
 const ManagerEditProfileIphone = () => {
   // הגדרת state לכל שדה קלט
@@ -10,6 +11,7 @@ const ManagerEditProfileIphone = () => {
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const [displayMenu, setDisplayMenu] = useState(false)
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
@@ -31,7 +33,7 @@ const ManagerEditProfileIphone = () => {
   };
   const handleUpdateDetails = async () => {
 
-    if(newPassword != confirmNewPassword){
+    if (newPassword != confirmNewPassword) {
       alert("סיסמאות לא תואמות");
       setNewPassword("");
       setConfirmNewPassword("");
@@ -39,7 +41,7 @@ const ManagerEditProfileIphone = () => {
     }
 
     const token = parseJwt(localStorage.getItem("token"));
-    if(token.role != "Manager"){
+    if (token.role != "Manager") {
       alert("אתה לא מנהל , אנא פנה למנהלי האתר")
       return
     }
@@ -58,8 +60,18 @@ const ManagerEditProfileIphone = () => {
     }
   };
 
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
+
   return (
     <div className="manager-edit-profile-mobil">
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
       <div className="manager-edit-profile-mobil-child" />
       <b className="b49">שלום (שם מנהל)</b>
       <div className="div105">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -112,7 +124,7 @@ const ManagerEditProfileIphone = () => {
         />
         <div className="div108">הגדר סיסמא חדשה</div>
       </div>
-      <button className="vector-wrapper39">
+      <button className="vector-wrapper39" onClick={menu}>
         <img className="vector-icon48" alt="" src="/vector10.svg" />
       </button>
       <img className="icon24" alt="" src="/-02-11@2x.png" />

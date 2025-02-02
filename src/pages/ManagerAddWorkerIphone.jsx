@@ -10,7 +10,7 @@ const ManagerAddWorkerIphone = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [displayMenu,setDisplayMenu] = useState(false)
+  const [displayMenu, setDisplayMenu] = useState(false)
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
@@ -46,20 +46,20 @@ const ManagerAddWorkerIphone = () => {
       alert(`שגיאה בהוספת משתמש: ${error.response?.data?.message || "שגיאה לא ידועה"}`);
     }
   };
-  
-  const menu = () =>{
+
+  const menu = () => {
     setDisplayMenu(!displayMenu)
   }
-    // פונקציית סגירת תפריט
-    const closeMenu = () => {
-      setDisplayMenu(false);
-    };
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
 
   return (
     <div className="manager-add-worker-iphone">
 
-      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu ={closeMenu}/> : null}
-   
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
 
       <div className="manager-add-worker-iphone-child" />
       <div className="div88">שלום (שם מנהל)</div>
