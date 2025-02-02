@@ -208,12 +208,42 @@ const getAllWorkers = async (req, res) => {
     }
 };
 
+const managerEditUser = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { type, fullName, phoneNumber, city } = req.body;
+
+        let user;
+        if (type === 'לקוח') {
+            user = await Customer.findById(id);
+        } else if (type === 'עובד') {
+            user = await Employee.findById(id);
+        } else {
+            return res.status(400).json({ message: 'סוג משתמש לא תקין' });
+        }
+
+        if (!user) {
+            return res.status(404).json({ message: 'משתמש לא נמצא' });
+        }
+
+        if (fullName) user.fullName = fullName;
+        if (phoneNumber) user.phone = phoneNumber;
+        if (city) user.city = city;
+
+        await user.save();
+        res.status(200).json({ message: 'פרטי המשתמש עודכנו בהצלחה', user });
+
+    } catch (error) {
+        res.status(500).json({ message: 'שגיאה בעדכון המשתמש', error });
+    }
+};
+
 
 
 module.exports = {
     addRegularEmployee
-    , getAllCustomers, addCustomer,
+    ,getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee,
-    getAllWorkers,
+    getAllWorkers,managerEditUser
 };

@@ -56,6 +56,7 @@ const ManagerDisplayUsers = () => {
               key={index}
               nameCus={item.fullName}
               type = "עובד"
+              id = {item._id}
             />
           ))
           : customers.map((item, index) => (
@@ -64,6 +65,8 @@ const ManagerDisplayUsers = () => {
               nameCus={item.businessName}
               numBranch={`סניפים ${item.branches.length}`}
               type = "לקוח"
+              id = {item._id}
+
             />
           ))
         }

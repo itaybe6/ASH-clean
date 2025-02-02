@@ -52,6 +52,9 @@ const ManagerDisplayUsersMobile = () => {
             <UserOptionMobile
               key={index}
               bname={item.fullName}
+              id = {item._id}
+              type = "עובד"
+
             />
           ))
           : customers.map((item, index) => (
@@ -59,6 +62,9 @@ const ManagerDisplayUsersMobile = () => {
               key={index}
               bname={item.businessName}
               numbranch={String(item.branches.length)}
+              id = {item._id}
+              type = {"לקוח"}
+
             />
           ))}
       </div>

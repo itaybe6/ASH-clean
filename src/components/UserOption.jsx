@@ -1,14 +1,19 @@
 import PropTypes from "prop-types";
 import "./UserOption.css";
+import { useNavigate } from 'react-router-dom';
 
-const CustomerOption = ({ className = "", nameCus, numBranch, type }) => {
+const UserOption = ({ className = "", nameCus, numBranch, type , id }) => {
+  const navigate = useNavigate();  // שימוש ב-useNavigate במקום useHistory
+  const handleEditClick = () => {
+    navigate(`/manager-edit-user/${id}/${type}`);  // ניווט לדף עריכת המשתמש עם ה-ID
+};
 
   return (
     <div className={`customeroption ${className}`}>
     {/* כפתורים מצד שמאל */}
     <div className="customer-actions">
       <button className="btn-gray">עבודות</button>
-      <button className="btn-orange">עריכה</button>
+      <button className="btn-orange" onClick={handleEditClick} >עריכה</button>
     </div>
 
     {/* מבנה הטבלה */}
@@ -21,10 +26,10 @@ const CustomerOption = ({ className = "", nameCus, numBranch, type }) => {
   );
 };
 
-CustomerOption.propTypes = {
+UserOption.propTypes = {
   className: PropTypes.string,
   nameCus: PropTypes.string,
   numBranch: PropTypes.string,
 };
 
-export default CustomerOption;
+export default UserOption;

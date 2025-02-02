@@ -43,7 +43,8 @@ import HomePage from "./pages/HomePageDesktop";
 import MobileMenuWorker from "./pages/MobileMenuWorker";
 import MobileMenuManager from "./pages/MobileMenuManager";
 import MobileMenuClient from "./pages/MobileMenuClient";
-
+import ManagerEditUser from "./pages/ManagerEditUser";
+import ManagerEditUserMobile from "./pages/ManagerEditUserMobile";
 
 import Loader from "./components/Loader";
 
@@ -88,7 +89,6 @@ function App() {
           <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
           <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
           <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
-          <Route path="/manager-display-workers" element={isMobile ? <ManagerDisplayWorkersMobile /> : <ManagerDisplayWorkers />} />
           <Route path="/manager-customer-jobs-done" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
           <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />
           <Route path="/manager-edit-branch" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
@@ -105,6 +105,8 @@ function App() {
           <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
           <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
           <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
+          <Route path="/manager-edit-user/:id/:type" element={isMobile ? <ManagerEditUserMobile /> : <ManagerEditUser />} />
+
         </Routes>
       </PageTransition>
   );

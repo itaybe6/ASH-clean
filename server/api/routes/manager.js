@@ -3,7 +3,8 @@ const router = express.Router();
 const { addRegularEmployee ,getBranchesByCustomer,
         addCustomer,getAllCustomers,
         getCleaningsByBranch , addCleaningForEmployee,
-        updateManagerDetails , getAllWorkers ,  } = require('../controller/manager');
+        updateManagerDetails , getAllWorkers ,  
+        managerEditUser } = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -40,5 +41,7 @@ router.put("/update", updateManagerDetails);
 
 router.get("/workers", getAllWorkers);
 
+
+router.put("/editUser/:id" ,managerEditUser);
 
 module.exports = router;

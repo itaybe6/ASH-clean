@@ -290,8 +290,8 @@
   flex-direction: column;
   gap: 30px;
   width: 100%;
-  margin-top: -80px;
-  margin-left: -200px;
+  margin-top: -100px;
+  margin-left: -300px;
   max-height: 800px; /* גובה מקסימלי */
   overflow-y: auto; /* גלילה אם הכרטיסים ארוכים */
 }
