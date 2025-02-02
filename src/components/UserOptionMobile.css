@@ -170,14 +170,19 @@
 }
 .customeroptionmobile {
   width: 294px;
-  position: absolute;
   margin: 0 !important;
-  top: calc(50% - 80px);
-  left: calc(50% - 147.5px);
+  top: calc(50% - 50px);
+  left: calc(50% - 117.5px);
   height: 223px;
   z-index: 7;
   text-align: right;
   font-size: var(--font-size-base);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  position: relative; 
+  /* אם היה top / left / right / bottom – להסיר אותם */
+  /* אפשר להוסיף קצת רקע ו-padding לצורך עיצוב */
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
 }

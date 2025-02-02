@@ -5,9 +5,9 @@ import HomePageIphone from "./pages/HomePageIphone";
 import ManagerJobs from "./pages/ManagerJobs";
 import ManagerJobsMobile from "./pages/ManagerJobsMobile";
 import ManagerAddWorker from "./pages/ManagerAddWorker";
-import ManagerDisplayCustomers from "./pages/ManagerDisplayCustomers";
+import ManagerDisplayUsers from "./pages/ManagerDisplayUsers";
 import ManagerDisplayWorkers from "./pages/ManagerDisplayWorkers";
-import ManagerDisplayCustomersMobile from "./pages/ManagerDisplayCustomersMobile";
+import ManagerDisplayUsersMobile from "./pages/ManagerDisplayUsersMobile";
 import ManagerDisplayWorkersMobile from "./pages/ManagerDisplayWorkersMobile";
 import ManagerCustomerJobsDone from "./pages/ManagerCustomerJobsDone";
 import ManagerCustomerJobsDoneMobile from "./pages/ManagerCustomerJobsDoneMobile";
@@ -87,7 +87,7 @@ function App() {
           <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
           <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
           <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
-          <Route path="/manager-display-customers" element={isMobile ? <ManagerDisplayCustomersMobile /> : <ManagerDisplayCustomers />} />
+          <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
           <Route path="/manager-display-workers" element={isMobile ? <ManagerDisplayWorkersMobile /> : <ManagerDisplayWorkers />} />
           <Route path="/manager-customer-jobs-done" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
           <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />

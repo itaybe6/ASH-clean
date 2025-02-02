@@ -30,7 +30,7 @@ const addRegularEmployee = async (req, res) => {
 };
 
 
-//3 admin add a new customer
+//3 admin add a new customer 
 const addCustomer = async (req, res) => {
     try {
         const {
@@ -198,10 +198,22 @@ const updateManagerDetails = async (req, res) => {
     }
 };
 
+//  get all Workers 
+const getAllWorkers = async (req, res) => {
+    try {
+        const workers = await Employee.find({ role: "Regular" });
+        res.status(200).json(workers);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching regular workers", error });
+    }
+};
+
+
 
 module.exports = {
     addRegularEmployee
     , getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
-    updateManagerDetails, addCleaningForEmployee
+    updateManagerDetails, addCleaningForEmployee,
+    getAllWorkers,
 };

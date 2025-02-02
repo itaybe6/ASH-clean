@@ -1,8 +1,12 @@
 import { Switch, FormControlLabel } from "@mui/material";
 import WorkerOption from "../components/WorkerOption";
 import "./ManagerDisplayWorkers.css";
+import CustomToggleButton from "../components/CustomToggleButton.jsx";
+import { useState } from "react";
 
 const ManagerDisplayWorkers = () => {
+  const [active, setActive] = useState(true);
+
   return (
     <div className="manager-display-workers">
       <div className="manager-display-workers-inner">
@@ -20,15 +24,13 @@ const ManagerDisplayWorkers = () => {
         placeholder="חיפוש משתמש..."
         type="text"
       />
-      <FormControlLabel
-        className="manager-display-workers-child1"
-        control={<Switch color="primary" />}
-      />
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" />;
+
       <button className="rectangle-parent13">
         <div className="group-child21" />
         <b className="b21">+</b>
       </button>
-     
+
       <div className="workeroption-wrapper">
         <WorkerOption nameW="ליאור שם טוב" />
       </div>

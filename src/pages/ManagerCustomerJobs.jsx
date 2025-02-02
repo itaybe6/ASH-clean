@@ -66,7 +66,7 @@ const ManagerCustomerJobs = () => {
         <div className="div67">סטטוס</div>
         <div className="div68">אישור</div>
       </div>
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"80vh"} />;
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"80vh"} name1 = "עבודות"  name2 = "עבודות עתידיות" />;
 
     </div>
   );

@@ -2,7 +2,8 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
 
-const ToggleButton = styled(Button)(({ theme, active }) => ({
+const ToggleButton = styled(Button)(({ active  }) => ({
+
   width: "160px",
   height: "50px",
   borderRadius: "25px",
@@ -13,17 +14,19 @@ const ToggleButton = styled(Button)(({ theme, active }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  transition: "background-color 0.3s",
+  // מעבר חלק בכל שינוי צבע
+  transition: "transform 0.4s ease-in-out",
   "&:hover": {
     backgroundColor: active ? "#ea580c" : "#525252",
+    transform: "scale(0.95)", // אפשר לשנות את המספר לפי העדפה
   },
 }));
 
-const CustomToggleButton = ({ active, onClick , Height}) => {
+const CustomToggleButton = ({ active, onClick , Height  , name1 , name2 , left}) => {
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" height={Height} marginLeft={"440px"}>
+    <Box display="flex" justifyContent="center" alignItems="center" height={Height} marginLeft={left}>
       <ToggleButton active={active ? 1 : 0} onClick={onClick}>
-        {active ? "עבודות" : "עבודות עתידיות"}
+      {active ? name1 : name2}
       </ToggleButton>
     </Box>
   );

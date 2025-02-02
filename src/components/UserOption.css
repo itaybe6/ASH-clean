@@ -1,0 +1,78 @@
+.customeroption {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px 44px; /* הרחבת הפדינג */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60%; /* הרחבת הרכיב */
+  justify-content: space-between;
+  margin: auto; /* ממרכז את הרכיב */
+  z-index: 10;
+
+}
+
+/* מבנה השורה בטבלה */
+.customer-row {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+/* כותרות מימין */
+.table-header {
+  color: #333;
+  width: 20%;
+  text-align: right;
+  font-size: 25px; /* הגדלת הכתב */
+
+}
+
+/* ערכים בטבלה */
+.table-value {
+  width: 40%;
+  text-align: center;
+  font-size: 25px; /* הגדלת הכתב */
+  direction: rtl; /* מוודא שהעברית נשמרת כמו שצריך */
+
+}
+
+/* הכפתורים בצד שמאל */
+.customer-actions {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+  font-weight: bold;
+
+  
+}
+
+/* כפתור עריכה */
+.btn-orange {
+  background-color: var(--color-darkorange-200);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px; /* הגדלת הכתב */
+
+  
+}
+
+/* כפתור עבודות */
+.btn-gray {
+  font-size: 16px; /* הגדלת הכתב */
+
+  font-weight: bold;
+  background-color: #555;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}

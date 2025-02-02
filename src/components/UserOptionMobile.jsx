@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import "./CustomerOptionMobile.css";
+import "./UserOptionMobile.css";
 
-const CustomerOptionMobile = ({ className = "", bname, numbranch }) => {
+const UserOptionMobile = ({ className = "", bname, numbranch }) => {
   return (
     <div className={`customeroptionmobile ${className}`}>
       <div className="customeroptionmobile-child" />
@@ -29,10 +29,10 @@ const CustomerOptionMobile = ({ className = "", bname, numbranch }) => {
   );
 };
 
-CustomerOptionMobile.propTypes = {
+UserOptionMobile.propTypes = {
   className: PropTypes.string,
   bname: PropTypes.string,
   numbranch: PropTypes.string,
 };
 
-export default CustomerOptionMobile;
+export default UserOptionMobile;

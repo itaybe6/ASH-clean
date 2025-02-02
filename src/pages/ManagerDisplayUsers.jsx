@@ -1,8 +1,31 @@
-import { Switch, FormControlLabel } from "@mui/material";
-import CustomerOption from "../components/CustomerOption";
-import "./ManagerDisplayCustomers.css";
+import UserOption from "../components/UserOption.jsx";
+import "./ManagerDisplayUsers.css";
+import CustomToggleButton from "../components/CustomToggleButton.jsx";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const ManagerDisplayCustomers = () => {
+const ManagerDisplayUsers = () => {
+  const [active, setActive] = useState(true);
+  const [customers, setCustomers] = useState([]);
+  const [workers, setWorkers] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/manager/getAll")
+      .then((res) => {
+        setCustomers(res.data);
+      })
+      .catch((error) => console.error("Error fetching customers:", error));
+  }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/manager/workers")
+      .then((res) => {
+        setWorkers(res.data);
+      })
+      .catch((error) => console.error("Error fetching customers:", error));
+  }, []);
+
+
   return (
     <div className="manager-display-customers">
       <div className="manager-display-customers-inner">
@@ -20,23 +43,32 @@ const ManagerDisplayCustomers = () => {
         placeholder="חיפוש משתמש..."
         type="text"
       />
-      <FormControlLabel
-        className="group-formcontrollabel"
-        control={<Switch color="primary" />}
-      />
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" left="440px"/>;
+
       <button className="rectangle-parent11">
         <div className="group-child19" />
         <b className="b20">+</b>
       </button>
-      <div className="customeroption-wrapper">
-        <CustomerOption nameCus="אורן משי" numBranch="8" />
+      <div className="search-list-container">
+        {active
+          ? workers.map((item, index) => (
+            <UserOption
+              key={index}
+              nameCus={item.fullName}
+              type = "עובד"
+            />
+          ))
+          : customers.map((item, index) => (
+            <UserOption
+              key={index}
+              nameCus={item.businessName}
+              numBranch={`סניפים ${item.branches.length}`}
+              type = "לקוח"
+            />
+          ))
+        }
       </div>
-      <div className="parent9">
-        <div className="div31">משתמש</div>
-        <div className="div32">שם מלא</div>
-        <div className="div33">כמות סניפים</div>
-        <div className="div34">עבודות</div>
-      </div>
+
       <div className="rectangle-parent12">
         <div className="group-child20" />
         <button className="vector-wrapper5">
@@ -64,4 +96,4 @@ const ManagerDisplayCustomers = () => {
   );
 };
 
-export default ManagerDisplayCustomers;
+export default ManagerDisplayUsers;

@@ -3,7 +3,7 @@ const router = express.Router();
 const { addRegularEmployee ,getBranchesByCustomer,
         addCustomer,getAllCustomers,
         getCleaningsByBranch , addCleaningForEmployee,
-        updateManagerDetails  } = require('../controller/manager');
+        updateManagerDetails , getAllWorkers ,  } = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -19,8 +19,8 @@ router.post('/add-customer', addCustomer);
 //, isAuthenticated, isManager --- להוסיף אוטנטיקציה 
 
 
-// 4 get all the customers
-router.get('/getAll', isAuthenticated, getAllCustomers);
+// 4 5555  get all the customers 5555
+router.get('/getAll', getAllCustomers);
 
 
 // 5 get all the branches of customer
@@ -36,6 +36,9 @@ router.get('/:workerId/cleanings', addCleaningForEmployee);
 
 // edit details
 router.put("/update", updateManagerDetails);
+
+
+router.get("/workers", getAllWorkers);
 
 
 module.exports = router;
