@@ -4,23 +4,19 @@ import "./Search.css";
 const Search = ({
   className = "",
   worker,
-  stastus,
+  status,
   branch,
   date,
   bussiness,
 }) => {
   return (
-    <div className={`search ${className}`}>
-      <div className="search-child" />
-      <div className="div263">{worker}</div>
-      <div className="div264">{stastus}</div>
-      <div className="div265">{date}</div>
-      <div className="div266">{branch}</div>
-      <div className="div267">{bussiness}</div>
-      <button className="rectangle-parent95">
-        <button className="group-child192" />
-        <div className="div268">צפייה בתמונה</div>
-      </button>
+    <div className="search">
+      <div className="date">{date}</div>
+      <div className="business">{bussiness}</div>
+      <div className="branch">{branch}</div>
+      <div className="worker">{worker}</div>
+      <div className="status">{status}</div>
+      <button className="img-btn">צפייה בתמונה</button>
     </div>
   );
 };

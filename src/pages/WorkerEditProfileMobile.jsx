@@ -4,7 +4,6 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const WorkerEditProfileMobile = () => {
-  // הגדרת state לכל שדה קלט
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");

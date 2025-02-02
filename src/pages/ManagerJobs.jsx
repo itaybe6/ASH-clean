@@ -6,8 +6,66 @@ import Search from "../components/Search";
 import "./ManagerJobs.css";
 
 const ManagerJobs = () => {
-  const [groupDateTimePickerValue, setGroupDateTimePickerValue] =
-    useState(null);
+  const [groupDateTimePickerValue, setGroupDateTimePickerValue] = useState(null);
+  const searchItems = [
+    {
+      worker: "ליאור שם טוב",
+      status: "נעשה",
+      branch: "שכונות, פארק, באר שבע",
+      date: "24/05/2025",
+      bussiness: "אורן משי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },{
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+    // אפשר להוסיף כאן עוד אובייקטים כרצונך
+  ];
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="manager-jobs">
@@ -16,13 +74,18 @@ const ManagerJobs = () => {
           <div className="div14">שלום (שם מנהל)</div>
           <div className="div15">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
         </div>
-        <Search
-          worker="ליאור שם טוב"
-          stastus="נעשה"
-          branch="שכונת הפארק, באר שבע"
-          date="24/05/2025"
-          bussiness="אורן משי"
-        />
+        <div className="search-list-container">
+          {searchItems.map((item, index) => (
+            <Search
+              key={index}
+              worker={item.worker}
+              status={item.status}
+              branch={item.branch}
+              date={item.date}
+              bussiness={item.bussiness}
+            />
+          ))}
+        </div>
         <div className="wrapper1">
           <DatePicker
             value={groupDateTimePickerValue}
@@ -69,14 +132,7 @@ const ManagerJobs = () => {
             </button>
           </div>
         </div>
-        <div className="parent7">
-          <div className="div17">תאריך</div>
-          <div className="div18">סניף</div>
-          <div className="div19">עסק</div>
-          <div className="div20">עובד מבצע</div>
-          <div className="div21">סטטוס</div>
-          <div className="div22">אישור</div>
-        </div>
+      
       </div>
     </LocalizationProvider>
   );

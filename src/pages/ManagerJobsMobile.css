@@ -94,3 +94,24 @@
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
+.search-list-container {
+  /* יוצר תצוגה אנכית עם רווח וגלילה */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* רווח בין הכרטיסים */
+  max-height: 1600px; /* גובה מקסימלי */
+  overflow-y: auto;   /* גלילה אנכית */
+  margin-top: 280px;
+  margin-right: 50px
+}
+.search-list-container .JobOptionMobile {
+  position: relative !important;
+  width: auto !important;
+  height: auto !important;
+  /* אפשר להוריד/להחליף פרמטרים נוספים שהיו ב-Search.css */
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #ccc; /* לדוגמה מסגרת */
+  border-radius: 8px;
+  background-color: #fff;
+}

@@ -1,197 +1,9 @@
-.joboptionmobile-child {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-xl);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.div269 {
-  position: absolute;
-  top: 40.85%;
-  left: 9.52%;
-  line-height: 146.39%;
-  font-weight: 300;
-}
-.div270 {
-  position: absolute;
-  top: 56.86%;
-  left: 31.63%;
-  line-height: 146.39%;
-  font-weight: 300;
-}
-.div271 {
-  position: absolute;
-  top: 72.55%;
-  left: 47.96%;
-  line-height: 146.39%;
-  font-weight: 300;
-}
-.group-child193 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-darkorange-200);
-}
-.div272 {
-  position: absolute;
-  top: 7.14%;
-  left: 13.01%;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-family: var(--font-heebo);
-  color: var(--color-white);
-  text-align: right;
-}
-.rectangle-parent96 {
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  position: absolute;
-  height: 9.15%;
-  width: 41.84%;
-  top: 87.25%;
-  right: 27.89%;
-  bottom: 3.59%;
-  left: 30.27%;
-}
-.div273 {
-  position: absolute;
-  top: 24.84%;
-  left: 41.16%;
-  line-height: 146.39%;
-  font-weight: 300;
-}
-.div274 {
-  position: absolute;
-  top: 8.5%;
-  left: 32.65%;
-  line-height: 146.39%;
-  font-weight: 300;
-}
-.div275 {
-  position: absolute;
-  top: 8.82%;
-  left: 78.91%;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div276 {
-  position: absolute;
-  top: 25.16%;
-  left: 82.65%;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div277 {
-  position: absolute;
-  top: 41.18%;
-  left: 82.31%;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div278 {
-  position: absolute;
-  top: 57.19%;
-  left: 68.03%;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div279 {
-  position: absolute;
-  top: 72.88%;
-  left: 77.55%;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.joboptionmobile-item {
-  position: absolute;
-  height: 0.33%;
-  width: 100.34%;
-  top: 22.06%;
-  right: -0.17%;
-  bottom: 77.61%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.joboptionmobile-inner {
-  position: absolute;
-  height: 0.33%;
-  width: 100.34%;
-  top: 37.42%;
-  right: -0.17%;
-  bottom: 62.25%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.joboptionmobile-child1 {
-  position: absolute;
-  height: 0.33%;
-  width: 100.34%;
-  top: 54.08%;
-  right: -0.17%;
-  bottom: 45.59%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.joboptionmobile-child2 {
-  position: absolute;
-  height: 0.33%;
-  width: 100.34%;
-  top: 69.77%;
-  right: -0.17%;
-  bottom: 29.9%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.joboptionmobile-child3 {
-  position: absolute;
-  height: 0.33%;
-  width: 100.34%;
-  top: 82.19%;
-  right: -0.17%;
-  bottom: 17.48%;
-  left: -0.17%;
-  border-top: 1px solid var(--color-whitesmoke-400);
-  box-sizing: border-box;
-}
-.joboptionmobile-child4 {
-  position: absolute;
-  height: 82.68%;
-  width: 0.34%;
-  top: -0.16%;
-  right: 34.86%;
-  bottom: 17.48%;
-  left: 64.8%;
-  border-right: 1px solid var(--color-gainsboro);
-  box-sizing: border-box;
-}
+
 .joboptionmobile {
   width: 294px;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 157px);
+  top: calc(50% - 187px);
   left: calc(50% - 147.5px);
   height: 306px;
   z-index: 4;
@@ -199,4 +11,45 @@
   font-size: var(--font-size-mini);
   color: var(--color-black);
   font-family: var(--font-heebo);
+}
+/* JobOptionMobile.css */
+
+.joboptionmobile {
+  /* מבטלים absolute */
+  position: static; 
+  /* גריד של 2 עמודות */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* גובה שורות אוטומטי */
+  grid-auto-rows: auto;
+  /* רווח בין התאים */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  background-color: #fff;
+  margin-bottom: 16px;
+  padding: 16px;
+  direction: rtl;
+  text-align: center;
+  font-family: var(--font-heebo);
+  font-weight: 300;
+}
+
+.joboptionmobile > div {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-whitesmoke-400);
+  /* אם רוצים קו אנכי באמצע: */
+  /* border-left: 1px solid var(--color-whitesmoke-400); */
+}
+
+/* הכפתור יתפרש על שני טורים בגריד */
+.full-span {
+  grid-column: 1 / span 2;
+  border: none;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkorange-200);
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }

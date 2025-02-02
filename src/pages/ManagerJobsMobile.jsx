@@ -1,13 +1,42 @@
 import { useState } from "react";
-import { TextField, Icon, Button } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import JobOptionMobile from "../components/JobOptionMobile";
 import "./ManagerJobsMobile.css";
 
 const ManagerJobsMobile = () => {
-  const [groupDateTimePickerValue, setGroupDateTimePickerValue] =
-    useState(null);
+  const [groupDateTimePickerValue, setGroupDateTimePickerValue] = useState(null);
+  const searchItems = [
+    {
+      worker: "ליאור שם טוב",
+      status: "נעשה",
+      branch: "שכונות, פארק, באר שבע",
+      date: "24/05/2025",
+      bussiness: "אורן משי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    }, {
+      worker: "ליאור שם טוב",
+      status: "נעשה",
+      branch: "שכונות, פארק, באר שבע",
+      date: "24/05/2025",
+      bussiness: "אורן משי",
+    },
+    {
+      worker: "מיכל כהן",
+      status: "לא נעשה",
+      branch: "תל אביב",
+      date: "15/06/2025",
+      bussiness: "קניון עזריאלי",
+    },
+
+    // אפשר להוסיף כאן עוד אובייקטים כרצונך
+  ];
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="manager-jobs-mobile">
@@ -38,16 +67,21 @@ const ManagerJobsMobile = () => {
             }}
           />
         </div>
-        <JobOptionMobile
-          branch="שכונת הפארק, באר שבע"
-          worker="ליאור שם טוב"
-          bussiness="אורן משי"
-          date="24/05/2025"
-          done="נעשה"
-        />
-         <button className="vector-wrapper67">
-        <img className="vector-icon76" alt="" src="/vector10.svg" />
-      </button>
+        <div className="search-list-container">
+          {searchItems.map((item, index) => (
+            <JobOptionMobile
+              key={index}
+              worker={item.worker}
+              status={item.status}
+              branch={item.branch}
+              date={item.date}
+              bussiness={item.bussiness}
+            />
+          ))}
+        </div>
+        <button className="vector-wrapper67" >
+          <img className="vector-icon76" alt="" src="/vector10.svg" />
+        </button>
         <img className="icon7" alt="" src="/-02-11@2x.png" />
       </div>
     </LocalizationProvider>
