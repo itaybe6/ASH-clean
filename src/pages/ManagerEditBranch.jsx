@@ -1,36 +1,39 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import "./ManagerEditBranch.css";
+import axios from 'axios';
 
 const ManagerEditBranch = () => {
-  // הגדרת state לכל שדה קלט
   const [branchName, setBranchName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
+  const navigate = useNavigate();
 
-  // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
 
-  // פונקציה לטיפול בלחיצת כפתור עדכון פרטים
-  const handleUpdateDetails = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת
-    console.log({
-      branchName,
-      phoneNumber,
-      branchAddress,
-    });
+  const handleUpdateDetails = async () => {
+    try {
+      const response = await axios.put(`http://localhost:5000/manager/editBranch/${branchId}`, {
+        name: branchName,
+        phone: phoneNumber,
+        address: branchAddress,
+      });
 
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setBranchName("");
-    // setPhoneNumber("");
-    // setBranchAddress("");
+      if (response.status === 200) {
+        alert("Branch updated successfully!");
+      } else {
+        alert("Error: " + response.data.message);
+      }
+    } catch (error) {
+      alert("Server error: " + (error.response?.data?.message || error.message));
+    }
   };
 
-  // פונקציה לטיפול בלחיצת כפתור חזרה
   const handleBack = () => {
-    // כאן ניתן להוסיף לוגיקה לחזרה לדף קודם, למשל ניווט
-    console.log("חזרה לדף הקודם");
+    navigate(-1);
   };
 
   return (

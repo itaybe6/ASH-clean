@@ -14,6 +14,7 @@ const ManagerAddBranch = () => {
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
   const { id } = useParams(); 
+  
   const handleAddBranch = async () => {
     try {
       const response = await axios.post(`http://localhost:5000/manager/addBranch/${id}`, {

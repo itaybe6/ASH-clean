@@ -239,19 +239,17 @@ const managerEditUser = async (req, res) => {
     }
 };
 
-
+//manager add branch
 const addBranchToCustomer = async (req, res) => {
     try {
         const { customerId } = req.params;
         const { name, phone, address } = req.body;
 
-        // בדיקה אם הלקוח קיים
         const customer = await Customer.findById(customerId);
         if (!customer) {
             return res.status(404).json({ message: 'Customer not found' });
         }
 
-        // יצירת סניף חדש
         const newBranch = new Branch({
             customer: customerId,
             name,
@@ -259,10 +257,8 @@ const addBranchToCustomer = async (req, res) => {
             address
         });
 
-        // שמירת הסניף למסד הנתונים
         await newBranch.save();
 
-        // הוספת הסניף לרשימת הסניפים של הלקוח
         customer.branches.push(newBranch._id);
         await customer.save();
 
@@ -272,12 +268,33 @@ const addBranchToCustomer = async (req, res) => {
     }
 };
 
+// manager edit branch
+const updateBranch = async (req, res) => {
+    try {
+        const { branchId } = req.params;
+        const { name, phone, address } = req.body;
 
+        // חיפוש ועדכון הסניף במסד הנתונים
+        const updatedBranch = await Branch.findByIdAndUpdate(
+            branchId,
+            { name, phone, address },
+            { new: true } // מחזיר את הערך המעודכן
+        );
+
+        if (!updatedBranch) {
+            return res.status(404).json({ message: 'Branch not found' });
+        }
+
+        res.status(200).json({ message: 'Branch updated successfully', branch: updatedBranch });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
 module.exports = {
     addRegularEmployee
     ,getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee,
     getAllWorkers,managerEditUser,
-    addBranchToCustomer
+    addBranchToCustomer , updateBranch
 };
