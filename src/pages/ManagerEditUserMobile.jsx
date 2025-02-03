@@ -41,7 +41,6 @@ const ManagerEditUserMobile = () => {
     };
     try {
       const response = await axios.put(`http://localhost:5000/manager/editUser/${id}`, updatedData);
-
       if (response.status === 200) {
         alert('הפרטים עודכנו בהצלחה');
         console.log('Updated User:', response.data);

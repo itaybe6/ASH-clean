@@ -6,17 +6,19 @@ const UserOptionMobile = ({ bname, numbranch, id, type }) => {
   const navigate = useNavigate();
 
   const handleEditClick = () => {
-    // מעבר לעמוד עריכה
     navigate(`/manager-edit-user/${id}/${type}`);
   };
+
   const nevigateJobs = () => {
-    if (type == "לקוח") {
-      navigate(`/manager-customer-jobs-done/${id}`);  
+
+    if (type == 'לקוח') {
+      navigate(`/manager-customer-jobs-done/${id}`);
     }
     else {
-      navigate(`/worker-future-jobs/${id}`);  
+      navigate(`/worker-future-jobs/${id}`);
     }
   }
+
   return (
     <div className="customeroptionmobile">
       {/* מעטפת הכרטיס */}
@@ -37,10 +39,9 @@ const UserOptionMobile = ({ bname, numbranch, id, type }) => {
           <div className="customeroptionmobile-cell right">סניפים</div>
         </div>
 
-        {/* כפתורי עריכה/עבודות */}
         <div className="customeroptionmobile-actions">
           <button className="edit-btn" onClick={handleEditClick}>עריכה</button>
-          <button className="work-btn" onclick ={nevigateJobs}>עבודות</button>
+          <button className="work-btn" onClick={nevigateJobs}>עבודות</button>
         </div>
       </div>
     </div>

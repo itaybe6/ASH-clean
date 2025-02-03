@@ -49,4 +49,7 @@ router.post('/addBranch/:customerId', addBranchToCustomer);
 router.put('/editBranch/:branchId', updateBranch);
 
 
+router.put('/editUser/:id',managerEditUser);
+
+
 module.exports = router;
