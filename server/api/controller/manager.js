@@ -240,11 +240,44 @@ const managerEditUser = async (req, res) => {
 };
 
 
+const addBranchToCustomer = async (req, res) => {
+    try {
+        const { customerId } = req.params;
+        const { name, phone, address } = req.body;
+
+        // בדיקה אם הלקוח קיים
+        const customer = await Customer.findById(customerId);
+        if (!customer) {
+            return res.status(404).json({ message: 'Customer not found' });
+        }
+
+        // יצירת סניף חדש
+        const newBranch = new Branch({
+            customer: customerId,
+            name,
+            phone,
+            address
+        });
+
+        // שמירת הסניף למסד הנתונים
+        await newBranch.save();
+
+        // הוספת הסניף לרשימת הסניפים של הלקוח
+        customer.branches.push(newBranch._id);
+        await customer.save();
+
+        res.status(201).json({ message: 'Branch added successfully', branch: newBranch });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
 
 module.exports = {
     addRegularEmployee
     ,getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee,
-    getAllWorkers,managerEditUser
+    getAllWorkers,managerEditUser,
+    addBranchToCustomer
 };

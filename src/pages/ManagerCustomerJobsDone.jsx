@@ -1,10 +1,49 @@
-import { Switch, FormControlLabel } from "@mui/material";
 import DoneJobCustomer from "../components/DoneJobCustomer";
+import CustomToggleButton from "../components/CustomToggleButton";
+import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "./ManagerCustomerJobsDone.css";
+import axios from "axios";
 
 const ManagerCustomerJobsDone = () => {
+  const [active, setActive] = useState(true);
+  const [branches, setBranches] = useState([]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);  
+  const [selectedBranch, setSelectedBranch] = useState(null);  
+  const navigate = useNavigate();
+
+  const { id } = useParams(); 
+  useEffect(() => {
+    const fetchBranches = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/manager/${id}/branches`);
+        setBranches(response.data);
+      } catch (error) {
+        console.error("Error fetching branches:", error);
+      }
+    };
+
+    fetchBranches();
+  }, []);
+
+  const handleSelectBranch = (branch) => {
+    setSelectedBranch(branch);
+    setDropdownOpen(false);
+  };
+
+  const editBranch = () => {
+    if (selectedBranch)
+      navigate(`/manager-customer-edit-branch/${selectedBranch._id}`);
+  }
+  const addBranch = () => {
+    navigate(`/manager-customer-add-branch/${id}`);
+  }
+
   return (
+
     <div className="manager-customer-jobs-done">
+
       <div className="manager-customer-jobs-done-child" />
       <img
         className="manager-customer-jobs-done-item"
@@ -12,7 +51,7 @@ const ManagerCustomerJobsDone = () => {
         src="/line-21.svg"
       />
       <div className="parent13">
-        <div className="div46">לוח ניקיונות (שם סניף)</div>
+        <div className="div46">{selectedBranch ? selectedBranch.name : "בחירת סניף"}</div>
         <div className="div47">
           כל הניקיונות האחרונים של הסניף שלך נרשמו כאן
         </div>
@@ -28,7 +67,7 @@ const ManagerCustomerJobsDone = () => {
           <div className="div49">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
         </div>
       </div>
-      <button className="rectangle-parent16">
+      <button className="rectangle-parent16" onClick={() => setDropdownOpen(!dropdownOpen)}>
         <div className="group-child27" />
         <b className="b26">בחירת סניף</b>
       </button>
@@ -45,15 +84,26 @@ const ManagerCustomerJobsDone = () => {
           done="נעשה"
         />
       </div>
-      <FormControlLabel
-        className="manager-customer-jobs-done-child1"
-        control={<Switch color="primary" />}
-      />
-      <button className="group1">
+
+      <button className="group1" onClick={editBranch}>
         <img className="vector-icon16" alt="" src="/vector11.svg" />
         <img className="vector-icon17" alt="" src="/vector12.svg" />
       </button>
-      <button className="rectangle-parent17">
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"80vh"} name1="עבודות" name2="עבודות עתידיות" left="440px" />;
+      {dropdownOpen && (
+        <ul className="dropdown-menu">
+          {branches.map((branch) => (
+            <li
+              key={branch._id}
+              className="dropdown-item"
+              onClick={() => handleSelectBranch(branch)}
+            >
+              {branch.name}
+            </li>
+          ))}
+        </ul>
+      )}
+      <button className="rectangle-parent17" onClick={addBranch}>
         <div className="group-child28" />
         <b className="b27">+</b>
       </button>

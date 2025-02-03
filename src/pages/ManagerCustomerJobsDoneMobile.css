@@ -81,9 +81,11 @@
 .div57 {
   position: absolute;
   top: calc(50% - 27px);
-  left: calc(50% - 75px);
+  right: 0px;;
   line-height: 146.39%;
   font-weight: 500;
+  direction: rtl;
+  text-align: right;
 }
 .div58 {
   position: absolute;
@@ -229,4 +231,52 @@
   font-size: var(--font-size-5xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+}
+
+.button-dropdown {
+
+  background: white;
+  border: 2px solid orange;
+  color: orange;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-dropdown:hover {
+  background: orange;
+  color: white;
+}
+
+/* עיצוב התפריט הנפתח */
+.dropdown-menu {
+  color: orange;
+  font-weight: bold;
+  position: absolute;
+  background: white;
+  border: 1px solid orange;
+  border-radius: 10px;
+  list-style: none;
+  width: 100px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 10;
+  right: 15px;
+  top:-20px
+}
+
+/* פריטים בתוך התפריט */
+.dropdown-item {
+
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 12px;
+}
+
+.dropdown-item:hover {
+  background: orange;
+  color: white;
+  border-radius: 5px;
 }
