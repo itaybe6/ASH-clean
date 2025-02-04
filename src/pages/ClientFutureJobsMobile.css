@@ -118,7 +118,7 @@
   position: absolute;
   margin: 0 !important;
   top: 208px;
-  left: calc(50% + 29.5px);
+  left: 30px;
   height: 45.8px;
   z-index: 7;
 }
@@ -159,4 +159,55 @@
   font-size: var(--font-size-5xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  overflow-y: auto;
+
+}
+.clean-jobs-list-container {
+  position: absolute;
+  top:300px;
+  right: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px; 
+  
+ 
+}
+
+/* עיצוב התפריט הנפתח */
+.dropdown-menu3 {
+  color: orange;
+  font-weight: bold;
+  position: absolute !important;
+  background: white;
+  border: 1px solid orange;
+  border-radius: 10px;
+  list-style: none;
+  width: 120px !important;  /* הגדלתי קצת את הרוחב */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1000 !important;
+  right: 55% !important;
+  top: 240px !important; /* תיקון כדי שה-dropdown לא יהיה קרוב מדי */
+
+
+  padding: 5px 0; /* כדי להוסיף ריווח פנימי */
+}
+
+.dropdown-item3 {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 14px;
+  padding: 10px; 
+  display: flex;
+  align-items: center; /* מרכז אנכית */
+  justify-content: center; /* מרכז אופקית */
+}
+
+.dropdown-item3:hover {
+  background: orange;
+  color: white;
+  border-radius: 5px;
 }

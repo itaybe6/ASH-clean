@@ -11,7 +11,7 @@ router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);
 
 
 // 2 get all the branches of customer ----------------> ????
-router.get('/:customerId/branches', isAuthenticated, getBranchesByCustomer);
+router.get('/:customerId/branches', getBranchesByCustomer);
 
 
 // 3 get customer details to show data
