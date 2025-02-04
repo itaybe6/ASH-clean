@@ -1,54 +1,57 @@
-/* ===== מעטפת כללית של הרכיב ===== */
 .futurejobclientmobile {
-  /* מאפשר לכל כרטיס להשתלב בזרימת העמוד
-     ולא להיערם על אחרים */
   position: relative;
-  width: 250px;         /* או px / אחוזים אחרים */
-  max-width: 300px;   /* למנוע שהכרטיס יתפרש על כל המסך */
-  margin: 20px auto;  /* ריווח אנכי + מרכז אופקי */
+  width: 250px;  /* או כל גודל שמתאים לעיצובך */
+  margin: 20px auto;
   text-align: right;
   font-family: var(--font-heebo, "Heebo"), sans-serif;
 }
 
-/* ===== כרטיס פנימי (רקע לבן + הצללה) ===== */
 .futurejobclientmobile-card {
   background-color: #fff;
-  border-radius: 20px;  /* var(--br-xl) אם תרצה */
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--color-whitesmoke-400, #eee);
+  border-radius: 20px;  /* var(--br-xl) */
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  border: 1px solid #eee;
   padding: 1rem;
-  
   box-sizing: border-box;
 }
 
-/* כל שורה מורכבת משני צדדים: fjc-left (מידע) ו-fjc-right (כותרת) */
+/* כל שורה: שם מצד אחד, ערך מצד שני */
 .fjc-row {
   display: flex;
-  flex-direction: row; /* מימין לשמאל, אבל נשתמש ב-RTL לטקסט */
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-whitesmoke-400, #eee);
+  border-bottom: 1px solid #eee;
   padding: 0.5rem 0;
 }
-
-
 .fjc-row:last-child {
   border-bottom: none;
 }
+
 .fjc-left {
-  direction: rtl !important;
-  text-align: right !important;
-  
-  font-size: var(--font-size-mid, 1rem);
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: bidi-override;
+  font-size: 1rem;
+  font-weight: 300;
   color: #333;
-  /* margin-left: 1rem;  <-- אם זה גורם לטקסט להתרחק מדי, אפשר להוריד או להחליף ל-margin-right */
 }
 
-/* הטקסט בצד ימין של השורה (הכותרת) */
 .fjc-right {
-
-  font-size: var(--font-size-base, 1rem);
+  font-size: 1rem;
   font-weight: 500;
   color: #000;
 }
 
+/* כפתור כתום - מוצג רק אם active=true */
+.fjc-button {
+  display: block;
+  margin: 1rem auto 0;   /* מרכז את הכפתור, רווח עליון של 1rem */
+  background-color: #ff7f50; /* צבע כתום/קורל */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  font-size: 1rem;
+}

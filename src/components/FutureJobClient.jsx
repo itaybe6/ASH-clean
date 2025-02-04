@@ -9,7 +9,7 @@ const FutureJobClient = ({ namew, done, time, date, active = false }) => {
 
   return (
     <div
-      className="futurejobclient2"
+      className="futurejobclient3"
       style={{ gridTemplateColumns: columns }}
     >
       {active && (

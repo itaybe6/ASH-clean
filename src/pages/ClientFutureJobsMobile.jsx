@@ -113,6 +113,7 @@ const ClientFutureJobsMobile = () => {
             time={job.time}
             date={job.date}
             done={job.done}
+            active = {active}
           />
         ))}
       </div>

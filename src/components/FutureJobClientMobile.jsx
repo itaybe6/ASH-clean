@@ -5,11 +5,13 @@ const FutureJobClientMobile = ({
   namew = "",
   time = "",
   date = "",
-  done = ""
+  done = "",
+  active = false, // ברירת מחדל: false
 }) => {
   return (
     <div className="futurejobclientmobile">
       <div className="futurejobclientmobile-card">
+
         {/* שורה 1 */}
         <div className="fjc-row">
           <div className="fjc-left">{date}</div>
@@ -31,9 +33,13 @@ const FutureJobClientMobile = ({
         {/* שורה 4 */}
         <div className="fjc-row">
           <div className="fjc-left">{done}</div>
-          <div className="fjc-right"> סטטוס</div>
+          <div className="fjc-right">סטטוס</div>
         </div>
 
+        {/* הצגת כפתור - רק אם active === true */}
+        {active && (
+          <button className="fjc-button">צפייה בתמונה</button>
+        )}
       </div>
     </div>
   );

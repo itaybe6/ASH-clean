@@ -96,7 +96,7 @@ const ClientFutureJobs = () => {
           כל הניקיונות האחרונים של הסניף שלך נרשמו כאן
         </div>
       </div>
-      <div className="jobs-list-container2">
+      <div className="jobs-list-container5">
         {cleaningList.map((job) => (
           <FutureJobClient
             key={job.id}         // מזהה ייחודי
