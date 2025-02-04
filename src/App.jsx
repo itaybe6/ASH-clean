@@ -48,6 +48,13 @@ import ManagerEditUserMobile from "./pages/ManagerEditUserMobile";
 import ManagerAddBranch from "./pages/ManagerAddBranch";
 import ManagerAddBranchMobile from "./pages/ManagerAddBranchMobile";
 
+
+import ManagerDIsplayWorkerJobs from "./pages/ManagerDIsplayWorkerJobs";
+import ManagerDIsplayWorkerJobsMobile from "./pages/ManagerDIsplayWorkerJobsMobile";
+import ManagerAddJobToWorker from "./pages/ManagerAddJobToWorker";
+import ManagerAddJobToWorkerMobile from "./pages/ManagerAddJobToWorkerMobile";
+
+
 import Loader from "./components/Loader";
 
 function PageTransition({ children }) {
@@ -93,10 +100,13 @@ function App() {
         <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
 
 
-        {/* להציג עבודות בצורה דינאמית ולראות שהתפריט לנייד עובד */}
         <Route path="/manager-customer-jobs-done/:id" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
         <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
         <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
+
+        <Route path="/manager-worker-jobs/:id" element={isMobile ? <ManagerDIsplayWorkerJobsMobile /> : <ManagerDIsplayWorkerJobs />} />
+        <Route path="/manager-add-job-to-worker/:id" element={isMobile ? <ManagerAddJobToWorkerMobile /> : <ManagerAddJobToWorker />} />
+
 
 
 

@@ -1,6 +1,7 @@
 const Branch = require('../models/branch');
 const Employee = require('../models/employee');
 const Customer = require('../models/costumer');
+const Cleaning = require('../models/cleaning')
 
 const bcrypt = require('bcrypt');
 
@@ -131,13 +132,13 @@ const getCleaningsByBranch = async (req, res) => {
 // add cleaning for the worker schedule
 const addCleaningForEmployee = async (req, res) => {
     try {
-        const { employeeId } = req.params;
+        const { workerId } = req.params;
         const { branch, dateTime } = req.body;
 
         // יצירת ניקיון חדש
         const newCleaning = new Cleaning({
             dateTime,
-            employee: employeeId,
+            employee: workerId,
             branch
         });
 
@@ -145,7 +146,7 @@ const addCleaningForEmployee = async (req, res) => {
 
         // הוספת הניקיון לרשימת הנקיונות של העובד
         await Employee.findByIdAndUpdate(
-            employeeId,
+            workerId,
             { $push: { cleaningSchedules: savedCleaning._id } },
             { new: true }
         );

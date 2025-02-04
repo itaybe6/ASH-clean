@@ -34,7 +34,7 @@ router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);
 
 
 // 7 Manager add cleaning to worker 
-router.get('/:workerId/cleanings', addCleaningForEmployee);
+router.post('/:workerId/cleanings', addCleaningForEmployee);
 
 // edit details
 router.put("/update", updateManagerDetails);

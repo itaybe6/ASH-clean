@@ -1,44 +1,6 @@
-import React, { useState } from "react";
-import axios from "axios";
 import "./ManagerAddWorker.css";
 
 const ManagerAddWorker = () => {
-  // State variables
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [city, setCity] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordVerification, setPasswordVerification] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // למנוע רענון דף
-
-    // בדיקה אם הסיסמאות תואמות
-    if (password !== passwordVerification) {
-      alert("הסיסמאות אינן תואמות!");
-      return;
-    }
-
-    try {
-      const response = await axios.post("http://localhost:5000/manager/add-worker", {
-        fullName,
-        phone: phoneNumber,
-        city,
-        password
-      });
-
-      alert("המשתמש נוסף בהצלחה!");
-      setFullName("");
-      setPhoneNumber("");
-      setCity("");
-      setPassword("");
-      setPasswordVerification("");
-    } catch (error) {
-      console.error("Error adding employee:", error);
-      alert(`שגיאה בהוספת משתמש: ${error.response?.data?.message || "שגיאה לא ידועה"}`);
-    }
-  };
-
   return (
     <div className="manager-add-worker">
       <section className="manager-add-worker-child" />
@@ -55,27 +17,13 @@ const ManagerAddWorker = () => {
       <div className="manager-add-worker-inner1">
         <div className="group-frame">
           <div className="group-frame">
-            <input
-              className="group-input"
-              placeholder="שם מלא"
-              type="text"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-            />
+            <input className="group-input" placeholder="שם מלא" type="text" />
             <input
               className="group-child12"
               placeholder="מספר פלאפון"
               type="tel"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
             />
-            <input
-              className="group-child13"
-              placeholder="עיר"
-              type="text"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
+            <input className="group-child13" placeholder="עיר" type="text" />
           </div>
         </div>
       </div>
@@ -85,19 +33,15 @@ const ManagerAddWorker = () => {
           name="password"
           placeholder="סיסמא"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
         />
         <input
           className="group-child15"
-          name="verification"
+          name="verfication"
           placeholder="אימות סיסמא"
           type="password"
-          value={passwordVerification}
-          onChange={(e) => setPasswordVerification(e.target.value)}
         />
       </div>
-      <button className="rectangle-parent9" onClick={handleSubmit}>
+      <button className="rectangle-parent9">
         <div className="group-child16" />
         <b className="b19">הוספת משתמש</b>
       </button>

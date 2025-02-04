@@ -9,7 +9,7 @@
   height: 745px;
   z-index: 0;
 }
-.div88 {
+.div101 {
   width: 186px;
   position: absolute;
   margin: 0 !important;
@@ -20,7 +20,7 @@
   display: inline-block;
   z-index: 1;
 }
-.div89 {
+.div102 {
   width: 229px;
   position: absolute;
   margin: 0 !important;
@@ -32,11 +32,11 @@
   display: inline-block;
   z-index: 2;
 }
-.b42 {
+.b48 {
   width: 247px;
   position: absolute;
   margin: 0 !important;
-  top: 243px;
+  top: 263px;
   left: calc(50% - 98.5px);
   line-height: 146.39%;
   display: inline-block;
@@ -45,11 +45,11 @@
   height: 30px;
   z-index: 3;
 }
-.div90 {
+.div103 {
   width: 287px;
   position: absolute;
   margin: 0 !important;
-  top: 273px;
+  top: 293px;
   left: calc(50% - 144.5px);
   font-size: var(--font-size-base);
   line-height: 146.39%;
@@ -62,12 +62,12 @@
   width: 56px;
   position: absolute;
   margin: 0 !important;
-  top: 200px;
+  top: 220px;
   left: calc(50% + 94.5px);
   height: 56px;
   z-index: 5;
 }
-.icon20 {
+.icon24 {
   width: 135px;
   position: absolute;
   margin: 0 !important;
@@ -77,14 +77,14 @@
   object-fit: cover;
   z-index: 6;
 }
-.vector-icon38 {
+.vector-icon46 {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 23.3px;
   height: 15.5px;
 }
-.vector-wrapper30 {
+.vector-wrapper38 {
   cursor: pointer;
   border: none;
   padding: 0;
@@ -97,7 +97,7 @@
   height: 15.5px;
   z-index: 7;
 }
-.group-child56 {
+.group-child69 {
   border: none;
   outline: none;
   background-color: var(--color-white);
@@ -109,7 +109,7 @@
   border-radius: var(--br-4xs);
   height: 44px;
 }
-.group-child57 {
+.group-child70 {
   border: none;
   outline: none;
   background-color: var(--color-white);
@@ -121,7 +121,7 @@
   border-radius: var(--br-4xs);
   height: 44px;
 }
-.group-child58 {
+.group-child71 {
   border: none;
   outline: none;
   background-color: var(--color-white);
@@ -133,7 +133,7 @@
   border-radius: var(--br-4xs);
   height: 44px;
 }
-.rectangle-parent33 {
+.rectangle-parent42 {
   width: 73.79%;
   position: absolute;
   margin: 0 !important;
@@ -171,7 +171,7 @@
   height: 44px;
   z-index: 10;
 }
-.group-child59 {
+.group-child72 {
   position: absolute;
   width: 100%;
   top: calc(50% - 19.85px);
@@ -181,7 +181,7 @@
   background-color: var(--color-darkorange-200);
   height: 39.7px;
 }
-.b43 {
+.b49 {
   position: absolute;
   width: 88.72%;
   top: calc(50% - 10.65px);
@@ -192,7 +192,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.rectangle-parent34 {
+.rectangle-parent43 {
   cursor: pointer;
   border: none;
   padding: 0;

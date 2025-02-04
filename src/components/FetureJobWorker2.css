@@ -1,0 +1,83 @@
+.managerjobworker-card3 {
+  /* ביטול absolute/ top/ left ישן:  */
+  position: relative;
+  /* גודל ורוחב הכרטיס בדף */
+  width: 320px;               /* אפשר להתאים אחוז/פיקסלים לפי הרצוי */
+  margin: 20px auto;        /* ריווח אנכי ומרכז אופקית */
+  min-height: 74px;         /* כמו שהיה */
+  
+  /* רקע לבן וצל */
+  background-color: #fff;
+  border-radius: 20px; /* var(--br-6xs) אם תרצו */
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+
+  /* הגדרת Flex כדי למקם כפתור וטקסט זה לצד זה */
+  display: flex;
+  flex-direction: row;      /* כפתור משמאל, טקסט מימין (נשתמש ב־RTL בהמשך) */
+  align-items: center;      /* מיישר אנכית את הכפתור והטקסט */
+  justify-content: space-between; 
+  padding: 1rem;
+
+  /* טקסט כללי */
+  font-family: var(--font-heebo);
+  text-align: right;
+  font-size: 15px;
+  color: var(--color-limegreen);
+  direction: rtl; /* לשפה העברית – אפשר לוותר אם לא צריך */
+}
+
+/* ===== הכפתור הכתום (אישור) ===== */
+.approval-button {
+  background-color: var(--color-darkorange-200, #ff7f50);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  direction: rtl; /* לשפה העברית – אפשר לוותר אם לא צריך */
+}
+
+/* ===== קבוצה לטקסטים (כותרת, כתובת, שעה) ===== */
+.job-details3 {
+  direction: rtl; 
+
+  display: flex;
+  flex-direction: column;   /* שורות של טקסט אנכיות */
+  align-items: flex-end;    /* יישור מימין */
+  gap: 0.3rem;     
+  font-size: 15px;
+  /* רווח בין השורות */
+}
+
+/* כותרת - לדוגמה שם העבודה */
+.job-title3 {
+  font-size: 15px;
+
+  font-weight: bold;
+  color: #000;   
+  margin: 0;  
+  direction: rtl; /* לשפה העברית – אפשר לוותר אם לא צריך */
+
+}
+
+/* כתובת */
+.job-address3 {
+  font-size: 15px;
+  font-weight: bold;
+
+  color: #444;
+  direction: rtl; /* לשפה העברית – אפשר לוותר אם לא צריך */
+
+}
+
+/* יום/שעה */
+.job-time3 {
+  font-size: 15px;
+  font-weight: bold;
+
+  color: #666;
+  direction: rtl; /* לשפה העברית – אפשר לוותר אם לא צריך */
+
+}
