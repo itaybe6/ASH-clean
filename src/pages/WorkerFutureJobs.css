@@ -9,6 +9,7 @@
   height: 1024px;
   z-index: 0;
 }
+
 .worker-future-jobs-item {
   width: 239px;
   position: relative;
@@ -16,6 +17,7 @@
   object-fit: contain;
   z-index: 1;
 }
+
 .div116 {
   width: 263px;
   position: absolute;
@@ -27,6 +29,7 @@
   display: inline-block;
   z-index: 2;
 }
+
 .div117 {
   width: 289px;
   position: absolute;
@@ -39,6 +42,7 @@
   display: inline-block;
   z-index: 3;
 }
+
 .worker-future-jobs-inner {
   width: 301px;
   position: absolute;
@@ -49,6 +53,7 @@
   height: 1024px;
   z-index: 4;
 }
+
 .vector-icon51 {
   position: absolute;
   right: 0px;
@@ -56,6 +61,7 @@
   width: 133px;
   height: 52px;
 }
+
 .vector-wrapper42 {
   cursor: pointer;
   border: none;
@@ -69,6 +75,7 @@
   height: 52px;
   z-index: 5;
 }
+
 .icon27 {
   width: 232px;
   position: absolute;
@@ -79,6 +86,7 @@
   object-fit: cover;
   z-index: 6;
 }
+
 .group-child92 {
   position: absolute;
   width: 100%;
@@ -91,6 +99,7 @@
   box-sizing: border-box;
   height: 70px;
 }
+
 .b54 {
   position: absolute;
   top: 17px;
@@ -101,6 +110,7 @@
   color: var(--color-darkorange-200);
   text-align: right;
 }
+
 .rectangle-parent44 {
   cursor: pointer;
   border: none;
@@ -115,6 +125,7 @@
   height: 70px;
   z-index: 7;
 }
+
 .vector-icon52 {
   position: absolute;
   top: 0px;
@@ -122,6 +133,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-wrapper43 {
   cursor: pointer;
   border: none;
@@ -133,6 +145,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-icon53 {
   position: absolute;
   top: 0px;
@@ -140,6 +153,7 @@
   width: 156.7px;
   height: 47px;
 }
+
 .vector-wrapper44 {
   cursor: pointer;
   border: none;
@@ -151,6 +165,7 @@
   width: 156.7px;
   height: 47px;
 }
+
 .group-parent21 {
   width: 156.7px;
   position: absolute;
@@ -160,6 +175,7 @@
   height: 111.3px;
   z-index: 9;
 }
+
 .worker-future-jobs-child1 {
   width: 280px;
   position: absolute;
@@ -168,6 +184,7 @@
   left: calc(50% - 290px);
   z-index: 10;
 }
+
 .worker-future-jobs {
   width: 100%;
   position: relative;
@@ -185,4 +202,12 @@
   font-size: var(--font-size-13xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+}
+
+.jobs-list-container2 {
+  position: absolute;
+  right: 600px;
+  display: flex;
+  flex-direction: column;
+  top: 300px;
 }

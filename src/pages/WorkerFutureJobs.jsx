@@ -10,7 +10,40 @@ const WorkerFutureJobs = () => {
 
   const setting = () => {
     navigate("/worker-edit-profile");
-  }
+  };
+
+  // מערך עבודות לדוגמה, במקום קריאה מהשרת:
+  const jobs = [
+    {
+      id: 1,
+      nameb: "אורן משי - שכונת הפארק",
+      address: "באר שבע, נחל פרת 9"
+    },
+    {
+      id: 2,
+      nameb: "חיים לוי - מרכז העיר",
+      address: "רח' הרצל 12, באר שבע"
+    },
+    {
+      id: 3,
+      nameb: "נורית כהן - צפון חדש",
+      address: "שדרות רגר 101, באר שבע"
+    }
+    ,
+    {
+      id:4,
+      nameb: "נורית כהן - צפון חדש",
+      address: "שדרות רגר 101, באר שבע"
+    }
+    ,
+    {
+      id:5,
+      nameb: "נורית כהן - צפון חדש",
+      address: "שדרות רגר 101, באר שבע"
+    }
+    // אפשר להוסיף עוד...
+  ];
+
   return (
     <div className="worker-future-jobs">
       <div className="worker-future-jobs-child" />
@@ -26,10 +59,18 @@ const WorkerFutureJobs = () => {
         <div className="group-child92" />
         <b className="b54">בחירת תאריך</b>
       </button>
-      <FetureJobWorker
-        nameb="אורן משי - שכונת הפארק"
-        address="באר שבע, נחל פרת 9"
-      />
+
+      {/* כאן נציב את רשימת הרכיבים */}
+      <div className="jobs-list-container2">
+        {jobs.map((job) => (
+          <FetureJobWorker
+            key={job.id}
+            nameb={job.nameb}
+            address={job.address}
+          />
+        ))}
+      </div>
+
       <div className="group-parent21">
         <button className="vector-wrapper43" onClick={setting}>
           <img className="vector-icon52" alt="" src="/vector2.svg" />
@@ -38,7 +79,9 @@ const WorkerFutureJobs = () => {
           <img className="vector-icon53" alt="" src="/vector22.svg" />
         </button>
       </div>
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"58vh"}/>;
+
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"57vh"} name2="עבודות עתידיות" name1="עבודות" left="30%" />;
+
 
     </div>
   );

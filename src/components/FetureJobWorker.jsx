@@ -1,41 +1,18 @@
-import PropTypes from "prop-types";
+import React from "react";
 import "./FetureJobWorker.css";
 
-const FetureJobWorker = ({ className = "", nameb, address }) => {
+const FetureJobWorker = ({ nameb, address }) => {
   return (
-    <div className={`feturejobworker ${className}`}>
-      <div className="rectangle-parent111">
-        <div className="frame-child36" />
-        <div className="parent75">
-          <b className="b125">פעיל</b>
-          <div className="group-child217" />
-        </div>
-        <div className="group-parent49">
-          <div className="group-wrapper11">
-            <div className="rectangle-parent111">
-              <b className="b126">{nameb}</b>
-              <div className="div327">{address}</div>
-            </div>
-          </div>
-          <div className="group-wrapper12">
-            <div className="rectangle-parent111">
-              <div className="div328">יום ה’ בשעה 14:30</div>
-            </div>
-          </div>
-        </div>
-        <button className="rectangle-parent112">
-          <div className="group-child218" />
-          <b className="b127">ביצוע</b>
-        </button>
+    <div className="feture-job-worker-card">
+      <div className="feture-job-worker-details">
+        <b className="feture-job-worker-title">{nameb}</b>
+        <div className="feture-job-worker-address">{address}</div>
+        <div className="feture-job-worker-time">יום ה' בשעה 14:30</div>
       </div>
+      <button className="feture-job-worker-button">ביצוע</button>
+
     </div>
   );
-};
-
-FetureJobWorker.propTypes = {
-  className: PropTypes.string,
-  nameb: PropTypes.string,
-  address: PropTypes.string,
 };
 
 export default FetureJobWorker;
