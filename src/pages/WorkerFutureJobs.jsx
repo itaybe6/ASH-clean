@@ -3,10 +3,16 @@ import "./WorkerFutureJobs.css";
 import CustomToggleButton from "../components/CustomToggleButton.jsx";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import heLocale from "date-fns/locale/he";
+import TextField from "@mui/material/TextField";
 
 const WorkerFutureJobs = () => {
   const [active, setActive] = useState(true);
   const navigate = useNavigate();
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   const setting = () => {
     navigate("/worker-edit-profile");
@@ -55,11 +61,35 @@ const WorkerFutureJobs = () => {
         <img className="vector-icon51" alt="" src="/vector1.svg" />
       </button>
       <img className="icon27" alt="" src="/-02-13@2x.png" />
-      <button className="rectangle-parent44">
-        <div className="group-child92" />
-        <b className="b54">בחירת תאריך</b>
-      </button>
-
+         <div className="date-picker-container">
+           <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={heLocale}>
+             <MobileDatePicker
+               sx={{ width: "100px", left: "1000px", borderRadius: "30px" , top : "30px"}}
+               label="בחר תאריך"
+               value={selectedDate}
+               onChange={(date) => setSelectedDate(date)}
+               renderInput={(params) => (
+                 <TextField
+                   {...params}
+                   className="mui-date-input"
+                   sx={{
+                     width: "10px",
+                     backgroundColor: "#FF7F50",
+                     borderRadius: "30px",
+                     "& .MuiInputBase-input": {
+                       color: "white",
+                       fontWeight: "bold",
+                       textAlign: "center",
+                     },
+                     "& .MuiOutlinedInput-root": {
+                       "& fieldset": { border: "none" },
+                     },
+                   }}
+                 />
+               )}
+             />
+           </LocalizationProvider>
+         </div>
       {/* כאן נציב את רשימת הרכיבים */}
       <div className="jobs-list-container2">
         {jobs.map((job) => (
@@ -80,7 +110,7 @@ const WorkerFutureJobs = () => {
         </button>
       </div>
 
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"57vh"} name2="עבודות עתידיות" name1="עבודות" left="30%" />;
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"57vh"} name2="עבודות עתידיות" name1="עבודות" left="50%" />;
 
 
     </div>
