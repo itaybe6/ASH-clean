@@ -233,7 +233,7 @@
   font-family: var(--font-heebo);
 }
 
-.button-dropdown {
+.button-dropdown-item2 {
 
   background: white;
   border: 2px solid orange;
@@ -245,37 +245,44 @@
   transition: all 0.3s ease;
 }
 
-.button-dropdown:hover {
+.button-dropdown-item2:hover {
   background: orange;
   color: white;
 }
 
 /* עיצוב התפריט הנפתח */
-.dropdown-menu {
+.dropdown-menu2 {
   color: orange;
   font-weight: bold;
-  position: absolute;
+  position: absolute !important;
   background: white;
   border: 1px solid orange;
   border-radius: 10px;
   list-style: none;
-  width: 100px;
+  width: 120px !important;  /* הגדלתי קצת את הרוחב */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  z-index: 10;
-  right: 15px;
-  top:-20px
+  z-index: 1000 !important;
+  right: 5px !important;
+  top: -40px !important; /* תיקון כדי שה-dropdown לא יהיה קרוב מדי */
+
+
+  padding: 5px 0; /* כדי להוסיף ריווח פנימי */
 }
 
-/* פריטים בתוך התפריט */
-.dropdown-item {
-
+.dropdown-item2 {
+  width: 100%;
+  text-align: center;
   cursor: pointer;
   transition: background 0.3s ease;
-  font-size: 12px;
+  font-size: 14px;
+  padding: 10px; 
+  display: flex;
+  align-items: center; /* מרכז אנכית */
+  justify-content: center; /* מרכז אופקית */
 }
 
-.dropdown-item:hover {
+.dropdown-item2:hover {
   background: orange;
   color: white;
   border-radius: 5px;

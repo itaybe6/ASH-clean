@@ -81,11 +81,11 @@ const ManagerCustomerJobsDoneMobile = () => {
         </div>
         <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"25vh"} name1="עבודות" name2="עבודות עתידיות" left="30px" />;
         {dropdownOpen && (
-          <ul className="dropdown-menu">
+          <ul className="dropdown-menu2">
             {branches.map((branch) => (
               <li
                 key={branch._id}
-                className="dropdown-item"
+                className="dropdown-item2"
                 onClick={() => handleSelectBranch(branch)}
               >
                 {branch.name}
