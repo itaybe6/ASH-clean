@@ -1,26 +1,27 @@
-import PropTypes from "prop-types";
+import React from "react";
 import "./FutureJobClient.css";
 
-const FutureJobClient = ({ className = "", namew, date, done, time }) => {
+const FutureJobClient = ({ namew, done, time, date, active = false }) => {
+  // נגדיר את גודל העמודות ב־CSS Grid בצורה דינמית
+  const columns = active
+    ? "auto 1fr 1fr 1fr 1fr" // אם יש כפתור, 5 עמודות (הראשונה לכפתור)
+    : "1fr 1fr 1fr 1fr";     // אם אין כפתור, 4 עמודות בלבד
+
   return (
-    <div className={`futurejobclient ${className}`}>
-      <div className="futurejobclient-inner">
-        <div className="group-child222" />
-      </div>
+    <div
+      className="futurejobclient2"
+      style={{ gridTemplateColumns: columns }}
+    >
+      {active && (
+        <button className="image-button">צפייה בתמונה</button>
+      )}
+      {/* עמודות הטקסט הרגילות */}
+      <div className="div346">{date}</div>
+      <div className="div345">{time}</div>
       <div className="div343">{namew}</div>
       <div className="div344">{done}</div>
-      <div className="div345">{time}</div>
-      <div className="div346">{date}</div>
     </div>
   );
-};
-
-FutureJobClient.propTypes = {
-  className: PropTypes.string,
-  namew: PropTypes.string,
-  date: PropTypes.string,
-  done: PropTypes.string,
-  time: PropTypes.string,
 };
 
 export default FutureJobClient;

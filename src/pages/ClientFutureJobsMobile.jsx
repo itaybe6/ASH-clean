@@ -53,16 +53,13 @@ const ClientFutureJobsMobile = () => {
     fetchBranches();
   }, []);
 
-
   useEffect(() => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
-          );
+            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`);
           const allCleanings = response.data;
-
           const filteredCleanings = allCleanings.filter(cleaning =>
             active ? cleaning.done === true : cleaning.done === false
           );
@@ -92,7 +89,6 @@ const ClientFutureJobsMobile = () => {
   return (
     <div className="client-future-jobs-mobile">
       {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} /> : null}
-
       <div className="client-future-jobs-mobile-child" />
       <div className="div180">שלום (שם לקוח)</div>
       <div className="div181">התחברות אחרונה 24/02/2025 בשעה 14:53</div>

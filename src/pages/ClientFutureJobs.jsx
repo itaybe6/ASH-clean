@@ -1,16 +1,91 @@
 import { Switch, FormControlLabel } from "@mui/material";
 import FutureJobClient from "../components/FutureJobClient";
-import "./ClientFutureJobs.css";
+import CustomToggleButton from "../components/CustomToggleButton";
 import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./ClientFutureJobs.css";
+
 
 const ClientFutureJobs = () => {
+  const [active, setActive] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedBranch, setSelectedBranch] = useState(null);
+  const [branches, setBranches] = useState([]);
+  const [cleanings, setCleanings] = useState([]);
+  const cleaningList = [
+    {
+      id: 1,
+      namew: "ליאור שם טוב",
+      date: "24/05/2025",
+      done: "עתידי",
+      time: "14:53"
+    },
+    {
+      id: 2,
+      namew: "רותם כהן",
+      date: "25/05/2025",
+      done: "בוצע",
+      time: "10:30"
+    },
+    {
+      id: 3,
+      namew: "אבי לוי",
+      date: "26/05/2025",
+      done: "בטיפול",
+      time: "12:15"
+    },
+    // אפשר להוסיף עוד...
+  ];
+  const id = "679a3c3dfd15b150ae41372a"
+
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const fetchBranches = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/customer/${id}/branches`);
+        setBranches(response.data);
+      } catch (error) {
+        console.error("Error fetching branches:", error);
+      }
+    };
+    fetchBranches();
+  }, []);
+
+  useEffect(() => {
+    if (selectedBranch) {
+      const fetchCleaning = async () => {
+        try {
+          const response = await axios.get(
+            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`);
+          const allCleanings = response.data;
+          const filteredCleanings = allCleanings.filter(cleaning =>
+            active ? cleaning.done === true : cleaning.done === false
+          );
+          setCleanings(filteredCleanings);
+        } catch (error) {
+          console.error('Error fetching cleanings:', error);
+        }
+      };
+
+      fetchCleaning();
+    }
+  }, [selectedBranch, active]);
+
+  const handleSelectBranch = (branch) => {
+    setSelectedBranch(branch);
+    setDropdownOpen(false);
+  };
+
   const Conatct = () => {
     navigate("/client-contact-us");
   }
   const Edit = () => {
     navigate("/client-edit-profile");
   }
+
   return (
     <div className="client-future-jobs">
       <div className="client-future-jobs-child" />
@@ -21,19 +96,18 @@ const ClientFutureJobs = () => {
           כל הניקיונות האחרונים של הסניף שלך נרשמו כאן
         </div>
       </div>
-      <div className="parent41">
-        <div className="div170">תאריך</div>
-        <div className="div171">שעה</div>
-        <div className="div172">עובד מבצע</div>
-        <div className="div173">סטטוס</div>
-        <div className="div174">אישור</div>
+      <div className="jobs-list-container2">
+        {cleaningList.map((job) => (
+          <FutureJobClient
+            key={job.id}         // מזהה ייחודי
+            namew={job.namew}
+            date={job.date}
+            done={job.done}
+            time={job.time}
+            active={active}
+          />
+        ))}
       </div>
-      <FutureJobClient
-        namew="ליאור שם טוב"
-        date="24/05/2025"
-        done="עתידי"
-        time="14:53"
-      />
       <div className="rectangle-parent60">
         <div className="group-child128" />
         <button className="vector-wrapper62">
@@ -57,6 +131,19 @@ const ClientFutureJobs = () => {
           </button>
         </div>
       </div>
+      {dropdownOpen && (
+        <ul className="dropdown-menu4">
+          {branches.map((branch) => (
+            <li
+              key={branch._id}
+              className="dropdown-item4"
+              onClick={() => handleSelectBranch(branch)}
+            >
+              {branch.name}
+            </li>
+          ))}
+        </ul>
+      )}
       <div className="frame-parent5">
         <div className="wrapper11">
           <div className="div176">שלום (שם לקוח)</div>
@@ -65,13 +152,17 @@ const ClientFutureJobs = () => {
           <div className="div177">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
         </div>
       </div>
-      <button className="rectangle-parent61">
+      <button className="rectangle-parent61" onClick={() => setDropdownOpen(!dropdownOpen)}>
         <div className="group-child129" />
         <b className="b66">בחירת סניף</b>
       </button>
-      <FormControlLabel
-        className="client-future-jobs-inner"
-        control={<Switch color="primary" />}
+      <CustomToggleButton
+        active={active}
+        onClick={() => setActive(!active)}
+        Height={"56vh"}
+        name1="עבודות"
+        name2="עבודות עתידיות"
+        left="100px"
       />
     </div>
   );

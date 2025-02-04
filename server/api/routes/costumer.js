@@ -7,7 +7,7 @@ const { isAuthenticated } = require('../middleware/authMiddleware');
 
 
 // 1 get all the cleaning of branch  ----------------> ????
-router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);
+router.get('/:branchId/cleanings', getCleaningsByBranch);
 
 
 // 2 get all the branches of customer ----------------> ????
