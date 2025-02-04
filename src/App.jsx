@@ -21,7 +21,7 @@ import ManagerRegistrationAddCustomerMobile from "./pages/ManagerRegistrationAdd
 import ManagerEditProfile from "./pages/ManagerEditProfile";
 import ManagerEditProfileIphone from "./pages/ManagerEditProfileIphone";
 import ManagerRegistrationAddBranchesMobile from "./pages/ManagerRegistrationAddBranchesMobile";
-import WorkerBranchSearchIphon from "./pages/WorkerBranchSearchIphon";
+import WorkerFutureJobsMobile from "./pages/WorkerFutureJobsMobile";
 import WorkerFutureJobs from "./pages/WorkerFutureJobs";
 import WorkerEditProfileMobile from "./pages/WorkerEditProfileMobile";
 import WorkerEditProfile from "./pages/WorkerEditProfile";
@@ -93,6 +93,7 @@ function App() {
         <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
 
 
+        {/* להציג עבודות בצורה דינאמית ולראות שהתפריט לנייד עובד */}
         <Route path="/manager-customer-jobs-done/:id" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
         <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
         <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
@@ -106,7 +107,7 @@ function App() {
         <Route path="/manager-edit-user/:id/:type" element={isMobile ? <ManagerEditUserMobile /> : <ManagerEditUser />} />
 
         {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  */}
-        <Route path="/worker-future-jobs" element={isMobile ? <WorkerBranchSearchIphon /> : <WorkerFutureJobs />} />
+        <Route path="/worker-future-jobs" element={isMobile ? <WorkerFutureJobsMobile /> : <WorkerFutureJobs />} />
         <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
         <Route path="/worker-job-suc" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
 

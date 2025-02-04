@@ -119,7 +119,7 @@
 .mobile-menu-client {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: transparent;
   height: 852px;
   overflow: hidden;
   z-index: 1000;

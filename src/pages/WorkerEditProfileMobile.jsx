@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import "./WorkerEditProfileMobile.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import MobileMenuWorker from "./MobileMenuWorker";
+import "./WorkerEditProfileMobile.css";
 
 const WorkerEditProfileMobile = () => {
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const [displayMenu, setDisplayMenu] = useState(false)
   const navigate = useNavigate();
 
   const parseJwt = (token) => {
@@ -42,10 +44,18 @@ const WorkerEditProfileMobile = () => {
       alert("אירעה שגיאה בעדכון הפרופיל. נסה שוב מאוחר יותר.");
     }
   };
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
 
 
   return (
     <div className="worker-edit-profile-mobile">
+      {displayMenu ? <MobileMenuWorker isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="worker-edit-profile-mobile-child" />
       <div className="div118">שלום (שם עובד)</div>
       <div className="div119">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -87,7 +97,7 @@ const WorkerEditProfileMobile = () => {
         <div className="div122">הגדר סיסמא חדשה</div>
       </div>
       <img className="icon28" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper45">
+      <button className="vector-wrapper45" onClick={menu} >
         <img className="vector-icon54" alt="" src="/vector10.svg" />
       </button>
     </div>

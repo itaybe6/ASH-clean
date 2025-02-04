@@ -79,7 +79,7 @@
 .mobile-menu-worker {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: transparent;
   height: 852px;
   overflow: hidden;
   transform: translateX(300px);
