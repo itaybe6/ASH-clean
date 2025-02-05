@@ -1,11 +1,23 @@
 const express = require('express');
+const multer = require('multer');
 const router = express.Router();
+const { getCleaningsByEmployee, getAllCustomers,
+     updateCleaningWithImage, getEmployeeById,
+     updateEmployeeDetails, cancelCleaning 
+     } = require('../controller/worker');
 
-const { getCleaningsByEmployee ,getAllCustomers,
-     updateCleaningWithImage , getEmployeeById,
-     updateEmployeeDetails , cancelCleaning} = require('../controller/worker');
+
+const upload = multer(); // מחסן זמני בזיכרון, יש גם אופציות לאחסון בדיסק
 
 const { isAuthenticated } = require('../middleware/authMiddleware');
+
+router.put('/cleanings/:cleaningId', upload.single('image'), updateCleaningWithImage);
+
+
+
+
+
+
 
 
 
@@ -14,7 +26,6 @@ router.get('/:employeeId/cleanings', isAuthenticated, getCleaningsByEmployee);
 
 
 // 3 worker upload img and change the status of the blecmimg
-router.put('/cleanings/:cleaningId', updateCleaningWithImage);
 
 
 // 4 get all the customers

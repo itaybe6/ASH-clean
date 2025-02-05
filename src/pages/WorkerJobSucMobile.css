@@ -141,10 +141,11 @@
   z-index: 0;
 }
 .worker-job-suc-mobile {
-  width: 100%;
-  position: relative;
+  width: 330px;
+  position: absolute;
+  right: -35px;
   background-color: var(--color-white);
-  height: 817.5px;
+  height: 300px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -156,4 +157,5 @@
   font-size: var(--font-size-base);
   color: var(--color-gray-200);
   font-family: var(--font-heebo);
+  z-index: 1000;
 }

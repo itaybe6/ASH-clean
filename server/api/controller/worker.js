@@ -22,29 +22,34 @@ const getCleaningsByEmployee = async (req, res) => {
 
 
 
-// 3 worker cancel the cleaning
 const updateCleaningWithImage = async (req, res) => {
-    const { cleaningId } = req.params;
-    const { image } = req.body;
-
     try {
-        const updatedCleaning = await Cleaning.findByIdAndUpdate(
-            cleaningId,
-            {
-                image, // שמירת התמונה
-                done: true // עדכון סטטוס ל-true
-            },
-            { new: true } // החזרת הנתונים המעודכנים
-        );
-
-        if (!updatedCleaning) {
-            return res.status(404).json({ message: 'Cleaning not found' });
+        const { cleaningId } = req.params;
+    
+        if (!req.file) {
+          return res.status(400).json({ message: "No file uploaded" });
         }
-
-        res.status(200).json(updatedCleaning);
-    } catch (error) {
-        res.status(500).json({ message: 'Error updating cleaning', error });
-    }
+    
+        const base64String = req.file.buffer.toString("base64");
+        const mimeType = req.file.mimetype; 
+        const base64Data = `data:${mimeType};base64,${base64String}`;
+        const updatedCleaning = await Cleaning.findByIdAndUpdate(
+          cleaningId,
+          {
+            image: base64Data,
+            done: true,
+          },
+          { new: true }
+        );
+    
+        if (!updatedCleaning) {
+          return res.status(404).json({ message: "Cleaning not found" });
+        }
+    
+        return res.status(200).json(updatedCleaning);
+      } catch (error) {
+        return res.status(500).json({ message: "Error updating cleaning", error });
+      }
 };
 
 

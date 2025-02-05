@@ -12,7 +12,7 @@ import axios from "axios";
 
 const WorkerFutureJobsMobile = () => {
   const [displayMenu, setDisplayMenu] = useState(false);
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [cleanings, setCleanings] = useState([]);
   const [filteredCleanings, setFilteredCleanings] = useState([]);
@@ -86,6 +86,7 @@ const WorkerFutureJobsMobile = () => {
             nameb={job.branch.name}
             address={job.branch.address}
             time={dayjs(job.dateTime).format("DD MMMM YYYY")}
+            id = {job._id}
           />
         ))}
       </div>

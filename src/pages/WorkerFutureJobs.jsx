@@ -70,11 +70,11 @@ const WorkerFutureJobs = () => {
       <div className="jobs-list-container2">
         {filteredCleanings.map((job) => (
           <FetureJobWorker
-            key={job.id}
+            key={job._id}
             nameb={job.branch.name}
             address={job.branch.address}
             time={dayjs(job.dateTime).format("DD MMMM YYYY")}
-
+            id = {job._id}
           />
         ))}
       </div>

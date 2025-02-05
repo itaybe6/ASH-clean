@@ -119,7 +119,9 @@ function App() {
         {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  , סינין לפי תאריך , משיכת נתונים מהדאטה בייס , סיניון לפי עבודות ועבודות עתידיות */}
         <Route path="/worker-future-jobs/:id" element={isMobile ? <WorkerFutureJobsMobile /> : <WorkerFutureJobs />} />
         <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
-        <Route path="/worker-job-suc" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
+
+
+        <Route path="/worker-job-suc/:id" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
 
 
         <Route path="/client-future-jobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
