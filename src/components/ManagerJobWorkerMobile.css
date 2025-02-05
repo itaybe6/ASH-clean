@@ -133,11 +133,11 @@
 }
 .managerjobworkermobile {
   width: 313px;
-  position: absolute;
-  margin: 0 !important;
-  top: calc(50% - 70.75px);
-  left: calc(50% - 148.5px);
+  position: relative;
+  margin: 10px auto;
+
   height: 74px;
+  
   z-index: 6;
   text-align: right;
   font-size: var(--font-size-2xs);

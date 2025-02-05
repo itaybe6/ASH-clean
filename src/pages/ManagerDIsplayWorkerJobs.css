@@ -9,6 +9,7 @@
   height: 1024px;
   z-index: 0;
 }
+
 .line-icon {
   width: 239px;
   position: relative;
@@ -16,6 +17,7 @@
   object-fit: contain;
   z-index: 1;
 }
+
 .div62 {
   width: 263px;
   position: absolute;
@@ -27,6 +29,7 @@
   display: inline-block;
   z-index: 2;
 }
+
 .div63 {
   width: 289px;
   position: absolute;
@@ -39,6 +42,7 @@
   display: inline-block;
   z-index: 3;
 }
+
 .group-child29 {
   position: absolute;
   width: 100%;
@@ -51,6 +55,7 @@
   box-sizing: border-box;
   height: 70px;
 }
+
 .b22 {
   position: absolute;
   top: 17px;
@@ -61,6 +66,7 @@
   color: var(--color-darkorange-200);
   text-align: right;
 }
+
 .rectangle-parent20 {
   cursor: pointer;
   border: none;
@@ -75,6 +81,7 @@
   height: 70px;
   z-index: 4;
 }
+
 .manager-display-worker-jobs-child2 {
   width: 280px;
   position: absolute;
@@ -83,6 +90,7 @@
   left: calc(50% - 290px);
   z-index: 6;
 }
+
 .group-child30 {
   position: absolute;
   top: 10px;
@@ -92,6 +100,7 @@
   width: 52px;
   height: 52px;
 }
+
 .b23 {
   position: absolute;
   top: 0px;
@@ -101,6 +110,7 @@
   color: var(--color-white);
   text-align: center;
 }
+
 .rectangle-parent21 {
   cursor: pointer;
   border: none;
@@ -114,6 +124,7 @@
   height: 71px;
   z-index: 7;
 }
+
 .group-child31 {
   position: absolute;
   top: calc(50% - 512px);
@@ -122,6 +133,7 @@
   width: 301px;
   height: 1024px;
 }
+
 .vector-icon29 {
   position: absolute;
   top: 0px;
@@ -129,6 +141,7 @@
   width: 133px;
   height: 52px;
 }
+
 .vector-wrapper22 {
   cursor: pointer;
   border: none;
@@ -140,6 +153,7 @@
   width: 133px;
   height: 52px;
 }
+
 .icon13 {
   position: absolute;
   top: 50px;
@@ -148,6 +162,7 @@
   height: 81px;
   object-fit: cover;
 }
+
 .vector-icon30 {
   position: absolute;
   top: 0px;
@@ -155,6 +170,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-wrapper23 {
   cursor: pointer;
   border: none;
@@ -166,6 +182,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-icon31 {
   position: absolute;
   top: 0px;
@@ -173,6 +190,7 @@
   width: 147.8px;
   height: 47px;
 }
+
 .vector-wrapper24 {
   cursor: pointer;
   border: none;
@@ -184,6 +202,7 @@
   width: 147.8px;
   height: 47px;
 }
+
 .div64 {
   position: absolute;
   top: 4px;
@@ -195,6 +214,7 @@
   color: var(--color-darkslategray-200);
   text-align: right;
 }
+
 .icbaseline-people-alt-icon5 {
   position: absolute;
   top: 0px;
@@ -202,6 +222,7 @@
   width: 55px;
   height: 55px;
 }
+
 .parent13 {
   cursor: pointer;
   border: none;
@@ -213,6 +234,7 @@
   width: 221px;
   height: 55px;
 }
+
 .group-parent6 {
   position: absolute;
   top: 221px;
@@ -220,6 +242,7 @@
   width: 221px;
   height: 161.3px;
 }
+
 .rectangle-parent22 {
   width: 301px;
   position: absolute;
@@ -229,6 +252,7 @@
   height: 1024px;
   z-index: 8;
 }
+
 .manager-display-worker-jobs1 {
   width: 100%;
   position: relative;
@@ -247,14 +271,18 @@
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
+
 .jobs-list-container8 {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* רווח אנכי בין כרטיסים */
-position: absolute;
-top : 320px;
-right:  500px;  
-  /* אם תרצה גלילה בגובה קבוע: 
-     max-height: 400px;
-     overflow-y: auto; */
+  gap: 20px;
+  position: absolute;
+  top: 320px;
+  right: 500px;
+
+}
+
+.date-picker-container{
+  position: absolute;
+  right: 40%;
 }

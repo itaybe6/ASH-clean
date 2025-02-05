@@ -5,7 +5,7 @@ const { addRegularEmployee ,getBranchesByCustomer,
         getCleaningsByBranch , addCleaningForEmployee,
         updateManagerDetails , getAllWorkers ,  
         managerEditUser ,addBranchToCustomer ,
-        updateBranch  } = require('../controller/manager');
+        updateBranch ,getCleaningsByEmployee } = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -31,6 +31,9 @@ router.get('/:customerId/branches', getBranchesByCustomer);
 
 // 6 get all the cleaning of branch
 router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);
+
+// get all the clening of worker
+router.get('/:workerId/WorkerCleanings',  getCleaningsByEmployee);
 
 
 // 7 Manager add cleaning to worker 

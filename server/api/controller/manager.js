@@ -122,11 +122,36 @@ const getBranchesByCustomer = async (req, res) => {
 //6 get all the cleaning of brunch 
 const getCleaningsByBranch = async (req, res) => {
     const { branchId } = req.params;
-
     const branch = await Branch.findById(branchId).populate('cleaningSchedules');
-
     res.status(200).json(branch.cleaningSchedules);
 };
+
+//6 get all the cleaning of employee 
+const getCleaningsByEmployee = async (req, res) => {
+    try {
+      const { workerId } = req.params;
+  
+      // שליפת העובד עם רשימת הנקיונות, כולל פרטי הסניף (שם + כתובת)
+      const employee = await Employee.findById(workerId)
+        .populate({
+          path: "cleaningSchedules",
+          populate: {
+            path: "branch",
+            select: "name address", // שליפת שם הסניף והכתובת בלבד
+          },
+        });
+  
+      if (!employee) {
+        return res.status(404).json({ message: "העובד לא נמצא" });
+      }
+  
+      res.status(200).json(employee.cleaningSchedules);
+    } catch (error) {
+      console.error("שגיאה בשליפת ניקיונות העובד:", error);
+      res.status(500).json({ message: "שגיאה בשליפת נתונים", error });
+    }
+  };
+  
 
 
 // add cleaning for the worker schedule
@@ -297,5 +322,6 @@ module.exports = {
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee,
     getAllWorkers,managerEditUser,
-    addBranchToCustomer , updateBranch
+    addBranchToCustomer , updateBranch,
+    getCleaningsByEmployee
 };

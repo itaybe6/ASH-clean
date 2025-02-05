@@ -1,18 +1,17 @@
-import PropTypes from "prop-types";
 import "./ManagerJobWorkerMobile.css";
 
 const ManagerJobWorkerMobile = ({
   className = "",
   nameb,
   address,
-  dateTIme,
+  dateTime,
 }) => {
   return (
     <div className={`managerjobworkermobile ${className}`}>
       <div className="rectangle-parent116">
         <div className="instance-child7" />
         <div className="parent78">
-          <b className="b126">פעיל</b>
+          <b className="b126">תפקיד?</b>
           <div className="group-child225" />
         </div>
         <div className="group-parent51">
@@ -24,7 +23,7 @@ const ManagerJobWorkerMobile = ({
           </div>
           <div className="group-wrapper9">
             <div className="rectangle-parent116">
-              <div className="div329">{dateTIme}</div>
+              <div className="div329">{dateTime}</div>
             </div>
           </div>
         </div>
@@ -35,13 +34,6 @@ const ManagerJobWorkerMobile = ({
       </div>
     </div>
   );
-};
-
-ManagerJobWorkerMobile.propTypes = {
-  className: PropTypes.string,
-  nameb: PropTypes.string,
-  address: PropTypes.string,
-  dateTIme: PropTypes.string,
 };
 
 export default ManagerJobWorkerMobile;

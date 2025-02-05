@@ -116,7 +116,6 @@
   position: relative;
   background-color: var(--color-white);
   height: 817.5px;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -128,4 +127,50 @@
   font-size: var(--font-size-5xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  overflow: auto;
+}
+.jobs-list-container9 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 280px;
+  right: 30px;
+}
+
+.rectangle-parent212 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 2px;
+  position: absolute;
+  margin: 0 !important;
+  top: 105px;
+  left: 34px;
+  height: 71px;
+  z-index: 7;
+}
+.group-child302 {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  border-radius: var(--br-7xl);
+  background-color: var(--color-darkorange-200);
+  width: 52px;
+  height: 52px;
+}
+.b232 {
+  position: absolute;
+  top: 2px;
+  left: 13px;
+  font-size: var(--font-size-29xl);
+  font-family: var(--font-heebo);
+  color: var(--color-white);
+  text-align: center;
+}
+.date-picker-container2{
+  position: absolute;
+  top:220px;
+  left:20px
 }
