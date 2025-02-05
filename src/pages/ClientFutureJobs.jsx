@@ -6,41 +6,29 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ClientFutureJobs.css";
 
-
 const ClientFutureJobs = () => {
   const [active, setActive] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [branches, setBranches] = useState([]);
-  const [cleanings, setCleanings] = useState([]);
-  const cleaningList = [
-    {
-      id: 1,
-      namew: "ליאור שם טוב",
-      date: "24/05/2025",
-      done: "עתידי",
-      time: "14:53"
-    },
-    {
-      id: 2,
-      namew: "רותם כהן",
-      date: "25/05/2025",
-      done: "בוצע",
-      time: "10:30"
-    },
-    {
-      id: 3,
-      namew: "אבי לוי",
-      date: "26/05/2025",
-      done: "בטיפול",
-      time: "12:15"
-    },
-    // אפשר להוסיף עוד...
-  ];
-  const id = "679a3c3dfd15b150ae41372a"
 
+  // שתי רשימות נפרדות
+  const [futureCleanings, setFutureCleanings] = useState([]);    // עבודות עתידיות
+  const [completedCleanings, setCompletedCleanings] = useState([]); // עבודות שהושלמו
+
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64));
+    } catch (error) {
+      return null;
+    }
+  };
+  const token = parseJwt(localStorage.getItem("token"));
+
+  const id = "679a3c3dfd15b150ae41372a";
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const fetchBranches = async () => {
@@ -54,25 +42,29 @@ const ClientFutureJobs = () => {
     fetchBranches();
   }, []);
 
+  // מושך ניקיונות פעם אחת לפי הסניף – שומר בעתידיים ובהושלמו בנפרד
   useEffect(() => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`);
-          const allCleanings = response.data;
-          const filteredCleanings = allCleanings.filter(cleaning =>
-            active ? cleaning.done === true : cleaning.done === false
+            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
           );
-          setCleanings(filteredCleanings);
+          const allCleanings = response.data;
+
+          // מפצל לשתי רשימות - done=false ו done=true
+          setFutureCleanings(allCleanings.filter((c) => c.done == false));
+          setCompletedCleanings(allCleanings.filter((c) => c.done == true));
+          console.log(futureCleanings)
+          console.log("complete",completedCleanings)
+
         } catch (error) {
           console.error('Error fetching cleanings:', error);
         }
       };
-
       fetchCleaning();
     }
-  }, [selectedBranch, active]);
+  }, [selectedBranch]);
 
   const handleSelectBranch = (branch) => {
     setSelectedBranch(branch);
@@ -81,10 +73,10 @@ const ClientFutureJobs = () => {
 
   const Conatct = () => {
     navigate("/client-contact-us");
-  }
+  };
   const Edit = () => {
     navigate("/client-edit-profile");
-  }
+  };
 
   return (
     <div className="client-future-jobs">
@@ -96,18 +88,31 @@ const ClientFutureJobs = () => {
           כל הניקיונות האחרונים של הסניף שלך נרשמו כאן
         </div>
       </div>
+
+      {/* מציג עבודות בהתאם לערך של active */}
       <div className="jobs-list-container5">
-        {cleaningList.map((job) => (
-          <FutureJobClient
-            key={job.id}         // מזהה ייחודי
-            namew={job.namew}
-            date={job.date}
-            done={job.done}
-            time={job.time}
-            active={active}
-          />
-        ))}
+        {active
+          ? futureCleanings.map((job) => (
+              <FutureJobClient
+                key={job._id}
+                namew={job.employee?.fullName}
+                date={job.dateTime}
+                done={job.done}
+                active={active}
+              />
+            ))
+          : completedCleanings.map((job) => (
+              <FutureJobClient
+                key={job._id}
+                namew={job.employee?.fullName}
+                date={job.dateTime}
+                done={job.done}
+                active={active}
+              />
+            ))
+        }
       </div>
+
       <div className="rectangle-parent60">
         <div className="group-child128" />
         <button className="vector-wrapper62">
@@ -131,6 +136,7 @@ const ClientFutureJobs = () => {
           </button>
         </div>
       </div>
+
       {dropdownOpen && (
         <ul className="dropdown-menu4">
           {branches.map((branch) => (
@@ -144,6 +150,7 @@ const ClientFutureJobs = () => {
           ))}
         </ul>
       )}
+
       <div className="frame-parent5">
         <div className="wrapper11">
           <div className="div176">שלום (שם לקוח)</div>
@@ -156,6 +163,7 @@ const ClientFutureJobs = () => {
         <div className="group-child129" />
         <b className="b66">בחירת סניף</b>
       </button>
+
       <CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}

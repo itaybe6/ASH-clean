@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./ClientEditProfileMobile.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import MobileMenuClient from "./MobileMenuClient";
+
 
 const ClientEditProfileMobile = () => {
   // הגדרת state לכל שדה קלט
@@ -9,6 +11,7 @@ const ClientEditProfileMobile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const [displayMenu, setDisplayMenu] = useState(false)
 
   // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -26,7 +29,7 @@ const ClientEditProfileMobile = () => {
       return null;
     }
   };
-  
+
 
 
   const handleSubmit = async (e) => {
@@ -34,27 +37,37 @@ const ClientEditProfileMobile = () => {
 
     const token = parseJwt(localStorage.getItem("token"));
     if (token.role !== "customer") {
-        alert("אינך לקוח, אינך רשאי לבצע פעולה זו!");
-        return;
+      alert("אינך לקוח, אינך רשאי לבצע פעולה זו!");
+      return;
     }
 
     try {
-        const response = await axios.put(
-            `http://localhost:5000/customer/${token.id}/edit`, 
-            { fullName, phoneNumber, city, newPassword },
-            { headers: { Authorization: `Bearer ${token.id}` } }
-        );
+      const response = await axios.put(
+        `http://localhost:5000/customer/${token.id}/edit`,
+        { fullName, phoneNumber, city, newPassword },
+        { headers: { Authorization: `Bearer ${token.id}` } }
+      );
 
-        alert( "פרטייך עודכנו בהצלחה");
-        navigate("/client-jobs"); // ניתוב לדף הלקוח לאחר עדכון
+      alert("פרטייך עודכנו בהצלחה");
+      navigate("/client-jobs"); // ניתוב לדף הלקוח לאחר עדכון
     } catch (error) {
-        console.error("Error updating customer:", error);
-        alert("שגיאה בעדכון הפרטים");
+      console.error("Error updating customer:", error);
+      alert("שגיאה בעדכון הפרטים");
     }
   };
 
+
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   return (
     <div className="client-edit-profile-mobile">
+      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
       <div className="client-edit-profile-mobile-child" />
       <div className="div139">שלום (שם לקוח)</div>
       <div className="div140">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -62,7 +75,7 @@ const ClientEditProfileMobile = () => {
       <div className="div142">
         לפתיחת סניפים נוספים יש לפנות למנהל האתר
       </div>
-      
+
       {/* עטיפת השדות והכפתור בטופס */}
       <form className="group-parent26" onSubmit={handleSubmit}>
         {/* כפתור עדכון פרטים */}
@@ -109,7 +122,7 @@ const ClientEditProfileMobile = () => {
       </form>
 
       <img className="icon31" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper53" onClick={handleSubmit}>
+      <button className="vector-wrapper53" onClick={menu} >
         <img className="vector-icon62" alt="" src="/vector10.svg" />
       </button>
     </div>
