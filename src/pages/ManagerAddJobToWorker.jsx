@@ -12,7 +12,7 @@ const ManagerAddJobToWorker = () => {
   const [selectedBusiness, setSelectedBusiness] = useState(null);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
-const {id} = useParams();
+  const { id } = useParams();
   useEffect(() => {
     const fetchBusinesses = async () => {
 
@@ -48,7 +48,7 @@ const {id} = useParams();
     }
   }, [selectedBusiness]);
 
-  
+
   const handleAddCleaning = async () => {
     if (!id || !selectedBranch || !selectedDate) {
       alert("יש למלא את כל הפרטים");
@@ -56,8 +56,6 @@ const {id} = useParams();
     }
 
     try {
-     
-
       const response = await axios.post(`http://localhost:5000/manager/${id}/cleanings`, {
         branch: selectedBranch._id,
         dateTime: selectedDate.format("YYYY-MM-DD"),
@@ -142,10 +140,12 @@ const {id} = useParams();
         </div>
       </div>
 
-      <button className="rectangle-parent17" onClick={handleAddCleaning}> 
+      <button className="rectangle-parent17" onClick={handleAddCleaning}>
         <div className="group-child24" />
         <b className="b19">הוספה</b>
       </button>
+
+      
     </div>
   );
 };
