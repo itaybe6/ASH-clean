@@ -77,7 +77,7 @@ const ClientContactUs = () => {
       <img className="client-contact-us-item" alt="" src="/line-21.svg" />
       <div className="frame-parent1">
         <div className="wrapper7">
-          <div className="div134">שלום (שם לקוח)</div>
+          <div className="div134">שלום שרגא</div>
         </div>
         <div className="wrapper8">
           <div className="div135">התחברות אחרונה 24/02/2025 בשעה 14:53</div>

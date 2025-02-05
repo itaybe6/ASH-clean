@@ -209,6 +209,7 @@
   border: none; /* הסרת גבול */
   cursor: pointer; /* שינוי סמן העכבר */
   transition: all 0.3s ease; /* אנימציה חלקה */
+  transform: translateX(-20px);
 }
 .frame-input {
   border: none;
@@ -221,6 +222,8 @@
   left: 68.23%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
+  
 }
 .group-child98 {
   border: none;
@@ -233,6 +236,7 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
 }
 .group-child99 {
   border: none;
@@ -245,6 +249,7 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
 }
 .group-child100 {
   border: none;
@@ -257,6 +262,7 @@
   left: 34.11%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
 }
 .group-child101 {
   border: none;
@@ -269,6 +275,7 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
 }
 .frame-container {
   width: 50.49%;
@@ -298,3 +305,5 @@
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
+
+

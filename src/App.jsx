@@ -111,6 +111,7 @@ function App() {
 
 
         {/* <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />  */}
+
         <Route path="/manager-add-customer" element={isMobile ? <ManagerRegistrationAddCustomerMobile /> : <ManagerRegistrationAddCustomer />} />
         <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />
         <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
@@ -124,7 +125,7 @@ function App() {
         <Route path="/worker-job-suc/:id" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
 
 
-        <Route path="/client-future-jobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
+        <Route path="/clientJobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
 
 
         <Route path="/client-contact-us" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
