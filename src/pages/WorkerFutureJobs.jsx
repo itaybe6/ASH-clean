@@ -1,54 +1,56 @@
 import FetureJobWorker from "../components/FetureJobWorker";
 import "./WorkerFutureJobs.css";
 import CustomToggleButton from "../components/CustomToggleButton.jsx";
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import heLocale from "date-fns/locale/he";
-import TextField from "@mui/material/TextField";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from 'react-router-dom';
+import CustomDatePicker from "../components/CustomDatePicker.jsx";
+import axios from "axios";
+import dayjs from "dayjs";
+import "dayjs/locale/he";
 
 const WorkerFutureJobs = () => {
   const [active, setActive] = useState(true);
   const navigate = useNavigate();
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [cleanings, setCleanings] = useState([]);
+  const [filteredCleanings, setFilteredCleanings] = useState([]);
+  const { id } = useParams();
 
   const setting = () => {
     navigate("/worker-edit-profile");
   };
 
-  // מערך עבודות לדוגמה, במקום קריאה מהשרת:
-  const jobs = [
-    {
-      id: 1,
-      nameb: "אורן משי - שכונת הפארק",
-      address: "באר שבע, נחל פרת 9"
-    },
-    {
-      id: 2,
-      nameb: "חיים לוי - מרכז העיר",
-      address: "רח' הרצל 12, באר שבע"
-    },
-    {
-      id: 3,
-      nameb: "נורית כהן - צפון חדש",
-      address: "שדרות רגר 101, באר שבע"
-    }
-    ,
-    {
-      id:4,
-      nameb: "נורית כהן - צפון חדש",
-      address: "שדרות רגר 101, באר שבע"
-    }
-    ,
-    {
-      id:5,
-      nameb: "נורית כהן - צפון חדש",
-      address: "שדרות רגר 101, באר שבע"
-    }
-    // אפשר להוסיף עוד...
-  ];
+  useEffect(() => {
+    const fetchCleanings = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/manager/${id}/WorkerCleanings`);
+        setCleanings(response.data);
+        setFilteredCleanings(response.data)
+        console.log(cleanings)
+      } catch (error) {
+        console.error("שגיאה בשליפת ניקיונות:", error);
+      }
+    };
+    fetchCleanings();
+
+  }, [id]);
+
+  useEffect(() => {
+    const filterCleanings = () => {
+      let filtered = [...cleanings];
+      filtered = filtered.filter(cleaning => Boolean(cleaning.done) === Boolean(active));
+      if (selectedDate) {
+        const formattedSelectedDate = dayjs(selectedDate).format("YYYY-MM-DD");
+        filtered = filtered.filter(cleaning =>
+          dayjs(cleaning.dateTime).format("YYYY-MM-DD") === formattedSelectedDate
+        );
+      }
+      setFilteredCleanings(filtered);
+    };
+
+    filterCleanings();
+  }, [cleanings, active, selectedDate]);
+ 
 
   return (
     <div className="worker-future-jobs">
@@ -61,46 +63,22 @@ const WorkerFutureJobs = () => {
         <img className="vector-icon51" alt="" src="/vector1.svg" />
       </button>
       <img className="icon27" alt="" src="/-02-13@2x.png" />
-         <div className="date-picker-container">
-           <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={heLocale}>
-             <MobileDatePicker
-               sx={{ width: "100px", left: "1000px", borderRadius: "30px" , top : "30px"}}
-               label="בחר תאריך"
-               value={selectedDate}
-               onChange={(date) => setSelectedDate(date)}
-               renderInput={(params) => (
-                 <TextField
-                   {...params}
-                   className="mui-date-input"
-                   sx={{
-                     width: "10px",
-                     backgroundColor: "#FF7F50",
-                     borderRadius: "30px",
-                     "& .MuiInputBase-input": {
-                       color: "white",
-                       fontWeight: "bold",
-                       textAlign: "center",
-                     },
-                     "& .MuiOutlinedInput-root": {
-                       "& fieldset": { border: "none" },
-                     },
-                   }}
-                 />
-               )}
-             />
-           </LocalizationProvider>
-         </div>
+      <div className="date-picker-container8">
+        <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+      </div>
       {/* כאן נציב את רשימת הרכיבים */}
       <div className="jobs-list-container2">
-        {jobs.map((job) => (
+        {filteredCleanings.map((job) => (
           <FetureJobWorker
             key={job.id}
-            nameb={job.nameb}
-            address={job.address}
+            nameb={job.branch.name}
+            address={job.branch.address}
+            time={dayjs(job.dateTime).format("DD MMMM YYYY")}
+
           />
         ))}
       </div>
-
+     
       <div className="group-parent21">
         <button className="vector-wrapper43" onClick={setting}>
           <img className="vector-icon52" alt="" src="/vector2.svg" />
@@ -110,7 +88,7 @@ const WorkerFutureJobs = () => {
         </button>
       </div>
 
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height = {"57vh"} name2="עבודות עתידיות" name1="עבודות" left="50%" />;
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"57vh"} name2="עבודות עתידיות" name1="עבודות" left="50%" />;
 
 
     </div>

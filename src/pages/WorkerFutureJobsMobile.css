@@ -162,3 +162,8 @@
 .mui-date-input input {
   text-align: center;
 }
+.date-picker-container6{
+  position: absolute;
+  top:213px;
+  left:5%;
+}

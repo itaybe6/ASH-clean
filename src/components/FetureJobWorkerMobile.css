@@ -1,7 +1,7 @@
 /* ===== מאפיינים כלליים של הכרטיס ===== */
 .feturejobworkermobile {
   position: relative;              /* כדי שהכפתור יוכל להיות absolute בתוכו */
-  width: 100%;
+  width: 200px;
   margin: 20px auto;               /* רווח אנכי בין כרטיסים ומרכז אופקי */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;             /* אפשר להחליף ל-var(--br-6xs) */
@@ -16,8 +16,8 @@
 /* ===== הכפתור הכתום (ממוקם באופן אבסולוטי בפינת הכרטיס) ===== */
 .exec-button {
   position: absolute;
-  top: 80px;        /* המרחק מהחלק העליון של הכרטיס */
-  left: 75px;       /* בפינה השמאלית (אם רוצים בפינה הימנית, החליפו ל right:10px) */
+  top: 90px;        /* המרחק מהחלק העליון של הכרטיס */
+  left: 15px;       /* בפינה השמאלית (אם רוצים בפינה הימנית, החליפו ל right:10px) */
   background-color: #ff7f50; /* או var(--color-darkorange-200) */
   color: #fff;
   border: none;
