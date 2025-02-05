@@ -1,5 +1,6 @@
 import React from "react";
 import "./FutureJobClientMobile.css";
+import dayjs from "dayjs";
 
 const FutureJobClientMobile = ({
   namew = "",
@@ -8,21 +9,18 @@ const FutureJobClientMobile = ({
   done = "",
   active = false, // ברירת מחדל: false
 }) => {
+  const formattedDate = dayjs(date).format("DD/MM/YYYY");
+
   return (
     <div className="futurejobclientmobile">
       <div className="futurejobclientmobile-card">
 
         {/* שורה 1 */}
         <div className="fjc-row">
-          <div className="fjc-left">{date}</div>
+          <div className="fjc-left">{formattedDate}</div>
           <div className="fjc-right">תאריך</div>
         </div>
 
-        {/* שורה 2 */}
-        <div className="fjc-row">
-          <div className="fjc-left">{time}</div>
-          <div className="fjc-right">שעה</div>
-        </div>
 
         {/* שורה 3 */}
         <div className="fjc-row">
@@ -32,7 +30,7 @@ const FutureJobClientMobile = ({
 
         {/* שורה 4 */}
         <div className="fjc-row">
-          <div className="fjc-left">{done}</div>
+          <div className="fjc-left">{done ?"נעשה" : "לא נעשה"}</div>
           <div className="fjc-right">סטטוס</div>
         </div>
 

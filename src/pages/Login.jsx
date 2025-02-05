@@ -35,7 +35,7 @@ const Login = () => {
         navigate("/worker-edit-profile");
       }
       else {
-        navigate("/client-jobs");
+        navigate("/clientJobs");
       }
     
       alert("ההתחברות הושלמה בהצלחה")

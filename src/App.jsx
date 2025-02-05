@@ -94,6 +94,7 @@ function App() {
   return (
     <PageTransition>
       <Routes>
+        <Route path="/" element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
         <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
         <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />

@@ -14,6 +14,8 @@ const ClientFutureJobsMobile = () => {
   const [displayMenu, setDisplayMenu] = useState(false)
 
   const id = "679a3c3dfd15b150ae41372a"
+  const [futureCleanings, setFutureCleanings] = useState([]);
+  const [completedCleanings, setCompletedCleanings] = useState([]);
 
   const cleanJobs = [
     {
@@ -58,21 +60,20 @@ const ClientFutureJobsMobile = () => {
       const fetchCleaning = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`);
-          const allCleanings = response.data;
-          const filteredCleanings = allCleanings.filter(cleaning =>
-            active ? cleaning.done === true : cleaning.done === false
+            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
           );
+          const allCleanings = response.data;
+          setFutureCleanings(allCleanings.filter((c) => c.done == false));
+          setCompletedCleanings(allCleanings.filter((c) => c.done == true));
 
-          setCleanings(filteredCleanings);
         } catch (error) {
           console.error('Error fetching cleanings:', error);
         }
       };
-
       fetchCleaning();
     }
-  }, [selectedBranch, active]);
+  }, [selectedBranch]);
+
 
   const handleSelectBranch = (branch) => {
     setSelectedBranch(branch);
@@ -106,16 +107,26 @@ const ClientFutureJobsMobile = () => {
 
       {/* כאן נכנס מיפוי על המערך במקום FutureJobClientMobile יחיד */}
       <div className="clean-jobs-list-container">
-        {cleanJobs.map((job) => (
-          <FutureJobClientMobile
-            key={job.id}
-            namew={job.namew}
-            time={job.time}
-            date={job.date}
-            done={job.done}
-            active = {active}
-          />
-        ))}
+        {active
+          ? completedCleanings.map((job) => (
+              <FutureJobClientMobile
+                key={job._id}
+                namew={job.employee?.fullName}
+                date={job.dateTime}
+                done={job.done}
+                active={active}
+              />
+            ))
+          : futureCleanings.map((job) => (
+              <FutureJobClientMobile
+                key={job._id}
+                namew={job.employee?.fullName}
+                date={job.dateTime}
+                done={job.done}
+                active={active}
+              />
+            ))
+        }
       </div>
 
       <CustomToggleButton

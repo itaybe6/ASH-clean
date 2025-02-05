@@ -12,9 +12,8 @@ const ClientFutureJobs = () => {
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [branches, setBranches] = useState([]);
 
-  // שתי רשימות נפרדות
-  const [futureCleanings, setFutureCleanings] = useState([]);    // עבודות עתידיות
-  const [completedCleanings, setCompletedCleanings] = useState([]); // עבודות שהושלמו
+  const [futureCleanings, setFutureCleanings] = useState([]);    
+  const [completedCleanings, setCompletedCleanings] = useState([]); 
 
   const parseJwt = (token) => {
     try {
@@ -42,7 +41,6 @@ const ClientFutureJobs = () => {
     fetchBranches();
   }, []);
 
-  // מושך ניקיונות פעם אחת לפי הסניף – שומר בעתידיים ובהושלמו בנפרד
   useEffect(() => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
@@ -51,12 +49,8 @@ const ClientFutureJobs = () => {
             `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
           );
           const allCleanings = response.data;
-
-          // מפצל לשתי רשימות - done=false ו done=true
           setFutureCleanings(allCleanings.filter((c) => c.done == false));
           setCompletedCleanings(allCleanings.filter((c) => c.done == true));
-          console.log(futureCleanings)
-          console.log("complete",completedCleanings)
 
         } catch (error) {
           console.error('Error fetching cleanings:', error);
@@ -92,7 +86,7 @@ const ClientFutureJobs = () => {
       {/* מציג עבודות בהתאם לערך של active */}
       <div className="jobs-list-container5">
         {active
-          ? futureCleanings.map((job) => (
+          ? completedCleanings.map((job) => (
               <FutureJobClient
                 key={job._id}
                 namew={job.employee?.fullName}
@@ -101,7 +95,7 @@ const ClientFutureJobs = () => {
                 active={active}
               />
             ))
-          : completedCleanings.map((job) => (
+          : futureCleanings.map((job) => (
               <FutureJobClient
                 key={job._id}
                 namew={job.employee?.fullName}
