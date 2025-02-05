@@ -8,6 +8,18 @@ const MobileMenuWorker = ({ closeMenu, isOpen }) => {
   const [isDragging, setIsDragging] = useState(false);
   const navigate = useNavigate();
 
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const token = parseJwt(localStorage.getItem("token")); 
+
   useEffect(() => {
     if (isOpen) {
       setTranslate(0);
@@ -69,7 +81,7 @@ const MobileMenuWorker = ({ closeMenu, isOpen }) => {
     navigate('/worker-edit-profile')
   }
   const jobs = () => {
-    navigate('/worker-future-jobs')
+    navigate(`/worker-future-jobs/${token.id}`)
   }
 
   return (

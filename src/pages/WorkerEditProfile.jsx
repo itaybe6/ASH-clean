@@ -12,7 +12,6 @@ const WorkerEditProfile = () => {
   const navigate = useNavigate();
 
 
-  //func to Encryption the token
   const parseJwt = (token) => {
     try {
       const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
@@ -23,6 +22,7 @@ const WorkerEditProfile = () => {
     }
   };
 
+  const token = parseJwt(localStorage.getItem("token")); 
   const handleUpdate = async () => {
     if (newPassword !== confirmNewPassword) {
       alert("הסיסמאות אינן תואמות.");
@@ -30,7 +30,6 @@ const WorkerEditProfile = () => {
     }
 
     try {
-      const token = parseJwt(localStorage.getItem("token")); 
       const employeeId = token.id; 
 
       const res = await axios.put(`http://localhost:5000/worker/updateDetails/${employeeId}`, {
@@ -43,10 +42,11 @@ const WorkerEditProfile = () => {
           Authorization: `Bearer ${token}` // שליחת התוקן לצורך אימות
         }
       });
+      navigate(`/worker-future-jobs/${id}`);  
 
       if (res.status === 200) {
         alert("הפרופיל עודכן בהצלחה!");
-        navigate("/worker-future-jobs");
+        navigate(`/worker-future-jobs/${token.id}`);  
       }
     } catch (error) {
       console.error("שגיאה בעדכון הפרופיל:", error);
@@ -55,7 +55,7 @@ const WorkerEditProfile = () => {
   };
 
   const jobs = () => {
-    navigate("/worker-future-jobs");
+    navigate(`/worker-future-jobs/${token.id}`);  
   }
 
   return (

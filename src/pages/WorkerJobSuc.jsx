@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import imageCompression from 'browser-image-compression';
 import "./WorkerJobSuc.css";
+import { useNavigate } from 'react-router-dom';
 
 const WorkerJobSuc = ({ nameb, address,time,id}) => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const navigate = useNavigate();  
 
   const handleFileSelect = (e) => {
     if (e.target.files[0]) {
@@ -21,6 +23,8 @@ const WorkerJobSuc = ({ nameb, address,time,id}) => {
       formData.append('image', compressedFile);
       await axios.put(`http://localhost:5000/worker/cleanings/${id}`, formData);
       alert('התמונה עודכנה בהצלחה!');
+      navigate("/homepage")
+
     } catch (err) {
       console.error('שגיאה בשליחה:', err);
     }
