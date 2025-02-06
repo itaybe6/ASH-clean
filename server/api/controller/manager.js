@@ -234,6 +234,16 @@ const getAllWorkers = async (req, res) => {
     }
 };
 
+//  get all cleanings 
+const getAllCleanings = async (req, res) => {
+    try {
+        const cleaning = await Cleaning.find();
+        res.status(200).json(cleaning);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching regular cleanings", error });
+    }
+};
+
 // manager edit user profile
 const managerEditUser = async (req, res) => {
     try {
@@ -323,5 +333,5 @@ module.exports = {
     updateManagerDetails, addCleaningForEmployee,
     getAllWorkers,managerEditUser,
     addBranchToCustomer , updateBranch,
-    getCleaningsByEmployee
+    getCleaningsByEmployee , getAllCleanings
 };
