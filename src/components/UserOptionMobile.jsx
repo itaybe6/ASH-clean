@@ -4,7 +4,7 @@ import "./UserOptionMobile.css";
 
 const UserOptionMobile = ({ bname, numbranch, id, type }) => {
   const navigate = useNavigate();
-
+  const text = type === "לקוח" ? "הוספת סניף" : "הוספת עבודה";
   const handleEditClick = () => {
     navigate(`/manager-edit-user/${id}/${type}`);
   };
@@ -18,6 +18,15 @@ const UserOptionMobile = ({ bname, numbranch, id, type }) => {
       navigate(`/worker-future-jobs/${id}`);
     }
   }
+  const handleAddClick = () => {
+    if(type == "לקוח"){
+      navigate(`/manager-customer-add-branch/${id}`);
+    }
+    else {
+      navigate(`/manager-add-job-to-worker/${id}`);
+    }
+  };
+
 
   return (
     <div className="customeroptionmobile">
@@ -40,8 +49,9 @@ const UserOptionMobile = ({ bname, numbranch, id, type }) => {
         </div>
 
         <div className="customeroptionmobile-actions">
-          <button className="edit-btn" onClick={handleEditClick}>עריכה</button>
+          <button className="edit-btn" onClick={handleAddClick}>{text}</button>
           <button className="work-btn" onClick={nevigateJobs}>עבודות</button>
+          <button className="edit-btn" onClick={handleEditClick}>עריכה</button>
         </div>
       </div>
     </div>

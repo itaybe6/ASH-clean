@@ -3,25 +3,34 @@ import "./UserOption.css";
 import { useNavigate } from 'react-router-dom';
 
 const UserOption = ({ className = "", nameCus, numBranch, type, id }) => {
-  const navigate = useNavigate();  
-  console.log(type)
+  const text = type === "לקוח" ? "הוספת סניף" : "הוספת עבודה";
+  const navigate = useNavigate();
   const handleEditClick = () => {
-    navigate(`/manager-edit-user/${id}/${type}`);  
+    navigate(`/manager-edit-user/${id}/${type}`);
   };
 
   const nevigateJobs = () => {
     if (type == "לקוח") {
-      navigate(`/clientJobs/${id}`);  
+      navigate(`/clientJobs/${id}`);
     }
     else {
-      navigate(`/worker-future-jobs/${id}`);  
+      navigate(`/worker-future-jobs/${id}`);
     }
   }
+  const handleAddClick = () => {
+    if(type == "לקוח"){
+      navigate(`/manager-customer-add-branch/${id}`);
+    }
+    else {
+      navigate(`/manager-add-job-to-worker/${id}`);
+    }
+  };
 
   return (
     <div className={`customeroption ${className}`}>
       {/* כפתורים מצד שמאל */}
       <div className="customer-actions">
+        <button className="btn-orange" onClick={handleAddClick} >{text}</button>
         <button className="btn-gray" onClick={nevigateJobs}>עבודות</button>
         <button className="btn-orange" onClick={handleEditClick} >עריכה</button>
       </div>

@@ -80,7 +80,7 @@ const ManagerDisplayUsers = () => {
             <UserOption
               key={index}
               nameCus={item.businessName}
-              numBranch={`סניפים ${item.branches.length}`}
+              numBranch={` ${item.branches.length}`}
               type = "לקוח"
               id = {item._id}
 
