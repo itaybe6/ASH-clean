@@ -75,14 +75,14 @@ const ManagerEditProfile = () => {
       <div className="div95">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="parent25">
         <div className="div967">הגדרות</div>
-        <div className="div97">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
+        <div className="div977">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
       </div>
       <div className="group-parent167">
         <button className="vector-wrapper32"  onClick={handleUpdate}>
-          <img className="vector-icon40" alt="" src="/vector20.svg" />
+          <img className="vector-icon407" alt="" src="/vector20.svg" />
         </button>
         <input
-          className="group-child69"
+          className="group-child697"
           placeholder="שם מלא"
           type="text"
           value={fullName}
@@ -91,7 +91,7 @@ const ManagerEditProfile = () => {
         />
         <div className="div98">הגדר סיסמא חדשה</div>
         <input
-          className="group-child70"
+          className="group-child707"
           placeholder="כתוב כאן סיסמא חדשה"
           type="password"
           value={newPassword}
@@ -100,7 +100,7 @@ const ManagerEditProfile = () => {
         />
       
         <input
-          className="group-child72"
+          className="group-child727"
           placeholder="מספר פלאפון"
           type="tel"
           value={phoneNumber}
@@ -108,7 +108,7 @@ const ManagerEditProfile = () => {
           required
         />
         <input
-          className="group-child73"
+          className="group-child737"
           placeholder="עיר"
           type="text"
           value={city}
