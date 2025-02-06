@@ -1,25 +1,28 @@
 import { useState, useEffect } from "react";
 import Search from "../components/Search";
 import CustomDatePicker from "../components/CustomDatePicker.jsx";
+import CustomToggleButton from "../components/CustomToggleButton";
+
 import axios from "axios";
 import "./ManagerJobs.css";
-import { format, subDays, isSameDay } from "date-fns";
+import { format, subDays, addDays,isSameDay } from "date-fns";
 
 const ManagerJobs = () => {
+  const [active, setActive] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
   const [cleanings, setCleanings] = useState([]);
   const [filterCleanings, setFilterCleanings] = useState([]);
 
-  const filterLastFourDays = (cleaningsList) => {
-    const fourDaysAgo = subDays(new Date(), 4); // מחזיר את התאריך של לפני 4 ימים
-    return cleaningsList.filter((item) => new Date(item.dateTime) >= fourDaysAgo);
+  const filterCleaningsByActive = (cleaningsList) => {
+    const referenceDate = active ? addDays(new Date(), 7) : subDays(new Date(), 7);
+    return cleaningsList.filter((item) => new Date(item.dateTime) <= referenceDate);
   };
 
   useEffect(() => {
     axios.get("http://localhost:5000/manager/getAllCleanings")
       .then((res) => {
         setCleanings(res.data);
-        const filteredData = filterLastFourDays(res.data);
+        const filteredData = filterCleaningsByActive(res.data);
         setFilterCleanings(filteredData);
       })
       .catch((error) => console.error("Error fetching cleanings:", error));
@@ -32,12 +35,16 @@ const ManagerJobs = () => {
       );
       setFilterCleanings(filteredData);
     }
-  }, [selectedDate, cleanings]); 
+  }, [selectedDate, cleanings]);
+
+  useEffect(() => {
+    setFilterCleanings(filterCleaningsByActive(cleanings));
+  }, [active, cleanings]);
 
   return (
     <div>
-
       <div className="manager-jobs">
+
         <div className="manager-jobs-child" />
         <div className="parent5">
           <div className="div14">שלום (שם מנהל)</div>
@@ -83,7 +90,17 @@ const ManagerJobs = () => {
             </button>
           </div>
         </div>
-
+        <div className="CustomToggleButton89">
+        <CustomToggleButton
+          active={active}
+          onClick={() => setActive(!active)}
+          Height={"56vh"}
+          name1=" שבוע קדימה"
+          name2=" שבוע אחורה"
+          left="100px"
+        />
+        </div>
+      
       </div>
     </div>
 
