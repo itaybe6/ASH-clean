@@ -6,13 +6,9 @@ import ManagerJobs from "./pages/ManagerJobs";
 import ManagerJobsMobile from "./pages/ManagerJobsMobile";
 import ManagerAddWorker from "./pages/ManagerAddWorker";
 import ManagerDisplayUsers from "./pages/ManagerDisplayUsers";
-import ManagerDisplayWorkers from "./pages/ManagerDisplayWorkers";
 import ManagerDisplayUsersMobile from "./pages/ManagerDisplayUsersMobile";
-import ManagerDisplayWorkersMobile from "./pages/ManagerDisplayWorkersMobile";
 import ManagerCustomerJobsDone from "./pages/ManagerCustomerJobsDone";
 import ManagerCustomerJobsDoneMobile from "./pages/ManagerCustomerJobsDoneMobile";
-import ManagerCustomerJobs from "./pages/ManagerCustomerJobs";
-import ManagerCustomerJobsMobile from "./pages/ManagerCustomerJobsMobile";
 import ManagerEditBranch from "./pages/ManagerEditBranch";
 import ManagerEditBranchMobile from "./pages/ManagerEditBranchMobile";
 import ManagerRegistrationAddCustomer from "./pages/ManagerRegistrationAddCustomer";
@@ -31,8 +27,6 @@ import ClientContactUs from "./pages/ClientContactUs";
 import ClientEditProfileMobile from "./pages/ClientEditProfileMobile";
 import ClientEditProfile from "./pages/ClientEditProfile";
 import ClientContactUsMobile from "./pages/ClientContactUsMobile";
-import ClientJobs from "./pages/ClientJobs";
-import ClientBranchIphone from "./pages/ClientBranchIphone";
 import ClientFutureJobs from "./pages/ClientFutureJobs";
 import Login from "./pages/Login";
 import ClientFutureJobsMobile from "./pages/ClientFutureJobsMobile";
@@ -101,7 +95,6 @@ function App() {
         <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
 
 
-        <Route path="/manager-customer-jobs-done/:id" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
         <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
         <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
 
@@ -128,7 +121,7 @@ function App() {
         <Route path="/clientJobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
         <Route path="/client-contact-us" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
         <Route path="/client-edit-profile" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
-      
+
 
         {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  , סינין לפי תאריך , משיכת נתונים מהדאטה בייס , סיניון לפי עבודות ועבודות עתידיות */}
         <Route path="/worker-future-jobs/:id" element={isMobile ? <WorkerFutureJobsMobile /> : <WorkerFutureJobs />} />
@@ -136,6 +129,11 @@ function App() {
         <Route path="/worker-job-suc/:id" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
 
 
+
+
+
+        {/* למחוק את הרכביים + למחוק את הנתיב הזה */}
+        <Route path="/manager-customer-jobs-done/:id" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
       </Routes>
     </PageTransition>
   );
