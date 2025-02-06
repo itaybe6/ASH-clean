@@ -4,6 +4,9 @@ import MobileMenuClient from "./MobileMenuClient";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ClientFutureJobsMobile.css";
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
 
 const ClientFutureJobsMobile = () => {
   const [active, setActive] = useState(true);
@@ -12,35 +15,11 @@ const ClientFutureJobsMobile = () => {
   const [branches, setBranches] = useState([]);
   const [cleanings, setCleanings] = useState([]);
   const [displayMenu, setDisplayMenu] = useState(false)
+  const navigate = useNavigate();
 
-  const id = "679a3c3dfd15b150ae41372a"
+  const { id } = useParams(); 
   const [futureCleanings, setFutureCleanings] = useState([]);
   const [completedCleanings, setCompletedCleanings] = useState([]);
-
-  const cleanJobs = [
-    {
-      id: 1,
-      namew: "ליאור שם טוב",
-      time: "14:53",
-      date: "24/05/2025",
-      done: "נעשה",
-    },
-    {
-      id: 2,
-      namew: "מוטי דהאן",
-      time: "15:20",
-      date: "24/05/2025",
-      done: "לא נעשה",
-    },
-    {
-      id: 3,
-      namew: "אבי כהן",
-      time: "16:00",
-      date: "25/05/2025",
-      done: "בטיפול",
-    },
-    // אפשר להוסיף עוד...
-  ];
 
 
   useEffect(() => {
@@ -87,9 +66,13 @@ const ClientFutureJobsMobile = () => {
   const closeMenu = () => {
     setDisplayMenu(false);
   };
+  const editBranch = () => {
+    if (selectedBranch)
+      navigate(`/manager-customer-edit-branch/${selectedBranch._id}`);
+  }
   return (
     <div className="client-future-jobs-mobile">
-      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id ={id} /> : null}
       <div className="client-future-jobs-mobile-child" />
       <div className="div180">שלום (שם לקוח)</div>
       <div className="div181">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
@@ -104,7 +87,10 @@ const ClientFutureJobsMobile = () => {
         <div className="group-child130" />
         <b className="b67">בחירת סניף</b>
       </button>
-
+      <button className="group8737" onClick={editBranch}>
+        <img className="vector-icon86" alt="" src="/vector11.svg" />
+        <img className="vector-icon87" alt="" src="/vector12.svg" />
+      </button>
       {/* כאן נכנס מיפוי על המערך במקום FutureJobClientMobile יחיד */}
       <div className="clean-jobs-list-container">
         {active

@@ -110,9 +110,9 @@ function App() {
 
 
 
-        <Route path="/clientJobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
-        <Route path="/client-contact-us" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
-        <Route path="/client-edit-profile" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
+        <Route path="/clientJobs/:id" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
+        <Route path="/client-contact-us/:id" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
+        <Route path="/client-edit-profile/:id" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
 
 
         {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  , סינין לפי תאריך , משיכת נתונים מהדאטה בייס , סיניון לפי עבודות ועבודות עתידיות */}

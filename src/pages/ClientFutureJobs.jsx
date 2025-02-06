@@ -4,12 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ClientFutureJobs.css";
+import { useParams } from 'react-router-dom';
 
 const ClientFutureJobs = () => {
   const [active, setActive] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [branches, setBranches] = useState([]);
+  const { id } = useParams(); 
+  const navigate = useNavigate();
 
   const [futureCleanings, setFutureCleanings] = useState([]);    
   const [completedCleanings, setCompletedCleanings] = useState([]); 
@@ -24,8 +27,6 @@ const ClientFutureJobs = () => {
     }
   };
   const token = parseJwt(localStorage.getItem("token"));
-  const id = "679a3c3dfd15b150ae41372a";
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBranches = async () => {
@@ -64,12 +65,17 @@ const ClientFutureJobs = () => {
   };
 
   const Conatct = () => {
-    navigate("/client-contact-us");
+    navigate(`/client-contact-us/${id}/`);
+
   };
   const Edit = () => {
-    navigate("/client-edit-profile");
-  };
+    navigate(`/client-edit-profile/${id}/`);
 
+  };
+  const editBranch = () => {
+    if (selectedBranch)
+      navigate(`/manager-customer-edit-branch/${selectedBranch._id}`);
+  }
   return (
     <div className="client-future-jobs">
       <div className="client-future-jobs-child" />
@@ -104,7 +110,10 @@ const ClientFutureJobs = () => {
             ))
         }
       </div>
-
+      <button className="group1737" onClick={editBranch}>
+        <img className="vector-icon16" alt="" src="/vector11.svg" />
+        <img className="vector-icon17" alt="" src="/vector12.svg" />
+      </button>
       <div className="rectangle-parent60">
         <div className="group-child128" />
         <button className="vector-wrapper62">

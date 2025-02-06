@@ -9,6 +9,7 @@
   height: 1024px;
   z-index: 0;
 }
+
 .client-future-jobs-item {
   width: 239px;
   position: relative;
@@ -16,23 +17,33 @@
   object-fit: contain;
   z-index: 1;
 }
+
 .div168 {
   position: absolute;
   top: 0px;
-  right: 0; /* מצמיד את הכותרת לצד ימין */
-  transform: none; /* מסיר את הטרנספורם כדי למנוע הזזה לאמצע */
+  right: 0;
+  /* מצמיד את הכותרת לצד ימין */
+  transform: none;
+  /* מסיר את הטרנספורם כדי למנוע הזזה לאמצע */
   line-height: 240%;
   font-weight: 500;
   display: block;
-  width: auto; /* הרוחב יתאים לתוכן */
-  min-width: 600px; /* מגדיר רוחב מינימלי כדי לשמור על מבנה קבוע */
-  max-width: 100%; /* מונע חריגה מגבולות */
-  text-align: right; /* מוודא שהטקסט מתחיל מהימין */
+  width: auto;
+  /* הרוחב יתאים לתוכן */
+  min-width: 600px;
+  /* מגדיר רוחב מינימלי כדי לשמור על מבנה קבוע */
+  max-width: 100%;
+  /* מונע חריגה מגבולות */
+  text-align: right;
+  /* מוודא שהטקסט מתחיל מהימין */
   direction: rtl;
-  white-space: normal; /* מאפשר ירידת שורות */
-  overflow: visible; /* מונע חיתוך טקסט */
+  white-space: normal;
+  /* מאפשר ירידת שורות */
+  overflow: visible;
+  /* מונע חיתוך טקסט */
   margin-right: -120px;
 }
+
 .div169 {
   position: absolute;
   top: 60px;
@@ -44,6 +55,7 @@
   display: inline-block;
   min-width: max-content;
 }
+
 .parent40 {
   width: 343px;
   position: absolute;
@@ -53,6 +65,7 @@
   height: 63px;
   z-index: 2;
 }
+
 .div170 {
   position: absolute;
   top: calc(50% - 11.5px);
@@ -61,6 +74,7 @@
   line-height: 146.39%;
   font-weight: 300;
 }
+
 .div171 {
   position: absolute;
   top: calc(50% - 11.5px);
@@ -69,6 +83,7 @@
   line-height: 146.39%;
   font-weight: 300;
 }
+
 .div172 {
   position: absolute;
   width: 16.05%;
@@ -79,6 +94,7 @@
   font-weight: 300;
   display: inline-block;
 }
+
 .div173 {
   position: absolute;
   top: calc(50% - 11.5px);
@@ -87,6 +103,7 @@
   line-height: 146.39%;
   font-weight: 300;
 }
+
 .div174 {
   position: absolute;
   top: calc(50% - 11.5px);
@@ -95,6 +112,7 @@
   line-height: 146.39%;
   font-weight: 300;
 }
+
 .parent41 {
   width: 54.1%;
   position: absolute;
@@ -106,6 +124,7 @@
   z-index: 3;
   font-size: var(--font-size-base);
 }
+
 .group-child128 {
   position: absolute;
   top: calc(50% - 512px);
@@ -114,6 +133,7 @@
   width: 301px;
   height: 1024px;
 }
+
 .vector-icon71 {
   position: absolute;
   right: 0px;
@@ -121,6 +141,7 @@
   width: 133px;
   height: 52px;
 }
+
 .vector-wrapper62 {
   cursor: pointer;
   border: none;
@@ -132,6 +153,7 @@
   width: 133px;
   height: 52px;
 }
+
 .icon36 {
   position: absolute;
   top: 50px;
@@ -140,6 +162,7 @@
   height: 81px;
   object-fit: cover;
 }
+
 .vector-icon72 {
   position: absolute;
   top: 0px;
@@ -147,6 +170,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-wrapper63 {
   cursor: pointer;
   border: none;
@@ -158,6 +182,7 @@
   width: 144.7px;
   height: 37.6px;
 }
+
 .vector-icon73 {
   position: absolute;
   top: 0px;
@@ -165,6 +190,7 @@
   width: 156.7px;
   height: 47px;
 }
+
 .vector-wrapper64 {
   cursor: pointer;
   border: none;
@@ -176,6 +202,7 @@
   width: 156.7px;
   height: 47px;
 }
+
 .div175 {
   position: absolute;
   top: 0px;
@@ -188,6 +215,7 @@
   display: inline-block;
   width: 118px;
 }
+
 .icbaseline-contact-mail-icon3 {
   position: absolute;
   top: 0px;
@@ -195,6 +223,7 @@
   width: 47px;
   height: 47px;
 }
+
 .parent42 {
   cursor: pointer;
   border: none;
@@ -206,6 +235,7 @@
   width: 179px;
   height: 47px;
 }
+
 .group-parent30 {
   position: absolute;
   top: 221px;
@@ -213,6 +243,7 @@
   width: 179px;
   height: 148.3px;
 }
+
 .rectangle-parent60 {
   width: 301px;
   position: absolute;
@@ -222,6 +253,7 @@
   height: 1024px;
   z-index: 5;
 }
+
 .div176 {
   position: relative;
   line-height: 146.39%;
@@ -231,6 +263,7 @@
   min-width: max-content;
   padding-left: 60px;
 }
+
 .wrapper11 {
   position: absolute;
   top: 0px;
@@ -241,12 +274,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .div177 {
   flex: 1;
   position: relative;
   line-height: 146.39%;
   font-weight: 300;
 }
+
 .wrapper12 {
   position: absolute;
   top: 41px;
@@ -259,6 +294,7 @@
   text-align: right;
   font-size: var(--font-size-base);
 }
+
 .frame-parent5 {
   width: 300px;
   position: absolute;
@@ -269,6 +305,7 @@
   z-index: 6;
   text-align: center;
 }
+
 .group-child129 {
   position: absolute;
   top: 0px;
@@ -280,18 +317,23 @@
   width: 194px;
   height: 70px;
 }
+
 .b66 {
   position: absolute;
   top: 18px;
-  right: 0; /* מיושר לקצה הימני */
+  right: 0;
+  /* מיושר לקצה הימני */
   font-size: var(--font-size-5xl);
   line-height: 146.39%;
   font-family: var(--font-heebo);
   color: var(--color-darkorange-200);
-  text-align: right; /* מוודא שהטקסט מתחיל מימין */
-  width: 400px; /* מתאים את הרוחב כך שהטקסט לא יזוז */
+  text-align: right;
+  /* מוודא שהטקסט מתחיל מימין */
+  width: 400px;
+  /* מתאים את הרוחב כך שהטקסט לא יזוז */
   left: calc(50% - 215px);
 }
+
 .rectangle-parent61 {
   cursor: pointer;
   border: none;
@@ -305,6 +347,7 @@
   height: 70px;
   z-index: 7;
 }
+
 .client-future-jobs-inner {
   width: 280px;
   position: absolute;
@@ -313,6 +356,7 @@
   left: calc(50% - 255px);
   z-index: 8;
 }
+
 .client-future-jobs {
   width: 100%;
   position: relative;
@@ -338,18 +382,18 @@
 .dropdown-menu4 {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  position: absolute!important;
+  position: absolute !important;
   background: white;
   border-radius: 10px;
   padding: 10px;
   list-style: none;
-  width: 180px!important;
+  width: 180px !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 5px!important;
+  margin-top: 5px !important;
   text-align: center;
-  z-index: 1000!important;
-  right: 470px!important;
-  top: 240px!important;
+  z-index: 1000 !important;
+  right: 470px !important;
+  top: 240px !important;
   min-width: 250px;
   direction: rtl;
 }
@@ -368,14 +412,46 @@
   color: white;
   border-radius: 5px;
 }
+
 .jobs-list-container5 {
   position: absolute;
   top: 350px;
   right: 25%;
   display: flex;
   flex-direction: column;
-  gap: 0px;       /* רווח אנכי בין כרטיסים */
+  gap: 0px;
+  /* רווח אנכי בין כרטיסים */
   /* אם רוצים גלילה בתוך אזור קבוע:
   max-height: 400px;
   overflow-y: auto; */
+}
+
+.group1737 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 29px;
+  position: absolute;
+  margin: 0 !important;
+  top: 186px;
+  right: 730px;
+  height: 29px;
+  z-index: 8;
+}
+
+.vector-icon16 {
+  position: absolute;
+  top: 1.5px;
+  left: calc(50% - 14.5px);
+  width: 29.5px;
+  height: 29.5px;
+}
+
+.vector-icon17 {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 6.9px);
+  width: 23.4px;
+  height: 23.4px;
 }

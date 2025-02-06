@@ -12,7 +12,7 @@ const UserOptionMobile = ({ bname, numbranch, id, type }) => {
   const nevigateJobs = () => {
 
     if (type == 'לקוח') {
-      navigate(`/manager-customer-jobs-done/${id}`);
+      navigate(`/clientJobs/${id}`);  
     }
     else {
       navigate(`/worker-future-jobs/${id}`);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ClientEditProfile.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ClientEditProfile = () => {
   // הגדרת state לכל שדה קלט
@@ -9,6 +10,7 @@ const ClientEditProfile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const { id } = useParams(); 
 
   // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -52,10 +54,10 @@ const ClientEditProfile = () => {
   };
 
   const Conatct = () => {
-    navigate("/client-contact-us");
+    navigate(`/client-contact-us/${id}/`);
   }
   const Jobs = () => {
-    navigate("/clientJobs");
+    navigate(`/clientJobs/${id}/`);
   }
   return (
     <div className="client-edit-profile">

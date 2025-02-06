@@ -2,7 +2,7 @@ import "./MobileMenuClient.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
-const MobileMenuClient = ({ closeMenu, isOpen }) => {
+const MobileMenuClient = ({ closeMenu, isOpen ,id}) => {
   const [translate, setTranslate] = useState(300);
   const navigate = useNavigate();
 
@@ -67,16 +67,17 @@ const MobileMenuClient = ({ closeMenu, isOpen }) => {
     transition: transitionStyle,
   };
 
+
   const contact = () => {
-    navigate("/client-contact-us");
+    navigate(`/client-contact-us/${id}/`);
   }
 
   const jobs = () => {
-    navigate("/clientJobs");
+    navigate(`/clientJobs/${id}/`);
+
   }
   const setting = () => {
-    navigate("/client-edit-profile");
-
+    navigate(`/client-edit-profile/${id}/`);
   }
   
   return (

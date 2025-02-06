@@ -212,3 +212,35 @@
   color: white;
   border-radius: 5px;
 }
+
+
+
+.group8737 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 29px;
+  position: absolute;
+  margin: 0 !important;
+  top: 270px;
+  left: 50px;
+  height: 29px;
+  z-index: 8;
+}
+
+.vector-icon86 {
+  position: absolute;
+  top: 1.5px;
+  left: calc(50% - 14.5px);
+  width: 22.5px;
+  height: 22.5px;
+}
+
+.vector-icon87 {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 6.9px);
+  width: 17.4px;
+  height: 17.4px;
+}

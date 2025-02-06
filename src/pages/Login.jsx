@@ -35,7 +35,7 @@ const Login = () => {
         navigate("/worker-edit-profile");
       }
       else {
-        navigate("/clientJobs");
+        navigate(`/clientJobs/${token.id}/`);
       }
     
       alert("ההתחברות הושלמה בהצלחה")

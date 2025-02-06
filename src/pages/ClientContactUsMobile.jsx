@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./ClientContactUsMobile.css";
 import axios from "axios";
 import MobileMenuClient from "./MobileMenuClient";
+import { useParams } from 'react-router-dom';
 
 const ClientContactUsMobile = () => {
   const [fullName, setFullName] = useState("");
@@ -9,6 +10,7 @@ const ClientContactUsMobile = () => {
   const [city, setCity] = useState("");
   const [message, setMessage] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
+  const { id } = useParams(); 
 
 
   const handleSubmit = async (e) => {
@@ -41,7 +43,7 @@ const ClientContactUsMobile = () => {
   };
   return (
     <div className="client-contact-us-mobile">
-      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu}  id ={id} /> : null}
 
       <div className="client-contact-us-mobile-child" />
       <img className="icon33" alt="" src="/-02-11@2x.png" />

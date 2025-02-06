@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import "./ClientContactUs.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ClientContactUs = () => {
   const [message, setMessage] = useState("");
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const { id } = useParams(); 
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -66,10 +69,10 @@ const ClientContactUs = () => {
   };
 
   const Edit = () => {
-    navigate("/client-edit-profile");
+    navigate(`/client-edit-profile/${id}/`);
   }
   const Jobs = () => {
-    navigate("/clientJobs");
+    navigate(`/clientJobs/${id}/`);
   }
   return (
     <div className="client-contact-us" data-animate-on-scroll>

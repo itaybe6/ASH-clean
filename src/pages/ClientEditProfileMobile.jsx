@@ -3,6 +3,7 @@ import "./ClientEditProfileMobile.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import MobileMenuClient from "./MobileMenuClient";
+import { useParams } from 'react-router-dom';
 
 
 const ClientEditProfileMobile = () => {
@@ -12,6 +13,7 @@ const ClientEditProfileMobile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
+  const { id } = useParams(); 
 
   // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -66,7 +68,7 @@ const ClientEditProfileMobile = () => {
   };
   return (
     <div className="client-edit-profile-mobile">
-      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id ={id}/> : null}
 
       <div className="client-edit-profile-mobile-child" />
       <div className="div139">שלום (שם לקוח)</div>

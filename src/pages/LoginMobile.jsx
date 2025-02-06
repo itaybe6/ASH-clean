@@ -34,7 +34,7 @@ const LoginMobile = () => {
         navigate("/worker-edit-profile");
       }
       else {
-        navigate("/client-jobs");
+        navigate(`/clientJobs/${token.id}/`);
       }
       alert("ההתחברות הושלמה בהצלחה")
     } catch (err) {
