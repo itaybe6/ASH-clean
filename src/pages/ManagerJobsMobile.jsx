@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import JobOptionMobile from "../components/JobOptionMobile";
-import "./ManagerJobsMobile.css";
 import MobileMenuManager from "./MobileMenuManager";
+import { format } from "date-fns";
+import axios from "axios";
+import "./ManagerJobsMobile.css";
 
 const ManagerJobsMobile = () => {
   const [groupDateTimePickerValue, setGroupDateTimePickerValue] = useState(null);
   const [displayMenu, setDisplayMenu] = useState(false)
+  const [cleanings, setCleanings] = useState([]);
 
   const searchItems = [
     {
@@ -41,6 +44,13 @@ const ManagerJobsMobile = () => {
     // אפשר להוסיף כאן עוד אובייקטים כרצונך
   ];
 
+  useEffect(() => {
+    axios.get("http://localhost:5000/manager/getAllCleanings")
+      .then((res) => {
+        setCleanings(res.data);
+      })
+      .catch((error) => console.error("Error fetching customers:", error));
+  }, []);
   const menu = () => {
     setDisplayMenu(!displayMenu)
   }
@@ -81,14 +91,14 @@ const ManagerJobsMobile = () => {
           />
         </div>
         <div className="search-list-container">
-          {searchItems.map((item, index) => (
+          {cleanings.map((item, index) => (
             <JobOptionMobile
               key={index}
-              worker={item.worker}
-              status={item.status}
-              branch={item.branch}
-              date={item.date}
-              bussiness={item.bussiness}
+              worker={item.employee.fullName}
+              status={item.done}
+              branch={item.branch.address}
+              date={format(new Date(item.dateTime), "dd/MM/yyyy")}
+              bussiness={item.branch.name}
             />
           ))}
         </div>

@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import CustomDatePicker from "../components/CustomDatePicker.jsx";
 import axios from "axios";
 import "./ManagerJobs.css";
+import { format } from "date-fns";
 
 const ManagerJobs = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -86,14 +87,14 @@ const ManagerJobs = () => {
           <div className="div15">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
         </div>
         <div className="search-list-container">
-          {searchItems.map((item, index) => (
+          {cleanings.map((item, index) => (
             <Search
               key={index}
-              worker={item.worker}
-              status={item.status}
-              branch={item.branch}
-              date={item.date}
-              bussiness={item.bussiness}
+              worker={item.employee.fullName}
+              status={item.done}
+              branch={item.branch.address}
+              date={ format(new Date(item.dateTime), "dd/MM/yyyy")}
+              bussiness={item.branch.name}
             />
           ))}
         </div>

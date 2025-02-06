@@ -15,7 +15,7 @@ const Search = ({
       <div className="business">{bussiness}</div>
       <div className="branch">{branch}</div>
       <div className="worker">{worker}</div>
-      <div className="status">{status}</div>
+      <div className="status">{status ? "נעשה" : "לא נעשה"}</div>
       <button className="img-btn">צפייה בתמונה</button>
     </div>
   );
