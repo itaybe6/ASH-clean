@@ -6,12 +6,12 @@
   align-items: center;
   justify-content: space-between;
 
-  width: 130%;            /* אפשר להתאים לפי הרצוי */
+  width: 300%;            /* אפשר להתאים לפי הרצוי */
   margin: 20px auto;     /* ריווח אנכי ומרכז אופקי */
-  padding: 3rem 1.5rem;  
+  padding: 1rem 1.5rem;  
   background-color: #fff;
   box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-  border-radius: 8px;
+  border-radius: 15px;
 
   direction: rtl;        /* בעברית, יישור לימין */
   text-align: right;
@@ -20,13 +20,12 @@
 
 /* ===== הכפתור הכתום ===== */
 .feture-job-worker-button {
-  background-color: #ff7f50;  /* כתום/קורל */
+  background-color: #f97316;  /* כתום/קורל */
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 0.5rem 1rem;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
   cursor: pointer;
   /* רווח אופציונלי מימין אם רוצים להרחיק עוד מהטקסט */
   margin-right: 1rem;
@@ -37,13 +36,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end; 
-  gap: 0.3rem;      
+  gap: 0.1rem;      
   direction: ltr;     /* רווח בין השורות */
 }
 
 /* כותרת (למשל "אורן משי - שכונת הפארק") */
 .feture-job-worker-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
   color: #000;
@@ -51,12 +50,13 @@
 
 /* כתובת העבודה */
 .feture-job-worker-address {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: #444;
 }
 
 /* שעה/תאריך העבודה */
 .feture-job-worker-time {
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   color: #666;
 }
+

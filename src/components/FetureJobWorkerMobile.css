@@ -1,32 +1,37 @@
 /* ===== מאפיינים כלליים של הכרטיס ===== */
 .feturejobworkermobile {
-  position: relative;              /* כדי שהכפתור יוכל להיות absolute בתוכו */
-  width: 200px;
-  margin: 20px auto;               /* רווח אנכי בין כרטיסים ומרכז אופקי */
+  position: relative; /* מוודא שהכפתור בפנים יכול להיות absolute */
+  width: 200%; /* מתפרס בצורה רספונסיבית */
+  max-width: 400px; /* מונע התרחבות יתר במסכים גדולים */
+  margin: 20px auto; /* מרווח בין הכרטיסים ומרכז אותם */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;             /* אפשר להחליף ל-var(--br-6xs) */
-  background-color: #fff;          /* רקע לבן */
-  padding: 1.5rem 1rem;           /* ריווח פנימי: למעלה/למטה גדול יותר */
-  direction: rtl;                  /* כתיבה מימין לשמאל */
-  text-align: right;               /* טקסט מיושר לימין */
-  font-family: "Heebo", sans-serif;/* או var(--font-heebo) */
+  border-radius: 10px; /* מעגל פינות */
+  background-color: #fff; /* רקע לבן */
+  padding: 1.5rem 1rem; /* רווח פנימי */
+  direction: rtl; /* כתיבה מימין לשמאל */
+  text-align: right; /* מיושר לימין */
+  font-family: "Heebo", sans-serif; 
   color: #333;
+  display: block; /* מוודא שהוא לא נעלם */
+  min-height: 120px; /* גובה מינימלי כדי שהוא לא ייעלם */
+  
 }
 
 /* ===== הכפתור הכתום (ממוקם באופן אבסולוטי בפינת הכרטיס) ===== */
 .exec-button {
   position: absolute;
-  top: 90px;        /* המרחק מהחלק העליון של הכרטיס */
+  top: 70px;        /* המרחק מהחלק העליון של הכרטיס */
   left: 15px;       /* בפינה השמאלית (אם רוצים בפינה הימנית, החליפו ל right:10px) */
-  background-color: #ff7f50; /* או var(--color-darkorange-200) */
+  background-color: #f97316; /* או var(--color-darkorange-200) */
   color: #fff;
   border: none;
   border-radius: 6px;
   padding: 0.4rem 0.8rem;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.;
+  font-family: 'Heebo';
 
 }
 
@@ -34,14 +39,12 @@
 .title {
   font-size: 1rem;    /* מתאים לכותרת בינונית */
   font-weight: bold;
-  margin-bottom: .4rem; /* רווח קטן מתחת לשורה */
   color: #000;        /* שחור */
 }
 
 /* ===== כתובת העבודה (קטן יותר) ===== */
 .address {
   font-size: 0.9rem;
-  margin-bottom: 1.3rem;
   color: #555; 
 }
 
