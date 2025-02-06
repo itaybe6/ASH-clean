@@ -56,12 +56,11 @@
   border: none;
   outline: none;
   background-color: var(--color-white);
-  width: 47.71%;
+  width: 40.71%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 206px);
-  right: 35.97%;
-  left: 16.32%;
+  top:260px;
+  right: 25.97%;
   border-radius: var(--br-mid);
   height: 46px;
   z-index: 4;
@@ -76,7 +75,7 @@
   z-index: 5;
 }
 
-.group-child19 {
+.group-child199 {
   position: absolute;
   top: 10px;
   left: 0px;
@@ -86,7 +85,7 @@
   height: 52px;
 }
 
-.b20 {
+.b208 {
   position: absolute;
   top: 0px;
   left: 12px;
@@ -96,7 +95,7 @@
   text-align: center;
 }
 
-.rectangle-parent11 {
+.rectangle-parent112 {
   cursor: pointer;
   border: none;
   padding: 0;
@@ -104,8 +103,8 @@
   width: 52px;
   position: absolute;
   margin: 0 !important;
-  top: 207px;
-  left: 119px;
+  top: 247px;
+  left: 319px;
   height: 71px;
   z-index: 6;
 }
@@ -313,12 +312,13 @@
   
 }
 
-.search-list-container {
+.search-list-container7 {
+  position: absolute;
+  top:350px;
+  right: 100px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
   max-height: 800px;
   width: 100%;
-  margin-top: 100px; /* במקום flex-grow */
-
+gap: 30px;
 }

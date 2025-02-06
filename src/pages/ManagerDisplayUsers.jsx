@@ -60,13 +60,13 @@ const ManagerDisplayUsers = () => {
         placeholder="חיפוש משתמש..."
         type="text"
       />
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" left="440px"/>;
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" left="-850px"/>;
 
-      <button className="rectangle-parent11" onClick={addUser}>
-        <div className="group-child19" />
-        <b className="b20">+</b>
+      <button className="rectangle-parent112" onClick={addUser}>
+        <div className="group-child199" />
+        <b className="b208">+</b>
       </button>
-      <div className="search-list-container">
+      <div className="search-list-container7">
         {active
           ? workers.map((item, index) => (
             <UserOption

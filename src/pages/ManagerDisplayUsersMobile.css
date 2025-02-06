@@ -8,7 +8,7 @@
   z-index: 0;
 }
 
-.b22 {
+.b223 {
   width: 186px;
   position: absolute;
   margin: 0 !important;
@@ -32,7 +32,7 @@
   z-index: 2;
 }
 
-.icon11 {
+.icon113 {
   width: 135px;
   position: absolute;
   margin: 0 !important;
@@ -98,7 +98,7 @@
   color: var(--color-darkslategray-200);
 }
 
-.group-child24 {
+.group-child242 {
   position: absolute;
   top: 6px;
   left: 0px;
@@ -106,7 +106,7 @@
   height: 39px;
 }
 
-.b23 {
+.b236 {
   position: absolute;
   top: 0px;
   left: 5px;
@@ -115,11 +115,11 @@
   height: 37px;
 }
 
-.group-parent7 {
+.group-parent77 {
   width: 39px;
   position: absolute;
   margin: 0 !important;
-  top: 202px;
+  top: 272px;
   left: 35px;
   height: 45px;
   z-index: 6;
@@ -153,7 +153,7 @@
 }
 
 /* קונטיינר הרשימה */
-.search-list-container {
+.search-list-container2 {
   margin-top: -300px;
   display: flex;
   flex-direction: column;
