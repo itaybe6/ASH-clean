@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom"; // ייבוא של Portals
 import "./FutureJobClient.css";
 import dayjs from "dayjs";
-import imageSrc from "./23.jpg"; // הנתיב לתמונה שהעלית
+import imageSrc from "./23.png"; // הנתיב לתמונה שהעלית
 
 const FutureJobClient = ({ namew, done, time, date, active = false }) => {
     const [isImageOpen, setIsImageOpen] = useState(false);
@@ -26,15 +27,17 @@ const FutureJobClient = ({ namew, done, time, date, active = false }) => {
                 <div className="div344">{done ? "נעשה" : "לא נעשה"}</div>
             </div>
 
-            {/* חלון פופאפ להצגת התמונה */}
-            {isImageOpen && (
-                <div className="image-modal">
-                    <div className="modal-content">
-                        <button className="close-button" onClick={() => setIsImageOpen(false)}>×</button>
-                        <img src={imageSrc} alt="תמונה" className="popup-image" />
-                    </div>
-                </div>
-            )}
+            {/* שימוש ב-React Portal כדי להוציא את הפופאפ מחוץ להורה */}
+            {isImageOpen &&
+                ReactDOM.createPortal(
+                    <div className="image-modal">
+                        <div className="modal-content">
+                            <button className="close-button" onClick={() => setIsImageOpen(false)}>×</button>
+                            <img src={imageSrc} alt="תמונה" className="popup-image" />
+                        </div>
+                    </div>,
+                    document.body // כאן אנחנו מציבים את זה מחוץ לכל המבנה
+                )}
         </>
     );
 };

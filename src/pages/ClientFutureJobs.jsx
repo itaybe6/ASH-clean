@@ -8,32 +8,26 @@ import "./ClientFutureJobs.css";
 const staticBranches = [
   {
     _id: "b1",
-    name: "לידר אופקים - מבנה",
+    name: "לידר ירושלים - לב הפסגה",
     cleanings: [
-      { _id: "c11", employee: { fullName: "משה לוי" }, dateTime: "2025-07-01T08:00:00Z", done: true },
-      { _id: "c12", employee: { fullName: "דוד כהן" }, dateTime: "2025-07-10T10:30:00Z", done: true },
-      { _id: "c13", employee: { fullName: "שרית יוסף" }, dateTime: "2025-09-02T15:00:00Z", done: false },
-      { _id: "c14", employee: { fullName: "עדי בר" }, dateTime: "2025-09-15T09:00:00Z", done: false }
+      { _id: "c11", employee: { fullName: "טארק אבו דחל" }, dateTime: "2025-02-03T08:00:00Z", done: true },
+      { _id: "c14", employee: { fullName: "טארק אבו דחל" }, dateTime: "2025-03-04T09:00:00Z", done: false }
     ]
   },
   {
     _id: "b2",
-    name: "לידר אור יהודה - קניון עזריאלי",
+    name: "לידר ירושלים - מלחה",
     cleanings: [
-      { _id: "c21", employee: { fullName: "רותם כהן" }, dateTime: "2025-06-01T08:00:00Z", done: true },
-      { _id: "c22", employee: { fullName: "ליאור שם-טוב" }, dateTime: "2025-06-05T12:30:00Z", done: true },
-      { _id: "c23", employee: { fullName: "אבי לוי" }, dateTime: "2025-09-10T09:00:00Z", done: false },
-      { _id: "c24", employee: { fullName: "נעה גל" }, dateTime: "2025-09-21T14:00:00Z", done: false }
+      { _id: "c21", employee: { fullName: "טארק אבו דחל" }, dateTime: "2025-02-03T08:00:00Z", done: true },
+      { _id: "c24", employee: { fullName: "טארק אבו דחל" }, dateTime: "2025-03-04T14:00:00Z", done: false }
     ]
   },
   {
     _id: "b3",
-    name: "לידר אלעד - מרכז רימון",
+    name: "לידר ירושלים - רמות",
     cleanings: [
-      { _id: "c31", employee: { fullName: "חיים שלמה" }, dateTime: "2025-05-10T07:30:00Z", done: true },
-      { _id: "c32", employee: { fullName: "רונית שמחה" }, dateTime: "2025-05-21T16:00:00Z", done: true },
-      { _id: "c33", employee: { fullName: "אור בן חמו" }, dateTime: "2025-08-02T12:00:00Z", done: false },
-      { _id: "c34", employee: { fullName: "תמר קרן" }, dateTime: "2025-08-17T10:00:00Z", done: false }
+      { _id: "c31", employee: { fullName: "טארק אבו דחל" }, dateTime: "2025-02-03T07:30:00Z", done: true },
+      { _id: "c33", employee: { fullName: "טארק אבו דחל" }, dateTime: "2025-03-04T12:00:00Z", done: false },
     ]
   },
   {
