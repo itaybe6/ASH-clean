@@ -28,7 +28,7 @@ const JobOptionMobile = ({
   
       {/* שורה 5: הכותרת סטטוס, הערך */}
       <div>סטטוס</div>
-      <div>{status}</div>
+      <div>{status ? "נעשה" : "לא נעשה"}</div>
   
       {/* כפתור */}
       <button className="full-span">צפייה בתמונה</button>

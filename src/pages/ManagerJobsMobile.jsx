@@ -1,56 +1,42 @@
 import { useState, useEffect } from "react";
-import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import JobOptionMobile from "../components/JobOptionMobile";
 import MobileMenuManager from "./MobileMenuManager";
-import { format } from "date-fns";
+import { format, subDays, isSameDay } from "date-fns";
+import CustomDatePicker from "../components/CustomDatePicker.jsx";
 import axios from "axios";
 import "./ManagerJobsMobile.css";
 
 const ManagerJobsMobile = () => {
-  const [groupDateTimePickerValue, setGroupDateTimePickerValue] = useState(null);
   const [displayMenu, setDisplayMenu] = useState(false)
   const [cleanings, setCleanings] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [filterCleanings, setFilterCleanings] = useState([]);
 
-  const searchItems = [
-    {
-      worker: "ליאור שם טוב",
-      status: "נעשה",
-      branch: "שכונות, פארק, באר שבע",
-      date: "24/05/2025",
-      bussiness: "אורן משי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    }, {
-      worker: "ליאור שם טוב",
-      status: "נעשה",
-      branch: "שכונות, פארק, באר שבע",
-      date: "24/05/2025",
-      bussiness: "אורן משי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
 
-    // אפשר להוסיף כאן עוד אובייקטים כרצונך
-  ];
+  const filterLastFourDays = (cleaningsList) => {
+    const fourDaysAgo = subDays(new Date(), 4); // מחזיר את התאריך של לפני 4 ימים
+    return cleaningsList.filter((item) => new Date(item.dateTime) >= fourDaysAgo);
+  };
 
   useEffect(() => {
     axios.get("http://localhost:5000/manager/getAllCleanings")
       .then((res) => {
         setCleanings(res.data);
+        const filteredData = filterLastFourDays(res.data);
+        setFilterCleanings(filteredData);
       })
-      .catch((error) => console.error("Error fetching customers:", error));
+      .catch((error) => console.error("Error fetching cleanings:", error));
   }, []);
+
+  useEffect(() => {
+    if (selectedDate) {
+      const filteredData = cleanings.filter((item) =>
+        isSameDay(new Date(item.dateTime), new Date(selectedDate))
+      );
+      setFilterCleanings(filteredData);
+    }
+  }, [selectedDate, cleanings]);
+
   const menu = () => {
     setDisplayMenu(!displayMenu)
   }
@@ -59,37 +45,18 @@ const ManagerJobsMobile = () => {
     setDisplayMenu(false);
   };
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <div>
       <div className="manager-jobs-mobile">
         {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
-
+        <div className="date-picker-container889">
+          <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+        </div>
         <div className="manager-jobs-mobile-inner">
           <div className="frame-child1" />
         </div>
         <div className="div23">שלום (שם מנהל)</div>
         <div className="div24">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
-        <div className="wrapper2">
-          <DatePicker
-            value={groupDateTimePickerValue}
-            onChange={(newValue) => {
-              setGroupDateTimePickerValue(newValue);
-            }}
-            sx={{}}
-            slotProps={{
-              textField: {
-                size: "medium",
-                fullWidth: false,
-                required: false,
-                autoFocus: false,
-                error: false,
-                color: "primary",
-              },
-              openPickerIcon: {
-                component: () => <></>,
-              },
-            }}
-          />
-        </div>
+        
         <div className="search-list-container">
           {cleanings.map((item, index) => (
             <JobOptionMobile
@@ -107,7 +74,7 @@ const ManagerJobsMobile = () => {
         </button>
         <img className="icon7" alt="" src="/-02-11@2x.png" />
       </div>
-    </LocalizationProvider>
+    </div>
   );
 };
 

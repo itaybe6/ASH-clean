@@ -1,81 +1,38 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Search from "../components/Search";
 import CustomDatePicker from "../components/CustomDatePicker.jsx";
 import axios from "axios";
 import "./ManagerJobs.css";
-import { format } from "date-fns";
+import { format, subDays, isSameDay } from "date-fns";
 
 const ManagerJobs = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [cleanings, setCleanings] = useState([]);
+  const [filterCleanings, setFilterCleanings] = useState([]);
 
-
-  const searchItems = [
-    {
-      worker: "ליאור שם טוב",
-      status: "נעשה",
-      branch: "שכונות, פארק, באר שבע",
-      date: "24/05/2025",
-      bussiness: "אורן משי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    }, {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
-    {
-      worker: "מיכל כהן",
-      status: "לא נעשה",
-      branch: "תל אביב",
-      date: "15/06/2025",
-      bussiness: "קניון עזריאלי",
-    },
-    // אפשר להוסיף כאן עוד אובייקטים כרצונך
-  ];
+  const filterLastFourDays = (cleaningsList) => {
+    const fourDaysAgo = subDays(new Date(), 4); // מחזיר את התאריך של לפני 4 ימים
+    return cleaningsList.filter((item) => new Date(item.dateTime) >= fourDaysAgo);
+  };
 
   useEffect(() => {
     axios.get("http://localhost:5000/manager/getAllCleanings")
       .then((res) => {
         setCleanings(res.data);
+        const filteredData = filterLastFourDays(res.data);
+        setFilterCleanings(filteredData);
       })
-      .catch((error) => console.error("Error fetching customers:", error));
+      .catch((error) => console.error("Error fetching cleanings:", error));
   }, []);
+
+  useEffect(() => {
+    if (selectedDate) {
+      const filteredData = cleanings.filter((item) =>
+        isSameDay(new Date(item.dateTime), new Date(selectedDate))
+      );
+      setFilterCleanings(filteredData);
+    }
+  }, [selectedDate, cleanings]); 
 
   return (
     <div>
@@ -87,13 +44,13 @@ const ManagerJobs = () => {
           <div className="div15">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
         </div>
         <div className="search-list-container">
-          {cleanings.map((item, index) => (
+          {filterCleanings.map((item, index) => (
             <Search
               key={index}
               worker={item.employee.fullName}
               status={item.done}
               branch={item.branch.address}
-              date={ format(new Date(item.dateTime), "dd/MM/yyyy")}
+              date={format(new Date(item.dateTime), "dd/MM/yyyy")}
               bussiness={item.branch.name}
             />
           ))}
