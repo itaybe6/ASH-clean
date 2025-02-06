@@ -206,14 +206,30 @@
 
 .jobs-list-container2 {
   position: absolute;
-  right: 600px;
-  display: flex;
-  flex-direction: column;
-  top: 300px;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+    max-width: 600px;
 }
 
 .date-picker-container8{
   position: absolute;
-  top:243px;
-  left:55%;
+  top: calc(15% + 100px); /* ממקם אותו יחסית לגובה */
+  left: 30%; /* ממקם באמצע המסך */
+  transform: translateX(-50%); /* מתקן את ההזזה לאמצע */
+
 }
+
+.CustomToggleButton1707{
+  position: absolute;
+    top: calc(9% + 160px); /* ממקם אותו קצת יותר למטה */
+    left: 55%; /* ממקם באמצע */
+    transform: translateX(-50%); /* שומר על המרכז */
+    display: flex;
+    align-items: center;
+    width: 150px; /* רוחב קבוע */
+    height: 52px; /* גובה קבוע */
+    transition: all 0.3s ease; /* אנימציה חלקה */
+}
+

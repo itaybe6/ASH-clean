@@ -88,7 +88,9 @@ const WorkerFutureJobs = () => {
         </button>
       </div>
 
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"57vh"} name2="עבודות עתידיות" name1="עבודות" left="50%" />;
+     <div className="CustomToggleButton1707">
+     <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"52vh"} name2="עבודות עתידיות" name1="עבודות" left="40%" />
+     </div>
 
 
     </div>
