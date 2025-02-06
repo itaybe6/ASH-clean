@@ -88,34 +88,26 @@ function App() {
   return (
     <PageTransition>
       <Routes>
+
+
         <Route path="/" element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
         <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
         <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
         <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
-
-
-        <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
-        <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
-
-        <Route path="/manager-worker-jobs/:id" element={isMobile ? <ManagerDIsplayWorkerJobsMobile /> : <ManagerDIsplayWorkerJobs />} />
-        <Route path="/manager-add-job-to-worker/:id" element={isMobile ? <ManagerAddJobToWorkerMobile /> : <ManagerAddJobToWorker />} />
-        <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
-        <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
-        <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
-
-
-
-        {/* <Route path="/manager-customer-jobs" element={isMobile ? <ManagerCustomerJobsMobile /> : <ManagerCustomerJobs />} />  */}
-
         <Route path="/manager-add-customer" element={isMobile ? <ManagerRegistrationAddCustomerMobile /> : <ManagerRegistrationAddCustomer />} />
         <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
         <Route path="/manager-edit-user/:id/:type" element={isMobile ? <ManagerEditUserMobile /> : <ManagerEditUser />} />
-
-
-
-
         <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />
+
+
+        {/* הוספת כפתור פלוס לתוצאת חיפוש תעביר לנתיבים האלה */}
+        <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
+        <Route path="/manager-add-job-to-worker/:id" element={isMobile ? <ManagerAddJobToWorkerMobile /> : <ManagerAddJobToWorker />} />
+
+        {/* מעבר לאחר כפתור עריכה ב clintJobs */}
+        <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
+
 
 
         <Route path="/clientJobs" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
@@ -130,10 +122,15 @@ function App() {
 
 
 
+        <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
+        <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
+        <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
 
 
         {/* למחוק את הרכביים + למחוק את הנתיב הזה */}
         <Route path="/manager-customer-jobs-done/:id" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
+        <Route path="/manager-worker-jobs/:id" element={isMobile ? <ManagerDIsplayWorkerJobsMobile /> : <ManagerDIsplayWorkerJobs />} />
+
       </Routes>
     </PageTransition>
   );
