@@ -17,8 +17,8 @@ const FutureJobClientMobile = ({
 
         {/* שורה 1 */}
         <div className="fjc-row">
-          <div className="fjc-left">{formattedDate}</div>
-          <div className="fjc-right">תאריך</div>
+          <div className="fjc-left2">{formattedDate}</div>
+          <div className="fjc-right2">תאריך</div>
         </div>
 
 

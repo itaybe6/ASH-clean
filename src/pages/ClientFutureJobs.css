@@ -42,7 +42,7 @@
   line-height: 146.39%;
   font-weight: 300;
   display: inline-block;
-  width: 314px;
+  min-width: max-content;
 }
 .parent40 {
   width: 343px;

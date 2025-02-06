@@ -135,9 +135,9 @@ const ManagerRegistrationAddCustomer = () => {
             <img className="vector-icon37" alt="" src="/vector9.svg" />
           </button>
           <div className="group-wrapper2">
-            <button className="parent23">
-              <div className="div87">משתמשים</div>
-              <img className="group-child53" alt="" src="/group-401.svg" />
+            <button className="parent231">
+              <div className="div871">משתמשים</div>
+              <img className="group-child531" alt="" src="/group-401.svg" />
             </button>
           </div>
         </div>
