@@ -54,9 +54,9 @@ const ManagerDisplayUsersMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-display-customers-mo-child" />
-      <b className="b22">שלום (שם מנהל)</b>
+      <b className="b223">שלום (שם מנהל)</b>
       <div className="div43">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
-      <img className="icon11" alt="" src="/-02-11@2x.png" />
+      <img className="icon113" alt="" src="/-02-11@2x.png" />
       <button className="vector-wrapper11" onClick={menu}>
         <img className="vector-icon14" alt="" src="/vector10.svg" />
       </button>
@@ -64,13 +64,13 @@ const ManagerDisplayUsersMobile = () => {
         <div className="group-child23" />
         <div className="div44">חיפוש משתמש...</div>
       </div>
-      <div className="group-parent7">
-        <img className="group-child24" alt="" src="/group-275.svg" />
-        <b className="b23" onClick={addUser}>+</b>
+      <div className="group-parent77">
+        <img className="group-child242" alt="" src="/group-275.svg" />
+        <b className="b236" onClick={addUser}>+</b>
       </div>
       <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"70vh"} name1="עובדים" name2="לקוחות" left={"130px"} />;
 
-      <div className="search-list-container">
+      <div className="search-list-container2">
         {active
           ? workers.map((item, index) => (
             <UserOptionMobile
