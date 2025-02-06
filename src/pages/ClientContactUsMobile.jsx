@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./ClientContactUsMobile.css";
 import axios from "axios";
+import MobileMenuClient from "./MobileMenuClient";
 
 const ClientContactUsMobile = () => {
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const [message, setMessage] = useState("");
+  const [displayMenu, setDisplayMenu] = useState(false)
 
 
   const handleSubmit = async (e) => {
@@ -30,9 +32,17 @@ const ClientContactUsMobile = () => {
     }
   };
 
-
+  const menu = () => {
+    setDisplayMenu(!displayMenu)
+  }
+  // פונקציית סגירת תפריט
+  const closeMenu = () => {
+    setDisplayMenu(false);
+  };
   return (
     <div className="client-contact-us-mobile">
+      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+
       <div className="client-contact-us-mobile-child" />
       <img className="icon33" alt="" src="/-02-11@2x.png" />
       <div className="div150">שלום (שם לקוח)</div>
@@ -41,7 +51,7 @@ const ClientContactUsMobile = () => {
       <div className="div153">
         יש בעיה? צריך עזרה או רק שאלה? מלא פה את הפרטים שלך ונחזור אלייך בהקדם
       </div>
-      
+
       {/* הוספת הטופס עם state */}
       <form className="rectangle-parent55" onSubmit={handleSubmit}>
         <input
@@ -84,7 +94,7 @@ const ClientContactUsMobile = () => {
         </button>
       </form>
 
-      <button className="vector-wrapper57">
+      <button className="vector-wrapper57" onClick={menu}> 
         <img className="vector-icon66" alt="" src="/vector10.svg" />
       </button>
     </div>

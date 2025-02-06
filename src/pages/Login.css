@@ -2,6 +2,7 @@
   width: 107px;
   position: relative;
   height: 45px;
+  right: 6px;
 }
 .vector-wrapper65 {
   cursor: pointer;
@@ -87,6 +88,8 @@
   border-radius: var(--br-xl);
   height: 63.5px;
   z-index: 3;
+  padding: 10px;
+  font-family: 'Heebo'
 }
 .login-item {
   border: none;
@@ -102,11 +105,13 @@
   border-radius: var(--br-xl);
   height: 63.5px;
   z-index: 4;
+  padding: 10px;
+  font-family: 'Heebo'
 }
 .vector-icon75 {
   width: 133px;
   position: relative;
-  height: 50.8px;
+  height: 60px;
 }
 .vector-wrapper66 {
   display: flex;

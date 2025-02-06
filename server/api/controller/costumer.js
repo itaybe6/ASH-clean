@@ -7,7 +7,12 @@ const bcrypt = require('bcrypt');
 const getCleaningsByBranch = async (req, res) => {
     const { branchId } = req.params;
 
-    const branch = await Branch.findById(branchId).populate('cleaningSchedules');
+    const branch = await Branch.findById(branchId).populate({
+    path: 'cleaningSchedules',
+    populate: {
+      path: 'employee' // כאן מתבצע ה־populate של העובד
+    }
+  })
 
     res.status(200).json(branch.cleaningSchedules);
 };

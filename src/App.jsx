@@ -94,6 +94,7 @@ function App() {
   return (
     <PageTransition>
       <Routes>
+        <Route path="/" element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
         <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
         <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
@@ -130,7 +131,6 @@ function App() {
 
         <Route path="/client-contact-us" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
         <Route path="/client-edit-profile" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
-        {/* <Route path="/clientJobs" element={isMobile ? <ClientBranchIphone /> : <ClientJobs />} /> */}
         <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
         <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />

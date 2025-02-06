@@ -34,7 +34,7 @@ const Login = () => {
       else if (token.role == "Regular"){
         navigate("/clientJobs");      }
       else {
-        navigate("/client-jobs");
+        navigate("/clientJobs");
       }
     
       alert("ההתחברות הושלמה בהצלחה")

@@ -19,11 +19,19 @@
 .div168 {
   position: absolute;
   top: 0px;
-  left: calc(50% - 171.5px);
-  line-height: 146.39%;
+  right: 0; /* מצמיד את הכותרת לצד ימין */
+  transform: none; /* מסיר את הטרנספורם כדי למנוע הזזה לאמצע */
+  line-height: 240%;
   font-weight: 500;
-  display: inline-block;
-  width: 343px;
+  display: block;
+  width: auto; /* הרוחב יתאים לתוכן */
+  min-width: 600px; /* מגדיר רוחב מינימלי כדי לשמור על מבנה קבוע */
+  max-width: 100%; /* מונע חריגה מגבולות */
+  text-align: right; /* מוודא שהטקסט מתחיל מהימין */
+  direction: rtl;
+  white-space: normal; /* מאפשר ירידת שורות */
+  overflow: visible; /* מונע חיתוך טקסט */
+  margin-right: -120px;
 }
 .div169 {
   position: absolute;
@@ -214,12 +222,13 @@
   z-index: 5;
 }
 .div176 {
-  width: 256px;
   position: relative;
   line-height: 146.39%;
   font-weight: 500;
   display: inline-block;
   flex-shrink: 0;
+  min-width: max-content;
+  padding-left: 60px;
 }
 .wrapper11 {
   position: absolute;
@@ -254,7 +263,7 @@
   position: absolute;
   margin: 0 !important;
   top: 50px;
-  left: calc(50% + 30px);
+  left: calc(50% + 140px);
   height: 64px;
   z-index: 6;
   text-align: center;
@@ -262,7 +271,7 @@
 .group-child129 {
   position: absolute;
   top: 0px;
-  left: calc(50% - 97px);
+  left: calc(50% - -25px);
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   border: 1px solid var(--color-darkorange-200);
@@ -273,12 +282,14 @@
 .b66 {
   position: absolute;
   top: 18px;
-  left: calc(50% - 59px);
+  right: 0; /* מיושר לקצה הימני */
   font-size: var(--font-size-5xl);
   line-height: 146.39%;
   font-family: var(--font-heebo);
   color: var(--color-darkorange-200);
-  text-align: right;
+  text-align: right; /* מוודא שהטקסט מתחיל מימין */
+  width: 400px; /* מתאים את הרוחב כך שהטקסט לא יזוז */
+  left: calc(50% - 215px);
 }
 .rectangle-parent61 {
   cursor: pointer;
@@ -328,7 +339,6 @@
   font-weight: bold;
   position: absolute!important;
   background: white;
-  border: 1px solid orange;
   border-radius: 10px;
   padding: 10px;
   list-style: none;
@@ -337,8 +347,10 @@
   margin-top: 5px!important;
   text-align: center;
   z-index: 1000!important;
-  right: 630px!important;
+  right: 470px!important;
   top: 240px!important;
+  min-width: 250px;
+  direction: rtl;
 }
 
 /* פריטים בתוך התפריט */
@@ -358,10 +370,10 @@
 .jobs-list-container5 {
   position: absolute;
   top: 350px;
-  right: 22%;
+  right: 25%;
   display: flex;
   flex-direction: column;
-  gap: 15px;       /* רווח אנכי בין כרטיסים */
+  gap: 0px;       /* רווח אנכי בין כרטיסים */
   /* אם רוצים גלילה בתוך אזור קבוע:
   max-height: 400px;
   overflow-y: auto; */

@@ -17,10 +17,14 @@
   z-index: 1;
 }
 .div134 {
-  flex: 1;
   position: relative;
   line-height: 146.39%;
   font-weight: 500;
+  display: inline-block;
+  flex-shrink: 0;
+  min-width: max-content;
+  padding-left: 60px;
+}
 }
 .wrapper7 {
   position: absolute;
