@@ -51,11 +51,12 @@
   position: absolute;
   margin: 0 !important;
   top: 240px;
-  left: calc(50% - 44.5px);
+  left: calc(50% - 45px);
   line-height: 146.39%;
   font-weight: 300;
   display: inline-block;
   z-index: 4;
+  min-width:min-content; 
 }
 .group-child93 {
   position: absolute;

@@ -74,10 +74,10 @@ const ManagerEditProfile = () => {
       <div className="div94">שלום (שם מנהל)</div>
       <div className="div95">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="parent25">
-        <div className="div96">הגדרות</div>
+        <div className="div967">הגדרות</div>
         <div className="div97">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
       </div>
-      <div className="group-parent16">
+      <div className="group-parent167">
         <button className="vector-wrapper32"  onClick={handleUpdate}>
           <img className="vector-icon40" alt="" src="/vector20.svg" />
         </button>
