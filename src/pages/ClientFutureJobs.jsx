@@ -24,7 +24,6 @@ const ClientFutureJobs = () => {
     }
   };
   const token = parseJwt(localStorage.getItem("token"));
-
   const id = "679a3c3dfd15b150ae41372a";
   const navigate = useNavigate();
 
@@ -76,7 +75,7 @@ const ClientFutureJobs = () => {
       <div className="client-future-jobs-child" />
       <img className="client-future-jobs-item" alt="" src="/line-21.svg" />
       <div className="parent40">
-        <div className="div168">לוח ניקיונות (שם סניף)</div>
+        <div className="div168">לוח ניקיונות {selectedBranch ? selectedBranch.name : ""}</div>
         <div className="div169">
           כל הניקיונות האחרונים של הסניף שלך נרשמו כאן
         </div>

@@ -35,8 +35,9 @@
 }
 .div169 {
   position: absolute;
-  top: 40px;
-  left: calc(50% - 142.5px);
+  top: 60px;
+  left: calc(50% - 20.5px);
+
   font-size: var(--font-size-base);
   line-height: 146.39%;
   font-weight: 300;
