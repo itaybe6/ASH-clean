@@ -5,7 +5,7 @@ import CustomToggleButton from "../components/CustomToggleButton";
 
 import axios from "axios";
 import "./ManagerJobs.css";
-import { format, subDays, addDays,isSameDay } from "date-fns";
+import { format, subDays, addDays, isSameDay } from "date-fns";
 
 const ManagerJobs = () => {
   const [active, setActive] = useState(true);
@@ -53,6 +53,7 @@ const ManagerJobs = () => {
         <div className="search-list-container">
           {filterCleanings.map((item, index) => (
             <Search
+              id={item._id}
               key={index}
               worker={item.employee.fullName}
               status={item.done}
@@ -91,16 +92,16 @@ const ManagerJobs = () => {
           </div>
         </div>
         <div className="CustomToggleButton89">
-        <CustomToggleButton
-          active={active}
-          onClick={() => setActive(!active)}
-          Height={"56vh"}
-          name1=" שבוע קדימה"
-          name2=" שבוע אחורה"
-          left="100px"
-        />
+          <CustomToggleButton
+            active={active}
+            onClick={() => setActive(!active)}
+            Height={"56vh"}
+            name1=" שבוע קדימה"
+            name2=" שבוע אחורה"
+            left="100px"
+          />
         </div>
-      
+
       </div>
     </div>
 

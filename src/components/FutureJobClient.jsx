@@ -1,44 +1,53 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom"; // ייבוא של Portals
-import "./FutureJobClient.css";
 import dayjs from "dayjs";
-import imageSrc from "./23.png"; // הנתיב לתמונה שהעלית
+import axios from "axios";
+import ImageModal from "./ImageModal";
+import "./FutureJobClient.css";
 
-const FutureJobClient = ({ namew, done, time, date, active = false }) => {
-    const [isImageOpen, setIsImageOpen] = useState(false);
+const FutureJobClient = ({ namew, done, bname, date, active = false, id }) => {
     const formattedDate = dayjs(date).format("DD/MM/YYYY");
+    const [imageData, setImageData] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleViewImage = async () => {
+        try {
+            // נניח שהנתיב בשרת: GET /worker/cleanings/:id/image
+            const response = await axios.get(`http://localhost:5000/manager/cleanings/${id}/image`);
+            if (response.data.image) {
+                setImageData(response.data.image);
+                setShowModal(true);
+            } else {
+                alert("לא נמצאה תמונה לניקיון זה");
+            }
+        } catch (error) {
+            console.error("שגיאה בשליפת התמונה:", error);
+            alert("שגיאה בשליפת התמונה");
+        }
+    };
 
     const columns = active
         ? "auto 1fr 1fr 1fr 1fr" // אם יש פתחון, 5 עמודות (האחת לתמונה)
         : "1fr 1fr 1fr 1fr"; // אם אין פתחון, 4 עמודות בלבד
 
     return (
-        <>
-            <div className="futurejobclient3" style={{ gridTemplateColumns: columns }}>
-                {active && (
-                    <button className="image-button" onClick={() => setIsImageOpen(true)}>
-                        צפייה בתמונה
-                    </button>
-                )}
-                {/* עמודות הטקסט הרגילות */}
-                <div className="div346">{formattedDate}</div>
-                <div className="div345">{time}</div>
-                <div className="div343">{namew}</div>
-                <div className="div344">{done ? "נעשה" : "לא נעשה"}</div>
-            </div>
+        <div className="futurejobclient3" style={{ gridTemplateColumns: columns }}>
+            {active && (
+                <button className="image-button" onClick={handleViewImage}>
+                    צפייה בתמונה
+                </button>
+            )}
+            <div className="div346">{formattedDate}</div>
+            <div className="div345">{bname}</div>
+            <div className="div343">{namew}</div>
+            <div className="div344">{done ? "נעשה" : "לא נעשה"}</div>
 
-            {/* שימוש ב-React Portal כדי להוציא את הפופאפ מחוץ להורה */}
-            {isImageOpen &&
-                ReactDOM.createPortal(
-                    <div className="image-modal">
-                        <div className="modal-content">
-                            <button className="close-button" onClick={() => setIsImageOpen(false)}>×</button>
-                            <img src={imageSrc} alt="תמונה" className="popup-image" />
-                        </div>
-                    </div>,
-                    document.body // כאן אנחנו מציבים את זה מחוץ לכל המבנה
-                )}
-        </>
+            {showModal && (
+                <ImageModal
+                    image={imageData}
+                    onClose={() => setShowModal(false)}
+                />
+            )}
+        </div>
     );
 };
 

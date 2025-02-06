@@ -101,6 +101,8 @@ const ClientFutureJobsMobile = () => {
                 date={job.dateTime}
                 done={job.done}
                 active={active}
+                id = {job._id}
+
               />
             ))
           : futureCleanings.map((job) => (
@@ -110,6 +112,7 @@ const ClientFutureJobsMobile = () => {
                 date={job.dateTime}
                 done={job.done}
                 active={active}
+                id = {job._id}
               />
             ))
         }

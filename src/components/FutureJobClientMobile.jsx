@@ -1,16 +1,29 @@
-import React from "react";
-import "./FutureJobClientMobile.css";
 import dayjs from "dayjs";
+import React, { useState } from "react";
+import axios from "axios";
+import ImageModal from "./ImageModal"; // מייבאים את הרכיב המודאל
+import "./FutureJobClientMobile.css";
 
-const FutureJobClientMobile = ({
-  namew = "",
-  time = "",
-  date = "",
-  done = "",
-  active = false, // ברירת מחדל: false
-}) => {
+const FutureJobClientMobile = ({namew = "",date = "",done = "",active = false, id}) => {
   const formattedDate = dayjs(date).format("DD/MM/YYYY");
+  const [imageData, setImageData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
+  const handleViewImage = async () => {
+    try {
+      // נניח שהנתיב בשרת: GET /worker/cleanings/:id/image
+      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id}/image`);
+      if (response.data.image) {
+        setImageData(response.data.image);
+        setShowModal(true);
+      } else {
+        alert("לא נמצאה תמונה לניקיון זה");
+      }
+    } catch (error) {
+      console.error("שגיאה בשליפת התמונה:", error);
+      alert("שגיאה בשליפת התמונה");
+    }
+  };
   return (
     <div className="futurejobclientmobile">
       <div className="futurejobclientmobile-card">
@@ -36,8 +49,15 @@ const FutureJobClientMobile = ({
 
         {/* הצגת כפתור - רק אם active === true */}
         {active && (
-          <button className="fjc-button">צפייה בתמונה</button>
+          <button className="fjc-button" onClick={handleViewImage}>צפייה בתמונה</button>
         )}
+        
+      {showModal && (
+        <ImageModal
+          image={imageData}
+          onClose={() => setShowModal(false)}
+        />
+      )}
       </div>
     </div>
   );

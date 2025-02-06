@@ -1,33 +1,51 @@
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import axios from "axios";
+import ImageModal from "./ImageModal"; // מייבאים את הרכיב המודאל
 import "./Search.css";
 
-const Search = ({
-  className = "",
-  worker,
-  status,
-  branch,
-  date,
-  bussiness,
-}) => {
+const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
+  const [imageData, setImageData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleViewImage = async () => {
+    try {
+      // נניח שהנתיב בשרת: GET /worker/cleanings/:id/image
+      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id}/image`);
+      if (response.data.image) {
+        setImageData(response.data.image);
+        setShowModal(true);
+      } else {
+        alert("לא נמצאה תמונה לניקיון זה");
+      }
+    } catch (error) {
+      console.error("שגיאה בשליפת התמונה:", error);
+      alert("שגיאה בשליפת התמונה");
+    }
+  };
+
   return (
-    <div className="search">
+    <div className={`search ${className}`}>
       <div className="date">{date}</div>
       <div className="business">{bussiness}</div>
       <div className="branch">{branch}</div>
       <div className="worker">{worker}</div>
-      <div className="status">{status ? "נעשה" : "לא נעשה"}</div>
-      <button className="img-btn">צפייה בתמונה</button>
+      <div className="status">
+        {status ? "נכנסה" : "לא נכנסה"}
+      </div>
+      
+      <button className="img-btn" onClick={handleViewImage}>
+        צפייה בתמונה
+      </button>
+
+      {/* מציגים את ImageModal רק אם showModal=true */}
+      {showModal && (
+        <ImageModal
+          image={imageData} 
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
-};
-
-Search.propTypes = {
-  className: PropTypes.string,
-  worker: PropTypes.string,
-  stastus: PropTypes.string,
-  branch: PropTypes.string,
-  date: PropTypes.string,
-  bussiness: PropTypes.string,
 };
 
 export default Search;

@@ -75,6 +75,7 @@ const ManagerJobsMobile = () => {
               branch={item.branch.address}
               date={format(new Date(item.dateTime), "dd/MM/yyyy")}
               bussiness={item.branch.name}
+              id={item._id}
             />
           ))}
         </div>

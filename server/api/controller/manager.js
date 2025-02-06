@@ -334,6 +334,22 @@ const updateBranch = async (req, res) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
+
+const getImgCleaning = async (req, res) => {
+    try {
+        const { cleaningId } = req.params;
+        const cleaning = await Cleaning.findById(cleaningId);
+    
+        if (!cleaning) {
+          return res.status(404).json({ message: 'Cleaning not found' });
+        }
+        // מחזירים את השדה image כ-JSON
+        return res.json({ image: cleaning.image }); 
+      } catch (error) {
+        return res.status(500).json({ message: 'Error retrieving image', error });
+      }
+} 
+
 module.exports = {
     addRegularEmployee
     ,getAllCustomers, addCustomer,
@@ -341,5 +357,5 @@ module.exports = {
     updateManagerDetails, addCleaningForEmployee,
     getAllWorkers,managerEditUser,
     addBranchToCustomer , updateBranch,
-    getCleaningsByEmployee , getAllCleanings
+    getCleaningsByEmployee , getAllCleanings ,getImgCleaning
 };

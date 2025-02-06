@@ -97,6 +97,8 @@ const ClientFutureJobs = () => {
                 date={job.dateTime}
                 done={job.done}
                 active={active}
+                bname={selectedBranch.name}
+                id = {job._id}
               />
             ))
           : futureCleanings.map((job) => (
@@ -105,7 +107,9 @@ const ClientFutureJobs = () => {
                 namew={job.employee?.fullName}
                 date={job.dateTime}
                 done={job.done}
+                bname={selectedBranch.name}
                 active={active}
+                id = {job._id}
               />
             ))
         }
