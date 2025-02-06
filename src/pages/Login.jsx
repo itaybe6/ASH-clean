@@ -32,7 +32,8 @@ const Login = () => {
         navigate("/manager-registration-add-customer");
       }
       else if (token.role == "Regular"){
-        navigate("/clientJobs");      }
+        navigate("/worker-edit-profile");
+      }
       else {
         navigate("/clientJobs");
       }
@@ -88,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login;

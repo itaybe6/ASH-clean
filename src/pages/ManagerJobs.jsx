@@ -1,11 +1,14 @@
-import { useState } from "react";
-import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { useState,useEffect } from "react";
 import Search from "../components/Search";
+import CustomDatePicker from "../components/CustomDatePicker.jsx";
+import axios from "axios";
 import "./ManagerJobs.css";
 
 const ManagerJobs = () => {
-  const [groupDateTimePickerValue, setGroupDateTimePickerValue] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [cleanings, setCleanings] = useState([]);
+
+
   const searchItems = [
     {
       worker: "ליאור שם טוב",
@@ -48,7 +51,7 @@ const ManagerJobs = () => {
       branch: "תל אביב",
       date: "15/06/2025",
       bussiness: "קניון עזריאלי",
-    },{
+    }, {
       worker: "מיכל כהן",
       status: "לא נעשה",
       branch: "תל אביב",
@@ -65,8 +68,17 @@ const ManagerJobs = () => {
     // אפשר להוסיף כאן עוד אובייקטים כרצונך
   ];
 
+  useEffect(() => {
+    axios.get("http://localhost:5000/manager/getAllCleanings")
+      .then((res) => {
+        setCleanings(res.data);
+      })
+      .catch((error) => console.error("Error fetching customers:", error));
+  }, []);
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <div>
+
       <div className="manager-jobs">
         <div className="manager-jobs-child" />
         <div className="parent5">
@@ -85,27 +97,9 @@ const ManagerJobs = () => {
             />
           ))}
         </div>
-        <div className="wrapper1">
-          <DatePicker
-            value={groupDateTimePickerValue}
-            onChange={(newValue) => {
-              setGroupDateTimePickerValue(newValue);
-            }}
-            sx={{}}
-            slotProps={{
-              textField: {
-                size: "medium",
-                fullWidth: false,
-                required: false,
-                autoFocus: false,
-                error: false,
-                color: "primary",
-              },
-              openPickerIcon: {
-                component: () => <></>,
-              },
-            }}
-          />
+
+        <div className="date-picker-container88">
+          <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
         </div>
         <div className="rectangle-parent7">
           <div className="group-child11" />
@@ -117,10 +111,10 @@ const ManagerJobs = () => {
             <button className="vector-container">
               <img className="vector-icon1" alt="" src="/vector2.svg" />
             </button>
-           <button className="vector-wrapper4">
-            
-            <img className="vector-icon7" alt="" src="/vector7.svg" />
-          </button>
+            <button className="vector-wrapper4">
+
+              <img className="vector-icon7" alt="" src="/vector7.svg" />
+            </button>
             <button className="parent6">
               <div className="div16">משתמשים</div>
               <img
@@ -131,9 +125,10 @@ const ManagerJobs = () => {
             </button>
           </div>
         </div>
-      
+
       </div>
-    </LocalizationProvider>
+    </div>
+
   );
 };
 

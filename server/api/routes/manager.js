@@ -5,7 +5,7 @@ const { addRegularEmployee ,getBranchesByCustomer,
         getCleaningsByBranch , addCleaningForEmployee,
         updateManagerDetails , getAllWorkers ,  
         managerEditUser ,addBranchToCustomer ,
-        updateBranch ,getCleaningsByEmployee } = require('../controller/manager');
+        updateBranch ,getCleaningsByEmployee , getAllCleanings } = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -53,6 +53,9 @@ router.put('/editBranch/:branchId', updateBranch);
 
 
 router.put('/editUser/:id',managerEditUser);
+
+
+router.get("/getAllCleanings", getAllCleanings);
 
 
 module.exports = router;
