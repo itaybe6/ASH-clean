@@ -112,10 +112,10 @@ function App() {
 
   return (
     <>
-
+{/* 
       {token && !isMobile &&  role === "Manager" && <SideBarManager  user = {token} />}
       {token && !isMobile &&  role === "Regular" && <SideBarWorekr user = {token}/>}
-      {token && !isMobile &&  role === "customer" && <SideBarCustomers user = {token}/>}
+      {token && !isMobile &&  role === "customer" && <SideBarCustomers user = {token}/>} */}
 
       <PageTransition>
         <Routes>
