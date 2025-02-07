@@ -223,6 +223,7 @@
   border-radius: var(--br-smi);
   height: 47px;
   padding: 10px;
+  font-family: 'Heebo';
   
 }
 .group-child98 {
@@ -237,6 +238,7 @@
   border-radius: var(--br-smi);
   height: 47px;
   padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child99 {
   border: none;
@@ -250,6 +252,7 @@
   border-radius: var(--br-smi);
   height: 47px;
   padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child100 {
   border: none;
@@ -263,6 +266,7 @@
   border-radius: var(--br-smi);
   height: 47px;
   padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child101 {
   border: none;
@@ -276,6 +280,7 @@
   border-radius: var(--br-smi);
   height: 47px;
   padding: 10px;
+  font-family: 'Heebo';
 }
 .frame-container {
   width: 50.49%;
