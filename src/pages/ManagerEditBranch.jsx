@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate  , useParams} from 'react-router-dom';
 import "./ManagerEditBranch.css";
 import axios from 'axios';
 
@@ -8,6 +7,7 @@ const ManagerEditBranch = () => {
   const [branchName, setBranchName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
+  const {id} = useParams();
   const navigate = useNavigate();
 
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
@@ -16,7 +16,7 @@ const ManagerEditBranch = () => {
 
   const handleUpdateDetails = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/manager/editBranch/${branchId}`, {
+      const response = await axios.put(`http://localhost:5000/manager/editBranch/${id}`, {
         name: branchName,
         phone: phoneNumber,
         address: branchAddress,
@@ -31,6 +31,19 @@ const ManagerEditBranch = () => {
       alert("Server error: " + (error.response?.data?.message || error.message));
     }
   };
+
+  const deleteBranch = async () => {
+    try {
+
+      const response = await axios.delete(`http://localhost:5000/manager/deleteBranch/${id}`);
+      if (response.status === 200) {
+        console.log('Branch deleted successfully!');
+        navigate('/manager-display-users');
+      }
+    } catch (error) {
+      console.error('Error deleting branch:', error);
+    }
+  }
 
   const handleBack = () => {
     navigate(-1);
@@ -74,7 +87,7 @@ const ManagerEditBranch = () => {
         <div className="group-child40" />
         <b className="b36">חזרה</b>
       </button>
-      <button className="vector-wrapper21">
+      <button className="vector-wrapper21" onClick={deleteBranch}>
         <img className="vector-icon28" alt="" src="/vector17.svg" />
       </button>
       

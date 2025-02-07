@@ -350,6 +350,21 @@ const getImgCleaning = async (req, res) => {
       }
 } 
 
+
+const deleteBranchById = async (req, res) => {
+    try {
+      const { branchId } = req.params;
+      
+      // מחיקת הסניף ע"פ ה-ID
+      await Branch.findByIdAndDelete(branchId);
+  
+      return res.status(200).json({ message: 'Branch deleted successfully' });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Failed to delete branch' });
+    }
+  };
+
 module.exports = {
     addRegularEmployee
     ,getAllCustomers, addCustomer,
@@ -357,5 +372,6 @@ module.exports = {
     updateManagerDetails, addCleaningForEmployee,
     getAllWorkers,managerEditUser,
     addBranchToCustomer , updateBranch,
-    getCleaningsByEmployee , getAllCleanings ,getImgCleaning
+    getCleaningsByEmployee , getAllCleanings 
+    ,getImgCleaning , deleteBranchById
 };

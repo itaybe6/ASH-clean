@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ManagerEditBranchMobile.css";
 import MobileMenuManager from "./MobileMenuManager";
+import { useNavigate  , useParams} from 'react-router-dom';
+import axios from 'axios';
 
 const ManagerEditBranchMobile = () => {
   // הגדרת state לכל שדה קלט
@@ -8,26 +10,43 @@ const ManagerEditBranchMobile = () => {
   const [branchAddress, setBranchAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
+ const {id} = useParams();
+  const navigate = useNavigate();
 
-  // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
 
-  // פונקציה לטיפול בלחיצת כפתור עדכון פרטים
-  const handleUpdateDetails = () => {
-    // כאן ניתן להוסיף לוגיקה למשלוח הנתונים לשרת
-    console.log({
-      branchName,
-      branchAddress,
-      phoneNumber,
-    });
+  const handleUpdateDetails = async () => {
+    try {
+      const response = await axios.put(`http://localhost:5000/manager/editBranch/${id}`, {
+        name: branchName,
+        phone: phoneNumber,
+        address: branchAddress,
+      });
 
-    // אופציונלי: איפוס השדות לאחר השליחה
-    // setBranchName("");
-    // setBranchAddress("");
-    // setPhoneNumber("");
+      if (response.status === 200) {
+        alert("Branch updated successfully!");
+      } else {
+        alert("Error: " + response.data.message);
+      }
+    } catch (error) {
+      alert("Server error: " + (error.response?.data?.message || error.message));
+    }
   };
+
+  const deleteBranch = async () => {
+    try {
+
+      const response = await axios.delete(`http://localhost:5000/manager/deleteBranch/${id}`);
+      if (response.status === 200) {
+        console.log('Branch deleted successfully!');
+        navigate('/manager-display-users');
+      }
+    } catch (error) {
+      console.error('Error deleting branch:', error);
+    }
+  }
   const menu = () => {
     setDisplayMenu(!displayMenu)
   }
@@ -71,7 +90,7 @@ const ManagerEditBranchMobile = () => {
         <div className="group-child45" />
         <b className="b39">עדכן פרטים</b>
       </button>
-      <button className="vector-wrapper25">
+      <button className="vector-wrapper25" onClick={deleteBranch}>
         <img className="vector-icon32" alt="" src="/vector18.svg" />
       </button>
       <img className="icon18" alt="" src="/-02-11@2x.png" />
