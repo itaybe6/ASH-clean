@@ -116,7 +116,9 @@ const ClientFutureJobsMobile = () => {
         }
       </div>
 
-      <CustomToggleButton
+
+<div className="CustomToggleButton2012">
+<CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}
         Height={"56vh"}
@@ -124,6 +126,8 @@ const ClientFutureJobsMobile = () => {
         name2="עבודות עתידיות"
         left="100px"
       />
+</div>
+      
       {dropdownOpen && (
         <ul className="dropdown-menu3">
           {branches.map((branch) => (

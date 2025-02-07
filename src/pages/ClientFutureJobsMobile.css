@@ -222,3 +222,15 @@
   width: 17.4px;
   height: 17.4px;
 }
+
+.CustomToggleButton2012{
+  position: absolute;
+    top: calc(12% + 160px);
+    left: 15%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 52px;
+    transition: all 0.3s ease;
+}

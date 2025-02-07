@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Autocomplete, TextField, Button } from "@mui/material";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import CustomDatePicker from "../components/CustomDatePicker";
 import axios from "axios";
 import "./ManagerAddJobToWorker.css";
@@ -59,7 +57,7 @@ const ManagerAddJobToWorker = () => {
     try {
       const response = await axios.post(`http://localhost:5000/manager/${id}/cleanings`, {
         branch: selectedBranch._id,
-        dateTime: selectedDate.format("YYYY-MM-DD"),
+        dateTime: selectedDate,
       });
 
       alert("ניקיון נוסף בהצלחה!");

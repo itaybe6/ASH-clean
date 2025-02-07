@@ -21,11 +21,11 @@
 .div168 {
   position: absolute;
   top: 0px;
-  right: 0;
+  right: 30%;
   /* מצמיד את הכותרת לצד ימין */
   transform: none;
   /* מסיר את הטרנספורם כדי למנוע הזזה לאמצע */
-  line-height: 240%;
+  line-height: 200%;
   font-weight: 500;
   display: block;
   width: auto;
@@ -47,7 +47,7 @@
 .div169 {
   position: absolute;
   top: 60px;
-  left: calc(50% - 20.5px);
+  left: calc(17% - 20.5px);
 
   font-size: var(--font-size-base);
   line-height: 146.39%;
@@ -261,7 +261,7 @@
 .group-child129 {
   position: absolute;
   top: 0px;
-  left: calc(50% - -25px);
+  left: calc(-13% - -25px);
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   border: 1px solid var(--color-darkorange-200);
@@ -283,21 +283,24 @@
   /* מוודא שהטקסט מתחיל מימין */
   width: 400px;
   /* מתאים את הרוחב כך שהטקסט לא יזוז */
-  left: calc(50% - 215px);
+  left: calc(-13% - 215px);
 }
 
 .rectangle-parent61 {
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  width: 194px;
   position: absolute;
-  margin: 0 !important;
-  top: 164px;
-  left: calc(50% + 136px);
-  height: 70px;
-  z-index: 7;
+  left: 58%;
+  transform: translateX(0%);
+  top: 157px; /* התאמה לגובה */
+  width: 200px; /* שמירה על גודל קבוע */
+  height: 50px;
+  border-radius: 70px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #FAFAFA;
 }
 
 .client-future-jobs-inner {
@@ -332,22 +335,21 @@
 
 /* עיצוב התפריט הנפתח */
 .dropdown-menu4 {
+  position: absolute;
+  top: calc(20% + 10px); /* 10px מתחת לכפתור */
   color: rgb(0, 0, 0);
   font-weight: bold;
-  position: absolute !important;
   background: white;
   border-radius: 10px;
   padding: 10px;
   list-style: none;
-  width: 180px !important;
+  width: 180px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 5px !important;
   text-align: center;
-  z-index: 1000 !important;
-  right: 470px !important;
-  top: 240px !important;
+  z-index: 1000;
   min-width: 250px;
   direction: rtl;
+  left: calc(55% - -25px)
 }
 
 /* פריטים בתוך התפריט */
@@ -366,35 +368,52 @@
 }
 
 .jobs-list-container5 {
-  position: absolute;
-  top: 350px;
-  right: 25%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0px;
-  /* רווח אנכי בין כרטיסים */
-  /* אם רוצים גלילה בתוך אזור קבוע:
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto; /* מאפשר גלילה פנימית אם הרשימה מתארכת */
   max-height: 400px;
-  overflow-y: auto; */
+  padding-bottom: 100%;
+  padding-right: 10px; /* קצת ריווח נוסף מהצד ימין */
 }
+
+.jobs-container-wrapper {
+  position: absolute;
+  right: 25%; /* מקרב את הרשימה לצד ימין */
+  bottom: 0%; /* מוריד את הרשימה למטה */
+  width: 63%;
+  max-width: 920px;
+  min-width: 500px;
+  height: calc(100vh - 350px); /* גובה דינמי לפי המסך, 200px להשאיר מרווח מהכותרת */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* מתחיל מהחלק העליון */
+  overflow: hidden; /* מונע גלילה חיצונית */
+}
+
+
 
 .group1737 {
   cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  width: 29px;
-  position: absolute;
-  margin: 0 !important;
-  top: 186px;
-  right: 730px;
-  height: 29px;
-  z-index: 8;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+    position: absolute;
+    left: calc(28% - -25px);
+    top: 293px;
 }
 
 .vector-icon16 {
   position: absolute;
-  top: 1.5px;
+  top: 0px;
   left: calc(50% - 14.5px);
   width: 29.5px;
   height: 29.5px;
@@ -407,3 +426,16 @@
   width: 23.4px;
   height: 23.4px;
 }
+
+.CustomToggleButton1144{
+  position: absolute;
+    top: calc(12% + 160px);
+    left: 15%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 52px;
+    transition: all 0.3s ease;
+}
+

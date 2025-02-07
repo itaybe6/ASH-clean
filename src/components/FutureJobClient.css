@@ -2,7 +2,7 @@
   /* במקום absolute + top + left, עוברים ל־position: relative */
   position: relative;
   margin: 10px;
-  width: 1100px;
+  width: 880px;
   min-height: 65px;
   background-color: #fff;
   border-radius: var(--br-xl);
