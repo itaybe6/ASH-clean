@@ -20,7 +20,7 @@
 /* ===== הכפתור הכתום (ממוקם באופן אבסולוטי בפינת הכרטיס) ===== */
 .exec-button {
   position: absolute;
-  top: 70px;        /* המרחק מהחלק העליון של הכרטיס */
+  top: 45px;        /* המרחק מהחלק העליון של הכרטיס */
   left: 15px;       /* בפינה השמאלית (אם רוצים בפינה הימנית, החליפו ל right:10px) */
   background-color: #f97316; /* או var(--color-darkorange-200) */
   color: #fff;
@@ -32,6 +32,7 @@
   font-size: 0.9rem;
   line-height: 1.;
   font-family: 'Heebo';
+  width: 80px;
 
 }
 

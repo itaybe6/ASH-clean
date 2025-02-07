@@ -70,7 +70,9 @@ const WorkerFutureJobsMobile = () => {
       <div className="date-picker-container6">
         <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
       </div>
-      <CustomToggleButton
+     
+     <div className="CustomToggleButton223">
+     <CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}
         Height={"58vh"}
@@ -78,6 +80,8 @@ const WorkerFutureJobsMobile = () => {
         name2="עבודות עתידיות"
         left="48%"
       />
+     </div>
+      
       {/* כאן מפעילים את הרכיב עבור כל עבודה */}
       <div className="jobs-list-container">
         {filteredCleanings.map((job) => (

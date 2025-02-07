@@ -205,12 +205,14 @@
 }
 
 .jobs-list-container2 {
-  position: absolute;
+    position: absolute;
     top: 60%;
     left: 30%;
     transform: translate(-50%, -50%);
     width: 15%;
     max-width: 600px;
+    top: calc(30% + 10px);
+    transform: translateX(-50%);
 }
 
 .date-picker-container8{
