@@ -51,6 +51,7 @@ import ManagerAddJobToWorkerMobile from "./pages/ManagerAddJobToWorkerMobile";
 import SideBarWorekr from "./pages/SideBarWorekr";
 import SideBarCustomers from "./pages/SideBarCustomers";
 import SideBarManager from "./pages/SideBarManager";
+import Header from "./pages/Header";
 
 
 import Loader from "./components/Loader";
@@ -83,7 +84,7 @@ function App() {
   const location = useLocation();
   const noSideBarPaths = ["/login", "/homepage", "/accessibility"];
   const shouldHideSidebar = noSideBarPaths.includes(location.pathname);
-  
+
   const checkScreenSize = () => {
     const mobileBreakpoint = 768;
     setIsMobile(window.innerWidth <= mobileBreakpoint);
@@ -96,15 +97,23 @@ function App() {
   }, []);
 
 
-  const parseJwt = (token) => {
-    try {
-      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
-    } catch (error) {
-      return null;
-    }
-  };
+  function b64DecodeUnicode(str) {
+    // מפענח Base64 וממפה תווי יוניקוד כראוי
+    return decodeURIComponent(
+      atob(str)
+        .split('')
+        .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+  }
+
+  function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    // הופכים - ו_ לתווי Base64 רגילים
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = b64DecodeUnicode(base64);
+    return JSON.parse(jsonPayload);
+  }
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) {
@@ -114,13 +123,13 @@ function App() {
 
     }
   }, []);
-
+  console.log(token)
   return (
     <>
-
-      {!shouldHideSidebar && token && !isMobile &&  role === "Manager" && <SideBarManager  user = {token} />}
-      {!shouldHideSidebar && token && !isMobile &&  role === "Regular" && <SideBarWorekr user = {token}/>}
-      {!shouldHideSidebar && token && !isMobile &&  role === "customer" && <SideBarCustomers user = {token}/>}
+      {role && !shouldHideSidebar && <Header name={token.name} />}
+      {!shouldHideSidebar && token && !isMobile && role === "Manager" && <SideBarManager user={token} />}
+      {!shouldHideSidebar && token && !isMobile && role === "Regular" && <SideBarWorekr user={token} />}
+      {!shouldHideSidebar && token && !isMobile && role === "customer" && <SideBarCustomers user={token} />}
 
       <PageTransition>
         <Routes>

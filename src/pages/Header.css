@@ -1,0 +1,21 @@
+.header-container {
+  position: absolute; 
+  top: 60px;       /* המרחק מלמעלה */
+  right: 350px;      /* המרחק משמאל */
+  color: #333;     /* צבע טקסט */
+  font-family: 'Heebo'; /* או כל פונט אחר */
+  z-index: 999;
+direction: rtl;
+}
+
+.header-container h2 {
+  font-size: 34px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.header-container p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #666;
+}

@@ -30,8 +30,9 @@ const login = async (req, res) => {
         if (!isMatch) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
+        console.log(user)
         const payload = {
-            name: user.name,
+            name: user.fullName,
             role: user.role || 'customer',
             phone : phone,
             id : user._id
