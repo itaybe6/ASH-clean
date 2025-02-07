@@ -368,44 +368,54 @@
 }
 
 .jobs-list-container5 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-y: auto;
-  max-height: 600px;
-  padding-bottom: 20px;
+  position: relative;
+  width: 100%; /* מבטיח שהרשימה תמלא את כל הרוחב של ההורה */
+  max-width: 1000px;
+  min-width: 600px;
+  height: auto;
+  overflow-x: visible; /* מונע חיתוך אופקי */
+  text-align: center;
+  padding-top: 230px; /* דוחף את הרשימה למטה */
 }
+
+
+
+
 
 
 .jobs-container-wrapper {
-  position: absolute;
-  right: 55%;
-  transform: translateX(50%);
-  bottom: 5%;
-  width: 63%;
-  max-width: 920px;
-  min-width: 500px;
-  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  position: relative;
+  left: 35%;
+  transform: translateX(-50%);
+  width: 90%; /* מגדיל את הרוחב */
+  max-width: 1200px; /* מוודא שזה מתאים למסכים רחבים */
+  min-width: 600px; /* מונע בעיות במסכים קטנים */
+  height: auto;
+  overflow-x: visible; /* מונע חיתוך לרוחב */
+  white-space: nowrap; /* מונע חיתוך של תוכן בפנים */
+  margin-top: 50px; /* מוסיף מרווח למטה */
 }
 
-@media screen and (max-width: 1440px) {
+
+
+
+@media screen and (max-width: 1919px) {
   .jobs-container-wrapper {
-      width: 70%;
+      width: 75%;
+      margin-top: 120px; /* דחיפה קלה למטה */
+      left: 30%;
   }
 }
 
 @media screen and (min-width: 1920px) {
   .jobs-container-wrapper {
-      width: 55%;
+      width: 65%;
+      margin-top: 120px; /* התאמה למסכים גדולים יותר */
   }
 }
+
 
 
 
