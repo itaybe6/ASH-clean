@@ -106,7 +106,6 @@ function App() {
         .join('')
     );
   }
-
   function parseJwt(token) {
     const base64Url = token.split('.')[1];
     // הופכים - ו_ לתווי Base64 רגילים
@@ -114,6 +113,7 @@ function App() {
     const jsonPayload = b64DecodeUnicode(base64);
     return JSON.parse(jsonPayload);
   }
+
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) {
@@ -123,7 +123,7 @@ function App() {
 
     }
   }, []);
-  console.log(token)
+  
   return (
     <>
       {role && !shouldHideSidebar && <Header name={token.name} />}
