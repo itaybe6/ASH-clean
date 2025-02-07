@@ -88,32 +88,34 @@ const ClientFutureJobs = () => {
       </div>
 
       {/* מציג עבודות בהתאם לערך של active */}
-      <div className="jobs-list-container5">
-        {active
-          ? completedCleanings.map((job) => (
-              <FutureJobClient
-                key={job._id}
-                namew={job.employee?.fullName}
-                date={job.dateTime}
-                done={job.done}
-                active={active}
-                bname={selectedBranch.name}
-                id = {job._id}
-              />
-            ))
-          : futureCleanings.map((job) => (
-              <FutureJobClient
-                key={job._id}
-                namew={job.employee?.fullName}
-                date={job.dateTime}
-                done={job.done}
-                bname={selectedBranch.name}
-                active={active}
-                id = {job._id}
-              />
-            ))
-        }
-      </div>
+      <div className="jobs-container-wrapper">
+  <div className="jobs-list-container5">
+    {active
+      ? completedCleanings.map((job) => (
+          <FutureJobClient
+            key={job._id}
+            namew={job.employee?.fullName}
+            date={job.dateTime}
+            done={job.done}
+            active={active}
+            bname={selectedBranch.name}
+            id={job._id}
+          />
+        ))
+      : futureCleanings.map((job) => (
+          <FutureJobClient
+            key={job._id}
+            namew={job.employee?.fullName}
+            date={job.dateTime}
+            done={job.done}
+            bname={selectedBranch.name}
+            active={active}
+            id={job._id}
+          />
+        ))
+    }
+  </div>
+</div>
       
       <div className="rectangle-parent60">
         <div className="group-child128" />

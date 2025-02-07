@@ -368,18 +368,32 @@
 }
 
 .jobs-list-container5 {
-  position: absolute;
-  top: 44%; /* מיקום אנכי באמצע */
-  left: 44%; /* מיקום אופקי באמצע */
-  transform: translate(-50%, -50%); /* מבטיח מיקום מדויק */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* מוודא שהתוכן מיושר */
-  justify-content: center; /* מוודא שהתוכן ממורכז */
-  width: 60%; /* ניתן לשנות לפי הצורך */
-  max-width: 920px; /* מקסימום רוחב */
-  min-width: 500px; /* גודל מינימלי */
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto; /* מאפשר גלילה פנימית אם הרשימה מתארכת */
+  max-height: 400px;
+  padding-bottom: 100%;
+  padding-right: 10px; /* קצת ריווח נוסף מהצד ימין */
 }
+
+.jobs-container-wrapper {
+  position: absolute;
+  right: 25%; /* מקרב את הרשימה לצד ימין */
+  bottom: 0%; /* מוריד את הרשימה למטה */
+  width: 63%;
+  max-width: 920px;
+  min-width: 500px;
+  height: calc(100vh - 350px); /* גובה דינמי לפי המסך, 200px להשאיר מרווח מהכותרת */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* מתחיל מהחלק העליון */
+  overflow: hidden; /* מונע גלילה חיצונית */
+}
+
+
 
 .group1737 {
   cursor: pointer;
