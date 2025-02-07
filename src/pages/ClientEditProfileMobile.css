@@ -15,7 +15,7 @@
   position: absolute;
   margin: 0 !important;
   top: 225px;
-  left: calc(50% + 62.5px);
+  left: calc(52% + 62.5px);
   font-size: var(--font-size-13xl);
   line-height: 146.39%;
   font-weight: 500;
@@ -32,15 +32,16 @@
   font-weight: 300;
   display: inline-block;
   z-index: 4;
+  min-width: max-content;
 }
 .component-child3 {
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 80%;
   top: 0%;
   right: 0%;
   bottom: 0%;
-  left: 0%;
+  left: 23%;
   border-radius: var(--br-smi);
   background-color: var(--color-darkorange-200);
 }
@@ -49,8 +50,8 @@
   height: 55.74%;
   width: 82.75%;
   top: 21.11%;
-  left: 8.29%;
-  font-size: var(--font-size-xl);
+  left: 21%;
+  font-size: 15px;
   display: inline-block;
   font-family: var(--font-heebo);
   color: var(--color-white);
@@ -63,11 +64,10 @@
   background-color: transparent;
   position: absolute;
   width: 100%;
-  top: calc(50% - 27px);
-  right: 0%;
-  left: 0%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 54px;
+  top: calc(63% - 27px);
+    right: 0%;
+    left: 0%;
+    height: 44px;
 }
 .component-wrapper {
   cursor: pointer;
@@ -75,11 +75,12 @@
   padding: 0;
   background-color: transparent;
   position: absolute;
-  width: 48.7%;
-  top: calc(50% + 171px);
-  right: 1.81%;
-  left: 49.49%;
-  height: 54px;
+  width: 50%;
+  top: calc(35% + 171px);
+  right: 1%;
+  left: 48%;
+  height: 44px;
+  z-index: 999;
 }
 .group-child109 {
   border: none;
@@ -92,6 +93,8 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 48.8px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child110 {
   border: none;
@@ -104,6 +107,8 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 48.8px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child111 {
   border: none;
@@ -116,6 +121,8 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 48.8px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child112 {
   border: none;
@@ -128,6 +135,8 @@
   left: 0%;
   border-radius: var(--br-smi);
   height: 48.8px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .div143 {
   position: absolute;
