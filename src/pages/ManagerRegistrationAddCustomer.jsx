@@ -63,8 +63,7 @@ const ManagerRegistrationAddCustomer = () => {
         alt=""
         src="/line-21.svg"
       />
-      <div className="div84">שלום (שם מנהל)</div>
-      <div className="div85">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+   
       <div className="manager-registration-add-c-inner">
         <div className="vector-group">
           <img className="vector-icon34" alt="" src="/vector19.svg" />

@@ -87,8 +87,7 @@ const ClientEditProfile = () => {
         </div>
         <div className="group-child114" />
         <img className="group-child115" alt="" src="/line-21.svg" />
-        <div className="div145">שלום שרגא</div>
-        <div className="div146">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+     
         <div className="frame-parent2">
           <div className="parent35">
             <div className="div147">הגדרות</div>

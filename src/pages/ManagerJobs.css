@@ -9,30 +9,6 @@
   height: 1024px;
   z-index: 0;
 }
-.div14 {
-  position: relative;
-  line-height: 146.39%;
-  font-weight: 500;
-}
-.div15 {
-  position: relative;
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 300;
-  margin-top: -1px;
-}
-.parent5 {
-  margin: 0 !important;
-  position: absolute;
-  top: 75px;
-  left: calc(50% + 10px);
-  height: 74px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  z-index: 1;
-}
 
 .wrapper1 {
   width: 194px;
@@ -233,18 +209,19 @@
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
-.search-list-container {
-  /* יוצר תצוגה אנכית עם רווח וגלילה */
+.search-list-container5 {
+  position: absolute;
+  top:350px;
+  right: 200px;
   display: flex;
   flex-direction: column;
-  gap: 16px; /* רווח בין הכרטיסים */
+  gap: 26px; /* רווח בין הכרטיסים */
   max-height: 800px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
-  margin-top: 200px;
   margin-right: 280px
 }
 
-.search-list-container .search {
+.search-list-container5 .search {
   position: relative !important;
   width: auto !important;
   height: auto !important;

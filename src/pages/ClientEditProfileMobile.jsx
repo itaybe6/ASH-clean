@@ -71,8 +71,6 @@ const ClientEditProfileMobile = () => {
       {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id ={id}/> : null}
 
       <div className="client-edit-profile-mobile-child" />
-      <div className="div139">שלום (שם לקוח)</div>
-      <div className="div140">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="div141">הגדרות</div>
       <div className="div142">
         לפתיחת סניפים נוספים יש לפנות למנהל האתר

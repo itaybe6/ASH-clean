@@ -4,13 +4,10 @@ const ManagerAddWorker = () => {
   return (
     <div className="manager-add-worker">
       <section className="manager-add-worker-child" />
-      <img className="manager-add-worker-item" alt="" src="/line-21.svg" />
-      <div className="div25">שלום (שם מנהל)</div>
-      <div className="div26">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+      
       <div className="manager-add-worker-inner">
-        <div className="vector-parent">
-          <img className="vector-icon4" alt="" src="/vector4.svg" />
-          <b className="b18">הוספת משתמש - עובד</b>
+        <div className="vector-parent96">
+          <b className="b188">הוספת משתמש - עובד</b>
           <div className="div27">אנא מלא את הפרטים למטה כדי להוסיף סניף</div>
         </div>
       </div>

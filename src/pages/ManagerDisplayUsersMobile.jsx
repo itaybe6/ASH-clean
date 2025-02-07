@@ -54,8 +54,7 @@ const ManagerDisplayUsersMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-display-customers-mo-child" />
-      <b className="b223">שלום (שם מנהל)</b>
-      <div className="div43">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+      
       <img className="icon113" alt="" src="/-02-11@2x.png" />
       <button className="vector-wrapper11" onClick={menu}>
         <img className="vector-icon14" alt="" src="/vector10.svg" />

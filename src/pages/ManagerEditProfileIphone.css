@@ -9,28 +9,7 @@
   height: 741px;
   z-index: 0;
 }
-.b49 {
-  width: 183px;
-  position: absolute;
-  margin: 0 !important;
-  top: 133px;
-  left: calc(50% - 19.5px);
-  line-height: 146.39%;
-  display: inline-block;
-  z-index: 1;
-}
-.div105 {
-  width: 264px;
-  position: absolute;
-  margin: 0 !important;
-  top: 165px;
-  left: calc(50% - 100.5px);
-  font-size: var(--font-size-mini);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 2;
-}
+
 .div106 {
   width: 73px;
   position: absolute;

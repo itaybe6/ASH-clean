@@ -73,8 +73,6 @@ const ManagerEditProfileIphone = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-edit-profile-mobil-child" />
-      <b className="b49">שלום (שם מנהל)</b>
-      <div className="div105">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="div106">הגדרות</div>
       <div className="div107">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
       <div className="component-parent">

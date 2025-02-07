@@ -129,25 +129,7 @@
   width: 239px;
   object-fit: contain;
 }
-.div145 {
-  position: absolute;
-  top: 57px;
-  left: calc(50% + 71px);
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  width: 263px;
-}
-.div146 {
-  position: absolute;
-  top: 104px;
-  left: calc(50% + 45px);
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  width: 289px;
-}
+
 .div147 {
   align-self: stretch;
   position: relative;

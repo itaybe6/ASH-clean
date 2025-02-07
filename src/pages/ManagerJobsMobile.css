@@ -18,29 +18,7 @@
   justify-content: flex-start;
   z-index: 0;
 }
-.div23 {
-  width: 186px;
-  position: absolute;
-  margin: 0 !important;
-  top: 125px;
-  left: calc(50% - 21.5px);
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  z-index: 1;
-}
-.div24 {
-  width: 229px;
-  position: absolute;
-  margin: 0 !important;
-  top: 157px;
-  left: calc(50% - 64.5px);
-  font-size: var(--font-size-smi);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 2;
-}
+
 .wrapper2 {
   width: 143px;
   position: absolute;
@@ -101,7 +79,7 @@
   gap: 16px; /* רווח בין הכרטיסים */
   max-height: 1600px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
-  margin-top: 280px;
+  margin-top: 180px;
   margin-right: 50px
 }
 .search-list-container .JobOptionMobile {
@@ -118,14 +96,14 @@
 
 .date-picker-container889{
   position: absolute;
-  top:203px;
+  top:103px;
   left:10%;
   z-index: 999;
 }
 
 .CustomToggleButton82{
   position: absolute;
-  top:-7px;
+  top:-108px;
   left:25%;
 
 }

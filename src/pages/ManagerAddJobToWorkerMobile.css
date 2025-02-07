@@ -9,28 +9,7 @@
   height: 742px;
   z-index: 0;
 }
-.b42 {
-  width: 186px;
-  position: absolute;
-  margin: 0 !important;
-  top: 128px;
-  left: calc(50% - 21.5px);
-  line-height: 146.39%;
-  display: inline-block;
-  z-index: 1;
-}
-.div91 {
-  width: 264px;
-  position: absolute;
-  margin: 0 !important;
-  top: 160px;
-  left: calc(50% - 99.5px);
-  font-size: var(--font-size-mini);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 2;
-}
+
 .icon21 {
   width: 135px;
   position: absolute;

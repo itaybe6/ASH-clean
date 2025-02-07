@@ -53,8 +53,7 @@ const ManagerDisplayUsers = () => {
         alt=""
         src="/line-21.svg"
       />
-      <div className="div29">שלום (שם מנהל)</div>
-      <div className="div30">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+     
       <input
         className="manager-display-customers-item"
         placeholder="חיפוש משתמש..."

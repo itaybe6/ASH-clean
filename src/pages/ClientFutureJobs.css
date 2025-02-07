@@ -254,57 +254,9 @@
   z-index: 5;
 }
 
-.div176 {
-  position: relative;
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  flex-shrink: 0;
-  min-width: max-content;
-  padding-left: 60px;
-}
 
-.wrapper11 {
-  position: absolute;
-  top: 0px;
-  left: calc(50% - 78px);
-  width: 228px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
 
-.div177 {
-  flex: 1;
-  position: relative;
-  line-height: 146.39%;
-  font-weight: 300;
-}
 
-.wrapper12 {
-  position: absolute;
-  top: 41px;
-  left: calc(50% - 150px);
-  width: 298px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: right;
-  font-size: var(--font-size-base);
-}
-
-.frame-parent5 {
-  width: 300px;
-  position: absolute;
-  margin: 0 !important;
-  top: 50px;
-  left: calc(50% + 140px);
-  height: 64px;
-  z-index: 6;
-  text-align: center;
-}
 
 .group-child129 {
   position: absolute;

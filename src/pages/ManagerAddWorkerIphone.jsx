@@ -4,8 +4,6 @@ const ManagerAddWorkerIphone = () => {
   return (
     <div className="manager-add-worker-iphone">
       <div className="manager-add-worker-iphone-child" />
-      <div className="div101">שלום (שם מנהל)</div>
-      <div className="div102">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <b className="b48">הוספת משתמש - עובד</b>
       <div className="div103">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
       <img

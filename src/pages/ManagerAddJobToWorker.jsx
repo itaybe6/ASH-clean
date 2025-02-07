@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Autocomplete, TextField, Button } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
+import CustomDatePicker from "../components/CustomDatePicker";
 import axios from "axios";
 import "./ManagerAddJobToWorker.css";
 import { useParams } from "react-router-dom";
@@ -74,9 +75,6 @@ const ManagerAddJobToWorker = () => {
     <div className="manager-add-job-to-worker">
       <div className="manager-add-job-to-worker-child" />
       <img className="manager-add-job-to-worker-item" alt="" src="/line-21.svg" />
-      <div className="div54">שלום עומר</div>
-      <div className="div55">אנא הזן את פרטי העבודה</div>
-
       <div className="rectangle-parent15">
         <div className="group-child20" />
         <button className="vector-wrapper18">
@@ -124,18 +122,9 @@ const ManagerAddJobToWorker = () => {
             />
           </div>
 
-          {/* שדה בחירת תאריך */}
-          <div className="input-row">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker
-                label="בחירת תאריך"
-                value={selectedDate}
-                onChange={(newValue) => setSelectedDate(newValue)}
-                renderInput={(params) => <TextField {...params} />}
-                className="date-picker"
-              />
-            </LocalizationProvider>
-          </div>
+          <div className="date-picker-container887">
+          <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+        </div>
 
         </div>
       </div>

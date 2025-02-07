@@ -82,8 +82,6 @@ const ManagerAddJobToWorkerMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-add-job-to-worker-mo-child" />
-      <b className="b42">שלום (שם מנהל)</b>
-      <div className="div91">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <img className="icon21" alt="" src="/-02-11@2x.png" />
       <button className="vector-wrapper31">
         <img className="vector-icon38" alt="" src="/vector10.svg" onClick={menu}/>

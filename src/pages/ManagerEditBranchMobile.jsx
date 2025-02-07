@@ -40,8 +40,6 @@ const ManagerEditBranchMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-edit-branch-mobile-child" />
-      <b className="b37">שלום (שם מנהל)</b>
-      <div className="div79">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="parent22">
         <div className="div80">אנא מלא את הפרטים למטה כדי לערוך את הסניף</div>
         <b className="b38">עריכת פרטי סניף</b>

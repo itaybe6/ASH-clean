@@ -48,8 +48,7 @@ const ManagerAddBranchMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-add-branch-mobile-child" />
-      <b className="b88">שלום (שם מנהל)</b>
-      <div className="div222">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+      
       <div className="rectangle-parent83">
         <input
           className="group-child183"

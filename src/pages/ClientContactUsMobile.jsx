@@ -47,8 +47,7 @@ const ClientContactUsMobile = () => {
 
       <div className="client-contact-us-mobile-child" />
       <img className="icon33" alt="" src="/-02-11@2x.png" />
-      <div className="div150">שלום (שם לקוח)</div>
-      <div className="div151">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+      
       <div className="div152">צור איתנו קשר</div>
       <div className="div153">
         יש בעיה? צריך עזרה או רק שאלה? מלא פה את הפרטים שלך ונחזור אלייך בהקדם

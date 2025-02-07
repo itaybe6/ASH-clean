@@ -39,8 +39,6 @@ const ManagerAddBranch = () => {
     <div className="manager-add-branch">
       <div className="manager-add-branch-child" />
       <img className="manager-add-branch-item" alt="" src="/line-21.svg" />
-      <div className="div218">שלום (שם מנהל)</div>
-      <div className="div219">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="rectangle-parent80">
         <input
           className="group-child178"

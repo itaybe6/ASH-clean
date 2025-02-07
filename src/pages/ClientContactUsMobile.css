@@ -15,25 +15,7 @@
   height: 47px;
   object-fit: cover;
 }
-.div150 {
-  position: absolute;
-  top: 118px;
-  left: calc(50% - 6.5px);
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  width: 171px;
-}
-.div151 {
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 64.5px);
-  font-size: var(--font-size-smi);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  width: 229px;
-}
+
 .div152 {
   position: absolute;
   top: 204px;

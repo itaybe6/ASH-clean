@@ -74,8 +74,6 @@ const ClientFutureJobsMobile = () => {
     <div className="client-future-jobs-mobile">
       {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id ={id} /> : null}
       <div className="client-future-jobs-mobile-child" />
-      <div className="div180">שלום (שם לקוח)</div>
-      <div className="div181">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
 
       <img className="icon38" alt="" src="/-02-11@2x.png" />
       <div className="parent43">

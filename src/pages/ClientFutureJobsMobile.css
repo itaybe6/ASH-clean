@@ -9,29 +9,7 @@
   height: 735px;
   z-index: 0;
 }
-.div180 {
-  width: 171px;
-  position: absolute;
-  margin: 0 !important;
-  top: 118px;
-  left: calc(50% - 6.5px);
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  z-index: 1;
-}
-.div181 {
-  width: 229px;
-  position: absolute;
-  margin: 0 !important;
-  top: 150px;
-  left: calc(50% - 64.5px);
-  font-size: var(--font-size-smi);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 2;
-}
+
 .client-future-jobs-mobile-item {
   width: 9.5px;
   position: absolute;

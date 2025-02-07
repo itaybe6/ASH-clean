@@ -66,8 +66,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-registration-add-c-child1" />
-      <div className="div91">שלום (שם מנהל)</div>
-      <div className="div92">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+  
       <div className="manager-registration-add-c-inner1">
         <div className="parent24">
           <b className="b44">הוספת משתמש - לקוח</b>

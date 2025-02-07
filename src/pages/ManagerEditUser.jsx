@@ -46,8 +46,6 @@ const ManagerEditUser = () => {
   return (
     <div className="manager-edit-profile">
       <div className="manager-edit-profile-child" />
-      <div className="div94">שלום (שם מנהל)</div>
-      <div className="div95">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="parent25">
         <div className="div96">עריכת פרטי משתמש</div>      </div>
       <div className="group-parent16">

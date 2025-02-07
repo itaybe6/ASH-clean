@@ -16,29 +16,7 @@
   object-fit: contain;
   z-index: 1;
 }
-.div84 {
-  width: 263px;
-  position: absolute;
-  margin: 0 !important;
-  top: 57px;
-  left: calc(50% + 71px);
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  z-index: 2;
-}
-.div85 {
-  width: 289px;
-  position: absolute;
-  margin: 0 !important;
-  top: 104px;
-  left: calc(50% + 45px);
-  font-size: var(--font-size-base);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 3;
-}
+
 .vector-icon34 {
   position: absolute;
   top: 18.5px;

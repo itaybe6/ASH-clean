@@ -46,11 +46,8 @@ const ManagerJobs = () => {
       <div className="manager-jobs">
 
         <div className="manager-jobs-child" />
-        <div className="parent5">
-          <div className="div14">שלום (שם מנהל)</div>
-          <div className="div15">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
-        </div>
-        <div className="search-list-container">
+      
+        <div className="search-list-container5">
           {filterCleanings.map((item, index) => (
             <Search
               id={item._id}

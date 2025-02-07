@@ -16,29 +16,7 @@
   object-fit: contain;
   z-index: 1;
 }
-.div218 {
-  width: 263px;
-  position: absolute;
-  margin: 0 !important;
-  top: 57px;
-  left: calc(50% + 71px);
-  font-size: var(--font-size-13xl);
-  line-height: 146.39%;
-  font-weight: 500;
-  display: inline-block;
-  z-index: 2;
-}
-.div219 {
-  width: 289px;
-  position: absolute;
-  margin: 0 !important;
-  top: 104px;
-  left: calc(50% + 45px);
-  line-height: 146.39%;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 3;
-}
+
 .group-child178 {
   border: none;
   outline: none;

@@ -40,8 +40,6 @@ const ManagerEditBranch = () => {
     <div className="manager-edit-branch">
       <div className="manager-edit-branch-child" />
       <img className="manager-edit-branch-item" alt="" src="/line-21.svg" />
-      <div className="div72">שלום (שם מנהל)</div>
-      <div className="div73">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="div74">ערוך את הפרטים של הסניף</div>
       <b className="b34">עריכת פרטי סניף</b>
       <div className="rectangle-parent24">

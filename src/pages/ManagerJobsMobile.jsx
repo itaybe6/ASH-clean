@@ -63,9 +63,6 @@ const ManagerJobsMobile = () => {
         <div className="manager-jobs-mobile-inner">
           <div className="frame-child1" />
         </div>
-        <div className="div23">שלום (שם מנהל)</div>
-        <div className="div24">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
-
         <div className="search-list-container">
           {filterCleanings.map((item, index) => (
             <JobOptionMobile
@@ -84,16 +81,8 @@ const ManagerJobsMobile = () => {
         </button>
         <img className="icon7" alt="" src="/-02-11@2x.png" />
       </div>
-
       <div className="CustomToggleButton82">
-        <CustomToggleButton
-          active={active}
-          onClick={() => setActive(!active)}
-          Height={"56vh"}
-          name1=" שבוע קדימה"
-          name2=" שבוע אחורה"
-          left="100px"
-        />
+        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"56vh"} name1=" שבוע קדימה" name2=" שבוע אחורה"left="100px"/>
       </div>
     </div>
   );

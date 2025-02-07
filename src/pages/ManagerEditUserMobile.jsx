@@ -66,8 +66,7 @@ const ManagerEditUserMobile = () => {
     <div className="manager-edit-profile-mobil">
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="manager-edit-profile-mobil-child" />
-      <b className="b49">שלום (שם מנהל)</b>
-      <div className="div105">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
+
       <div className="div106">עריכת פרטי משתמש</div>
       <div className="component-parent">
         <button className="rectangle-parent41" onClick={handleUpdateDetails}>

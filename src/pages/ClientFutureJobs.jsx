@@ -156,14 +156,8 @@ const ClientFutureJobs = () => {
         </ul>
       )}
 
-      <div className="frame-parent5">
-        <div className="wrapper11">
-          <div className="div176">שלום (שם לקוח)</div>
-        </div>
-        <div className="wrapper12">
-          <div className="div177">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
-        </div>
-      </div>
+      
+
       <button className="rectangle-parent61" onClick={() => setDropdownOpen(!dropdownOpen)}>
         <div className="group-child129" />
         <b className="b66">בחירת סניף</b>
