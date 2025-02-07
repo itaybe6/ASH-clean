@@ -57,8 +57,6 @@ const WorkerEditProfileMobile = () => {
     <div className="worker-edit-profile-mobile">
       {displayMenu ? <MobileMenuWorker isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="worker-edit-profile-mobile-child" />
-      <div className="div118">שלום (שם עובד)</div>
-      <div className="div119">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <div className="div120">הגדרות</div>
       <div className="div121">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
       <div className="group-parent22">

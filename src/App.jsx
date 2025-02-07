@@ -123,10 +123,10 @@ function App() {
 
     }
   }, []);
-  
+
   return (
     <>
-      {role && !shouldHideSidebar && <Header name={token.name} />}
+      {role && !shouldHideSidebar && <Header name={token.name} mobile= {isMobile} />}
       {!shouldHideSidebar && token && !isMobile && role === "Manager" && <SideBarManager user={token} />}
       {!shouldHideSidebar && token && !isMobile && role === "Regular" && <SideBarWorekr user={token} />}
       {!shouldHideSidebar && token && !isMobile && role === "customer" && <SideBarCustomers user={token} />}

@@ -19,3 +19,10 @@ direction: rtl;
   font-size: 14px;
   color: #666;
 }
+.header-mobile {
+  top: 93px;
+  left: 43px;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
