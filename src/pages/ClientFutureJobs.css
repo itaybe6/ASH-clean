@@ -261,7 +261,7 @@
 .group-child129 {
   position: absolute;
   top: 0px;
-  left: calc(19% - -25px);
+  left: calc(-13% - -25px);
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   border: 1px solid var(--color-darkorange-200);
@@ -283,22 +283,24 @@
   /* מוודא שהטקסט מתחיל מימין */
   width: 400px;
   /* מתאים את הרוחב כך שהטקסט לא יזוז */
-  left: calc(19% - 215px);
+  left: calc(-13% - 215px);
 }
 
 .rectangle-parent61 {
-  cursor: pointer;
-  border: none;
-  padding: 10px 20px;
-  background-color: transparent;
-  font-size: 16px;
-  border-radius: 5px;
-  height: 70px;
-  width: 194px;
-  z-index: 7;
   position: absolute;
-  left: calc(54% - -25px);
-  top: 150px;
+  left: 58%;
+  transform: translateX(0%);
+  top: 157px; /* התאמה לגובה */
+  width: 200px; /* שמירה על גודל קבוע */
+  height: 50px;
+  border-radius: 70px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #FAFAFA;
 }
 
 .client-future-jobs-inner {
@@ -333,22 +335,21 @@
 
 /* עיצוב התפריט הנפתח */
 .dropdown-menu4 {
+  position: absolute;
+  top: calc(20% + 10px); /* 10px מתחת לכפתור */
   color: rgb(0, 0, 0);
   font-weight: bold;
-  position: absolute !important;
   background: white;
   border-radius: 10px;
   padding: 10px;
   list-style: none;
-  width: 180px !important;
+  width: 180px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 5px !important;
   text-align: center;
-  z-index: 1000 !important;
-  right: 470px !important;
-  top: 240px !important;
+  z-index: 1000;
   min-width: 250px;
   direction: rtl;
+  left: calc(55% - -25px)
 }
 
 /* פריטים בתוך התפריט */
@@ -368,15 +369,16 @@
 
 .jobs-list-container5 {
   position: absolute;
-  top: 350px;
-  right: 25%;
+  top: 44%; /* מיקום אנכי באמצע */
+  left: 44%; /* מיקום אופקי באמצע */
+  transform: translate(-50%, -50%); /* מבטיח מיקום מדויק */
   display: flex;
   flex-direction: column;
-  gap: 0px;
-  /* רווח אנכי בין כרטיסים */
-  /* אם רוצים גלילה בתוך אזור קבוע:
-  max-height: 400px;
-  overflow-y: auto; */
+  align-items: center; /* מוודא שהתוכן מיושר */
+  justify-content: center; /* מוודא שהתוכן ממורכז */
+  width: 60%; /* ניתן לשנות לפי הצורך */
+  max-width: 920px; /* מקסימום רוחב */
+  min-width: 500px; /* גודל מינימלי */
 }
 
 .group1737 {
@@ -391,8 +393,8 @@
     justify-content: center;
     z-index: 8;
     position: absolute;
-    left: calc(55% - -25px);
-    top: 170px;
+    left: calc(28% - -25px);
+    top: 293px;
 }
 
 .vector-icon16 {
