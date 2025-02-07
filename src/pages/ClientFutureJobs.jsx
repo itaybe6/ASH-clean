@@ -48,9 +48,13 @@ const ClientFutureJobs = () => {
             `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
           );
           const allCleanings = response.data;
+      
+          // ממיינים את הניקיונות לפי תאריך (מהקרוב לרחוק)
+          allCleanings.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
+      
           setFutureCleanings(allCleanings.filter((c) => c.done == false));
           setCompletedCleanings(allCleanings.filter((c) => c.done == true));
-
+      
         } catch (error) {
           console.error('Error fetching cleanings:', error);
         }
