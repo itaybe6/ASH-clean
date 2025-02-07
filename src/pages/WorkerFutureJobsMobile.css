@@ -166,6 +166,24 @@
 }
 .date-picker-container6{
   position: absolute;
-  top:213px;
-  left:5%;
+  top: calc(9% + 160px); /* ממקם אותו קצת יותר למטה */
+  left: 30%; /* ממקם באמצע */
+  transform: translateX(-50%); /* שומר על המרכז */
+  display: flex;
+  align-items: center;
+  width: 150px; /* רוחב קבוע */
+  height: 52px; /* גובה קבוע */
+  transition: all 0.3s ease; /* אנימציה חלקה */
+}
+
+.CustomToggleButton223{
+  position: absolute;
+    top: calc(9% + 160px); /* ממקם אותו קצת יותר למטה */
+    left: 53%; /* ממקם באמצע */
+    transform: translateX(-50%); /* שומר על המרכז */
+    display: flex;
+    align-items: center;
+    width: 150px; /* רוחב קבוע */
+    height: 52px; /* גובה קבוע */
+    transition: all 0.3s ease; /* אנימציה חלקה */
 }
