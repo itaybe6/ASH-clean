@@ -1,0 +1,121 @@
+.side-bar-manager-child {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  background-color: var(--color-white);
+  width: 301px;
+  height: 1024px;
+}
+.side-bar-manager-inner {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  width: 301px;
+  height: 1024px;
+}
+.vector-icon104 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper95 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 879px;
+  right: 90px;
+  width: 133px;
+  height: 52px;
+}
+.icon60 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 232px;
+  height: 81px;
+  object-fit: cover;
+}
+.vector-icon105 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-wrapper96 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 123.7px;
+  right: 12.2px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-icon106 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 147.8px;
+  height: 47px;
+}
+.vector-wrapper97 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 7px;
+  width: 147.8px;
+  height: 47px;
+}
+.div232 {
+  position: absolute;
+  top: 4px;
+  right: 65px;
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-darkslategray-200);
+  text-align: right;
+}
+.icbaseline-people-alt-icon10 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 55px;
+  height: 55px;
+}
+.parent56 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 57px;
+  right: 0px;
+  width: 207px;
+  height: 55px;
+}
+.group-parent49 {
+  position: absolute;
+  top: 247px;
+  right: 47px;
+  width: 207px;
+  height: 161.3px;
+}
+.side-bar-manager {
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  z-index: 999;
+  top: 0px;
+  height: 1024px;
+  background-color: transparent;
+}

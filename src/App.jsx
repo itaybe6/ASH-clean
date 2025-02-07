@@ -47,6 +47,9 @@ import ManagerDIsplayWorkerJobs from "./pages/ManagerDIsplayWorkerJobs";
 import ManagerDIsplayWorkerJobsMobile from "./pages/ManagerDIsplayWorkerJobsMobile";
 import ManagerAddJobToWorker from "./pages/ManagerAddJobToWorker";
 import ManagerAddJobToWorkerMobile from "./pages/ManagerAddJobToWorkerMobile";
+import SideBarWorekr from "./pages/SideBarWorekr";
+import SideBarCustomers from "./pages/SideBarCustomers";
+import SideBarManager from "./pages/SideBarManager";
 
 
 import Loader from "./components/Loader";
@@ -73,6 +76,8 @@ function PageTransition({ children }) {
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+  const [role, setRole] = useState(null);
+  const [token, setToken] = useState(null);
 
   const checkScreenSize = () => {
     const mobileBreakpoint = 768;
@@ -85,56 +90,79 @@ function App() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
+    } catch (error) {
+      return null;
+    }
+  };
+  useEffect(() => {
+    const savedToken = localStorage.getItem("token");
+    if (savedToken) {
+      setToken(parseJwt(savedToken));
+      const user = parseJwt(savedToken);
+      setRole(user.role);
+
+    }
+  }, []);
+
   return (
-    <PageTransition>
-      <Routes>
+    <>
+
+      {token && !isMobile &&  role === "Manager" && <SideBarManager  user = {token} />}
+      {token && !isMobile &&  role === "Regular" && <SideBarWorekr user = {token}/>}
+      {token && !isMobile &&  role === "customer" && <SideBarCustomers user = {token}/>}
+
+      <PageTransition>
+        <Routes>
+          <Route path="/" element={isMobile ? <LoginMobile /> : <Login />} />
+          <Route path="homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
+          <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
+          <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
+          <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
+          <Route path="/manager-add-customer" element={isMobile ? <ManagerRegistrationAddCustomerMobile /> : <ManagerRegistrationAddCustomer />} />
+          <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
+          <Route path="/manager-edit-user/:id/:type" element={isMobile ? <ManagerEditUserMobile /> : <ManagerEditUser />} />
+          <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />
 
 
-        <Route path="/" element={isMobile ? <LoginMobile /> : <Login />} />
-        <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
-        <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
-        <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
-        <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
-        <Route path="/manager-add-customer" element={isMobile ? <ManagerRegistrationAddCustomerMobile /> : <ManagerRegistrationAddCustomer />} />
-        <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
-        <Route path="/manager-edit-user/:id/:type" element={isMobile ? <ManagerEditUserMobile /> : <ManagerEditUser />} />
-        <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />
+          {/* הוספת כפתור פלוס לתוצאת חיפוש תעביר לנתיבים האלה */}
+          <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
+          <Route path="/manager-add-job-to-worker/:id" element={isMobile ? <ManagerAddJobToWorkerMobile /> : <ManagerAddJobToWorker />} />
 
-
-        {/* הוספת כפתור פלוס לתוצאת חיפוש תעביר לנתיבים האלה */}
-        <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
-        <Route path="/manager-add-job-to-worker/:id" element={isMobile ? <ManagerAddJobToWorkerMobile /> : <ManagerAddJobToWorker />} />
-
-        {/* מעבר לאחר כפתור עריכה ב clintJobs */}
-        <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
-
-
-
-        <Route path="/clientJobs/:id" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
-        <Route path="/client-contact-us/:id" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
-        <Route path="/client-edit-profile/:id" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
-
-
-
-    {/* מפה למחוק את המלל הסטטי בתחילת העמוד  */}
-        {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  , סינין לפי תאריך , משיכת נתונים מהדאטה בייס , סיניון לפי עבודות ועבודות עתידיות */}
-        <Route path="/worker-future-jobs/:id" element={isMobile ? <WorkerFutureJobsMobile /> : <WorkerFutureJobs />} />
-        <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
-        <Route path="/worker-job-suc/:id" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
+          {/* מעבר לאחר כפתור עריכה ב clintJobs */}
+          <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
 
 
 
-        <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
-        <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
-        <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
+          <Route path="/clientJobs/:id" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
+          <Route path="/client-contact-us/:id" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
+          <Route path="/client-edit-profile/:id" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
 
 
-        {/* למחוק את הרכביים + למחוק את הנתיב הזה */}
-        <Route path="/manager-customer-jobs-done/:id" element={isMobile ? <ManagerCustomerJobsDoneMobile /> : <ManagerCustomerJobsDone />} />
-        <Route path="/manager-worker-jobs/:id" element={isMobile ? <ManagerDIsplayWorkerJobsMobile /> : <ManagerDIsplayWorkerJobs />} />
 
-      </Routes>
-    </PageTransition>
+          {/* מפה למחוק את המלל הסטטי בתחילת העמוד  */}
+          {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  , סינין לפי תאריך , משיכת נתונים מהדאטה בייס , סיניון לפי עבודות ועבודות עתידיות */}
+          <Route path="/worker-future-jobs/:id" element={isMobile ? <WorkerFutureJobsMobile /> : <WorkerFutureJobs />} />
+          <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
+          <Route path="/worker-job-suc/:id" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
+
+
+
+          <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
+          <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
+          <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
+
+
+
+
+        </Routes>
+      </PageTransition>
+    </>
   );
 }
 

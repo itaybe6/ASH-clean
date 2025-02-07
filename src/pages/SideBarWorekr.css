@@ -1,0 +1,111 @@
+.group-child192 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  background-color: var(--color-white);
+  width: 301px;
+  height: 1024px;
+}
+.vector-icon101 {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper92 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  right: 90px;
+  bottom: 93px;
+  width: 133px;
+  height: 52px;
+}
+.icon59 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 232px;
+  height: 81px;
+  object-fit: cover;
+}
+.rectangle-parent90 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  width: 301px;
+  height: 1024px;
+}
+.vector-icon102 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-wrapper93 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.group-wrapper8 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 61.7px;
+  right: 6px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-icon103 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 147.8px;
+  height: 47px;
+}
+.vector-wrapper94 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 147.8px;
+  height: 47px;
+}
+.group-parent48 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 150.7px;
+  height: 99.3px;
+}
+.side-bar-worekr-inner {
+  position: absolute;
+  top: 265px;
+  right: 73.3px;
+  width: 150.7px;
+  height: 99.3px;
+}
+.side-bar-worekr {
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  z-index: 999;
+  top: 0px;
+  height: 1024px;
+  background-color: transparent;
+}

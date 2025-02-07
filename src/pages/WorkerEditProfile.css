@@ -299,7 +299,6 @@
   position: relative;
   background: linear-gradient(#fff, #fff), #fff;
   height: 1024px;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: flex-start;

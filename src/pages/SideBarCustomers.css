@@ -1,0 +1,137 @@
+.group-child191 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  background-color: var(--color-white);
+  width: 301px;
+  height: 1024px;
+}
+.vector-icon98 {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 133px;
+  height: 52px;
+}
+.vector-wrapper89 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  right: 90px;
+  bottom: 93px;
+  width: 133px;
+  height: 52px;
+}
+.icon58 {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 232px;
+  height: 81px;
+  object-fit: cover;
+}
+.rectangle-parent89 {
+  position: absolute;
+  top: calc(50% - 512px);
+  right: 0px;
+  width: 642px;
+  height: 1024px;
+}
+.vector-icon99 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.vector-wrapper90 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 60.7px;
+  right: 8.2px;
+  width: 144.7px;
+  height: 37.6px;
+}
+.div231 {
+  position: absolute;
+  top: 0px;
+  right: 61px;
+  font-size: var(--font-size-13xl);
+  line-height: 146.39%;
+  font-family: var(--font-heebo);
+  color: var(--color-darkslategray-200);
+  text-align: right;
+  display: inline-block;
+  width: 118px;
+}
+.icbaseline-contact-mail-icon5 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 47px;
+  height: 47px;
+}
+.parent55 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 179px;
+  height: 47px;
+}
+.group-parent47 {
+  position: absolute;
+  top: 57px;
+  right: 0px;
+  width: 179px;
+  height: 98.3px;
+}
+.vector-icon100 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 147.8px;
+  height: 47px;
+}
+.vector-wrapper91 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 2.2px;
+  width: 147.8px;
+  height: 47px;
+}
+.group-parent46 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 179px;
+  height: 155.3px;
+}
+.side-bar-customers-inner {
+  position: absolute;
+  top: 247px;
+  right: 67px;
+  width: 179px;
+  height: 155.3px;
+}
+.side-bar-customers {
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  z-index: 999;
+  top: 0px;
+  height: 1024px;
+  background-color: transparent;
+}

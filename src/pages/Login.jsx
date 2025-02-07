@@ -32,7 +32,7 @@ const Login = () => {
         navigate("/manager-registration-add-customer");
       }
       else if (token.role == "Regular"){
-        navigate("/worker-edit-profile");
+        navigate("/worker-edit-profile"); 
       }
       else {
         navigate(`/clientJobs/${token.id}/`);
