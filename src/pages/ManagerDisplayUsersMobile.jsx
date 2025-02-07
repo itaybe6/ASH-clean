@@ -11,6 +11,7 @@ const ManagerDisplayUsersMobile = () => {
   const [customers, setCustomers] = useState([]);
   const [workers, setWorkers] = useState([]);
   const [displayMenu, setDisplayMenu] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = useNavigate();
 
@@ -49,12 +50,27 @@ const ManagerDisplayUsersMobile = () => {
     setDisplayMenu(false);
   };
 
+  const filteredCustomers = customers.filter((customer) =>
+    customer.businessName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredWorkers = workers.filter((worker) =>
+    worker.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
   return (
     <div className="manager-display-customers-mo">
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-display-customers-mo-child" />
-      
+      <input
+        className="manager-display-customers-item2"
+        placeholder="חיפוש משתמש..."
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)} // עדכון state בזמן הקלדה
+      />
       <img className="icon113" alt="" src="/-02-11@2x.png" />
       <button className="vector-wrapper11" onClick={menu}>
         <img className="vector-icon14" alt="" src="/vector10.svg" />
@@ -71,7 +87,7 @@ const ManagerDisplayUsersMobile = () => {
 
       <div className="search-list-container2">
         {active
-          ? workers.map((item, index) => (
+          ? filteredWorkers.map((item, index) => (
             <UserOptionMobile
               key={index}
               bname={item.fullName}
@@ -81,7 +97,7 @@ const ManagerDisplayUsersMobile = () => {
 
             />
           ))
-          : customers.map((item, index) => (
+          : filteredCustomers.map((item, index) => (
             <UserOptionMobile
               key={index}
               bname={item.businessName}

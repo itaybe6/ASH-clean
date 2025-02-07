@@ -9,6 +9,7 @@ const ManagerDisplayUsers = () => {
   const [active, setActive] = useState(true);
   const [customers, setCustomers] = useState([]);
   const [workers, setWorkers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,6 +44,15 @@ const ManagerDisplayUsers = () => {
     }
   }
 
+  const filteredCustomers = customers.filter((customer) =>
+    customer.businessName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredWorkers = workers.filter((worker) =>
+    worker.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
   return (
     <div className="manager-display-customers">
       <div className="manager-display-customers-inner">
@@ -54,10 +64,12 @@ const ManagerDisplayUsers = () => {
         src="/line-21.svg"
       />
      
-      <input
+     <input
         className="manager-display-customers-item"
         placeholder="חיפוש משתמש..."
         type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)} // עדכון state בזמן הקלדה
       />
       <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" left="-850px"/>;
 
@@ -67,7 +79,7 @@ const ManagerDisplayUsers = () => {
       </button>
       <div className="search-list-container7">
         {active
-          ? workers.map((item, index) => (
+          ? filteredWorkers.map((item, index) => (
             <UserOption
               key={index}
               nameCus={item.fullName}
@@ -75,7 +87,7 @@ const ManagerDisplayUsers = () => {
               id = {item._id}
             />
           ))
-          : customers.map((item, index) => (
+          : filteredCustomers.map((item, index) => (
             <UserOption
               key={index}
               nameCus={item.businessName}
