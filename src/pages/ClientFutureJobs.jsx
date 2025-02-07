@@ -114,10 +114,7 @@ const ClientFutureJobs = () => {
             ))
         }
       </div>
-      <button className="group1737" onClick={editBranch}>
-        <img className="vector-icon16" alt="" src="/vector11.svg" />
-        <img className="vector-icon17" alt="" src="/vector12.svg" />
-      </button>
+      
       <div className="rectangle-parent60">
         <div className="group-child128" />
         <button className="vector-wrapper62">
@@ -156,21 +153,30 @@ const ClientFutureJobs = () => {
         </ul>
       )}
 
+      <button className="group1737" onClick={editBranch}>
+        <img className="vector-icon16" alt="" src="/vector11.svg" />
+        <img className="vector-icon17" alt="" src="/vector12.svg" />
+      </button>
       
-
       <button className="rectangle-parent61" onClick={() => setDropdownOpen(!dropdownOpen)}>
         <div className="group-child129" />
         <b className="b66">בחירת סניף</b>
       </button>
+    
 
-      <CustomToggleButton
+<div className="CustomToggleButton1144">
+<CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}
         Height={"56vh"}
         name1="עבודות"
         name2="עבודות עתידיות"
         left="100px"
-      />
+      /> 
+</div>
+    
+
+
     </div>
   );
 };
