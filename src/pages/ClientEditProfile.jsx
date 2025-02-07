@@ -62,29 +62,6 @@ const ClientEditProfile = () => {
   return (
     <div className="client-edit-profile">
       <div className="group-parent27">
-        <div className="rectangle-parent53">
-          <div className="group-child113" />
-          <button className="vector-wrapper54">
-            <img className="vector-icon63" alt="" src="/vector8.svg" />
-          </button>
-          <img className="icon32" alt="" src="/-02-13@2x.png" />
-          <div className="group-parent28">
-            <button className="vector-wrapper55">
-              <img className="vector-icon64" alt="" src="/vector23.svg" />
-            </button>
-            <button className="vector-wrapper56">
-              <img className="vector-icon65" onClick={Jobs} alt="" src="/vector9.svg" />
-            </button>
-            <button className="parent34">
-              <div className="div144" onClick={Conatct}>צור קשר</div>
-              <img
-                className="icbaseline-contact-mail-icon1"
-                alt=""
-                src="/icbaselinecontactmail.svg"
-              />
-            </button>
-          </div>
-        </div>
         <div className="group-child114" />
         <img className="group-child115" alt="" src="/line-21.svg" />
      

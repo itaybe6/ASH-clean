@@ -58,12 +58,7 @@ const ManagerRegistrationAddCustomer = () => {
   return (
     <div className="manager-registration-add-c">
       <div className="manager-registration-add-c-child" />
-      <img
-        className="manager-registration-add-c-item"
-        alt=""
-        src="/line-21.svg"
-      />
-   
+    
       <div className="manager-registration-add-c-inner">
         <div className="vector-group">
           <img className="vector-icon34" alt="" src="/vector19.svg" />
@@ -120,27 +115,7 @@ const ManagerRegistrationAddCustomer = () => {
           <b className="b41">המשך לסניפים</b>
         </button>
       </div>
-      <div className="rectangle-parent31">
-        <div className="group-child52" />
-        <button className="vector-wrapper27">
-          <img className="vector-icon35" alt="" src="/vector8.svg" />
-        </button>
-        <img className="icon19" alt="" src="/-02-13@2x.png" />
-        <div className="group-parent13">
-          <button className="vector-wrapper28">
-            <img className="vector-icon36" alt="" src="/vector2.svg" />
-          </button>
-          <button className="vector-wrapper29">
-            <img className="vector-icon37" alt="" src="/vector9.svg" />
-          </button>
-          <div className="group-wrapper2">
-            <button className="parent231">
-              <div className="div871">משתמשים</div>
-              <img className="group-child531" alt="" src="/group-401.svg" />
-            </button>
-          </div>
-        </div>
-      </div>
+    
       <div className="rectangle-parent32">
         <input
           className="group-child54"

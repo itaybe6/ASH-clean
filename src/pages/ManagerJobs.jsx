@@ -44,9 +44,6 @@ const ManagerJobs = () => {
   return (
     <div>
       <div className="manager-jobs">
-
-        <div className="manager-jobs-child" />
-      
         <div className="search-list-container5">
           {filterCleanings.map((item, index) => (
             <Search
@@ -64,30 +61,7 @@ const ManagerJobs = () => {
         <div className="date-picker-container88">
           <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
         </div>
-        <div className="rectangle-parent7">
-          <div className="group-child11" />
-          <button className="vector-wrapper">
-            <img className="vector-icon" alt="" src="/vector1.svg" />
-          </button>
-          <img className="icon6" alt="" src="/-02-13@2x.png" />
-          <div className="group-parent2">
-            <button className="vector-container">
-              <img className="vector-icon1" alt="" src="/vector2.svg" />
-            </button>
-            <button className="vector-wrapper4">
-
-              <img className="vector-icon7" alt="" src="/vector7.svg" />
-            </button>
-            <button className="parent6">
-              <div className="div16">משתמשים</div>
-              <img
-                className="icbaseline-people-alt-icon"
-                alt=""
-                src="/icbaselinepeoplealt.svg"
-              />
-            </button>
-          </div>
-        </div>
+   
         <div className="CustomToggleButton89">
           <CustomToggleButton
             active={active}

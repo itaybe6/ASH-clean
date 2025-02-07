@@ -74,29 +74,7 @@ const ManagerAddBranch = () => {
         <b className="b87">הוספת סניף</b>
 
       </div>
-      <div className="rectangle-parent82">
-        <div className="group-child182" />
-        <button className="vector-wrapper81">
-          <img className="vector-icon90" alt="" src="/vector1.svg" />
-        </button>
-        <img className="icon54" alt="" src="/-02-13@2x.png" />
-        <div className="group-parent44">
-          <button className="vector-wrapper82">
-            <img className="vector-icon91" alt="" src="/vector2.svg" />
-          </button>
-          <button className="vector-wrapper83">
-            <img className="vector-icon92" alt="" src="/vector9.svg" />
-          </button>
-          <button className="parent52">
-            <div className="div221">משתמשים</div>
-            <img
-              className="icbaseline-people-alt-icon8"
-              alt=""
-              src="/icbaselinepeoplealt.svg"
-            />
-          </button>
-        </div>
-      </div>
+    
     </div>
   );
 };

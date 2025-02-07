@@ -77,29 +77,7 @@ const ManagerEditBranch = () => {
       <button className="vector-wrapper21">
         <img className="vector-icon28" alt="" src="/vector17.svg" />
       </button>
-      <div className="rectangle-parent27">
-        <div className="group-child41" />
-        <button className="vector-wrapper22">
-          <img className="vector-icon29" alt="" src="/vector8.svg" />
-        </button>
-        <img className="icon17" alt="" src="/-02-13@2x.png" />
-        <div className="group-parent11">
-          <button className="vector-wrapper23">
-            <img className="vector-icon30" alt="" src="/vector2.svg" />
-          </button>
-          <button className="vector-wrapper24">
-            <img className="vector-icon31" alt="" src="/vector9.svg" />
-          </button>
-          <button className="parent21">
-            <div className="div78">משתמשים</div>
-            <img
-              className="icbaseline-people-alt-icon5"
-              alt=""
-              src="/icbaselinepeoplealt.svg"
-            />
-          </button>
-        </div>
-      </div>
+      
     </div>
   );
 };

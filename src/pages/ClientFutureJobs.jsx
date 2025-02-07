@@ -121,29 +121,6 @@ const ClientFutureJobs = () => {
   </div>
 </div>
       
-      <div className="rectangle-parent60">
-        <div className="group-child128" />
-        <button className="vector-wrapper62">
-          <img className="vector-icon71" alt="" src="/vector8.svg" />
-        </button>
-        <img className="icon36" alt="" src="/-02-13@2x.png" />
-        <div className="group-parent30">
-          <button className="vector-wrapper63" onClick={Edit}>
-            <img className="vector-icon72" alt="" src="/vector2.svg" />
-          </button>
-          <button className="vector-wrapper64">
-            <img className="vector-icon73" alt="" src="/vector22.svg" />
-          </button>
-          <button className="parent42" onClick={Conatct}>
-            <div className="div175">צור קשר</div>
-            <img
-              className="icbaseline-contact-mail-icon3"
-              alt=""
-              src="/icbaselinecontactmail.svg"
-            />
-          </button>
-        </div>
-      </div>
 
       {dropdownOpen && (
         <ul className="dropdown-menu4">

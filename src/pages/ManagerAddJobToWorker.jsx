@@ -72,26 +72,8 @@ const ManagerAddJobToWorker = () => {
   return (
     <div className="manager-add-job-to-worker">
       <div className="manager-add-job-to-worker-child" />
-      <img className="manager-add-job-to-worker-item" alt="" src="/line-21.svg" />
       <div className="rectangle-parent15">
-        <div className="group-child20" />
-        <button className="vector-wrapper18">
-          <img className="vector-icon25" alt="" src="/vector1.svg" />
-        </button>
-        <img className="icon11" alt="" src="/-02-13@2x.png" />
-
-        <div className="group-parent5">
-          <button className="vector-wrapper19">
-            <img className="vector-icon26" alt="" src="/vector2.svg" />
-          </button>
-          <button className="vector-wrapper20">
-            <img className="vector-icon27" alt="" src="/vector9.svg" />
-          </button>
-          <button className="parent10">
-            <div className="div56">משתמשים</div>
-            <img className="icbaseline-people-alt-icon4" alt="" src="/icbaselinepeoplealt.svg" />
-          </button>
-        </div>
+       
 
         {/* אזור הוספת העבודה */}
         <div className="form-container">

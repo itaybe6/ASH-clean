@@ -28,12 +28,6 @@ const ManagerDisplayUsers = () => {
       .catch((error) => console.error("Error fetching customers:", error));
   }, []);
 
-  const jobs = () => {
-    navigate(`/manager-jobs`)
-  }
-  const edit = () => {
-    navigate(`/manager-edit-profile`)
-  }
 
   const addUser = () => {
     if(active){
@@ -100,29 +94,7 @@ const ManagerDisplayUsers = () => {
         }
       </div>
 
-      <div className="rectangle-parent12">
-        <div className="group-child20" />
-        <button className="vector-wrapper5">
-          <img className="vector-icon8" alt="" src="/vector8.svg" />
-        </button>
-        <img className="icon9" alt="" src="/-02-13@2x.png" />
-        <div className="group-parent5">
-          <button className="vector-wrapper6" onClick={edit}>
-            <img className="vector-icon9" alt="" src="/vector2.svg" />
-          </button>
-          <button className="vector-wrapper7" onClick={jobs}>
-            <img className="vector-icon10" alt="" src="/vector9.svg" />
-          </button>
-          <button className="parent10">
-            <div className="div35">משתמשים</div>
-            <img
-              className="icbaseline-people-alt-icon1"
-              alt=""
-              src="/icbaselinepeoplealt.svg"
-            />
-          </button>
-        </div>
-      </div>
+      
     </div>
   );
 };

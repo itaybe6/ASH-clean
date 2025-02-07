@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ClientContactUs.css";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const ClientContactUs = () => {
@@ -11,7 +10,6 @@ const ClientContactUs = () => {
   const [city, setCity] = useState("");
   const { id } = useParams(); 
 
-  const navigate = useNavigate();
 
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
@@ -68,12 +66,7 @@ const ClientContactUs = () => {
     }
   };
 
-  const Edit = () => {
-    navigate(`/client-edit-profile/${id}/`);
-  }
-  const Jobs = () => {
-    navigate(`/clientJobs/${id}/`);
-  }
+
   return (
     <div className="client-contact-us" data-animate-on-scroll>
       <div className="client-contact-us-child" />
@@ -125,31 +118,7 @@ const ClientContactUs = () => {
           <img className="vector-icon58" alt="" src="/vector.svg" />
         </button>
       </form>
-      <div className="client-contact-us-inner1">
-        <div className="rectangle-parent51">
-          <div className="group-child108" />
-          <button className="vector-wrapper50">
-            <img className="vector-icon59" alt="" src="/vector8.svg" />
-          </button>
-          <img className="icon30" alt="" src="/-02-13@2x.png" />
-          <div className="group-parent25">
-            <button className="vector-wrapper51" onClick={Edit}>
-              <img className="vector-icon60" alt="" src="/vector2.svg" />
-            </button>
-            <button className="vector-wrapper52" onClick={Jobs}>
-              <img className="vector-icon61" alt="" src="/vector9.svg" />
-            </button>
-            <button className="parent33">
-              <div className="div138">צור קשר</div>
-              <img
-                className="icbaseline-contact-mail-icon"
-                alt=""
-                src="/icbaselinecontactmail.svg"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };

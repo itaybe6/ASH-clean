@@ -87,29 +87,7 @@ const ManagerEditUser = () => {
           required
         />
       </div>
-      <div className="rectangle-parent37">
-        <div className="group-child74" />
-        <button className="vector-wrapper33">
-          <img className="vector-icon41" alt="" src="/vector8.svg" />
-        </button>
-        <img className="icon22" alt="" src="/-02-13@2x.png" />
-        <div className="group-parent17">
-          <button className="vector-wrapper34" >
-            <img className="vector-icon42" alt="" src="/vector2.svg"  />
-          </button>
-          <button className="vector-wrapper35" >
-            <img className="vector-icon43" alt="" src="/vector9.svg"  />
-          </button>
-          <button className="parent26" >
-            <div className="div99">משתמשים</div>
-            <img
-              className="icbaseline-people-alt-icon6"
-              alt=""
-              src="/icbaselinepeoplealt.svg"
-            />
-          </button>
-        </div>
-      </div>
+   
      
     </div>
   );

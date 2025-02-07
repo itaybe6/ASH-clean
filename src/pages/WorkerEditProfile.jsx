@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./WorkerEditProfile.css";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 
 const WorkerEditProfile = () => {
   const [fullName, setFullName] = useState("");
@@ -9,7 +8,6 @@ const WorkerEditProfile = () => {
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
-  const navigate = useNavigate();
 
 
   const parseJwt = (token) => {
@@ -54,29 +52,12 @@ const WorkerEditProfile = () => {
     }
   };
 
-  const jobs = () => {
-    navigate(`/worker-future-jobs/${token.id}`);  
-  }
 
   return (
     <div className="worker-edit-profile">
-      <div className="worker-edit-profile-child" />
-      <img className="worker-edit-profile-item" alt="" src="/line-21.svg" />
-      <div className="div123">שלום (שם עובד)</div>
-      <div className="div124">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
-      <div className="worker-edit-profile-inner" />
-      <button className="vector-wrapper46">
-        <img className="vector-icon55" alt="" src="/vector8.svg" />
-      </button>
-      <img className="icon29" alt="" src="/-02-13@2x.png" />
-      <div className="group-parent23">
-        <button className="vector-wrapper47">
-          <img className="vector-icon56" alt="" src="/vector23.svg" />
-        </button>
-        <button className="vector-wrapper48" onClick={jobs}>
-          <img className="vector-icon57" alt="" src="/vector9.svg" />
-        </button>
-      </div>
+     
+     
+     
       <div className="frame-container">
         <div className="parent29">
           <div className="div125">הגדרות</div>
