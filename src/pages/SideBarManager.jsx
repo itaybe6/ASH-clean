@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 const SideBarManager = ({user}) => {
+  const navigate = useNavigate();
   const jobs = () => {
     navigate(`/manager-jobs`)
   }
@@ -23,13 +24,13 @@ const SideBarManager = ({user}) => {
       </button>
       <img className="icon60" alt="" src="/-02-13@2x.png" />
       <div className="group-parent49">
-        <button className="vector-wrapper96">
+        <button className="vector-wrapper96" onClick={edit}>
           <img className="vector-icon105" alt="" src="/vector2.svg" />
         </button>
-        <button className="vector-wrapper97">
+        <button className="vector-wrapper97"onClick={jobs}> 
           <img className="vector-icon106" alt="" src="/vector9.svg" />
         </button>
-        <button className="parent56">
+        <button className="parent56" onClick={users}>
           <div className="div232">משתמשים</div>
           <img
             className="icbaseline-people-alt-icon10"

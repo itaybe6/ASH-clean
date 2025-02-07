@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Router, Routes, Route, useLocation } from "react-router-dom";
+
 import ManagerRegistrationAddB from "./pages/ManagerRegistrationAddB";
 import HomePageIphone from "./pages/HomePageIphone";
 import ManagerJobs from "./pages/ManagerJobs";
@@ -79,6 +80,10 @@ function App() {
   const [role, setRole] = useState(null);
   const [token, setToken] = useState(null);
 
+  const location = useLocation();
+  const noSideBarPaths = ["/login", "/homepage", "/accessibility"];
+  const shouldHideSidebar = noSideBarPaths.includes(location.pathname);
+  
   const checkScreenSize = () => {
     const mobileBreakpoint = 768;
     setIsMobile(window.innerWidth <= mobileBreakpoint);
@@ -113,14 +118,16 @@ function App() {
   return (
     <>
 
-      {token && !isMobile &&  role === "Manager" && <SideBarManager  user = {token} />}
-      {token && !isMobile &&  role === "Regular" && <SideBarWorekr user = {token}/>}
-      {token && !isMobile &&  role === "customer" && <SideBarCustomers user = {token}/>}
+      {!shouldHideSidebar && token && !isMobile &&  role === "Manager" && <SideBarManager  user = {token} />}
+      {!shouldHideSidebar && token && !isMobile &&  role === "Regular" && <SideBarWorekr user = {token}/>}
+      {!shouldHideSidebar && token && !isMobile &&  role === "customer" && <SideBarCustomers user = {token}/>}
 
       <PageTransition>
         <Routes>
-          <Route path="/" element={isMobile ? <LoginMobile /> : <Login />} />
           <Route path="homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
+          <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
+          <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
+
           <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />
           <Route path="/manager-add-worker" element={isMobile ? <ManagerAddWorkerIphone /> : <ManagerAddWorker />} />
           <Route path="/manager-display-users" element={isMobile ? <ManagerDisplayUsersMobile /> : <ManagerDisplayUsers />} />
@@ -128,33 +135,17 @@ function App() {
           <Route path="/manager-registration-add-branches" element={isMobile ? <ManagerRegistrationAddBranchesMobile /> : <ManagerRegistrationAddB />} />
           <Route path="/manager-edit-user/:id/:type" element={isMobile ? <ManagerEditUserMobile /> : <ManagerEditUser />} />
           <Route path="/manager-edit-profile" element={isMobile ? <ManagerEditProfileIphone /> : <ManagerEditProfile />} />
-
-
-          {/* הוספת כפתור פלוס לתוצאת חיפוש תעביר לנתיבים האלה */}
           <Route path="/manager-customer-add-branch/:id" element={isMobile ? <ManagerAddBranchMobile /> : <ManagerAddBranch />} />
           <Route path="/manager-add-job-to-worker/:id" element={isMobile ? <ManagerAddJobToWorkerMobile /> : <ManagerAddJobToWorker />} />
-
-          {/* מעבר לאחר כפתור עריכה ב clintJobs */}
           <Route path="/manager-customer-edit-branch/:id" element={isMobile ? <ManagerEditBranchMobile /> : <ManagerEditBranch />} />
-
-
 
           <Route path="/clientJobs/:id" element={isMobile ? <ClientFutureJobsMobile /> : <ClientFutureJobs />} />
           <Route path="/client-contact-us/:id" element={isMobile ? <ClientContactUsMobile /> : <ClientContactUs />} />
           <Route path="/client-edit-profile/:id" element={isMobile ? <ClientEditProfileMobile /> : <ClientEditProfile />} />
 
-
-
-          {/* מפה למחוק את המלל הסטטי בתחילת העמוד  */}
-          {/* להוסיף לעבודות אצל עובד , מקבל תעודת זהות ולפי זה מציג  , סינין לפי תאריך , משיכת נתונים מהדאטה בייס , סיניון לפי עבודות ועבודות עתידיות */}
           <Route path="/worker-future-jobs/:id" element={isMobile ? <WorkerFutureJobsMobile /> : <WorkerFutureJobs />} />
           <Route path="/worker-edit-profile" element={isMobile ? <WorkerEditProfileMobile /> : <WorkerEditProfile />} />
           <Route path="/worker-job-suc/:id" element={isMobile ? <WorkerJobSucMobile /> : <WorkerJobSuc />} />
-
-
-
-          <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
-          <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
           <Route path="/mobile-menu-worker" element={isMobile ? <MobileMenuWorker /> : <MobileMenuManager />} />
 
 

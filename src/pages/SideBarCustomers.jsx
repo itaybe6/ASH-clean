@@ -1,11 +1,17 @@
 import "./SideBarCustomers.css";
+import { useNavigate } from 'react-router-dom';
 
-const SideBarCustomers = ({user}) => {
-  const Conatct = () => {
+const SideBarCustomers = ({user}) => {  
+  const navigate = useNavigate();
+
+  const Contact = () => {
     navigate(`/client-contact-us/${user.id}/`);
   }
   const Jobs = () => {
     navigate(`/clientJobs/${user.id}/`);
+  }
+  const edit = () => {
+    navigate(`/client-edit-profile/${user.id}/`);
   }
   return (
     <div className="side-bar-customers">
@@ -19,10 +25,10 @@ const SideBarCustomers = ({user}) => {
       <div className="side-bar-customers-inner">
         <div className="group-parent46">
           <div className="group-parent47">
-            <button className="vector-wrapper90">
+            <button className="vector-wrapper90" onClick={edit}>
               <img className="vector-icon99" alt="" src="/vector2.svg" />
             </button>
-            <button className="parent55" >
+            <button className="parent55" onClick={Contact}>
               <div className="div231">צור קשר</div>
               <img
                 className="icbaseline-contact-mail-icon5"
@@ -31,7 +37,7 @@ const SideBarCustomers = ({user}) => {
               />
             </button>
           </div>
-          <button className="vector-wrapper91">
+          <button className="vector-wrapper91" onClick={Jobs}>
             <img className="vector-icon100" alt="" src="/vector9.svg" />
           </button>
         </div>
