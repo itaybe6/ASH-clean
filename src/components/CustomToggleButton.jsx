@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 const ToggleButton = styled(Button)(({ active  }) => ({
 
   width: "160px",
-  height: "50px",
+  height: "0px",
   borderRadius: "25px",
   backgroundColor: active ? "#f97316" : "#3f3f3f",
   color: "#fff",
