@@ -1,12 +1,14 @@
 import "./MobileMenuWorker.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const MobileMenuWorker = ({ closeMenu, isOpen }) => {
   const [translate, setTranslate] = useState(300);
   const [touchStartX, setTouchStartX] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
 
   const parseJwt = (token) => {
     try {
@@ -84,7 +86,7 @@ const MobileMenuWorker = ({ closeMenu, isOpen }) => {
     navigate(`/worker-future-jobs/${token.id}`)
   }
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    logout();
     navigate("/homepage"); 
   };
   return (

@@ -1,11 +1,13 @@
 import "./MobileMenuManager.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const MobileMenuManager = ({ closeMenu, isOpen }) => {
   const [translate, setTranslate] = useState(300);
   const [touchStartX, setTouchStartX] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
+  const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -77,11 +79,11 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); 
-    navigate("/homepage"); 
+    logout();
+    navigate("/homepage");
   };
   return (
-    <div className="mobile-menu-manager" style={menuStyle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}onTouchEnd={handleTouchEnd} >
+    <div className="mobile-menu-manager" style={menuStyle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd} >
       <div className="mobile-menu-manager-child" />
       <div className="group-parent42">
         <button className="vector-wrapper75" onClick={setting}>

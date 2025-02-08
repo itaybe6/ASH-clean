@@ -1,10 +1,12 @@
 import "./MobileMenuClient.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const MobileMenuClient = ({ closeMenu, isOpen ,id}) => {
   const [translate, setTranslate] = useState(300);
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
 
   const [touchStartX, setTouchStartX] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -81,7 +83,7 @@ const MobileMenuClient = ({ closeMenu, isOpen ,id}) => {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); 
+    logout();
     navigate("/homepage"); 
   };
   
