@@ -12,6 +12,7 @@ const ManagerEditUserMobile = () => {
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
@@ -40,7 +41,7 @@ const ManagerEditUserMobile = () => {
       city,
     };
     try {
-      const response = await axios.put(`http://localhost:5000/manager/editUser/${id}`, updatedData);
+      const response = await axios.put(`${apiUrl}/manager/editUser/${id}`, updatedData);
       if (response.status === 200) {
         alert('הפרטים עודכנו בהצלחה');
         console.log('Updated User:', response.data);

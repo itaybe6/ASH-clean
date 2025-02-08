@@ -11,6 +11,7 @@ const ClientContactUsMobile = () => {
   const [message, setMessage] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
   const { id } = useParams(); 
+  const apiUrl = import.meta.env.VITE_API_URL;
 
 
   const handleSubmit = async (e) => {
@@ -22,7 +23,7 @@ const ClientContactUsMobile = () => {
       message,
     };
     try {
-      const response = await axios.post("http://localhost:5000/customer/contact", formData);
+      const response = await axios.post(`${apiUrl}/customer/contact`, formData);
       alert(response.data.message);
       setFullName("");
       setPhoneNumber("");

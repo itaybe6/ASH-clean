@@ -13,11 +13,15 @@ const SideBarCustomers = ({user}) => {
   const edit = () => {
     navigate(`/client-edit-profile/${user.id}/`);
   }
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // מוחק את ה-token מה-localStorage
+    navigate("/homepage"); // מנווט לעמוד ההתחברות
+  };
   return (
     <div className="side-bar-customers">
       <div className="rectangle-parent89">
         <div className="group-child191" />
-        <button className="vector-wrapper89">
+        <button className="vector-wrapper89" onClick={handleLogout}>
           <img className="vector-icon98" alt="" src="/vector8.svg" />
         </button>
         <img className="icon58" alt="" src="/-02-13@2x.png" />

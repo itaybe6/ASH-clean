@@ -14,12 +14,14 @@ const WorkerFutureJobs = () => {
   const [cleanings, setCleanings] = useState([]);
   const [filteredCleanings, setFilteredCleanings] = useState([]);
   const { id } = useParams();
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
 
   useEffect(() => {
     const fetchCleanings = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/manager/${id}/WorkerCleanings`);
+        const response = await axios.get(`${apiUrl}/manager/${id}/WorkerCleanings`);
         setCleanings(response.data);
         setFilteredCleanings(response.data)
         console.log(cleanings)

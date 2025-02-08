@@ -13,13 +13,17 @@ const SideBarManager = ({user}) => {
   const edit = () => {
     navigate(`/manager-edit-profile`)
   }
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // מוחק את ה-token מה-localStorage
+    navigate("/homepage"); // מנווט לעמוד ההתחברות
+  };
   return (
     <div className="side-bar-manager">
       <div className="side-bar-manager-child" />
       <div className="side-bar-manager-inner">
         <div className="side-bar-manager-child" />
       </div>
-      <button className="vector-wrapper95">
+      <button className="vector-wrapper95" onClick={handleLogout}>
         <img className="vector-icon104" alt="" src="/vector1.svg" />
       </button>
       <img className="icon60" alt="" src="/-02-13@2x.png" />

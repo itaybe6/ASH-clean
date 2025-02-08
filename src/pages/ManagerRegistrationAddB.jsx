@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const ManagerRegistrationAddB = () => {
-  // הגדרת state לכל שדה קלט
   const [branchName, setBranchName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
-  const [branches, setBranches] = useState([]); // שמירת רשימת הסניפים
+  const [branches, setBranches] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
@@ -30,7 +30,7 @@ const ManagerRegistrationAddB = () => {
       };
       console.log(userDataToSend);
 
-      const response = await axios.post("http://localhost:5000/manager/add-customer", userDataToSend);
+      const response = await axios.post(`${apiUrl}/manager/add-customer`, userDataToSend);
 
       console.log("Success Add Customer");
       alert("לקוח נוסף בהצלחה")

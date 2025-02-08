@@ -10,10 +10,12 @@ const ManagerDisplayUsers = () => {
   const [customers, setCustomers] = useState([]);
   const [workers, setWorkers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/manager/getAll")
+    axios.get(`${apiUrl}/manager/getAll`)
       .then((res) => {
         setCustomers(res.data);
       })
@@ -21,7 +23,7 @@ const ManagerDisplayUsers = () => {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/manager/workers")
+    axios.get(`${apiUrl}/manager/workers`)
       .then((res) => {
         setWorkers(res.data);
       })

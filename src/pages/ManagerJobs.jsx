@@ -12,6 +12,7 @@ const ManagerJobs = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [cleanings, setCleanings] = useState([]);
   const [filterCleanings, setFilterCleanings] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const filterCleaningsByActive = (cleaningsList) => {
     const referenceDate = active ? addDays(new Date(), 7) : subDays(new Date(), 7);
@@ -19,7 +20,7 @@ const ManagerJobs = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/manager/getAllCleanings")
+    axios.get(`${apiUrl}/manager/getAllCleanings`)
       .then((res) => {
         setCleanings(res.data);
         const filteredData = filterCleaningsByActive(res.data);

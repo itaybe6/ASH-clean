@@ -17,6 +17,8 @@ const WorkerFutureJobsMobile = () => {
   const [cleanings, setCleanings] = useState([]);
   const [filteredCleanings, setFilteredCleanings] = useState([]);
   const { id } = useParams();
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   const menu = () => {
     setDisplayMenu(!displayMenu);
@@ -29,7 +31,7 @@ const WorkerFutureJobsMobile = () => {
   useEffect(() => {
     const fetchCleanings = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/manager/${id}/WorkerCleanings`);
+        const response = await axios.get(`${apiUrl}/manager/${id}/WorkerCleanings`);
         setCleanings(response.data);
         setFilteredCleanings(response.data)
         console.log(cleanings)
@@ -60,8 +62,6 @@ const WorkerFutureJobsMobile = () => {
     <div className="worker-future-jobs-mobile">
       {displayMenu && <MobileMenuWorker isOpen={displayMenu} closeMenu={closeMenu} />}
       <div className="worker-future-jobs-mobile-child" />
-      <div className="div114">שלום (שם עובד)</div>
-      <div className="div115">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <img className="icon26" alt="" src="/-02-11@2x.png" />
       <button className="vector-wrapper41" onClick={menu}>
         <img className="vector-icon50" alt="" src="/vector10.svg" />

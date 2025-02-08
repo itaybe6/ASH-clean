@@ -83,11 +83,14 @@ const MobileMenuWorker = ({ closeMenu, isOpen }) => {
   const jobs = () => {
     navigate(`/worker-future-jobs/${token.id}`)
   }
-
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/homepage"); 
+  };
   return (
     <div className="mobile-menu-worker" style={menuStyle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <div className="mobile-menu-worker-child" />
-      <button className="vector-wrapper72">
+      <button className="vector-wrapper72" onClick={handleLogout}>
         <img className="vector-icon81" alt="" src="/vector8.svg" />
       </button>
       <img className="icon51" alt="" src="/-02-17@2x.png" />
