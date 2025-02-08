@@ -12,7 +12,6 @@
     left: 0; 
     width: 100%; 
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.3s ease forwards; /* הופעה עדינה */
     display: flex;
     align-items: center;
@@ -34,18 +33,20 @@
   
   /* תוכן המודאל */
   .modal-content {
-    position: relative;
-    background: linear-gradient(135deg, #fff, #000000); /* גרדיאנט עדין */
+    position: absolute;
+    background: whitesmoke;
     padding: 20px 25px;
-    border-radius: 16px; /* פינות מעוגלות יפה */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* צל מעודן */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 90%;
-    max-height: 85%;
+    max-height: 93%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: scaleIn 0.3s ease forwards; /* אנימציית גדילה */
+    animation: scaleIn 0.3s ease forwards;
+    left: 15%;
+    top: 5%;
   }
   
   /* כפתור X: עגול, עם צבע רקע אדום בולט */
@@ -55,7 +56,7 @@
     right: 15px;
     width: 34px;
     height: 34px;
-    background-color: #e74c3c; /* אדום יפה */
+    background-color: #111111; /* אדום יפה */
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -74,10 +75,12 @@
   /* התמונה בתוך המודאל: תופסת גודל מקסימלי אך שומרת יחס */
   .modal-image {
     max-width: 100%;
-    max-height: 75vh;
+    max-height: 89%;
     border-radius: 12px;
-    object-fit: cover; /* למלא את המסגרת בלי לעוות */
-    margin-top: 10px;
+    object-fit: cover;
+    min-height: 84%;
+    border: 1px;
+    border-radius: 25px;
   }
   
   .img2964{

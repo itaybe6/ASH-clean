@@ -145,7 +145,7 @@ const ClientFutureJobs = () => {
 <CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}
-        Height={"56vh"}
+        Height={"50px"}
         name1="עבודות"
         name2="עבודות עתידיות"
         left="100px"
