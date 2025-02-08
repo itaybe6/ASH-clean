@@ -13,6 +13,7 @@ const ClientFutureJobs = () => {
   const [branches, setBranches] = useState([]);
   const { id } = useParams(); 
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const [futureCleanings, setFutureCleanings] = useState([]);    
   const [completedCleanings, setCompletedCleanings] = useState([]); 
@@ -31,7 +32,7 @@ const ClientFutureJobs = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/customer/${id}/branches`);
+        const response = await axios.get(`${apiUrl}/customer/${id}/branches`);
         setBranches(response.data);
       } catch (error) {
         console.error("Error fetching branches:", error);
@@ -45,7 +46,7 @@ const ClientFutureJobs = () => {
       const fetchCleaning = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
+            `${apiUrl}/customer/${selectedBranch._id}/cleanings`
           );
           const allCleanings = response.data;
       

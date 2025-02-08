@@ -9,12 +9,14 @@ const ClientContactUs = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const { id } = useParams(); 
+  const apiUrl = import.meta.env.VITE_API_URL;
 
 
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
       "[data-animate-on-scroll]"
     );
+    
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -54,7 +56,7 @@ const ClientContactUs = () => {
     };
   
     try {
-      const response = await axios.post("http://localhost:5000/customer/contact", formData);
+      const response = await axios.post(`${apiUrl}/customer/contact`, formData);
       alert(response.data.message);
       setFullName("");
       setPhoneNumber("");

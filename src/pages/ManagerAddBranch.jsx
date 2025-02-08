@@ -9,6 +9,8 @@ const ManagerAddBranch = () => {
   const [branchName, setBranchName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const navigate = useNavigate();
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
@@ -17,7 +19,7 @@ const ManagerAddBranch = () => {
   
   const handleAddBranch = async () => {
     try {
-      const response = await axios.post(`http://localhost:5000/manager/addBranch/${id}`, {
+      const response = await axios.post(`${apiUrl}/manager/addBranch/${id}`, {
         name: branchName,
         phone: phoneNumber,
         address: branchAddress,

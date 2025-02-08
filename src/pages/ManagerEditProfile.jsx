@@ -9,6 +9,8 @@ const ManagerEditProfile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
@@ -46,7 +48,7 @@ const ManagerEditProfile = () => {
     }
     try {
       const response = await axios.put(
-        "http://localhost:5000/manager/update",
+        `${apiUrl}/manager/update`,
         { fullName, phoneNumber, city, newPassword },
         { headers: { Authorization: `Bearer ${token.id}` } } // שליחת ה-Token
       );

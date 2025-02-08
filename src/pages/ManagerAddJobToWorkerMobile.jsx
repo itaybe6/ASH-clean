@@ -14,12 +14,13 @@ const ManagerAddJobToWorkerMobile = () => {
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [displayMenu, setDisplayMenu] = useState(false)
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const { id } = useParams()
   useEffect(() => {
     const fetchBusinesses = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/manager/getAll");
+        const response = await axios.get(`${apiUrl}/manager/getAll`);
         setBusinesses(response.data);
         console.log(businesses)
 
@@ -35,7 +36,7 @@ const ManagerAddJobToWorkerMobile = () => {
     if (selectedBusiness) {
       const fetchBranches = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/manager/${selectedBusiness._id}/branches`);
+          const response = await axios.get(`${apiUrl}/manager/${selectedBusiness._id}/branches`);
           setBranches(response.data);
 
         } catch (error) {
@@ -62,7 +63,7 @@ const ManagerAddJobToWorkerMobile = () => {
       return;
     }
     try {
-      const response = await axios.post(`http://localhost:5000/manager/${id}/cleanings`, {
+      const response = await axios.post(`${apiUrl}/manager/${id}/cleanings`, {
         branch: selectedBranch._id,
         dateTime: selectedDate,
       });

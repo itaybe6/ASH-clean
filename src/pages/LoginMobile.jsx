@@ -7,6 +7,7 @@ const LoginMobile = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const parseJwt = (token) => {
     try {
@@ -21,7 +22,7 @@ const LoginMobile = () => {
   const handleLogin = async (e) => {
     e.preventDefault?.();
     try {
-      const res = await axios.post("http://localhost:5000/auth/login", {
+      const res = await axios.post(`${apiUrl}/auth/login`, {
         phone,
         password,
       });

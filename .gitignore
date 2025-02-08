@@ -34,3 +34,5 @@ pids
 Thumbs.db
   
 /server/.env
+/.env
+

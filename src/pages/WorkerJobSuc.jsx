@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 const WorkerJobSuc = ({ nameb, address,time,id}) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const navigate = useNavigate();  
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   const handleFileSelect = (e) => {
     if (e.target.files[0]) {
@@ -21,7 +23,7 @@ const WorkerJobSuc = ({ nameb, address,time,id}) => {
       const compressedFile = await imageCompression(selectedFile, options);
       const formData = new FormData();
       formData.append('image', compressedFile);
-      await axios.put(`http://localhost:5000/worker/cleanings/${id}`, formData);
+      await axios.put(`${apiUrl}/worker/cleanings/${id}`, formData);
       alert('התמונה עודכנה בהצלחה!');
       navigate("/homepage")
 

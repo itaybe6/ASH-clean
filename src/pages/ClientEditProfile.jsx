@@ -11,6 +11,7 @@ const ClientEditProfile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const { id } = useParams(); 
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   // פונקציות לטיפול בשינוי ערכים בשדות הקלט
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -40,7 +41,7 @@ const ClientEditProfile = () => {
 
     try {
         const response = await axios.put(
-            `http://localhost:5000/customer/${token.id}/edit`, 
+            `${apiUrl}/customer/${token.id}/edit`, 
             { fullName, phoneNumber, city, newPassword },
             { headers: { Authorization: `Bearer ${token.id}` } }
         );
@@ -53,12 +54,7 @@ const ClientEditProfile = () => {
     }
   };
 
-  const Conatct = () => {
-    navigate(`/client-contact-us/${id}/`);
-  }
-  const Jobs = () => {
-    navigate(`/clientJobs/${id}/`);
-  }
+
   return (
     <div className="client-edit-profile">
       <div className="group-parent27">

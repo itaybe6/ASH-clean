@@ -20,6 +20,7 @@ const ClientEditProfileMobile = () => {
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const navigate = useNavigate();
   const parseJwt = (token) => {
@@ -45,7 +46,7 @@ const ClientEditProfileMobile = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/customer/${token.id}/edit`,
+        `${apiUrl}/customer/${token.id}/edit`,
         { fullName, phoneNumber, city, newPassword },
         { headers: { Authorization: `Bearer ${token.id}` } }
       );

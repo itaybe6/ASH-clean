@@ -8,13 +8,14 @@ const ManagerRegistrationAddBranchesMobile = () => {
   const [branchName, setBranchName] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const [branches, setBranches] = useState([]);
   const navigate = useNavigate();
   const [displayMenu, setDisplayMenu] = useState(false)
-
   const handleAddUser = async () => {
     const userData = JSON.parse(sessionStorage.getItem("userData"));
     console.log(userData);
@@ -30,7 +31,7 @@ const ManagerRegistrationAddBranchesMobile = () => {
       };
       console.log(userDataToSend);
 
-      const response = await axios.post("http://localhost:5000/manager/add-customer", userDataToSend);
+      const response = await axios.post(`${apiUrl}/manager/add-customer`, userDataToSend);
 
       console.log("Success Add Customer");
       alert("לקוח נוסף בהצלחה")

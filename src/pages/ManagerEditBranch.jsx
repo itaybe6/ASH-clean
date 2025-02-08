@@ -8,6 +8,8 @@ const ManagerEditBranch = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
   const {id} = useParams();
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const navigate = useNavigate();
 
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
@@ -16,7 +18,7 @@ const ManagerEditBranch = () => {
 
   const handleUpdateDetails = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/manager/editBranch/${id}`, {
+      const response = await axios.put(`${apiUrl}/manager/editBranch/${id}`, {
         name: branchName,
         phone: phoneNumber,
         address: branchAddress,
@@ -35,7 +37,7 @@ const ManagerEditBranch = () => {
   const deleteBranch = async () => {
     try {
 
-      const response = await axios.delete(`http://localhost:5000/manager/deleteBranch/${id}`);
+      const response = await axios.delete(`${apiUrl}/manager/deleteBranch/${id}`);
       if (response.status === 200) {
         console.log('Branch deleted successfully!');
         navigate('/manager-display-users');

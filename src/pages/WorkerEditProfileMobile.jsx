@@ -10,6 +10,8 @@ const WorkerEditProfileMobile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const navigate = useNavigate();
 
   const parseJwt = (token) => {
@@ -25,7 +27,7 @@ const WorkerEditProfileMobile = () => {
     try {
       const token = parseJwt(localStorage.getItem("token"));
       const employeeId = token.id;
-      const res = await axios.put(`http://localhost:5000/worker/updateDetails/${employeeId}`, {
+      const res = await axios.put(`${apiUrl}/worker/updateDetails/${employeeId}`, {
         fullName,
         newPassword,
         phoneNumber,

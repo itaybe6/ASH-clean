@@ -16,6 +16,7 @@ const ClientFutureJobsMobile = () => {
   const [cleanings, setCleanings] = useState([]);
   const [displayMenu, setDisplayMenu] = useState(false)
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const { id } = useParams(); 
   const [futureCleanings, setFutureCleanings] = useState([]);
@@ -25,7 +26,7 @@ const ClientFutureJobsMobile = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/customer/${id}/branches`);
+        const response = await axios.get(`${apiUrl}/customer/${id}/branches`);
         setBranches(response.data);
       } catch (error) {
         console.error("Error fetching branches:", error);
@@ -39,7 +40,7 @@ const ClientFutureJobsMobile = () => {
       const fetchCleaning = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
+            `${apiUrl}/customer/${selectedBranch._id}/cleanings`
           );
           const allCleanings = response.data;
           setFutureCleanings(allCleanings.filter((c) => c.done == false));
