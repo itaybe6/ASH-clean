@@ -350,6 +350,7 @@ const getImgCleaning = async (req, res) => {
     }
 }
 
+ 
 const deleteBranchById = async (req, res) => {
     try {
         const { branchId } = req.params;
@@ -357,16 +358,18 @@ const deleteBranchById = async (req, res) => {
         if (!deletedBranch) {
             return res.status(404).json({ message: 'הסניף לא נמצא' });
         }
+        const deletedCleanings = await Cleaning.deleteMany({ branch: branchId });
         await Customer.updateOne(
             { branches: branchId }, 
             { $pull: { branches: branchId } } 
         );
-        res.status(200).json({ message: 'הסניף נמחק בהצלחה' });
+        res.status(200).json({ message: 'הסניף וכל הניקיונות המשויכים אליו נמחקו בהצלחה' });
     } catch (error) {
-        console.error('שגיאה במחיקת סניף:', error);
-        res.status(500).json({ error: 'שגיאה במחיקת סניף' });
+        console.error('❌ שגיאה במחיקת סניף וניקיונות:', error);
+        res.status(500).json({ error: 'שגיאה במחיקת סניף וניקיונות' });
     }
 };
+
 
 const deleteCleaning = async (req, res) => {
     try {

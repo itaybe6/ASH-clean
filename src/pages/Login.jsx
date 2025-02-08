@@ -2,25 +2,31 @@ import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const { setToken, setRole } = useContext(AuthContext);
   const navigate = useNavigate();
-  
   const apiUrl = import.meta.env.VITE_API_URL;
 
-
-  //func to Encryption the token
-  const parseJwt = (token) => {
-    try {
-        const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
-    } catch (error) {
-        return null;
-    }
-};
+  function b64DecodeUnicode(str) {
+    return decodeURIComponent(
+      atob(str)
+        .split('')
+        .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+  }
+  function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    // הופכים - ו_ לתווי Base64 רגילים
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = b64DecodeUnicode(base64);
+    return JSON.parse(jsonPayload);
+  }
 
   const handleLogin = async (e) => {
     e.preventDefault?.();
@@ -29,16 +35,18 @@ const Login = () => {
         phone,
         password,
       });
+      const user = parseJwt(res.data.token);
+      setToken(user);  
+      setRole(user.role || "customer");
       localStorage.setItem("token", res.data.token);
-      const token = parseJwt(res.data.token)
-      if(token.role == "Manager"){
+      if(user.role == "Manager"){
         navigate("/manager-display-users");
       }
-      else if (token.role == "Regular"){
+      else if (user.role == "Regular"){
         navigate("/worker-edit-profile"); 
       }
       else {
-        navigate(`/clientJobs/${token.id}/`);
+        navigate(`/clientJobs/${user.id}/`);
       }
     
       alert("ההתחברות הושלמה בהצלחה")

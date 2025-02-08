@@ -9,7 +9,7 @@ import {
   createTheme,
   StyledEngineProvider,
 } from "@mui/material";
-
+import { AuthProvider } from "./context/AuthContext";
 import "./global.css";
 
 const muiTheme = createTheme();
@@ -22,7 +22,9 @@ root.render(
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
+        <AuthProvider>
         <App />
+        </AuthProvider>
       </ThemeProvider>
     </StyledEngineProvider>
   </BrowserRouter>
