@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import "./ManagerEditProfile.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 
 const ManagerEditProfile = () => {
-  // הגדרת state לכל שדה קלט
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
+  const { token } = useContext(AuthContext);
 
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -19,36 +21,20 @@ const ManagerEditProfile = () => {
 
   const navigate = useNavigate();
 
-
- //func to Encryption the token
- const parseJwt = (token) => {
-  try {
-    const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
-  } catch (error) {
-    return null;
-  }
-};
-
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-  
-    const token = parseJwt(localStorage.getItem("token"));
-    if(token.role != "Manager"){
-      alert("אתה לא מנהל , אנא פנה למנהלי האתר")
-      return
-    }
+ 
     try {
       const response = await axios.put(
         `${apiUrl}/manager/update`,
         { fullName, phoneNumber, city, newPassword },
-        { headers: { Authorization: `Bearer ${token.id}` } } // שליחת ה-Token
+        { headers: { Authorization: `Bearer ${token.id}` } } 
+
       );
 
       alert(response.data.message);
-      navigate("/manager-jobs");
+      navigate("/login");
 
     } catch (error) {
       console.error("Error updating manager:", error);

@@ -6,28 +6,21 @@ import axios from "axios";
 import "./ClientFutureJobs.css";
 import { useParams } from 'react-router-dom';
 
+
 const ClientFutureJobs = () => {
   const [active, setActive] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [branches, setBranches] = useState([]);
-  const { id } = useParams(); 
-  const navigate = useNavigate();
-  const apiUrl = import.meta.env.VITE_API_URL;
-
   const [futureCleanings, setFutureCleanings] = useState([]);    
   const [completedCleanings, setCompletedCleanings] = useState([]); 
+  const { id } = useParams(); 
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const navigate = useNavigate();
 
-  const parseJwt = (token) => {
-    try {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      return JSON.parse(atob(base64));
-    } catch (error) {
-      return null;
-    }
-  };
-  const token = parseJwt(localStorage.getItem("token"));
+
+
+
 
   useEffect(() => {
     const fetchBranches = async () => {

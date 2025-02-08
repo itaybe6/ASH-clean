@@ -4,18 +4,19 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import MobileMenuClient from "./MobileMenuClient";
 import { useParams } from 'react-router-dom';
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const ClientEditProfileMobile = () => {
-  // הגדרת state לכל שדה קלט
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
-  const { id } = useParams(); 
+  const { id } = useParams();
+  const { token } = useContext(AuthContext);
 
-  // פונקציות לטיפול בשינוי ערכים בשדות הקלט
+
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
@@ -23,27 +24,13 @@ const ClientEditProfileMobile = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
 
   const navigate = useNavigate();
-  const parseJwt = (token) => {
-    try {
-      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
-    } catch (error) {
-      return null;
-    }
-  };
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const token = parseJwt(localStorage.getItem("token"));
     if (token.role !== "customer") {
       alert("אינך לקוח, אינך רשאי לבצע פעולה זו!");
       return;
     }
-
     try {
       const response = await axios.put(
         `${apiUrl}/customer/${token.id}/edit`,
@@ -52,7 +39,7 @@ const ClientEditProfileMobile = () => {
       );
 
       alert("פרטייך עודכנו בהצלחה");
-      navigate("/client-jobs"); // ניתוב לדף הלקוח לאחר עדכון
+      navigate("/login");
     } catch (error) {
       console.error("Error updating customer:", error);
       alert("שגיאה בעדכון הפרטים");
@@ -69,7 +56,7 @@ const ClientEditProfileMobile = () => {
   };
   return (
     <div className="client-edit-profile-mobile">
-      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id ={id}/> : null}
+      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id={id} /> : null}
 
       <div className="client-edit-profile-mobile-child" />
       <div className="div141">הגדרות</div>

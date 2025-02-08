@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 import { Router, Routes, Route, useLocation } from "react-router-dom";
 
 import ManagerRegistrationAddB from "./pages/ManagerRegistrationAddB";
@@ -53,21 +55,19 @@ import Header from "./pages/Header";
 
 import Loader from "./components/Loader";
 
+//animation for the page
 function PageTransition({ children }) {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 1000); // זמן טעינה קצר
-
+    const timer = setTimeout(() => setLoading(false), 1000); 
     return () => clearTimeout(timer);
   }, [location]);
-
   return (
     <>
       {loading && <Loader />}
-      <div className="page-transition">{children}</div> {/* הוספנו את האנימציה */}
+      <div className="page-transition">{children}</div> 
     </>
   );
 
@@ -75,8 +75,7 @@ function PageTransition({ children }) {
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-  const [role, setRole] = useState(null);
-  const [token, setToken] = useState(null);
+  const { token, role } = useContext(AuthContext);
 
   const location = useLocation();
   const noSideBarPaths = ["/login", "/homepage", "/accessibility"];
@@ -91,34 +90,6 @@ function App() {
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-
-  function b64DecodeUnicode(str) {
-    // מפענח Base64 וממפה תווי יוניקוד כראוי
-    return decodeURIComponent(
-      atob(str)
-        .split('')
-        .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-        .join('')
-    );
-  }
-  function parseJwt(token) {
-    const base64Url = token.split('.')[1];
-    // הופכים - ו_ לתווי Base64 רגילים
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = b64DecodeUnicode(base64);
-    return JSON.parse(jsonPayload);
-  }
-
-  useEffect(() => {
-    const savedToken = localStorage.getItem("token");
-    if (savedToken) {
-      setToken(parseJwt(savedToken));
-      const user = parseJwt(savedToken);
-      setRole(user.role);
-
-    }
   }, []);
 
   return (

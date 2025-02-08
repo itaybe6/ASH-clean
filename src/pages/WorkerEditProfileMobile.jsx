@@ -3,7 +3,8 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import MobileMenuWorker from "./MobileMenuWorker";
 import "./WorkerEditProfileMobile.css";
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const WorkerEditProfileMobile = () => {
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -11,21 +12,10 @@ const WorkerEditProfileMobile = () => {
   const [city, setCity] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
   const apiUrl = import.meta.env.VITE_API_URL;
-
+  const { token } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  const parseJwt = (token) => {
-    try {
-      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
-    } catch (error) {
-      return null;
-    }
-  };
   const handleUpdate = async () => {
     try {
-      const token = parseJwt(localStorage.getItem("token"));
       const employeeId = token.id;
       const res = await axios.put(`${apiUrl}/worker/updateDetails/${employeeId}`, {
         fullName,
@@ -39,7 +29,7 @@ const WorkerEditProfileMobile = () => {
       });
       if (res.status === 200) {
         alert("הפרופיל עודכן בהצלחה!");
-        navigate("/worker-future-jobs");
+        navigate("/login");
       }
     } catch (error) {
       console.error("שגיאה בעדכון הפרופיל:", error);

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./WorkerEditProfile.css";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 const WorkerEditProfile = () => {
   const [fullName, setFullName] = useState("");
@@ -9,28 +12,16 @@ const WorkerEditProfile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
+  const navigate = useNavigate()
+  const { token } = useContext(AuthContext);
 
-
-  const parseJwt = (token) => {
-    try {
-      const base64Url = token.split('.')[1]; // החלק האמצעי של ה-JWT
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      return JSON.parse(atob(base64)); // פענוח Base64 ל-JSON
-    } catch (error) {
-      return null;
-    }
-  };
-
-  const token = parseJwt(localStorage.getItem("token")); 
   const handleUpdate = async () => {
     if (newPassword !== confirmNewPassword) {
       alert("הסיסמאות אינן תואמות.");
       return;
     }
-
     try {
       const employeeId = token.id; 
-
       const res = await axios.put(`${apiUrl}/worker/updateDetails/${employeeId}`, {
         fullName,
         newPassword,
@@ -38,14 +29,12 @@ const WorkerEditProfile = () => {
         city
       }, {
         headers: {
-          Authorization: `Bearer ${token}` // שליחת התוקן לצורך אימות
+          Authorization: `Bearer ${token}`
         }
       });
-      navigate(`/worker-future-jobs/${id}`);  
-
       if (res.status === 200) {
         alert("הפרופיל עודכן בהצלחה!");
-        navigate(`/worker-future-jobs/${token.id}`);  
+        navigate(`/login`);  
       }
     } catch (error) {
       console.error("שגיאה בעדכון הפרופיל:", error);
