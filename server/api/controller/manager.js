@@ -271,7 +271,14 @@ const managerEditUser = async (req, res) => {
             return res.status(404).json({ message: 'משתמש לא נמצא' });
         }
 
-        if (fullName) user.fullName = fullName;
+        if (fullName){
+            if(type === 'לקוח'){
+                user.businessName = fullName;
+            }
+            else if (type === 'עובד'){
+                user.fullName = fullName;
+            }
+        } 
         if (phoneNumber) user.phone = phoneNumber;
         if (city) user.city = city;
 

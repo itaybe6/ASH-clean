@@ -39,7 +39,7 @@ const ManagerEditBranch = () => {
 
       const response = await axios.delete(`${apiUrl}/manager/deleteBranch/${id}`);
       if (response.status === 200) {
-        console.log('Branch deleted successfully!');
+        console.log('סניף נערך בהצלחה');
         navigate('/manager-display-users');
       }
     } catch (error) {

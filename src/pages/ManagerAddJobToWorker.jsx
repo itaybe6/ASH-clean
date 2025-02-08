@@ -16,29 +16,24 @@ const ManagerAddJobToWorker = () => {
   const { id } = useParams();
   useEffect(() => {
     const fetchBusinesses = async () => {
-
       try {
         const response = await axios.get(`${apiUrl}/manager/getAll`);
         setBusinesses(response.data);
         console.log(businesses)
-
       } catch (error) {
         console.error("שגיאה בשליפת עסקים:", error);
       }
     };
-
     fetchBusinesses();
   }, []);
 
 
   useEffect(() => {
-
     if (selectedBusiness) {
       const fetchBranches = async () => {
         try {
           const response = await axios.get(`${apiUrl}/manager/${selectedBusiness._id}/branches`);
           setBranches(response.data);
-
         } catch (error) {
           console.error("שגיאה בשליפת עסקים:", error);
         }
@@ -74,7 +69,7 @@ const ManagerAddJobToWorker = () => {
   return (
     <div className="manager-add-job-to-worker">
       <div className="manager-add-job-to-worker-child" />
-      <div className="rectangle-parent15">
+      <div >
        
 
         {/* אזור הוספת העבודה */}
@@ -94,7 +89,6 @@ const ManagerAddJobToWorker = () => {
 
             {/* שדה בחירת סניף */}
             <Autocomplete
-              key={selectedBranch} // זה יכריח רענון בעת שינוי
               options={branches}
               getOptionLabel={(option) => option.name}
               onChange={(event, newValue) => setSelectedBranch(newValue)}
