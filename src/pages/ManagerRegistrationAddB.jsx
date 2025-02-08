@@ -119,10 +119,10 @@ const ManagerRegistrationAddB = () => {
           onClick={handleBack}
         >
           <div className="group-child81" />
-          <b className="b48">חזרה</b>
+          <b className="b4899">חזרה</b>
         </button>
         {branches.length > 0 && (
-          <div className="branches-container">
+          <div className="branches-container1414">
             <h3 className="branches-title">📌 סניפים שנוספו:</h3>
             <ul className="branches-list">
               {branches.map((branch, index) => (

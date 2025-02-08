@@ -118,21 +118,14 @@ const ManagerRegistrationAddCustomer = () => {
     
       <div className="rectangle-parent32">
         <input
-          className="group-child54"
+          className="group-child541"
           placeholder="סיסמא"
           type="password"
           value={password}
           onChange={handlePasswordChange}
           required
         />
-        <input
-          className="group-child5599"
-          placeholder="אימות סיסמא"
-          type="password"
-          value={confirmPassword}
-          onChange={handleConfirmPasswordChange}
-          required
-        />
+      
       </div>
     </div>
   );

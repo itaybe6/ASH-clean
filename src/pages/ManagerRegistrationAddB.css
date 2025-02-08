@@ -212,6 +212,8 @@
   left: 69.12%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child78 {
   border: none;
@@ -224,6 +226,8 @@
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child79 {
   border: none;
@@ -236,6 +240,8 @@
   left: 34.8%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-parent20 {
   position: absolute;
@@ -253,6 +259,12 @@
   font-weight: 300;
   display: inline-block;
   width: 126px;
+  background-color: #f6892a;
+    border: 1px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Heebo';
 }
 .group-parent19 {
   position: absolute;
@@ -306,7 +318,7 @@
   border-radius: var(--br-smi);
   background-color: var(--color-darkslategray-200);
 }
-.b48 {
+.b4899 {
   position: absolute;
   width: 88.69%;
   top: 23.08%;
@@ -362,20 +374,38 @@
 }
 
 
-.branches-container {
-  max-height: 300px; /* גובה מקסימלי של הקוביה */
-  overflow-y: auto; /* יצירת גלילה כאשר יש יותר מדי סניפים */
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  margin-top: 300px;
-  border: 1px solid #ddd;
+.branches-container1414 {
+  position: absolute;
+  top: 115%;
+  margin-top: 140% x;
+  /* max-width: 25%; */
+  /* background-color: #fff; */
+  border-radius: 10px;
+  padding: 4px;
+  padding-bottom: -38%;
+  overflow-y: auto;
+  max-height: 300px;
+  min-width: 300px;
+  z-index: 999;
+  border: 1px;
+  direction: rtl;
+  width: 75%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 405px;
+  min-height: 400px;
+  overflow-y: auto;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .branches-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 15px;
+  margin-bottom: -8px;
 }
 
 .branch-item {
@@ -383,9 +413,12 @@
 }
 
 .branch-card {
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
 }
