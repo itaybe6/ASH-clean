@@ -27,7 +27,7 @@ direction: rtl;
   width: 100% !important;     
   text-align: right !important; 
   direction: rtl !important;  /* יישור לימין */
-  z-index: 10000 !important;  /* מבטיח שהכותרת תמיד תישאר למעלה */
+  z-index: 9 !important;  /* מבטיח שהכותרת תמיד תישאר למעלה */
   padding: 15px 20px !important; /* ריווח פנימי */
   background: transparent !important; /* רקע שקוף */
   box-shadow: none !important; /* מבטל צל */
