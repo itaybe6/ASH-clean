@@ -1,8 +1,11 @@
 import "./SideBarWorekr.css";
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const SideBarWorekr = ({ user }) => {
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
+
   const setting = () => {
     navigate("/worker-edit-profile");
   };
@@ -11,14 +14,14 @@ const SideBarWorekr = ({ user }) => {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // מוחק את ה-token מה-localStorage
-    navigate("/homepage"); // מנווט לעמוד ההתחברות
+    logout();
+    navigate("/homepage"); 
   };
   return (
     <div className="side-bar-worekr">
       <div className="rectangle-parent90">
         <div className="group-child192" />
-        <button className="vector-wrapper92"onClick={handleLogout}>
+        <button className="vector-wrapper92" onClick={handleLogout}>
           <img className="vector-icon101" alt="" src="/vector8.svg" />
         </button>
         <img className="icon59" alt="" src="/-02-13@2x.png" />

@@ -1,9 +1,11 @@
 import "./SideBarManager.css";
-import { Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
-const SideBarManager = ({user}) => {
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+const SideBarManager = ({ user }) => {
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
+
   const jobs = () => {
     navigate(`/manager-jobs`)
   }
@@ -14,9 +16,9 @@ const SideBarManager = ({user}) => {
     navigate(`/manager-edit-profile`)
   }
   const handleLogout = () => {
-    localStorage.removeItem("token"); // מוחק את ה-token מה-localStorage
-    navigate("/homepage"); // מנווט לעמוד ההתחברות
-  };
+    logout()
+    navigate("/homepage"); 
+  }
   return (
     <div className="side-bar-manager">
       <div className="side-bar-manager-child" />
@@ -31,7 +33,7 @@ const SideBarManager = ({user}) => {
         <button className="vector-wrapper96" onClick={edit}>
           <img className="vector-icon105" alt="" src="/vector2.svg" />
         </button>
-        <button className="vector-wrapper97"onClick={jobs}> 
+        <button className="vector-wrapper97" onClick={jobs}>
           <img className="vector-icon106" alt="" src="/vector9.svg" />
         </button>
         <button className="parent56" onClick={users}>
@@ -43,7 +45,6 @@ const SideBarManager = ({user}) => {
           />
         </button>
       </div>
-      <Outlet /> 
     </div>
   );
 };

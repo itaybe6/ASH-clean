@@ -115,12 +115,9 @@ const getAllCleaningsForCustomer = async (req, res) => {
     }
 };
 
-//555
 const sendContactEmail = async (req, res) => {
     const { fullName, phoneNumber, city, message } = req.body;
-
     console.log(req.body)
-    // הגדרת פרטי השליחה
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -128,12 +125,37 @@ const sendContactEmail = async (req, res) => {
             pass: "ypxz vuwi kkjs lluu", // השתמש בסיסמה ייעודית (App Passwords)
         },
     });
-
     const mailOptions = {
-        from: "itaybenyair99@gmail.com",
-        to: "bokobzadir@gmail.com", // המייל של מנהל האתר
+        from: "bokobzadir@gmail.com",
+        to: "ash.office14@gmail.com", 
         subject: "פנייה חדשה מהאתר",
         text: `שם מלא: ${fullName}\nטלפון: ${phoneNumber}\nעיר: ${city}\n\nהודעה:\n${message}`,
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        res.status(200).json({ message: "ההודעה נשלחה בהצלחה!" });
+    } catch (error) {
+        console.error("Email error:", error);
+        res.status(500).json({ error: "שגיאה בשליחת המייל" });
+    }
+};
+
+
+const sendEmail = async (req, res) => {
+    const { fullName, phoneNumber, service } = req.body;
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "itaybenyair99@gmail.com", // שים את המייל שלך
+            pass: "ypxz vuwi kkjs lluu", // השתמש בסיסמה ייעודית (App Passwords)
+        },
+    });
+    const mailOptions = {
+        from: "itaybenyair99@gmail.com",
+        to: "bokobzadir@gmail.com", 
+        subject: "פנייה חדשה מהאתר",
+        text: `שם מלא: ${fullName}\nטלפון: ${phoneNumber}\nעיר: ${service}`,
     };
 
     try {
@@ -155,4 +177,5 @@ module.exports = {
     , deleteBranchAndCleanings
     , getAllCleaningsForCustomer
     , sendContactEmail
+    ,sendEmail
 };

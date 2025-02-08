@@ -123,15 +123,7 @@ left: -100px;
   width: 221px;
   height: 161.3px;
 }
-.rectangle-parent15 {
-  width: 301px;
-  position: absolute;
-  margin: 0 !important;
-  top: calc(50% - 512px);
-  left: 82%;
-  height: 1024px;
-  z-index: 999;
-}
+
 .div57 {
   position: absolute;
   top: 0px;

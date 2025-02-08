@@ -23,6 +23,8 @@ const ManagerJobs = () => {
     axios.get(`${apiUrl}/manager/getAllCleanings`)
       .then((res) => {
         setCleanings(res.data);
+        console.log(cleanings)
+
         const filteredData = filterCleaningsByActive(res.data);
         setFilterCleanings(filteredData);
       })
@@ -45,6 +47,7 @@ const ManagerJobs = () => {
   return (
     <div>
       <div className="manager-jobs">
+<<<<<<< HEAD
       <div className="search-list-container5">
   {filterCleanings
     .sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime)) // מיון עולה - מהקרוב לרחוק
@@ -60,6 +63,21 @@ const ManagerJobs = () => {
       />
     ))}
 </div>
+=======
+        <div className="search-list-container5">
+          {filterCleanings.map((item, index) => (
+            <Search
+              id={item._id}
+              key={index}
+              worker={item.employee.name}
+              status={item.done}
+              branch={item.branch.name}
+              date={format(new Date(item.dateTime), "dd/MM/yyyy")}
+              bussiness={item.branch.customer.businessName}
+            />
+          ))}
+        </div>
+>>>>>>> a9636ee230ce847009ab84aed83e8b062414d64a
 
         <div className="date-picker-container88">
           <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />

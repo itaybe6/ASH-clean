@@ -106,13 +106,13 @@
 }
 .mobile-menu-manager {
   width: 100%;
-  position: relative;
+  position: absolute;
   background-color: transparent;
-  height: 852px;
+  height: 100%;
   overflow: hidden;
   z-index: 1000;
   transform: translateX(300px);
-
+top: 0px;
 }
 .mobile-menu-manager.open {
   transform: translateX(0);

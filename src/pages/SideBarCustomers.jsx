@@ -1,8 +1,10 @@
 import "./SideBarCustomers.css";
 import { useNavigate } from 'react-router-dom';
-
-const SideBarCustomers = ({user}) => {  
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+const SideBarCustomers = ({ user }) => {
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
 
   const Contact = () => {
     navigate(`/client-contact-us/${user.id}/`);
@@ -14,7 +16,7 @@ const SideBarCustomers = ({user}) => {
     navigate(`/client-edit-profile/${user.id}/`);
   }
   const handleLogout = () => {
-    localStorage.removeItem("token"); // מוחק את ה-token מה-localStorage
+    logout();
     navigate("/homepage"); // מנווט לעמוד ההתחברות
   };
   return (

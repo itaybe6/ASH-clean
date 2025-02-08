@@ -118,12 +118,13 @@
 
 .mobile-menu-client {
   width: 100%;
-  position: relative;
+  position: absolute;
   background-color: transparent;
   height: 852px;
   overflow: hidden;
   z-index: 1000;
   transform: translateX(300px);
+  top:0px;
 }
 
 .mobile-menu-client.open {

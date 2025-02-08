@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ManagerEditBranchMobile.css";
 import MobileMenuManager from "./MobileMenuManager";
-import { useNavigate  , useParams} from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ManagerEditBranchMobile = () => {
@@ -11,14 +11,11 @@ const ManagerEditBranchMobile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
   const apiUrl = import.meta.env.VITE_API_URL;
-
- const {id} = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
-
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
-
   const handleUpdateDetails = async () => {
     try {
       const response = await axios.put(`${apiUrl}/manager/editBranch/${id}`, {
@@ -36,7 +33,6 @@ const ManagerEditBranchMobile = () => {
       alert("Server error: " + (error.response?.data?.message || error.message));
     }
   };
-
   const deleteBranch = async () => {
     try {
 
@@ -52,15 +48,13 @@ const ManagerEditBranchMobile = () => {
   const menu = () => {
     setDisplayMenu(!displayMenu)
   }
-  // פונקציית סגירת תפריט
   const closeMenu = () => {
     setDisplayMenu(false);
   };
   return (
     <div className="manager-edit-branch-mobile">
-      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
-
       <div className="manager-edit-branch-mobile-child" />
+      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="parent22">
         <div className="div80">אנא מלא את הפרטים למטה כדי לערוך את הסניף</div>
         <b className="b38">עריכת פרטי סניף</b>
