@@ -28,7 +28,7 @@ const FetureJobWorker = ({ nameb, address,time,id , done}) => {
 
   return (
     <div className="feture-job-worker-card">
-      {ok &&  <WorkerJobSuc   nameb={nameb} address={address} time={time} id={id}/>}
+      {ok &&  <WorkerJobSuc   nameb={nameb} address={address} time={time} id={id} setOk={setOk}/>}
   
       <div className="feture-job-worker-details">
         <b className="feture-job-worker-title">{nameb}</b>

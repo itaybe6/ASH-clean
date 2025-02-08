@@ -2,7 +2,7 @@ import FetureJobWorker from "../components/FetureJobWorker";
 import "./WorkerFutureJobs.css";
 import CustomToggleButton from "../components/CustomToggleButton.jsx";
 import { useState, useEffect } from "react";
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CustomDatePicker from "../components/CustomDatePicker.jsx";
 import axios from "axios";
 import dayjs from "dayjs";
@@ -38,10 +38,10 @@ const WorkerFutureJobs = () => {
   useEffect(() => {
     const filterCleanings = () => {
       let filtered = [...cleanings];
-  
+
       // מסנן לפי מצב עבודה (בוצע / לא בוצע)
       filtered = filtered.filter(cleaning => Boolean(cleaning.done) === Boolean(active));
-  
+
       // מסנן לפי תאריך אם נבחר תאריך מסוים
       if (selectedDate) {
         const formattedSelectedDate = dayjs(selectedDate).format("YYYY-MM-DD");
@@ -49,16 +49,16 @@ const WorkerFutureJobs = () => {
           dayjs(cleaning.dateTime).format("YYYY-MM-DD") === formattedSelectedDate
         );
       }
-  
+
       // **ממיין את הרשימה לפי תאריך מהקרוב לרחוק**
       filtered.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
-  
+
       setFilteredCleanings(filtered);
     };
-  
+
     filterCleanings();
   }, [cleanings, active, selectedDate]);
-  
+
 
 
   return (
@@ -71,21 +71,21 @@ const WorkerFutureJobs = () => {
       </div>
       {/* כאן נציב את רשימת הרכיבים */}
       <div className="jobs-list-container2">
-  {filteredCleanings.length > 0 ? (
-    filteredCleanings.map((job) => (
-      <FetureJobWorker
-        key={job._id}
-        nameb={job.branch.name}
-        address={job.branch.address}
-        time={dayjs(job.dateTime).format("DD/MM/YYYY")}
-        id={job._id}
-        done = {job.done}
-      />
-    ))
-  ) : (
-    <p>אין עבודות להצגה</p>
-  )}
-</div>
+        {filteredCleanings.length > 0 ? (
+          filteredCleanings.map((job) => (
+            <FetureJobWorker
+              key={job._id}
+              nameb={job.branch.name}
+              address={job.branch.address}
+              time={dayjs(job.dateTime).format("DD/MM/YYYY")}
+              id={job._id}
+              done={job.done}
+            />
+          ))
+        ) : (
+          <p>אין עבודות להצגה</p>
+        )}
+      </div>
 
 
 

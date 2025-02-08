@@ -27,7 +27,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id ,done}) => {
 
   return (
     <div className="feturejobworkermobile">
-      {ok &&  <WorkerJobSucMobile   nameb={nameb} address={address} time={time} id={id}/>}
+      {ok &&  <WorkerJobSucMobile   nameb={nameb} address={address} time={time} id={id} setOk={setOk}/> }
 
       {done ? <button className="exec-button"  onClick={handleCancelCleaning} >ביטול</button>  :
               <button className="exec-button"  onClick={() => {setOk(true)}} >ביצוע</button> }
