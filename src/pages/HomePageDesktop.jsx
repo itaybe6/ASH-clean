@@ -1,7 +1,55 @@
 import Component2 from "../components/Component2";
 import "./HomePageDesktop.css";
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useState } from "react";
+import axios from "axios";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const { token } = useContext(AuthContext);
+  const [fullName, setFullName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [service, setService] = useState('');
+  const apiUrl = import.meta.env.VITE_API_URL;
+
+
+  const toLogin = () => {
+    if (!token) {
+      navigate("/login")
+    }
+    if (token.role == "Manager") {
+      navigate("/manager-display-users");
+    }
+    else if (token.role == "Regular") {
+      navigate("/worker-edit-profile");
+    }
+    else {
+      navigate(`/clientJobs/${user.id}/`);
+    }
+  }
+  const sendEmail = async () => {
+    try {
+      const response = await axios.post(`${apiUrl}/customer/sendEmail`, {
+        fullName,
+        phoneNumber,
+        service
+      });
+      if (response.status === 200) {
+        alert('האימייל נשלח בהצלחה!');
+        setFullName('');
+        setPhoneNumber('');
+        setService('');
+      } else {
+        alert('שגיאה בשליחת האימייל');
+      }
+    } catch (error) {
+      console.error('שגיאה:', error);
+      alert('שגיאה בחיבור לשרת');
+    }
+  };
+
   return (
     <div className="homepage">
       <div className="test-02-3-wrapper">
@@ -39,7 +87,7 @@ const HomePage = () => {
         <button className="button">אודות</button>
         <button className="button">שירותים</button>
       </div>
-      <button className="vector-wrapper69">
+      <button className="vector-wrapper69" onClick={toLogin}>
         <img className="vector-icon78" alt="" src="/vector27.svg" />
       </button>
       <button className="homepage-inner">
@@ -171,20 +219,12 @@ const HomePage = () => {
         <div className="component-container">
           <div className="group-child164" />
         </div>
-        <button className="vector-wrapper70">
+        <button className="vector-wrapper70" onClick={sendEmail}>
           <img className="vector-icon79" alt="" src="/vector28.svg" />
         </button>
-        <input
-          className="group-child165"
-          placeholder="מספר פלאפון"
-          type="tel"
-        />
-        <input
-          className="group-child166"
-          placeholder="בחירת שירות"
-          type="text"
-        />
-        <input className="group-child167" placeholder="שם מלא" type="text" />
+        <input className="group-child165" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+        <input className="group-child166" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+        <input className="group-child167" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <div className="div213">
           <p className="p23">הניקיון המושלם</p>
           <p className="p23">בדרך אליכם!</p>
