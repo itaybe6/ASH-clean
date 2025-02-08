@@ -23,7 +23,7 @@
   box-sizing: border-box;
 
   font-family: var(--font-heebo);
-  direction: rtl; /* אם התוכן בעברית */
+  direction: ltr; /* אם התוכן בעברית */
 }
 
 /* כל שורה בטבלה (3 שורות) */
