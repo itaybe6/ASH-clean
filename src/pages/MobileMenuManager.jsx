@@ -101,7 +101,7 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
         </button>
       </div>
       <button className="vector-wrapper77" onClick={handleLogout}>
-        <img className="vector-icon86" alt="" src="/vector8.svg" />
+        <img className="vector-icon861" alt="" src="/vector8.svg" />
       </button>
       <img className="icon52" alt="" src="/-02-17@2x.png" />
     </div>

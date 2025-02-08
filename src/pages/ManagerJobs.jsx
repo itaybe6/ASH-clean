@@ -47,6 +47,7 @@ const ManagerJobs = () => {
   return (
     <div>
       <div className="manager-jobs">
+<<<<<<< HEAD
         <div className="search-list-container5">
           {filterCleanings.map((item, index) => (
             <Search
@@ -60,6 +61,23 @@ const ManagerJobs = () => {
             />
           ))}
         </div>
+=======
+      <div className="search-list-container5">
+  {filterCleanings
+    .sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime)) // מיון עולה - מהקרוב לרחוק
+    .map((item, index) => (
+      <Search
+        id={item._id}
+        key={index}
+        worker={item.employee.fullName}
+        status={item.done}
+        branch={item.branch.address}
+        date={format(new Date(item.dateTime), "dd/MM/yyyy")}
+        bussiness={item.branch.name}
+      />
+    ))}
+</div>
+>>>>>>> 02010e83b1ef3050f992ad561c0bb8a94d5a2daa
 
         <div className="date-picker-container88">
           <CustomDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />

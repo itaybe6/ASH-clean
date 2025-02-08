@@ -78,13 +78,13 @@
 }
 .mobile-menu-worker {
   width: 100%;
-  position: relative;
+  position: absolute;
   background-color: transparent;
-  height: 852px;
+  height: 100vh;
   overflow: hidden;
   transform: translateX(300px);
   z-index: 1000;
-
+top: 0px;
 }
 .mobile-menu-worker.open {
   transform: translateX(0);
