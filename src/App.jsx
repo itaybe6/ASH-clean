@@ -133,7 +133,7 @@ function App() {
 
       <PageTransition>
         <Routes>
-          <Route path="homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
+          <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
           <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
           <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
 

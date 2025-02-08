@@ -50,9 +50,11 @@ const Login = () => {
   
     }
   };
+
+  const back = () => {navigate(`/homepage`);}
   return (
     <div className="login">
-      <button className="vector-wrapper65">
+      <button className="vector-wrapper65" onClick={back}>
         <img className="vector-icon74" alt="" src="/vector24.svg" />
       </button>
       <div className="wrapper13">
