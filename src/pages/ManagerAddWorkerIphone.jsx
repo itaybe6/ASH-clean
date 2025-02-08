@@ -55,8 +55,8 @@ const ManagerAddWorkerIphone = () => {
     <div className="manager-add-worker-iphone">
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="manager-add-worker-iphone-child" />
-      <b className="b48">הוספת משתמש - עובד</b>
-      <div className="div103">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
+      <b className="b4889">הוספת משתמש - עובד</b>
+      <div className="div10389">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
       <img
         className="icbaseline-person-icon"
         alt=""
@@ -66,15 +66,14 @@ const ManagerAddWorkerIphone = () => {
       <button className="vector-wrapper38" onClick={menu}>
         <img className="vector-icon46" alt="" src="/vector10.svg" />
       </button>
-      <div className="rectangle-parent42">
-        <input className="group-child69" placeholder="שם מלא" name="fullName" type="text" value={formData.fullName} onChange={handleChange} required />
-        <input className="group-child70" placeholder="עיר" type="text" name="city" value={formData.city} onChange={handleChange} required />
-        <input className="group-child71" placeholder="מספר פלאפון" name="phone" type="tel" value={formData.phone} onChange={handleChange} required />
+      <div className="rectangle-parent4289">
+        <input className="group-child6989" placeholder="שם מלא" name="fullName" type="text" value={formData.fullName} onChange={handleChange} required />
+        <input className="group-child7089" placeholder="עיר" type="text" name="city" value={formData.city} onChange={handleChange} required />
+        <input className="group-child7189" placeholder="מספר פלאפון" name="phone" type="tel" value={formData.phone} onChange={handleChange} required />
       </div>
       <input className="manager-add-worker-iphone-item" name="password" placeholder="סיסמא" type="password" value={formData.password} onChange={handleChange} required />
-      <input className="manager-add-worker-iphone-inner" name="verification" placeholder="אימות סיסמא" type="password" value={formData.verification} onChange={handleChange} required />
-      <button className="rectangle-parent43" onClick={handleSubmit}>
-        <div className="group-child72" />
+      <button className="rectangle-parent4389" onClick={handleSubmit}>
+        <div className="group-child7289" />
         <b className="b49">הוספת משתמש</b>
       </button>
     </div>

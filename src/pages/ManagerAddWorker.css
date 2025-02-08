@@ -177,13 +177,14 @@
   border: none;
   padding: 0;
   background-color: transparent;
-  width: 168px;
+  width: 30%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% + 144px);
-  left: calc(50% + 65px);
+  top: 56%;
+  left: 43%;
   height: 52px;
   z-index: 7;
+  transform: translateX(11%);
 }
 .group-child17 {
   position: absolute;

@@ -76,15 +76,15 @@ const ManagerDisplayUsersMobile = () => {
       <button className="vector-wrapper11" onClick={menu}>
         <img className="vector-icon14" alt="" src="/vector10.svg" />
       </button>
-      <div className="rectangle-parent15">
-        <div className="group-child23" />
-        <div className="div44">חיפוש משתמש...</div>
-      </div>
+     
       <div className="group-parent77">
         <img className="group-child242" alt="" src="/group-275.svg" />
         <b className="b236" onClick={addUser}>+</b>
       </div>
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"70vh"} name1="עובדים" name2="לקוחות" left={"130px"} />;
+      <div className="CustomToggleButtonnewmob1">
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name1="עובדים" name2="לקוחות" left={"0px"} />
+      </div>
+      
 
       <div className="search-list-container2">
         {active

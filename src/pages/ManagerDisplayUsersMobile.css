@@ -95,15 +95,15 @@
 
 .group-parent77 {
   width: 39px;
-  position: absolute;
-  margin: 0 !important;
-  top: 272px;
-  left: 35px;
-  height: 45px;
-  z-index: 6;
-  text-align: center;
-  font-size: var(--font-size-17xl);
-  color: var(--color-white);
+    position: absolute;
+    margin: 0 !important;
+    top: 40%;
+    left: 15%;
+    height: 45px;
+    z-index: 6;
+    text-align: center;
+    font-size: var(--font-size-17xl);
+    color: var(--color-white);
 }
 
 .manager-display-customers-mo-item {
@@ -117,7 +117,7 @@
 
 .manager-display-customers-mo {
   width: 100%;
-  min-height: 100vh;
+  min-height: 85px;
   background-color: var(--color-white);
   overflow: visible;
   display: flex;
@@ -132,24 +132,31 @@
 
 /* קונטיינר הרשימה */
 .search-list-container2 {
-  margin-top: -300px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center; /* למרכז לרוחב, אופציונלי */
   padding: 1rem;
   height: 100%;
+  top: 1;
+  position: absolute;
+  top: 45%;
 }
+
 .manager-display-customers-item2 {
   border: none;
   outline: none;
   background-color: var(--color-white);
-  width:200px;
+  width: 80%;
   position: absolute;
   margin: 0 !important;
-  top:220px;
-  right:70px;
+  top: 32%;
+  right: 9%;
   border-radius: var(--br-mid);
   height: 46px;
   z-index: 4;
+  padding: 10px;
+  font-family: 'Heebo';
+}
+
+.CustomToggleButtonnewmob1{
+  position: absolute;
+  top: 40%;
+  left: 50%; 
 }

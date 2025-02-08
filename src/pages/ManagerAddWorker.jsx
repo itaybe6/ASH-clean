@@ -69,7 +69,6 @@ const ManagerAddWorker = () => {
       </div>
       <div className="rectangle-parent8">
         <input className="group-child14" name="password" placeholder="סיסמא"  type="password" value={formData.password} onChange={handleChange} required />
-        <input className="group-child15" name="verification" placeholder="אימות סיסמא" type="password" value={formData.verification} onChange={handleChange} required/>
       </div>
       <button className="rectangle-parent9" onClick={handleSubmit} >
         <div className="group-child16" />
