@@ -91,7 +91,7 @@ const MobileMenuClient = ({ closeMenu, isOpen ,id}) => {
     <div className="mobile-menu-client" style={menuStyle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <div className="mobile-menu-client-child" />
       <button className="vector-wrapper78" onClick={handleLogout}>
-        <img className="vector-icon87" alt="" src="/vector8.svg" />
+        <img className="vector-icon872525" alt="" src="/vector8.svg" />
       </button>
       <img className="icon53" alt="" src="/-02-17@2x.png" />
       <div className="group-parent43">

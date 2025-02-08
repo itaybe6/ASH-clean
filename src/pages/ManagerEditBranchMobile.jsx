@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import "./ManagerEditBranchMobile.css";
 import MobileMenuManager from "./MobileMenuManager";
+import MobileMenuClient from "./MobileMenuClient";
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const ManagerEditBranchMobile = () => {
-  // הגדרת state לכל שדה קלט
   const [branchName, setBranchName] = useState("");
   const [branchAddress, setBranchAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
   const apiUrl = import.meta.env.VITE_API_URL;
   const { id } = useParams();
+  const { token } = useContext(AuthContext);
+  const userRole = token?.role; // תוודא שה־role נמצא בתוך ה־token
+
   const navigate = useNavigate();
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
@@ -51,10 +56,13 @@ const ManagerEditBranchMobile = () => {
   const closeMenu = () => {
     setDisplayMenu(false);
   };
+
+  const menuComponent = userRole === "Manager" ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} />;
+
   return (
     <div className="manager-edit-branch-mobile">
       <div className="manager-edit-branch-mobile-child" />
-      {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
+      {displayMenu && menuComponent}
       <div className="parent22">
         <div className="div80">אנא מלא את הפרטים למטה כדי לערוך את הסניף</div>
         <b className="b38">עריכת פרטי סניף</b>
