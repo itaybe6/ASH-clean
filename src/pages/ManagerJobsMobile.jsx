@@ -70,9 +70,9 @@ const ManagerJobsMobile = () => {
               key={index}
               worker={item.employee.fullName}
               status={item.done}
-              branch={item.branch.address}
+              branch={item.branch.name}
               date={format(new Date(item.dateTime), "dd/MM/yyyy")}
-              bussiness={item.branch.name}
+              bussiness={item.branch.customer.businessName}
               id={item._id}
             />
           ))}
