@@ -4,17 +4,15 @@ import imageCompression from 'browser-image-compression';
 import { useNavigate } from 'react-router-dom';
 import "./WorkerJobSucMobile.css";
 
-const WorkerJobSucMobile = ({ nameb, address, time, id }) => {
+const WorkerJobSucMobile = ({ nameb, address, time, id , setOk}) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const navigate = useNavigate();  
   const apiUrl = import.meta.env.VITE_API_URL;
-
   const handleFileSelect = (e) => {
     if (e.target.files[0]) {
       setSelectedFile(e.target.files[0]);
     }
   };
-
   const handleUpload = async () => {
     if (!selectedFile) return;
     try {
@@ -30,39 +28,25 @@ const WorkerJobSucMobile = ({ nameb, address, time, id }) => {
       console.error('שגיאה בשליחה:', err);
     }
   };
-
   return (
     <div className="worker-job-suc-mobile">
-      <div className="worker-job-suc-mobile-inner">
-        <div className="component-group">
-          <div className="component-group">
-            <div className="component-child2" />
-          </div>
-          <div className="div131">{nameb}</div>
-          <div className="div132">{address}</div>
-          <div className="div133">{time}</div>
-          <div className="group-wrapper6">
-            <div className="group-wrapper7">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFileSelect}
-                style={{ display: 'none' }}
-                id="file-input"
-              />
-              <button className="rectangle-parent49" onClick={() => document.getElementById('file-input').click()}>
-                <div className="group-child105" />
-                <div className="parent31">
+      {/* כפתור סגירה */}
+      <button className="close-button" onClick={() => setOk(false)}>
+        ✖
+      </button>
 
-                  <b className="b59">תמונה</b>
-                  <img className="group-child106" alt="" src="/group-351.svg" />
-                </div>
-              </button>
-            </div>
-          </div>
-          <button className="rectangle-parent50" onClick={handleUpload}>
-            <div className="group-child107" />
-            <b className="b60">בוצע</b>
+      <div className="worker-job-suc-content">
+        <h2 className="job-title">{nameb}</h2>
+        <p className="job-address">{address}</p>
+        <p className="job-time">{time}</p>
+
+        <div className="button-container">
+          <button className="upload-btn" onClick={() => document.getElementById("file-input").click()}>
+            תמונה
+          </button>
+          <input type="file" accept="image/*" id="file-input" style={{ display: "none" }} onChange={handleFileSelect} />
+          <button className="confirm-btn" onClick={handleUpload}>
+            בוצע
           </button>
         </div>
       </div>

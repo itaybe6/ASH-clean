@@ -19,7 +19,6 @@ const WorkerFutureJobsMobile = () => {
   const { id } = useParams();
   const apiUrl = import.meta.env.VITE_API_URL;
 
-
   const menu = () => {
     setDisplayMenu(!displayMenu);
   };
@@ -89,7 +88,7 @@ const WorkerFutureJobsMobile = () => {
             key={job._id}
             nameb={job.branch.name}
             address={job.branch.address}
-            time={dayjs(job.dateTime).format("DD MMMM YYYY")}
+            time={dayjs(job.dateTime).format("DD/MM/YYYY")}
             id = {job._id}
             done= {job.done}
           />
