@@ -75,10 +75,10 @@ const WorkerFutureJobsMobile = () => {
      <CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}
-        Height={"58vh"}
+        Height={"50px"}
         name1="עבודות"
         name2="עבודות עתידיות"
-        left="48%"
+        left="0%"
       />
      </div>
       

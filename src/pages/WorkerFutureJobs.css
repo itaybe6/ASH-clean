@@ -205,15 +205,25 @@
 }
 
 .jobs-list-container2 {
-    position: absolute;
-    top: 60%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    width: 15%;
-    max-width: 600px;
-    top: calc(30% + 10px);
-    transform: translateX(-50%);
+  position: absolute;
+  top: 63%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 900px; /* אפשר להגדיל אם צריך */
+  max-height: 650px; 
+  min-height: 650px;
+  overflow-y: auto; /* מאפשר גלילה רק לאורך */
+  overflow-x: hidden; /* מסתיר גלילה אופקית */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* מרכז את הכרטיסים */
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
 }
+
+
 
 .date-picker-container8{
   position: absolute;

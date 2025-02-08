@@ -2,21 +2,24 @@
 .feture-job-worker-card {
   position: relative;
   display: flex;
-  flex-direction: row;   /* הכפתור והטקסט זה לצד זה */
+  flex-direction: row;  
   align-items: center;
   justify-content: space-between;
 
-  width: 300%;            /* אפשר להתאים לפי הרצוי */
-  margin: 20px auto;     /* ריווח אנכי ומרכז אופקי */
+  width: 100%;        /* נותן גמישות */
+  max-width: 800px;   /* מגדיל את הרוחב */
+  min-width: 350px;   /* מבטיח שהכרטיסים לא יהיו קטנים מדי */
+  margin: 10px auto;  
   padding: 1rem 1.5rem;  
   background-color: #fff;
   box-shadow: 0 4px 4px rgba(0,0,0,0.25);
   border-radius: 15px;
 
-  direction: rtl;        /* בעברית, יישור לימין */
+  direction: rtl;    
   text-align: right;
-  font-family: "Heebo", sans-serif; /* או var(--font-heebo) */
+  font-family: "Heebo", sans-serif;
 }
+
 
 /* ===== הכפתור הכתום ===== */
 .feture-job-worker-button {

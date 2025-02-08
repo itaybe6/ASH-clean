@@ -152,7 +152,7 @@
 .clean-jobs-list-container {
   position: absolute;
   top:415px;
-  right: 45px;
+  right: 50px;
   display: flex;
   flex-direction: column;
   margin-top: 0px; 
