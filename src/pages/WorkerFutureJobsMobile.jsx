@@ -91,6 +91,7 @@ const WorkerFutureJobsMobile = () => {
             address={job.branch.address}
             time={dayjs(job.dateTime).format("DD MMMM YYYY")}
             id = {job._id}
+            done= {job.done}
           />
         ))}
       </div>

@@ -61,7 +61,7 @@ const getAllCustomers = async (req, res) => {
 };
 
 
-// 5 fetch employee details 
+// 5 fetch employee details  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 const getEmployeeById = async (req, res) => {
     const { employeeId } = req.params;
     const employee = await Employee.findById(employeeId).select('-password -cleaningSchedules');
@@ -69,7 +69,6 @@ const getEmployeeById = async (req, res) => {
 };
 
 
-// 6 edit details Employe
 const updateEmployeeDetails = async (req, res) => {
     const { employeeId } = req.params;
     const { phoneNumber, newPassword , fullName ,city } = req.body;
