@@ -244,7 +244,11 @@ const getAllCleanings = async (req, res) => {
             })
             .populate({
                 path: 'branch',
-                select: 'name address'
+                select: 'name address customer',
+                populate: {
+                    path: 'customer',
+                    select: 'businessName'
+                }
             });
         res.status(200).json(cleanings);
     } catch (error) {
@@ -271,14 +275,14 @@ const managerEditUser = async (req, res) => {
             return res.status(404).json({ message: 'משתמש לא נמצא' });
         }
 
-        if (fullName){
-            if(type === 'לקוח'){
+        if (fullName) {
+            if (type === 'לקוח') {
                 user.businessName = fullName;
             }
-            else if (type === 'עובד'){
+            else if (type === 'עובד') {
                 user.fullName = fullName;
             }
-        } 
+        }
         if (phoneNumber) user.phone = phoneNumber;
         if (city) user.city = city;
 
@@ -357,7 +361,7 @@ const getImgCleaning = async (req, res) => {
     }
 }
 
- 
+
 const deleteBranchById = async (req, res) => {
     try {
         const { branchId } = req.params;
@@ -367,8 +371,8 @@ const deleteBranchById = async (req, res) => {
         }
         const deletedCleanings = await Cleaning.deleteMany({ branch: branchId });
         await Customer.updateOne(
-            { branches: branchId }, 
-            { $pull: { branches: branchId } } 
+            { branches: branchId },
+            { $pull: { branches: branchId } }
         );
         res.status(200).json({ message: 'הסניף וכל הניקיונות המשויכים אליו נמחקו בהצלחה' });
     } catch (error) {
@@ -386,12 +390,12 @@ const deleteCleaning = async (req, res) => {
             return res.status(404).json({ message: 'הניקיון לא נמצא' });
         }
         await Employee.updateOne(
-            { cleaningSchedules: cleaningId }, 
-            { $pull: { cleaningSchedules: cleaningId } } 
+            { cleaningSchedules: cleaningId },
+            { $pull: { cleaningSchedules: cleaningId } }
         );
         await Branch.updateOne(
-            { cleaningSchedules: cleaningId }, 
-            { $pull: { cleaningSchedules: cleaningId } } 
+            { cleaningSchedules: cleaningId },
+            { $pull: { cleaningSchedules: cleaningId } }
         );
         res.json({ message: 'ניקיון נמחק בהצלחה' });
     } catch (error) {
@@ -415,5 +419,5 @@ module.exports = {
     addBranchToCustomer, updateBranch,
     getCleaningsByEmployee, getAllCleanings
     , getImgCleaning, deleteBranchById,
-    deleteCleaning 
+    deleteCleaning
 };

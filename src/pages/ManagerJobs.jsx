@@ -23,6 +23,8 @@ const ManagerJobs = () => {
     axios.get(`${apiUrl}/manager/getAllCleanings`)
       .then((res) => {
         setCleanings(res.data);
+        console.log(cleanings)
+
         const filteredData = filterCleaningsByActive(res.data);
         setFilterCleanings(filteredData);
       })
@@ -50,11 +52,11 @@ const ManagerJobs = () => {
             <Search
               id={item._id}
               key={index}
-              worker={item.employee.fullName}
+              worker={item.employee.name}
               status={item.done}
-              branch={item.branch.address}
+              branch={item.branch.name}
               date={format(new Date(item.dateTime), "dd/MM/yyyy")}
-              bussiness={item.branch.name}
+              bussiness={item.branch.customer.businessName}
             />
           ))}
         </div>

@@ -37,7 +37,6 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
     }
   };
 
-  // סיום מגע
   const handleTouchEnd = (e) => {
     if (!isOpen || !isDragging) return;
 
