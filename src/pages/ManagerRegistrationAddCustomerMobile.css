@@ -18,9 +18,9 @@
   display: inline-block;
   width: 288px;
 }
-.div93 {
+.div9333 {
   position: absolute;
-  top: 63.7px;
+  top: 65px;
   left: calc(50% - 163px);
   font-size: var(--font-size-mini);
   line-height: 146.39%;
@@ -93,6 +93,8 @@
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .group-child62 {
   border: none;
@@ -105,6 +107,8 @@
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .group-child63 {
   border: none;
@@ -117,6 +121,8 @@
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .group-child64 {
   border: none;
@@ -129,6 +135,8 @@
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .group-child65 {
   border: none;
@@ -141,6 +149,8 @@
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .rectangle-parent35 {
   position: absolute;
@@ -182,16 +192,15 @@
   top: calc(50% + 176.65px);
   right: 1.03%;
   left: 47.93%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 39.7px;
 }
 .group-parent14 {
-  width: 73.79%;
+  width: 75%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 96.75px);
-  right: 12.98%;
-  left: 13.23%;
+  top: calc(45% - 96.75px);
+  right: 13%;
+  left: 14%;
   height: 432.7px;
   z-index: 6;
 }
@@ -201,11 +210,13 @@
   background-color: var(--color-white);
   position: absolute;
   width: 100%;
-  top: calc(50% - 50.5px);
+  top: calc(235% - 50.5px);
   right: 0%;
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .group-child68 {
   border: none;
@@ -213,20 +224,21 @@
   background-color: var(--color-white);
   position: absolute;
   width: 100%;
-  top: calc(50% + 6.5px);
+  top: calc(232% + 6.5px);
   right: 0%;
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'heebo';
 }
 .group-parent15 {
-  width: 73.79%;
+  width: 75%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% + 168.25px);
-  right: 12.98%;
-  left: 13.23%;
-  height: 101px;
+  top: calc(28% + 168.25px);
+  left: 15%;
+  height: 13%;
   z-index: 7;
 }
 .manager-registration-add-c1 {

@@ -127,7 +127,7 @@
   bottom: 300px;
   left: calc(50% - 54px);
   border-radius: var(--br-smi);
-  background-color: var(--color-darkorange-200);
+  background-color: #ffffff;
   width: 108px;
   height: 42.2px;
 }

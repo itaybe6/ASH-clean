@@ -73,7 +73,7 @@ const ManagerAddWorker = () => {
       </div>
       <button className="rectangle-parent9" onClick={handleSubmit} >
         <div className="group-child16" />
-        <b className="b19">הוספת משתמש</b>
+        <b className="b193">הוספת משתמש</b>
       </button>
     </div>
   );

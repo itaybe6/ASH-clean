@@ -71,6 +71,8 @@
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child47 {
   border: none;
@@ -83,6 +85,8 @@
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child48 {
   border: none;
@@ -95,6 +99,8 @@
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child49 {
   border: none;
@@ -107,6 +113,8 @@
   left: 54.59%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child50 {
   border: none;
@@ -119,6 +127,8 @@
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child51 {
   position: absolute;
@@ -148,10 +158,9 @@
   background-color: transparent;
   position: absolute;
   width: 30.27%;
-  top: calc(50% + 163.5px);
+  top: calc(55% + 163.5px);
   right: 0.54%;
-  left: 69.19%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  left: 70%;
   height: 52px;
 }
 .group-parent12 {
@@ -297,18 +306,22 @@
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
-.group-child55 {
+.group-child5599 {
   border: none;
   outline: none;
   background-color: var(--color-white);
   position: absolute;
   width: 99.82%;
-  top: calc(50% + 7.5px);
+  top: calc(10% + 7.5px);
   right: 0.18%;
   left: 0%;
   border-radius: var(--br-xs);
   height: 43px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .rectangle-parent32 {
   width: 38.61%;

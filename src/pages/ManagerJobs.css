@@ -194,7 +194,7 @@
 .manager-jobs {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;

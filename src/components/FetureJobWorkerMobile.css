@@ -1,9 +1,10 @@
 /* ===== מאפיינים כלליים של הכרטיס ===== */
 .feturejobworkermobile {
   position: relative; /* מוודא שהכפתור בפנים יכול להיות absolute */
-  width: 200%; /* מתפרס בצורה רספונסיבית */
+  width: 100%; /* מתפרס בצורה רספונסיבית */
   max-width: 400px; /* מונע התרחבות יתר במסכים גדולים */
-  margin: 20px auto; /* מרווח בין הכרטיסים ומרכז אותם */
+  min-width: 300px;
+  margin: 8px auto; /* מרווח בין הכרטיסים ומרכז אותם */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px; /* מעגל פינות */
   background-color: #fff; /* רקע לבן */

@@ -126,7 +126,7 @@ const ManagerRegistrationAddCustomer = () => {
           required
         />
         <input
-          className="group-child55"
+          className="group-child5599"
           placeholder="אימות סיסמא"
           type="password"
           value={confirmPassword}

@@ -297,7 +297,7 @@
 .worker-edit-profile {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   display: flex;
   flex-direction: row;
