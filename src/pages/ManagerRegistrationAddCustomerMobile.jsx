@@ -66,11 +66,11 @@ const ManagerRegistrationAddCustomerMobile = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-registration-add-c-child1" />
-  
+
       <div className="manager-registration-add-c-inner1">
         <div className="parent24">
           <b className="b44">הוספת משתמש - לקוח</b>
-          <div className="div93">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
+          <div className="div9333">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
           <img className="group-child60" alt="" src="/group-404.svg" />
         </div>
       </div>
@@ -78,75 +78,21 @@ const ManagerRegistrationAddCustomerMobile = () => {
       <button className="vector-wrapper31" onClick={menu}>
         <img className="vector-icon39" alt="" src="/vector10.svg" />
       </button>
+      <div className="group-parent15">
+        <input className="group-child61" placeholder="שם העסק" type="text" value={businessName} onChange={handleBusinessNameChange} required />
+        <input className="group-child62" placeholder="שם מלא" type="text" value={fullName} onChange={handleFullNameChange} required />
+        <input className="group-child63" placeholder="עיר" type="text" value={city} onChange={handleCityChange} required />
+        <input className="group-child64" placeholder="כתובת" type="text" value={address} onChange={handleAddressChange} required />
+        <input className="group-child65" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={handlePhoneNumberChange} required />
+        <input className="group-child67" placeholder="סיסמא" type="password" value={password} onChange={handlePasswordChange} required />
+      </div>
       <div className="group-parent14">
-        <div className="rectangle-parent35">
-          <input
-            className="group-child61"
-            placeholder="שם העסק"
-            type="text"
-            value={businessName}
-            onChange={handleBusinessNameChange}
-            required
-          />
-          <input
-            className="group-child62"
-            placeholder="שם מלא"
-            type="text"
-            value={fullName}
-            onChange={handleFullNameChange}
-            required
-          />
-          <input
-            className="group-child63"
-            placeholder="עיר"
-            type="text"
-            value={city}
-            onChange={handleCityChange}
-            required
-          />
-          <input
-            className="group-child64"
-            placeholder="כתובת"
-            type="text"
-            value={address}
-            onChange={handleAddressChange}
-            required
-          />
-          <input
-            className="group-child65"
-            placeholder="מספר פלאפון"
-            type="tel"
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
-            required
-          />
-        </div>
-        <button
-          className="rectangle-parent36"
-          onClick={handleContinue}
-        >
+        <button className="rectangle-parent36" onClick={handleContinue}>
           <div className="group-child66" />
           <b className="b45">המשך לסניפים</b>
         </button>
       </div>
-      <div className="group-parent15">
-        <input
-          className="group-child67"
-          placeholder="סיסמא"
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
-        />
-        <input
-          className="group-child68"
-          placeholder="אמת סיסמא"
-          type="password"
-          value={confirmPassword}
-          onChange={handleConfirmPasswordChange}
-          required
-        />
-      </div>
+     
     </div>
   );
 };

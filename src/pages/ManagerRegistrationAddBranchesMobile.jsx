@@ -119,7 +119,7 @@ const ManagerRegistrationAddBranchesMobile = () => {
         <b className="b52">הוספת משתמש</b>
       </button>
       <button
-        className="rectangle-parent40"
+        className="rectangle-parent4011"
         onClick={handleBack}
       >
         {branches.length > 0 && (

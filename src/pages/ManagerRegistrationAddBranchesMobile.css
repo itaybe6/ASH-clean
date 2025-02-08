@@ -117,6 +117,8 @@
   left: 0.34%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child88 {
   border: none;
@@ -129,6 +131,8 @@
   left: 0.34%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child89 {
   border: none;
@@ -141,15 +145,23 @@
   left: 0.34%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .div113 {
   position: absolute;
-  width: 90.72%;
+  width: 65%;
   top: calc(50% + 83.5px);
-  left: 5.84%;
+  left: 19%;
   line-height: 146.39%;
-  font-weight: 300;
   display: inline-block;
+  background-color: #f6892a;
+  border: 1px;
+  padding: 10px;
+  font-family: 'Heebo';
+    font-weight: 500;
+    border-radius: 10px;
+    color: white;
 }
 .group-wrapper4 {
   position: absolute;
@@ -197,13 +209,11 @@
   border: none;
   padding: 0;
   background-color: transparent;
-  width: 37.66%;
+  width: 35%;
   position: absolute;
   margin: 0 !important;
   top: calc(50% + 162.25px);
-  right: 13.23%;
-  left: 49.11%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  left: 55%;
   height: 39.7px;
   z-index: 9;
 }
@@ -225,22 +235,23 @@
   color: var(--color-darkslategray-200);
   font-family: var(--font-heebo);
 }
-.rectangle-parent40 {
-  margin-top: -50px;
-  position: fixed;
+.rectangle-parent4011 {
+  margin-top: -49px;
+  position: absolute;
   bottom: 20px; /* הצמדת הכפתור לתחתית */
-  left: 20px; /* הצמדה לצד שמאל */
-  width: 120px; /* רוחב הכפתור */
+  left: 10%; /* הצמדה לצד שמאל */
+  width: 35%; /* רוחב הכפתור */
   height: 40px; /* גובה הכפתור */
-  background-color: #333; /* צבע רקע כהה */
   border-radius: 10px; /* פינות מעוגלות */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* הוספת צל */
+  top: calc(56% + 162.25px);
+    height: 39.7px;
+    border: 1px;
 }
 
-.rectangle-parent40:hover {
+.rectangle-parent4011:hover {
   background-color: #444; /* שינוי צבע בלחיצה */
 }
 
@@ -249,21 +260,22 @@
   font-size: 16px; /* גודל טקסט מותאם לנייד */
   font-weight: bold;
   text-align: center;
+  top: 8px;
+    left: calc(29% - 98.5px);
 }
 
 .branches-container {
   position: fixed;
-  top: 80px; /* מרווח מהחלק העליון */
-  left: 10px; /* ריווח מהשוליים */
-  width: 90%; /* התאמה למסך קטן */
-  margin-top: 550px;
+  top: 40%; /* מרווח מהחלק העליון */
+  margin-top: 140%x;
   max-width: 320px; /* מקסימום רוחב */
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 5px;
   overflow-y: auto; /* מאפשר גלילה */
   max-height: 300px; /* גובה מקסימלי לפני שמתחילה גלילה */
+  z-index: 999;
+  border: 1px;
 }
 
 .branches-title {
@@ -289,13 +301,11 @@
 
 .branch-card {
   width: 100%;
-  padding: 10px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
 }
 
 .branch-card b {
@@ -321,24 +331,39 @@
 /* התאמה לטלפונים קטנים */
 @media (max-width: 480px) {
   .branches-container {
-    width: 95%;
+    width: 225%;
     left: 2.5%;
-    max-height: 250px; /* להקטין עוד קצת את הגובה */
+    top: -600%;
+    height: auto;
+    gap: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    min-height: 100px;
+    max-height: 185px;
+    overflow-y: auto;
   }
 
   .branch-card {
     padding: 8px;
+    direction: rtl;
+    font-family: 'Heebo';
   }
 
   .branches-title {
-    font-size: 16px;
+    font-size: 20px;
+    direction: rtl;
+    font-family: 'Heebo';
   }
 
   .branch-card b {
-    font-size: 14px;
+    font-size: 19px;
+    font-family: 'Heebo';
   }
 
   .branch-card p {
-    font-size: 12px;
+    font-size: 15px;
+    font-family: 'Heebo';
   }
 }

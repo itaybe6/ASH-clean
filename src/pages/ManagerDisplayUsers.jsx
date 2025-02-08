@@ -67,7 +67,10 @@ const ManagerDisplayUsers = () => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)} // עדכון state בזמן הקלדה
       />
-      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50vh"} name1="עובדים" name2="לקוחות" left="-850px"/>;
+      <div className="CustomToggleButtonm1856">
+      <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name1="עובדים" name2="לקוחות" left="50px"/>
+      </div>
+      
 
       <button className="rectangle-parent112" onClick={addUser}>
         <div className="group-child199" />
