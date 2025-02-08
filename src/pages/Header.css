@@ -1,5 +1,5 @@
 .header-container {
-  position: absolute; 
+  position: fixed; 
   top: 60px;       /* המרחק מלמעלה */
   right: 350px;      /* המרחק משמאל */
   color: #333;     /* צבע טקסט */
@@ -20,9 +20,11 @@ direction: rtl;
   color: #666;
 }
 .header-mobile {
-  top: 93px;
-  left: 43px;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  position: fixed !important;  /* קובע שהתפריט יישאר קבוע */
+  top: 0 !important;           /* מוצמד לחלק העליון */
+  left: 0 !important;
+  width: 100% !important;      /* מכסה את כל הרוחב */
+  z-index: 9999 !important;    /* מבטיח שהוא יהיה תמיד למעלה */
+  text-align: center !important;
+  padding: 15px 0 !important;  /* ריווח פנימי */
 }

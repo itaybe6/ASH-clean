@@ -33,7 +33,7 @@ const ClientFutureJobsMobile = () => {
     };
     fetchBranches();
   }, []);
-
+  
   useEffect(() => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
@@ -42,9 +42,19 @@ const ClientFutureJobsMobile = () => {
             `http://localhost:5000/customer/${selectedBranch._id}/cleanings`
           );
           const allCleanings = response.data;
-          setFutureCleanings(allCleanings.filter((c) => c.done == false));
-          setCompletedCleanings(allCleanings.filter((c) => c.done == true));
-
+  
+          // פונקציה למיון לפי תאריך (מהקרוב לרחוק)
+          const sortByDate = (jobs) => {
+            return jobs.sort((a, b) => 
+              new Date(a.dateTime.split("/").reverse().join("-")) - 
+              new Date(b.dateTime.split("/").reverse().join("-"))
+            );
+          };
+  
+          // מיון העבודות והכנסתן לסטייט
+          setFutureCleanings(sortByDate(allCleanings.filter((c) => c.done === false)));
+          setCompletedCleanings(sortByDate(allCleanings.filter((c) => c.done === true)));
+  
         } catch (error) {
           console.error('Error fetching cleanings:', error);
         }
@@ -52,6 +62,7 @@ const ClientFutureJobsMobile = () => {
       fetchCleaning();
     }
   }, [selectedBranch]);
+  
 
 
   const handleSelectBranch = (branch) => {
@@ -121,10 +132,9 @@ const ClientFutureJobsMobile = () => {
 <CustomToggleButton
         active={active}
         onClick={() => setActive(!active)}
-        Height={"56vh"}
+        Height={"50px"}
         name1="עבודות"
         name2="עבודות עתידיות"
-        left="100px"
       />
 </div>
       
