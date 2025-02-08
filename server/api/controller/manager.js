@@ -207,7 +207,7 @@ const updateManagerDetails = async (req, res) => {
 
         // עדכון הנתונים החדשים
         if (fullName) manager.fullName = fullName;
-        if (phoneNumber) manager.phoneNumber = phoneNumber;
+        if (phoneNumber) manager.phone = phoneNumber;
         if (city) manager.city = city;
         if (newPassword) {
             const salt = await bcrypt.genSalt(10);

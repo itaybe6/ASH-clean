@@ -32,7 +32,7 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       const token = parseJwt(res.data.token)
       if(token.role == "Manager"){
-        navigate("/manager-registration-add-customer");
+        navigate("/manager-display-users");
       }
       else if (token.role == "Regular"){
         navigate("/worker-edit-profile"); 
