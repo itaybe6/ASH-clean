@@ -38,18 +38,27 @@ const WorkerFutureJobs = () => {
   useEffect(() => {
     const filterCleanings = () => {
       let filtered = [...cleanings];
+  
+      // מסנן לפי מצב עבודה (בוצע / לא בוצע)
       filtered = filtered.filter(cleaning => Boolean(cleaning.done) === Boolean(active));
+  
+      // מסנן לפי תאריך אם נבחר תאריך מסוים
       if (selectedDate) {
         const formattedSelectedDate = dayjs(selectedDate).format("YYYY-MM-DD");
         filtered = filtered.filter(cleaning =>
           dayjs(cleaning.dateTime).format("YYYY-MM-DD") === formattedSelectedDate
         );
       }
+  
+      // **ממיין את הרשימה לפי תאריך מהקרוב לרחוק**
+      filtered.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
+  
       setFilteredCleanings(filtered);
     };
-
+  
     filterCleanings();
   }, [cleanings, active, selectedDate]);
+  
 
 
   return (
@@ -62,21 +71,26 @@ const WorkerFutureJobs = () => {
       </div>
       {/* כאן נציב את רשימת הרכיבים */}
       <div className="jobs-list-container2">
-        {filteredCleanings.map((job) => (
-          <FetureJobWorker
-            key={job._id}
-            nameb={job.branch.name}
-            address={job.branch.address}
-            time={dayjs(job.dateTime).format("DD/MM/YYYY")}
-            id={job._id}
-            done = {job.done}
-          />
-        ))}
-      </div>
+  {filteredCleanings.length > 0 ? (
+    filteredCleanings.map((job) => (
+      <FetureJobWorker
+        key={job._id}
+        nameb={job.branch.name}
+        address={job.branch.address}
+        time={dayjs(job.dateTime).format("DD/MM/YYYY")}
+        id={job._id}
+        done = {job.done}
+      />
+    ))
+  ) : (
+    <p>אין עבודות להצגה</p>
+  )}
+</div>
+
 
 
       <div className="CustomToggleButton1707">
-        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"52vh"} name2="עבודות עתידיות" name1="עבודות" left="40%" />
+        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name2="עבודות עתידיות" name1="עבודות" left="40%" />
       </div>
 
 

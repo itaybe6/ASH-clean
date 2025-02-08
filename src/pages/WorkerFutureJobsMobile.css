@@ -179,7 +179,7 @@
 .CustomToggleButton223{
   position: absolute;
     top: calc(9% + 160px); /* ממקם אותו קצת יותר למטה */
-    left: 53%; /* ממקם באמצע */
+    left: 70%; /* ממקם באמצע */
     transform: translateX(-50%); /* שומר על המרכז */
     display: flex;
     align-items: center;

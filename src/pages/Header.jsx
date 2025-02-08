@@ -6,7 +6,7 @@ export default function Header({ name,mobile}) {
     <div className={`header-container ${mobile ? "header-mobile" : ""}`}>
       <h2>שלום {name}
       </h2>
-      <p>התחברות למערכת עס ניקיון ואחזקה בע"מ</p>
+      <p>התחברות למערכת עש ניקיון ואחזקה בע"מ</p>
     </div>
   );
 }

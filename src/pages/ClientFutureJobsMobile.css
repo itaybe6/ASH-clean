@@ -6,7 +6,7 @@
   right: 0%;
   left: 0%;
   background-color: var(--color-gray-100);
-  height: 735px;
+  height: 100vh;
   z-index: 0;
 }
 
@@ -31,31 +31,40 @@
 }
 .div182 {
   position: absolute;
-  top: calc(50% - 27px);
-  left: calc(50% - 155px);
+  top: 335px;
+  left: auto;
   line-height: 146.39%;
   font-weight: 500;
   width:100%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 10px 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .div183 {
-  position: absolute;
-  top: calc(50% + 5px);
-  left: calc(50% - 157px);
+  position: relative;
+  top: 351px;
+  left: auto;
   font-size: var(--font-size-mini);
   line-height: 146.39%;
   font-weight: 300;
   display: inline-block;
-  width: 314px;
+  width: 100%;
+  text-align: right;
+  padding: 10px 24px;
 }
 .parent43 {
-  width: 314px;
-  position: absolute;
-  margin: 0 !important;
-  top: calc(50% - 143.75px);
-  left: calc(50% - 157.5px);
-  height: 54px;
-  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ממקם את הכותרת במרכז */
+  text-align: center;
+  margin-top: 15px; /* מוסיף רווח מעל הכותרת */
 }
+
 .client-future-jobs-mobile-inner {
   width: 193.3px;
   position: absolute;
@@ -89,18 +98,17 @@
   height: 22.9px;
 }
 .rectangle-parent62 {
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
   width: 127px;
-  position: absolute;
-  margin: 0 !important;
-  top: 208px;
-  left: 30px;
   height: 45.8px;
-  z-index: 7;
+  position: absolute;
+  margin-top: 10px; /* ריווח מהחלק העליון */
+  border: 1px;
+  border-radius: 15px;
+  right: 9%;
+  top: 25%;
+
 }
+
 .vector-icon76 {
   position: absolute;
   top: 0px;
@@ -139,37 +147,33 @@
   color: var(--color-black);
   font-family: var(--font-heebo);
   overflow-y: auto;
-
 }
+
 .clean-jobs-list-container {
   position: absolute;
-  top:300px;
-  right: 45px;
+  top:415px;
+  right: 50px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px; 
+  margin-top: 0px; 
   
  
 }
 
 /* עיצוב התפריט הנפתח */
 .dropdown-menu3 {
-  color: orange;
+  color: rgb(34, 34, 34);
   font-weight: bold;
   position: absolute !important;
   background: white;
-  border: 1px solid orange;
   border-radius: 10px;
   list-style: none;
   width: 120px !important;  /* הגדלתי קצת את הרוחב */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   z-index: 1000 !important;
-  right: 55% !important;
+  right: 10.5% !important;
   top: 240px !important; /* תיקון כדי שה-dropdown לא יהיה קרוב מדי */
-
-
   padding: 5px 0; /* כדי להוסיף ריווח פנימי */
 }
 
@@ -194,17 +198,14 @@
 
 
 .group8737 {
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
   width: 29px;
-  position: absolute;
-  margin: 0 !important;
-  top: 270px;
-  left: 50px;
   height: 29px;
-  z-index: 8;
+  position: relative;
+  margin-top: 5px; /* מוסיף ריווח כדי שלא יכסה אלמנטים אחרים */
+  border: 1px;
+  top: 26.9%;
+  background-color: #fafafa;
+  left: -82%;
 }
 
 .vector-icon86 {
@@ -224,13 +225,11 @@
 }
 
 .CustomToggleButton2012{
+  width: 50%;
+  display: flex;
+  justify-content: center; /* ממקם אותו במרכז */
+  margin-top: 20px; /* מוסיף רווח מעל הכפתור */
   position: absolute;
-    top: calc(12% + 160px);
-    left: 15%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    width: 150px;
-    height: 52px;
-    transition: all 0.3s ease;
+  left: 45%;
+  top: 32%;
 }
