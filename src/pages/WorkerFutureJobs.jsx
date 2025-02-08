@@ -31,6 +31,8 @@ const WorkerFutureJobs = () => {
 
   }, [id]);
 
+
+
   useEffect(() => {
     const filterCleanings = () => {
       let filtered = [...cleanings];
@@ -63,8 +65,9 @@ const WorkerFutureJobs = () => {
             key={job._id}
             nameb={job.branch.name}
             address={job.branch.address}
-            time={dayjs(job.dateTime).format("DD MMMM YYYY")}
+            time={dayjs(job.dateTime).format("DD/MM/YYYY")}
             id={job._id}
+            done = {job.done}
           />
         ))}
       </div>

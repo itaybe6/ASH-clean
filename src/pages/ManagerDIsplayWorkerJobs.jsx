@@ -1,4 +1,3 @@
-import FetureJobWorker2 from "../components/FetureJobWorker2";
 import CustomToggleButton from "../components/CustomToggleButton";
 import CustomDatePicker from "../components/CustomDatePicker";
 import { useState, useEffect } from "react";

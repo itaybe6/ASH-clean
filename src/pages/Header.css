@@ -1,7 +1,7 @@
 .header-container {
   position: fixed; 
   top: 60px;       /* המרחק מלמעלה */
-  right: 350px;      /* המרחק משמאל */
+  right: 450px;      /* המרחק משמאל */
   color: #333;     /* צבע טקסט */
   font-family: 'Heebo'; /* או כל פונט אחר */
   z-index: 999;

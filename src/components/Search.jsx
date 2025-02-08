@@ -22,8 +22,6 @@ const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
       alert("שגיאה בשליפת התמונה");
     }
   };
-
-
   const handleDeleteCleaning = async () => {
     try {
         const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
@@ -41,9 +39,6 @@ const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
         alert("שגיאה במחיקת ניקיון");
     }
 };
-
-
-
   return (
     <div className={`search ${className}`}>
       <div className="date">{date}</div>
