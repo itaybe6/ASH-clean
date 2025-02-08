@@ -8,8 +8,6 @@ import ManagerJobsMobile from "./pages/ManagerJobsMobile";
 import ManagerAddWorker from "./pages/ManagerAddWorker";
 import ManagerDisplayUsers from "./pages/ManagerDisplayUsers";
 import ManagerDisplayUsersMobile from "./pages/ManagerDisplayUsersMobile";
-import ManagerCustomerJobsDone from "./pages/ManagerCustomerJobsDone";
-import ManagerCustomerJobsDoneMobile from "./pages/ManagerCustomerJobsDoneMobile";
 import ManagerEditBranch from "./pages/ManagerEditBranch";
 import ManagerEditBranchMobile from "./pages/ManagerEditBranchMobile";
 import ManagerRegistrationAddCustomer from "./pages/ManagerRegistrationAddCustomer";
