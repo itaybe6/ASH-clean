@@ -34,13 +34,7 @@ const ManagerEditProfile = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    if(newPassword != confirmNewPassword){
-      alert("סיסמאות לא תואמות");
-      setNewPassword("");
-      setConfirmNewPassword("");
-      return;
-    }
-
+  
     const token = parseJwt(localStorage.getItem("token"));
     if(token.role != "Manager"){
       alert("אתה לא מנהל , אנא פנה למנהלי האתר")
@@ -73,10 +67,7 @@ const ManagerEditProfile = () => {
   return (
     <div className="manager-edit-profile">
       <div className="manager-edit-profile-child" />
-      <div className="parent25">
-        <div className="div967">הגדרות</div>
-        <div className="div977">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
-      </div>
+      
       <div className="group-parent167">
         <button className="vector-wrapper32"  onClick={handleUpdate}>
           <img className="vector-icon407" alt="" src="/vector20.svg" />
