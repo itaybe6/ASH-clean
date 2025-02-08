@@ -31,6 +31,8 @@ app.use('/manager', managerRoutes);
 app.use('/customer', custumerRoutes);
 app.use('/worker', workerRoutes);
 
+const deleteOldCleanings = require('./api/cleaningJob');
+setInterval(deleteOldCleanings, 24 * 60 * 60 * 1000); 
 
 
 // Start server

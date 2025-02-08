@@ -350,35 +350,47 @@ const getImgCleaning = async (req, res) => {
     }
 }
 
-
 const deleteBranchById = async (req, res) => {
     try {
         const { branchId } = req.params;
-
-        // מחיקת הסניף ע"פ ה-ID
-        await Branch.findByIdAndDelete(branchId);
-
-        return res.status(200).json({ message: 'Branch deleted successfully' });
+        const deletedBranch = await Branch.findByIdAndDelete(branchId);
+        if (!deletedBranch) {
+            return res.status(404).json({ message: 'הסניף לא נמצא' });
+        }
+        await Customer.updateOne(
+            { branches: branchId }, 
+            { $pull: { branches: branchId } } 
+        );
+        res.status(200).json({ message: 'הסניף נמחק בהצלחה' });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: 'Failed to delete branch' });
+        console.error('שגיאה במחיקת סניף:', error);
+        res.status(500).json({ error: 'שגיאה במחיקת סניף' });
     }
 };
-
 
 const deleteCleaning = async (req, res) => {
     try {
         const { cleaningId } = req.params;
         const deletedCleaning = await Cleaning.findByIdAndDelete(cleaningId);
         if (!deletedCleaning) {
-            return res.status(404).json({ message: 'ניקיון לא נמצא' });
+            return res.status(404).json({ message: 'הניקיון לא נמצא' });
         }
+        await Employee.updateOne(
+            { cleaningSchedules: cleaningId }, 
+            { $pull: { cleaningSchedules: cleaningId } } 
+        );
+        await Branch.updateOne(
+            { cleaningSchedules: cleaningId }, 
+            { $pull: { cleaningSchedules: cleaningId } } 
+        );
         res.json({ message: 'ניקיון נמחק בהצלחה' });
     } catch (error) {
         console.error('שגיאה במחיקת ניקיון:', error);
         res.status(500).json({ message: 'שגיאה במחיקת ניקיון' });
     }
 };
+
+
 
 
 
@@ -393,5 +405,5 @@ module.exports = {
     addBranchToCustomer, updateBranch,
     getCleaningsByEmployee, getAllCleanings
     , getImgCleaning, deleteBranchById,
-    deleteCleaning
+    deleteCleaning 
 };
