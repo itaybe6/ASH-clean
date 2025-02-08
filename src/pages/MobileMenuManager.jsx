@@ -75,6 +75,11 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
   const setting = () => {
     navigate("/manager-edit-profile");
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); 
+    navigate("/homepage"); 
+  };
   return (
     <div className="mobile-menu-manager" style={menuStyle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}onTouchEnd={handleTouchEnd} >
       <div className="mobile-menu-manager-child" />
@@ -94,7 +99,7 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
           />
         </button>
       </div>
-      <button className="vector-wrapper77">
+      <button className="vector-wrapper77" onClick={handleLogout}>
         <img className="vector-icon86" alt="" src="/vector8.svg" />
       </button>
       <img className="icon52" alt="" src="/-02-17@2x.png" />

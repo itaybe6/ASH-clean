@@ -9,11 +9,16 @@ const SideBarWorekr = ({ user }) => {
   const jobs = () => {
     navigate(`/worker-future-jobs/${user.id}`);
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // מוחק את ה-token מה-localStorage
+    navigate("/homepage"); // מנווט לעמוד ההתחברות
+  };
   return (
     <div className="side-bar-worekr">
       <div className="rectangle-parent90">
         <div className="group-child192" />
-        <button className="vector-wrapper92">
+        <button className="vector-wrapper92"onClick={handleLogout}>
           <img className="vector-icon101" alt="" src="/vector8.svg" />
         </button>
         <img className="icon59" alt="" src="/-02-13@2x.png" />
