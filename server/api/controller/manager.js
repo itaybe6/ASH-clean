@@ -129,29 +129,29 @@ const getCleaningsByBranch = async (req, res) => {
 //6 get all the cleaning of employee 
 const getCleaningsByEmployee = async (req, res) => {
     try {
-      const { workerId } = req.params;
-  
-      // שליפת העובד עם רשימת הנקיונות, כולל פרטי הסניף (שם + כתובת)
-      const employee = await Employee.findById(workerId)
-        .populate({
-          path: "cleaningSchedules",
-          populate: {
-            path: "branch",
-            select: "name address", // שליפת שם הסניף והכתובת בלבד
-          },
-        });
-  
-      if (!employee) {
-        return res.status(404).json({ message: "העובד לא נמצא" });
-      }
-  
-      res.status(200).json(employee.cleaningSchedules);
+        const { workerId } = req.params;
+
+        // שליפת העובד עם רשימת הנקיונות, כולל פרטי הסניף (שם + כתובת)
+        const employee = await Employee.findById(workerId)
+            .populate({
+                path: "cleaningSchedules",
+                populate: {
+                    path: "branch",
+                    select: "name address", // שליפת שם הסניף והכתובת בלבד
+                },
+            });
+
+        if (!employee) {
+            return res.status(404).json({ message: "העובד לא נמצא" });
+        }
+
+        res.status(200).json(employee.cleaningSchedules);
     } catch (error) {
-      console.error("שגיאה בשליפת ניקיונות העובד:", error);
-      res.status(500).json({ message: "שגיאה בשליפת נתונים", error });
+        console.error("שגיאה בשליפת ניקיונות העובד:", error);
+        res.status(500).json({ message: "שגיאה בשליפת נתונים", error });
     }
-  };
-  
+};
+
 
 
 // add cleaning for the worker schedule
@@ -193,12 +193,12 @@ const addCleaningForEmployee = async (req, res) => {
 //edit personal details
 const updateManagerDetails = async (req, res) => {
     const { fullName, phoneNumber, city, newPassword } = req.body;
-    const managerId = req.headers.authorization?.split(" ")[1]; 
+    const managerId = req.headers.authorization?.split(" ")[1];
 
     if (!managerId) {
         return res.status(401).json({ message: "חסר מזהה מנהל בבקשה" });
     }
-    
+
     try {
         const manager = await Employee.findById(managerId);
         if (!manager) {
@@ -237,20 +237,20 @@ const getAllWorkers = async (req, res) => {
 //  get all cleanings 
 const getAllCleanings = async (req, res) => {
     try {
-      const cleanings = await Cleaning.find()
-        .populate({
-          path: 'employee',
-          select: 'fullName'
-        })
-        .populate({
-          path: 'branch',
-          select: 'name address'
-        });
-      res.status(200).json(cleanings);
+        const cleanings = await Cleaning.find()
+            .populate({
+                path: 'employee',
+                select: 'fullName'
+            })
+            .populate({
+                path: 'branch',
+                select: 'name address'
+            });
+        res.status(200).json(cleanings);
     } catch (error) {
-      res.status(500).json({ message: "Error fetching regular cleanings", error });
+        res.status(500).json({ message: "Error fetching regular cleanings", error });
     }
-  };
+};
 
 // manager edit user profile
 const managerEditUser = async (req, res) => {
@@ -339,39 +339,59 @@ const getImgCleaning = async (req, res) => {
     try {
         const { cleaningId } = req.params;
         const cleaning = await Cleaning.findById(cleaningId);
-    
+
         if (!cleaning) {
-          return res.status(404).json({ message: 'Cleaning not found' });
+            return res.status(404).json({ message: 'Cleaning not found' });
         }
         // מחזירים את השדה image כ-JSON
-        return res.json({ image: cleaning.image }); 
-      } catch (error) {
+        return res.json({ image: cleaning.image });
+    } catch (error) {
         return res.status(500).json({ message: 'Error retrieving image', error });
-      }
-} 
+    }
+}
 
 
 const deleteBranchById = async (req, res) => {
     try {
-      const { branchId } = req.params;
-      
-      // מחיקת הסניף ע"פ ה-ID
-      await Branch.findByIdAndDelete(branchId);
-  
-      return res.status(200).json({ message: 'Branch deleted successfully' });
+        const { branchId } = req.params;
+
+        // מחיקת הסניף ע"פ ה-ID
+        await Branch.findByIdAndDelete(branchId);
+
+        return res.status(200).json({ message: 'Branch deleted successfully' });
     } catch (error) {
-      console.error(error);
-      return res.status(500).json({ error: 'Failed to delete branch' });
+        console.error(error);
+        return res.status(500).json({ error: 'Failed to delete branch' });
     }
-  };
+};
+
+
+const deleteCleaning = async (req, res) => {
+    try {
+        const { cleaningId } = req.params;
+        const deletedCleaning = await Cleaning.findByIdAndDelete(cleaningId);
+        if (!deletedCleaning) {
+            return res.status(404).json({ message: 'ניקיון לא נמצא' });
+        }
+        res.json({ message: 'ניקיון נמחק בהצלחה' });
+    } catch (error) {
+        console.error('שגיאה במחיקת ניקיון:', error);
+        res.status(500).json({ message: 'שגיאה במחיקת ניקיון' });
+    }
+};
+
+
+
+
 
 module.exports = {
     addRegularEmployee
-    ,getAllCustomers, addCustomer,
+    , getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee,
-    getAllWorkers,managerEditUser,
-    addBranchToCustomer , updateBranch,
-    getCleaningsByEmployee , getAllCleanings 
-    ,getImgCleaning , deleteBranchById
+    getAllWorkers, managerEditUser,
+    addBranchToCustomer, updateBranch,
+    getCleaningsByEmployee, getAllCleanings
+    , getImgCleaning, deleteBranchById,
+    deleteCleaning
 };

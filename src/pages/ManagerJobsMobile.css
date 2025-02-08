@@ -79,7 +79,7 @@
   gap: 16px; /* רווח בין הכרטיסים */
   max-height: 1600px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
-  margin-top: 180px;
+  margin-top: 280px;
   margin-right: 50px
 }
 .search-list-container .JobOptionMobile {
@@ -96,14 +96,14 @@
 
 .date-picker-container889{
   position: absolute;
-  top:103px;
+  top:203px;
   left:10%;
   z-index: 999;
 }
 
 .CustomToggleButton82{
   position: absolute;
-  top:-108px;
+  top:-20px;
   left:25%;
 
 }

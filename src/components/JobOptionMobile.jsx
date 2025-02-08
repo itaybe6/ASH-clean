@@ -23,6 +23,23 @@ const JobOptionMobile = ({ branch, worker, bussiness, date, status, id}) => {
     }
   };
 
+  const handleDeleteCleaning = async () => {
+    try {
+        const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
+        if (!confirmDelete) return;
+
+        const response = await axios.delete(`http://localhost:5000/manager/delete-cleaning/${id}`);
+
+        if (response.status === 200) {
+            alert("הניקיון נמחק בהצלחה!");
+        } else {
+            alert("שגיאה במחיקת ניקיון");
+        }
+    } catch (error) {
+        console.error("שגיאה במחיקת ניקיון:", error);
+        alert("שגיאה במחיקת ניקיון");
+    }
+};
 
   return (
     <div className="joboptionmobile">
@@ -43,6 +60,7 @@ const JobOptionMobile = ({ branch, worker, bussiness, date, status, id}) => {
 
       {/* כפתור */}
       <button className="full-span" onClick={handleViewImage}>צפייה בתמונה</button>
+      <button className="full-span" onClick={handleDeleteCleaning}>מחיקת עבודה</button>
 
       {showModal && (
         <ImageModal

@@ -6,7 +6,7 @@ const { addRegularEmployee ,getBranchesByCustomer,
         updateManagerDetails , getAllWorkers ,  
         managerEditUser ,addBranchToCustomer ,
         updateBranch ,getCleaningsByEmployee , getAllCleanings 
-        ,getImgCleaning , deleteBranchById} = require('../controller/manager');
+        ,getImgCleaning , deleteBranchById , deleteCleaning} = require('../controller/manager');
 
 const { isManager,isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -27,6 +27,8 @@ router.put('/editUser/:id',managerEditUser);
 router.get("/getAllCleanings", getAllCleanings);
 router.get('/cleanings/:cleaningId/image' ,getImgCleaning )
 router.delete('/deleteBranch/:branchId', deleteBranchById);
+
+router.delete('/delete-cleaning/:cleaningId', deleteCleaning);
 
 
 router.get('/:branchId/cleanings', isAuthenticated, getCleaningsByBranch);

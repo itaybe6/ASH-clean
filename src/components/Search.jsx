@@ -23,6 +23,27 @@ const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
     }
   };
 
+
+  const handleDeleteCleaning = async () => {
+    try {
+        const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
+        if (!confirmDelete) return;
+
+        const response = await axios.delete(`http://localhost:5000/manager/delete-cleaning/${id}`);
+
+        if (response.status === 200) {
+            alert("הניקיון נמחק בהצלחה!");
+        } else {
+            alert("שגיאה במחיקת ניקיון");
+        }
+    } catch (error) {
+        console.error("שגיאה במחיקת ניקיון:", error);
+        alert("שגיאה במחיקת ניקיון");
+    }
+};
+
+
+
   return (
     <div className={`search ${className}`}>
       <div className="date">{date}</div>
@@ -30,11 +51,14 @@ const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
       <div className="branch">{branch}</div>
       <div className="worker">{worker}</div>
       <div className="status">
-        {status ? "נכנסה" : "לא נכנסה"}
+        {status ? "נעשה" : "לא נעשה"}
       </div>
       
       <button className="img-btn" onClick={handleViewImage}>
         צפייה בתמונה
+      </button>
+      <button className="img-btn" onClick={handleDeleteCleaning} >
+        ביטול עבודה
       </button>
 
       {/* מציגים את ImageModal רק אם showModal=true */}

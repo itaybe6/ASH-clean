@@ -2,7 +2,7 @@
   
   /* פריסה ב־Grid עם 6 עמודות: תאריך, עסק, סניף, עובד מבצע, סטטוס, כפתור */
   display: grid;
-  grid-template-columns: 120px 180px 1fr 1fr 1fr auto;
+  grid-template-columns: 120px 180px 1fr 1fr 1fr auto auto;
   /* לדוגמה: העמודה הראשונה 120px, השנייה 180px, ואחרות גמישות. 
      אפשר לשנות גדלים לפי הצורך שלך. */
   
