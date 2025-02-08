@@ -312,6 +312,8 @@
   display: block;
   font-size: 16px;
   color: #222;
+  font-family: 'Heebo';
+  
 }
 
 .branch-card p {
@@ -321,6 +323,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Heebo';
 }
 
 .branch-card p i {

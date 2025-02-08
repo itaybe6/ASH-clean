@@ -212,11 +212,10 @@
 .search-list-container5 {
   position: absolute;
   top:350px;
-  right: 200px;
   display: flex;
   flex-direction: column;
-  gap: 26px; /* רווח בין הכרטיסים */
-  max-height: 800px; /* גובה מקסימלי */
+  gap: 15px; /* רווח בין הכרטיסים */
+  max-height: 500px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
   margin-right: 280px
 }
@@ -234,13 +233,13 @@
 }
 .date-picker-container88{
   position: absolute;
-  top:243px;
-  left:65%;
+  top: 24%;
+  left: 66%;
 }
 
 .CustomToggleButton89{
   position: absolute;
-  top:5px;
-  left:50%;
+  top: 24%;
+  left: 54%;
 
 }
