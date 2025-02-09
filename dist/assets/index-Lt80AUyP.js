@@ -11120,7 +11120,6 @@ function ImageModal({ image, onClose }) {
 const Search = ({ className = "", worker, status, branch, date, bussiness, id: id2 }) => {
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
-  console.log(worker);
   const handleViewImage = async () => {
     try {
       const response = await axios.get(`http://localhost:5000/manager/cleanings/${id2}/image`);
@@ -44737,4 +44736,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-WI7vfGRo.js.map
+//# sourceMappingURL=index-Lt80AUyP.js.map
