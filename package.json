@@ -41,7 +41,7 @@
     "build": "vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-"heroku-postbuild": "cd server && npm install && cd .. && npm run build"
+    "heroku-postbuild": "cd server && npm install && cd .. && npm run build"
   },
   "eslintConfig": {
     "root": true
@@ -60,6 +60,6 @@
   },
   "engines": {
     "node": "20.x",
-    "npm":"10.x"}
-
+    "npm": "10.x"
+  }
 }
