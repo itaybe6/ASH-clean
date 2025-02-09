@@ -51,8 +51,7 @@ const ManagerEditProfile = () => {
   }
 
   return (
-    <div className="manager-edit-profile">
-      <div className="manager-edit-profile-child" />
+    <div className="manager-edit-profile14">
       
       <div className="group-parent167">
         <button className="vector-wrapper32"  onClick={handleUpdate}>

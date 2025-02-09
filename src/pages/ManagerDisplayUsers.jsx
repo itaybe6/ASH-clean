@@ -51,14 +51,8 @@ const ManagerDisplayUsers = () => {
 
   return (
     <div className="manager-display-customers">
-      <div className="manager-display-customers-inner">
-        <div className="frame-child2" />
-      </div>
-      <img
-        className="manager-display-customers-child"
-        alt=""
-        src="/line-21.svg"
-      />
+    
+    
      
      <input
         className="manager-display-customers-item"

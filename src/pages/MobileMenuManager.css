@@ -105,9 +105,9 @@
 }
 .mobile-menu-manager {
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-color: transparent;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   z-index: 1000;
   transform: translateX(300px);
