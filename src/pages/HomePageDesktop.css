@@ -1,8 +1,8 @@
 .test-02-3-icon {
-  width: 771px;
+  width: 100%;
   position: relative;
   height: 671px;
-  object-fit: contain;
+  object-fit: fill;
 }
 .test-02-3-wrapper {
   width: 53.54%;
@@ -18,10 +18,10 @@
   z-index: 0;
 }
 .test-02-4-icon {
-  width: 771px;
+  width: 100%;
   position: relative;
   height: 671px;
-  object-fit: cover;
+  object-fit: fill;
 }
 .test-02-4-wrapper {
   width: 53.54%;
@@ -113,7 +113,7 @@
   z-index: 5;
 }
 .div201 {
-  width: 645px;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 1914px);
@@ -336,17 +336,15 @@
   z-index: 13;
 }
 .homepage-child1 {
-  width: 100.42%;
+  width: 100%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 509px);
-  right: -0.42%;
   left: 0%;
-  max-width: 100%;
   overflow: hidden;
-  height: 692px;
-  flex-shrink: 0;
   z-index: 14;
+  object-fit: fill;
+  top: 35.5%;
+  height: 955px;
 }
 .hands-holding-cleaning-tools-s-icon1 {
   align-self: stretch;
@@ -386,25 +384,35 @@
 }
 .div202 {
   width: 429px;
-  position: absolute;
-  margin: 0 !important;
-  top: 1438px;
-  right: 97px;
-  display: inline-block;
-  height: 245px;
-  flex-shrink: 0;
-  z-index: 17;
+    position: absolute;
+    margin: 0 !important;
+    top: 1438px;
+    display: inline-block;
+    height: 290px;
+    flex-shrink: 0;
+    z-index: 17;
+    position: absolute;
+    left: 63%;
+    transform: translateX(-22%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .b75 {
   width: 362px;
   position: absolute;
   margin: 0 !important;
   top: 1353px;
-  right: 98px;
   font-size: var(--font-size-29xl);
   display: inline-block;
   text-align: left;
   z-index: 18;
+  position: absolute;
+  left: 66%;
+  transform: translateX(-25%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .group-child150 {
   position: absolute;
@@ -426,16 +434,21 @@
 }
 .rectangle-parent71 {
   cursor: pointer;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  width: 277px;
-  position: absolute;
-  margin: 0 !important;
-  top: 1715px;
-  right: 98px;
-  height: 54px;
-  z-index: 19;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: 277px;
+    position: absolute;
+    margin: 0 !important;
+    top: 1740px;
+    height: 54px;
+    z-index: 19;
+    position: absolute;
+    left: 68%;
+    transform: translateX(-12%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .homepage-child3 {
   width: 360px;
@@ -620,13 +633,15 @@
   margin: 0 !important;
   position: absolute;
   top: 1384px;
-  left: 171px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-lgi);
   z-index: 21;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-108%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .p25 {
   margin: 0;
@@ -1126,4 +1141,6 @@
   font-size: var(--font-size-5xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  direction: rtl;
 }
+

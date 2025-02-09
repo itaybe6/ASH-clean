@@ -28,6 +28,8 @@
   left: 51.99%;
   border-radius: var(--br-mid);
   height: 46px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child179 {
   border: none;
@@ -40,6 +42,8 @@
   left: 0%;
   border-radius: var(--br-mid);
   height: 46px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child180 {
   border: none;
@@ -52,6 +56,8 @@
   left: 0%;
   border-radius: var(--br-mid);
   height: 46px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .rectangle-parent80 {
   width: 55.97%;
@@ -93,7 +99,6 @@
   right: 32.29%;
   bottom: 471px;
   left: 58.47%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 52px;
   z-index: 5;
 }
