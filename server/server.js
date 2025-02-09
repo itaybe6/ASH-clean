@@ -37,6 +37,12 @@ setInterval(deleteOldCleanings, 24 * 60 * 60 * 1000);
 
 // Start server
 const PORT = process.env.PORT ||5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`); //test
-});
+// שירות קבצי ה-Frontend כאשר ה-Backend בפרודקשן
+// שירות ה-Frontend (Vite)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../dist")));
+  
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(__dirname, "../dist", "index.html"));
+    });
+  }
