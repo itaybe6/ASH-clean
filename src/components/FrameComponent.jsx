@@ -1,10 +1,26 @@
-import PropTypes from "prop-types";
 import "./FrameComponent.css";
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const FrameComponent = ({ className = "" }) => {
- const navigate = useNavigate();
- const login = () =>{navigate('/login')}
+  const { token } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const login = () => {
+    if (!token) {
+      navigate("/login")
+    }
+    if (token.role == "Manager") {
+      navigate("/manager-display-users");
+    }
+    else if (token.role == "Regular") {
+      navigate("/worker-edit-profile");
+    }
+    else {
+      navigate(`/clientJobs/${user.id}/`);
+    }
+  }
+
   return (
     <button className={`homepage-mobile-inner2 ${className}`} onClick={login}>
       <div className="parent71">
@@ -13,10 +29,6 @@ const FrameComponent = ({ className = "" }) => {
       </div>
     </button>
   );
-};
-
-FrameComponent.propTypes = {
-  className: PropTypes.string,
 };
 
 export default FrameComponent;

@@ -1904,16 +1904,14 @@
   /* גובה שורות אוטומטי */
   grid-auto-rows: auto;
   /* רווח בין התאים */
-  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;  background-color: #fff;
   margin-bottom: 16px;
   padding: 16px;
   direction: rtl;
   text-align: center;
   font-family: var(--font-heebo);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .joboptionmobile > div {
@@ -1933,6 +1931,8 @@
   padding: 10px;
   margin-top: 10px;
   cursor: pointer;
+  font-family: 'Heebo';
+  font-weight: 600;
 }
 .mobile-menu-manager-child {
   position: absolute;
@@ -2135,7 +2135,8 @@ top: 0px;
   max-height: 1600px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
   margin-top: 280px;
-  margin-right: 50px
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 .search-list-container .JobOptionMobile {
   position: relative !important;
@@ -2151,14 +2152,14 @@ top: 0px;
 
 .date-picker-container889{
   position: absolute;
-  top:203px;
+  top:205px;
   left:10%;
   z-index: 999;
 }
 
 .CustomToggleButton82{
   position: absolute;
-  top:24%;
+  top:205px;
   left:25%;
 
 }.manager-add-worker-child {
@@ -12909,7 +12910,7 @@ direction: rtl;
 }
 .header-mobile {
   position: absolute;  /* מבטיח שהכותרת תישאר קבועה */
-  top: 105px !important;        /* מצמיד את הכותרת לראש המסך */
+  top: 90px !important;        /* מצמיד את הכותרת לראש המסך */
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;     

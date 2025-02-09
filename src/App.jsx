@@ -103,7 +103,7 @@ function App() {
         <Routes>
           <Route path="/" element={isMobile ? <HomePageIphone /> : <HomePage />} />
           <Route path="/login" element={isMobile ? <LoginMobile /> : <Login />} />
-          <Route path="/accessibility-desktop" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
+          <Route path="/accessibility" element={isMobile ? <AccessibilityIphone /> : <AccessibilityDesktop />} />
           <Route path="/homepage" element={isMobile ? <HomePageIphone /> : <HomePage />} />
 
           <Route path="/manager-jobs" element={isMobile ? <ManagerJobsMobile /> : <ManagerJobs />} />

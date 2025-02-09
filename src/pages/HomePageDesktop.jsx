@@ -50,6 +50,8 @@ const HomePage = () => {
     }
   };
 
+  const access = () => { navigate('/accessibility') }
+
   return (
     <div className="homepage">
       <div className="test-02-3-wrapper">
@@ -82,7 +84,7 @@ const HomePage = () => {
         <b className="b74">לחץ כאן לניקיון מושלם!</b>
       </button>
       <div className="parent45">
-        <button className="button">הצהרת נגישות</button>
+        <button className="button" onClick={access}>הצהרת נגישות</button>
         <button className="button">לקוחות ממליצים</button>
         <button className="button">אודות</button>
         <button className="button">שירותים</button>

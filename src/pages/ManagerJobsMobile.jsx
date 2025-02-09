@@ -15,15 +15,15 @@ const ManagerJobsMobile = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [filterCleanings, setFilterCleanings] = useState([]);
   const apiUrl = import.meta.env.VITE_API_URL;
-
-
-  
   const filterCleaningsByActive = (cleaningsList) => {
     const referenceDate = active ? addDays(new Date(), 7) : subDays(new Date(), 7);
-    return cleaningsList.filter((item) => new Date(item.dateTime) <= referenceDate);
+    if (active) {
+      return cleaningsList.filter((item) => new Date(item.dateTime) <= referenceDate && new Date(item.dateTime) >= new Date());
+    }
+    else {
+      return cleaningsList.filter((item) => new Date(item.dateTime) >= referenceDate && new Date(item.dateTime) <= new Date());
+    }
   };
-
-
   useEffect(() => {
     axios.get(`${apiUrl}/manager/getAllCleanings`)
       .then((res) => {
@@ -83,7 +83,7 @@ const ManagerJobsMobile = () => {
         <img className="icon7" alt="" src="/-02-11@2x.png" />
       </div>
       <div className="CustomToggleButton82">
-        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name1=" שבוע קדימה" name2=" שבוע אחורה"left="0px"/>
+        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name1=" שבוע קדימה" name2=" שבוע אחורה" left="0px" />
       </div>
     </div>
   );
