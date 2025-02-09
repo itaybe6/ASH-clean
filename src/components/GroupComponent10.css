@@ -23,13 +23,14 @@
 }
 .div258 {
   position: absolute;
-  height: 18.73%;
+  height: 24.73%;
   width: 29.14%;
-  top: 0%;
-  left: 32.4%;
+  top: -6%;
+  left: 37.4%;
   font-family: var(--font-inter);
   text-align: left;
   display: inline-block;
+  margin-top: 9%;
 }
 .p53 {
   margin: 0;

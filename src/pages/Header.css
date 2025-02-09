@@ -20,7 +20,7 @@ direction: rtl;
   color: #666;
 }
 .header-mobile {
-  position: fixed !important;  /* מבטיח שהכותרת תישאר קבועה */
+  position: absolute;  /* מבטיח שהכותרת תישאר קבועה */
   top: 105px !important;        /* מצמיד את הכותרת לראש המסך */
   left: 0 !important;
   right: 0 !important;

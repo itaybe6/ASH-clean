@@ -372,8 +372,8 @@
   width: 168px;
   margin: 0 !important;
   position: absolute;
-  top: 1338px;
-  left: calc(50% - 31.5px);
+  top: 1345px;
+  left: calc(52% - 31.5px);
   height: 41px;
   display: flex;
   flex-direction: row;
@@ -384,9 +384,11 @@
 }
 .b8 {
   position: relative;
+  width: 280px;
+  left: 5%;
 }
 .div3 {
-  width: 277px;
+  width: 285px;
   position: relative;
   font-size: var(--font-size-xl);
   text-align: right;
@@ -414,7 +416,7 @@
   flex-shrink: 0;
 }
 .div5 {
-  width: 285px;
+  width: 292px;
   position: relative;
   font-size: var(--font-size-xl);
   color: var(--color-black);
@@ -731,13 +733,14 @@
   z-index: 0;
 }
 .b15 {
-  width: 236.1px;
+  width: max-content;
   position: relative;
   display: inline-block;
   text-align: right;
   height: 42.6px;
   flex-shrink: 0;
   z-index: 3;
+  left: -26%;
 }
 .group-container {
   align-self: stretch;

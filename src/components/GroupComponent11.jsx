@@ -17,7 +17,7 @@ const GroupComponent11 = ({ className = "" }) => {
         הראווה והשלטים, הלקוחות התחילו לשים לב לעסק הרבה יותר. שירות מהיר, אמין
         ומדויק – ממליץ לכל אחד!
       </div>
-      <img className="group-child191" alt="" src="/group-365.svg" />
+      <img className="group-child19136" alt="" src="/group-365.svg" />
     </div>
   );
 };
