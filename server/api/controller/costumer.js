@@ -18,7 +18,6 @@ const getCleaningsByBranch = async (req, res) => {
 };
 
 
-// 2 fetch all the branch of customer
 const getBranchesByCustomer = async (req, res) => {
     try {
         const { customerId } = req.params;
@@ -28,7 +27,6 @@ const getBranchesByCustomer = async (req, res) => {
         if (!customer) {
             return res.status(404).json({ message: 'Customer not found' });
         }
-
         res.status(200).json(customer.branches);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching branches', error });

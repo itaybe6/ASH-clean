@@ -56,7 +56,7 @@ const ClientContactUs = () => {
     };
   
     try {
-      const response = await axios.post(`${apiUrl}/customer/contact`, formData);
+      const response = await axios.post(`${apiUrl}/costumer/contact`, formData);
       alert(response.data.message);
       setFullName("");
       setPhoneNumber("");

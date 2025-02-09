@@ -33,7 +33,7 @@ const ClientEditProfileMobile = () => {
     }
     try {
       const response = await axios.put(
-        `${apiUrl}/customer/${token.id}/edit`,
+        `${apiUrl}/costumer/${token.id}/edit`,
         { fullName, phoneNumber, city, newPassword },
         { headers: { Authorization: `Bearer ${token.id}` } }
       );

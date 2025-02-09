@@ -20,12 +20,11 @@ const ClientFutureJobs = () => {
 
 
 
-
-
   useEffect(() => {
     const fetchBranches = async () => {
+      const customerId = id
       try {
-        const response = await axios.get(`${apiUrl}/customer/${id}/branches`);
+        const response = await axios.get(`${apiUrl}/costumer/${customerId}/branches`);
         setBranches(response.data);
       } catch (error) {
         console.error("Error fetching branches:", error);
@@ -33,6 +32,7 @@ const ClientFutureJobs = () => {
     };
     fetchBranches();
   }, []);
+
 
   useEffect(() => {
     if (selectedBranch) {
