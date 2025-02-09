@@ -195,9 +195,9 @@
 }
 .manager-add-worker-iphone {
   width: 100%;
-  position: relative;
+  position: static;
   background-color: var(--color-white);
-  height: 817.5px;
+  height: 85px;
   overflow: hidden;
   display: flex;
   flex-direction: row;

@@ -83,14 +83,7 @@ const ManagerEditProfileIphone = () => {
           onChange={handleNewPasswordChange}
           required
         />
-        <input
-          className="group-child84"
-          placeholder="אמת סיסמא חדשה"
-          type="password"
-          value={confirmNewPassword}
-          onChange={handleConfirmNewPasswordChange}
-          required
-        />
+       
         <input
           className="group-child85"
           placeholder="מספר פלאפון"

@@ -4,8 +4,9 @@
   margin: 0 !important;
   right: 0%;
   left: 0%;
-  background-color: var(--color-gray-100);
-  z-index: 0;
+  background-color: #fafafa;
+  z-index: -1;
+  height: 100vh;
 }
 
 
@@ -160,3 +161,4 @@
   top: 40%;
   left: 50%; 
 }
+

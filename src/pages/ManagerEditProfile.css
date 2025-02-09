@@ -5,7 +5,7 @@
   top: calc(50% - 512px);
   right: 20.76%;
   left: 0.07%;
-  background-color: var(--color-gray-100);
+  background-color: #fafafa;
   height: 1024px;
   z-index: 0;
 }
@@ -271,10 +271,10 @@
   height: 1024px;
   z-index: 5;
 }
-.manager-edit-profile {
+.manager-edit-profile14 {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
