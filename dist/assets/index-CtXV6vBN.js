@@ -10860,7 +10860,11 @@ var factoryWithThrowingShims = function() {
 var propTypesExports = propTypes.exports;
 const PropTypes = /* @__PURE__ */ getDefaultExportFromCjs(propTypesExports);
 const FrameComponent = ({ className = "" }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: `homepage-mobile-inner2 ${className}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent71", children: [
+  const navigate = useNavigate();
+  const login = () => {
+    navigate("/login");
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: `homepage-mobile-inner2 ${className}`, onClick: login, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent71", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div253", children: "אזור אישי" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mdiaccount-icon1", alt: "", src: "/mdiaccount.svg" })
   ] }) });
@@ -38793,9 +38797,9 @@ const ManagerJobs = () => {
         id: item._id,
         worker: item.employee.fullName,
         status: item.done,
-        branch: item.branch.address,
+        branch: item.branch.name,
         date: format(new Date(item.dateTime), "dd/MM/yyyy"),
-        bussiness: item.branch.name
+        bussiness: item.branch.customer.businessName
       },
       index
     )) }),
@@ -43827,7 +43831,7 @@ const HomePage = () => {
   };
   const sendEmail = async () => {
     try {
-      const response = await axios.post(`${apiUrl2}/customer/sendEmail`, {
+      const response = await axios.post(`${apiUrl2}/costumer/sendEmail`, {
         fullName,
         phoneNumber,
         service
@@ -43988,24 +43992,10 @@ const HomePage = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "בדרך אליכם!" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child169", alt: "", src: "/line-2.svg" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child170", placeholder: "שם מלא", type: "text" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            className: "group-child171",
-            placeholder: "מספר פלאפון",
-            type: "tel"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            className: "group-child172",
-            placeholder: "בחירת שירות",
-            type: "text"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent79", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child170", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child171", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child172", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent79", onClick: sendEmail, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child173" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b85", children: "שליחה" })
         ] }),
@@ -44015,24 +44005,10 @@ const HomePage = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent39", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "instance-wrapper", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child174" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent40", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper71", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon80", alt: "", src: "/vector28.svg" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            className: "group-child175",
-            placeholder: "מספר פלאפון",
-            type: "tel"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            className: "group-child176",
-            placeholder: "בחירת שירות",
-            type: "text"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child177", placeholder: "שם מלא", type: "text" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper71", onClick: sendEmail, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon80", alt: "", src: "/vector28.svg" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child175", pplaceholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child176", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child177", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div215", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "הניקיון המושלם" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "בדרך אליכם!" })
@@ -44782,4 +44758,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-DVPFNi9R.js.map
+//# sourceMappingURL=index-CtXV6vBN.js.map

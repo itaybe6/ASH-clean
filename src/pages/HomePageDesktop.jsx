@@ -31,7 +31,7 @@ const HomePage = () => {
   }
   const sendEmail = async () => {
     try {
-      const response = await axios.post(`${apiUrl}/customer/sendEmail`, {
+      const response = await axios.post(`${apiUrl}/costumer/sendEmail`, {
         fullName,
         phoneNumber,
         service
@@ -240,18 +240,10 @@ const HomePage = () => {
             <p className="p23">בדרך אליכם!</p>
           </b>
           <img className="group-child169" alt="" src="/line-2.svg" />
-          <input className="group-child170" placeholder="שם מלא" type="text" />
-          <input
-            className="group-child171"
-            placeholder="מספר פלאפון"
-            type="tel"
-          />
-          <input
-            className="group-child172"
-            placeholder="בחירת שירות"
-            type="text"
-          />
-          <button className="rectangle-parent79">
+          <input className="group-child170" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+          <input className="group-child171" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+          <input  className="group-child172"  placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)}  />
+          <button className="rectangle-parent79" onClick={sendEmail} >
             <div className="group-child173" />
             <b className="b85">שליחה</b>
           </button>
@@ -263,20 +255,12 @@ const HomePage = () => {
           <div className="group-child174" />
         </div>
         <div className="group-parent40">
-          <button className="vector-wrapper71">
+          <button className="vector-wrapper71" onClick={sendEmail}>
             <img className="vector-icon80" alt="" src="/vector28.svg" />
           </button>
-          <input
-            className="group-child175"
-            placeholder="מספר פלאפון"
-            type="tel"
-          />
-          <input
-            className="group-child176"
-            placeholder="בחירת שירות"
-            type="text"
-          />
-          <input className="group-child177" placeholder="שם מלא" type="text" />
+          <input  className="group-child175"  pplaceholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}  />
+          <input  className="group-child176"  placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)}  />
+          <input className="group-child177" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           <div className="div215">
             <p className="p23">הניקיון המושלם</p>
             <p className="p23">בדרך אליכם!</p>
