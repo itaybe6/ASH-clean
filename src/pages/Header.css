@@ -21,7 +21,7 @@ direction: rtl;
 }
 .header-mobile {
   position: absolute;  /* מבטיח שהכותרת תישאר קבועה */
-  top: 105px !important;        /* מצמיד את הכותרת לראש המסך */
+  top: 90px !important;        /* מצמיד את הכותרת לראש המסך */
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;     

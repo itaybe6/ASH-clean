@@ -83,7 +83,7 @@ const ManagerJobsMobile = () => {
         <img className="icon7" alt="" src="/-02-11@2x.png" />
       </div>
       <div className="CustomToggleButton82">
-        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name1=" שבוע קדימה" name2=" שבוע אחורה"left="100px"/>
+        <CustomToggleButton active={active} onClick={() => setActive(!active)} Height={"50px"} name1=" שבוע קדימה" name2=" שבוע אחורה"left="0px"/>
       </div>
     </div>
   );
