@@ -2041,9 +2041,9 @@
 }
 .mobile-menu-manager {
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-color: transparent;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   z-index: 1000;
   transform: translateX(300px);
@@ -2846,7 +2846,7 @@ top: 0px;
 .manager-display-customers {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   align-items:  flex-end;
@@ -2973,8 +2973,9 @@ top: 0px;
   margin: 0 !important;
   right: 0%;
   left: 0%;
-  background-color: var(--color-gray-100);
-  z-index: 0;
+  background-color: #fafafa;
+  z-index: -1;
+  height: 100vh;
 }
 
 
@@ -3128,7 +3129,9 @@ top: 0px;
   position: absolute;
   top: 40%;
   left: 50%; 
-}.manager-edit-branch-child {
+}
+
+.manager-edit-branch-child {
   width: 79.17%;
   position: absolute;
   margin: 0 !important;
@@ -4373,9 +4376,9 @@ top: 0px;
 }
 .manager-add-worker-iphone {
   width: 100%;
-  position: relative;
+  position: static;
   background-color: var(--color-white);
-  height: 817.5px;
+  height: 85px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -4657,7 +4660,7 @@ top: 0px;
   top: calc(50% - 512px);
   right: 20.76%;
   left: 0.07%;
-  background-color: var(--color-gray-100);
+  background-color: #fafafa;
   height: 1024px;
   z-index: 0;
 }
@@ -4923,10 +4926,10 @@ top: 0px;
   height: 1024px;
   z-index: 5;
 }
-.manager-edit-profile {
+.manager-edit-profile14 {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -5008,10 +5011,11 @@ top: 0px;
   background-color: transparent;
   position: absolute;
   width: 42.31%;
-  top: 403px;
+  top: 330px;
   right: 0%;
   left: 57.69%;
   height: 44px;
+  padding: 20px;
 }
 .group-child82 {
   border: none;

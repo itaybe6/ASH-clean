@@ -39134,15 +39134,6 @@ const ManagerDisplayUsers = () => {
     (worker) => worker.fullName.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-display-customers", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-display-customers-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "frame-child2" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "img",
-      {
-        className: "manager-display-customers-child",
-        alt: "",
-        src: "/line-21.svg"
-      }
-    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "input",
       {
@@ -39864,57 +39855,54 @@ const ManagerEditProfile = () => {
       alert("שגיאה בעדכון הפרטים");
     }
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-edit-profile", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-edit-profile-child" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent167", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper32", onClick: handleUpdate, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon407", alt: "", src: "/vector20.svg" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child697",
-          placeholder: "שם מלא",
-          type: "text",
-          value: fullName,
-          onChange: handleFullNameChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div98", children: "הגדר סיסמא חדשה" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child707",
-          placeholder: "כתוב כאן סיסמא חדשה",
-          type: "password",
-          value: newPassword,
-          onChange: handleNewPasswordChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child727",
-          placeholder: "מספר פלאפון",
-          type: "tel",
-          value: phoneNumber,
-          onChange: handlePhoneNumberChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child737",
-          placeholder: "עיר",
-          type: "text",
-          value: city,
-          onChange: handleCityChange,
-          required: true
-        }
-      )
-    ] })
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-edit-profile14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent167", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper32", onClick: handleUpdate, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon407", alt: "", src: "/vector20.svg" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "input",
+      {
+        className: "group-child697",
+        placeholder: "שם מלא",
+        type: "text",
+        value: fullName,
+        onChange: handleFullNameChange,
+        required: true
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div98", children: "הגדר סיסמא חדשה" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "input",
+      {
+        className: "group-child707",
+        placeholder: "כתוב כאן סיסמא חדשה",
+        type: "password",
+        value: newPassword,
+        onChange: handleNewPasswordChange,
+        required: true
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "input",
+      {
+        className: "group-child727",
+        placeholder: "מספר פלאפון",
+        type: "tel",
+        value: phoneNumber,
+        onChange: handlePhoneNumberChange,
+        required: true
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "input",
+      {
+        className: "group-child737",
+        placeholder: "עיר",
+        type: "text",
+        value: city,
+        onChange: handleCityChange,
+        required: true
+      }
+    )
+  ] }) });
 };
 const ManagerEditProfileIphone = () => {
   const [fullName, setFullName] = reactExports.useState("");
@@ -39927,7 +39915,6 @@ const ManagerEditProfileIphone = () => {
   const apiUrl2 = "http://localhost:5000";
   const handleFullNameChange = (e3) => setFullName(e3.target.value);
   const handleNewPasswordChange = (e3) => setNewPassword(e3.target.value);
-  const handleConfirmNewPasswordChange = (e3) => setConfirmNewPassword(e3.target.value);
   const handlePhoneNumberChange = (e3) => setPhoneNumber(e3.target.value);
   const handleCityChange = (e3) => setCity(e3.target.value);
   const navigate = useNavigate();
@@ -39986,17 +39973,6 @@ const ManagerEditProfileIphone = () => {
           type: "password",
           value: newPassword,
           onChange: handleNewPasswordChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child84",
-          placeholder: "אמת סיסמא חדשה",
-          type: "password",
-          value: confirmNewPassword,
-          onChange: handleConfirmNewPasswordChange,
           required: true
         }
       ),
@@ -42068,287 +42044,293 @@ const MobileMenuWorker = ({ closeMenu, isOpen }) => {
   ] });
 };
 var dayjs_min = { exports: {} };
-(function(module, exports) {
-  !function(t3, e3) {
-    module.exports = e3();
-  }(commonjsGlobal, function() {
-    var t3 = 1e3, e3 = 6e4, n2 = 36e5, r2 = "millisecond", i3 = "second", s4 = "minute", u3 = "hour", a4 = "day", o2 = "week", c3 = "month", f2 = "quarter", h4 = "year", d4 = "date", l2 = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y4 = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M4 = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t4) {
-      var e4 = ["th", "st", "nd", "rd"], n3 = t4 % 100;
-      return "[" + t4 + (e4[(n3 - 20) % 10] || e4[n3] || e4[0]) + "]";
-    } }, m4 = function(t4, e4, n3) {
-      var r3 = String(t4);
-      return !r3 || r3.length >= e4 ? t4 : "" + Array(e4 + 1 - r3.length).join(n3) + t4;
-    }, v2 = { s: m4, z: function(t4) {
-      var e4 = -t4.utcOffset(), n3 = Math.abs(e4), r3 = Math.floor(n3 / 60), i4 = n3 % 60;
-      return (e4 <= 0 ? "+" : "-") + m4(r3, 2, "0") + ":" + m4(i4, 2, "0");
-    }, m: function t4(e4, n3) {
-      if (e4.date() < n3.date()) return -t4(n3, e4);
-      var r3 = 12 * (n3.year() - e4.year()) + (n3.month() - e4.month()), i4 = e4.clone().add(r3, c3), s5 = n3 - i4 < 0, u4 = e4.clone().add(r3 + (s5 ? -1 : 1), c3);
-      return +(-(r3 + (n3 - i4) / (s5 ? i4 - u4 : u4 - i4)) || 0);
-    }, a: function(t4) {
-      return t4 < 0 ? Math.ceil(t4) || 0 : Math.floor(t4);
-    }, p: function(t4) {
-      return { M: c3, y: h4, w: o2, d: a4, D: d4, h: u3, m: s4, s: i3, ms: r2, Q: f2 }[t4] || String(t4 || "").toLowerCase().replace(/s$/, "");
-    }, u: function(t4) {
-      return void 0 === t4;
-    } }, g2 = "en", D3 = {};
-    D3[g2] = M4;
-    var p2 = "$isDayjsObject", S4 = function(t4) {
-      return t4 instanceof _2 || !(!t4 || !t4[p2]);
-    }, w3 = function t4(e4, n3, r3) {
-      var i4;
-      if (!e4) return g2;
-      if ("string" == typeof e4) {
-        var s5 = e4.toLowerCase();
-        D3[s5] && (i4 = s5), n3 && (D3[s5] = n3, i4 = s5);
-        var u4 = e4.split("-");
-        if (!i4 && u4.length > 1) return t4(u4[0]);
-      } else {
-        var a5 = e4.name;
-        D3[a5] = e4, i4 = a5;
-      }
-      return !r3 && i4 && (g2 = i4), i4 || !r3 && g2;
-    }, O3 = function(t4, e4) {
-      if (S4(t4)) return t4.clone();
-      var n3 = "object" == typeof e4 ? e4 : {};
-      return n3.date = t4, n3.args = arguments, new _2(n3);
-    }, b3 = v2;
-    b3.l = w3, b3.i = S4, b3.w = function(t4, e4) {
-      return O3(t4, { locale: e4.$L, utc: e4.$u, x: e4.$x, $offset: e4.$offset });
-    };
-    var _2 = function() {
-      function M5(t4) {
-        this.$L = w3(t4.locale, null, true), this.parse(t4), this.$x = this.$x || t4.x || {}, this[p2] = true;
-      }
-      var m5 = M5.prototype;
-      return m5.parse = function(t4) {
-        this.$d = function(t5) {
-          var e4 = t5.date, n3 = t5.utc;
-          if (null === e4) return /* @__PURE__ */ new Date(NaN);
-          if (b3.u(e4)) return /* @__PURE__ */ new Date();
-          if (e4 instanceof Date) return new Date(e4);
-          if ("string" == typeof e4 && !/Z$/i.test(e4)) {
-            var r3 = e4.match($);
-            if (r3) {
-              var i4 = r3[2] - 1 || 0, s5 = (r3[7] || "0").substring(0, 3);
-              return n3 ? new Date(Date.UTC(r3[1], i4, r3[3] || 1, r3[4] || 0, r3[5] || 0, r3[6] || 0, s5)) : new Date(r3[1], i4, r3[3] || 1, r3[4] || 0, r3[5] || 0, r3[6] || 0, s5);
-            }
-          }
-          return new Date(e4);
-        }(t4), this.init();
-      }, m5.init = function() {
-        var t4 = this.$d;
-        this.$y = t4.getFullYear(), this.$M = t4.getMonth(), this.$D = t4.getDate(), this.$W = t4.getDay(), this.$H = t4.getHours(), this.$m = t4.getMinutes(), this.$s = t4.getSeconds(), this.$ms = t4.getMilliseconds();
-      }, m5.$utils = function() {
-        return b3;
-      }, m5.isValid = function() {
-        return !(this.$d.toString() === l2);
-      }, m5.isSame = function(t4, e4) {
-        var n3 = O3(t4);
-        return this.startOf(e4) <= n3 && n3 <= this.endOf(e4);
-      }, m5.isAfter = function(t4, e4) {
-        return O3(t4) < this.startOf(e4);
-      }, m5.isBefore = function(t4, e4) {
-        return this.endOf(e4) < O3(t4);
-      }, m5.$g = function(t4, e4, n3) {
-        return b3.u(t4) ? this[e4] : this.set(n3, t4);
-      }, m5.unix = function() {
-        return Math.floor(this.valueOf() / 1e3);
-      }, m5.valueOf = function() {
-        return this.$d.getTime();
-      }, m5.startOf = function(t4, e4) {
-        var n3 = this, r3 = !!b3.u(e4) || e4, f3 = b3.p(t4), l3 = function(t5, e5) {
-          var i4 = b3.w(n3.$u ? Date.UTC(n3.$y, e5, t5) : new Date(n3.$y, e5, t5), n3);
-          return r3 ? i4 : i4.endOf(a4);
-        }, $2 = function(t5, e5) {
-          return b3.w(n3.toDate()[t5].apply(n3.toDate("s"), (r3 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e5)), n3);
-        }, y5 = this.$W, M6 = this.$M, m6 = this.$D, v3 = "set" + (this.$u ? "UTC" : "");
-        switch (f3) {
-          case h4:
-            return r3 ? l3(1, 0) : l3(31, 11);
-          case c3:
-            return r3 ? l3(1, M6) : l3(0, M6 + 1);
-          case o2:
-            var g3 = this.$locale().weekStart || 0, D4 = (y5 < g3 ? y5 + 7 : y5) - g3;
-            return l3(r3 ? m6 - D4 : m6 + (6 - D4), M6);
-          case a4:
-          case d4:
-            return $2(v3 + "Hours", 0);
-          case u3:
-            return $2(v3 + "Minutes", 1);
-          case s4:
-            return $2(v3 + "Seconds", 2);
-          case i3:
-            return $2(v3 + "Milliseconds", 3);
-          default:
-            return this.clone();
+var hasRequiredDayjs_min;
+function requireDayjs_min() {
+  if (hasRequiredDayjs_min) return dayjs_min.exports;
+  hasRequiredDayjs_min = 1;
+  (function(module, exports) {
+    !function(t3, e3) {
+      module.exports = e3();
+    }(commonjsGlobal, function() {
+      var t3 = 1e3, e3 = 6e4, n2 = 36e5, r2 = "millisecond", i3 = "second", s4 = "minute", u3 = "hour", a4 = "day", o2 = "week", c3 = "month", f2 = "quarter", h4 = "year", d4 = "date", l2 = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y4 = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M4 = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t4) {
+        var e4 = ["th", "st", "nd", "rd"], n3 = t4 % 100;
+        return "[" + t4 + (e4[(n3 - 20) % 10] || e4[n3] || e4[0]) + "]";
+      } }, m4 = function(t4, e4, n3) {
+        var r3 = String(t4);
+        return !r3 || r3.length >= e4 ? t4 : "" + Array(e4 + 1 - r3.length).join(n3) + t4;
+      }, v2 = { s: m4, z: function(t4) {
+        var e4 = -t4.utcOffset(), n3 = Math.abs(e4), r3 = Math.floor(n3 / 60), i4 = n3 % 60;
+        return (e4 <= 0 ? "+" : "-") + m4(r3, 2, "0") + ":" + m4(i4, 2, "0");
+      }, m: function t4(e4, n3) {
+        if (e4.date() < n3.date()) return -t4(n3, e4);
+        var r3 = 12 * (n3.year() - e4.year()) + (n3.month() - e4.month()), i4 = e4.clone().add(r3, c3), s5 = n3 - i4 < 0, u4 = e4.clone().add(r3 + (s5 ? -1 : 1), c3);
+        return +(-(r3 + (n3 - i4) / (s5 ? i4 - u4 : u4 - i4)) || 0);
+      }, a: function(t4) {
+        return t4 < 0 ? Math.ceil(t4) || 0 : Math.floor(t4);
+      }, p: function(t4) {
+        return { M: c3, y: h4, w: o2, d: a4, D: d4, h: u3, m: s4, s: i3, ms: r2, Q: f2 }[t4] || String(t4 || "").toLowerCase().replace(/s$/, "");
+      }, u: function(t4) {
+        return void 0 === t4;
+      } }, g2 = "en", D3 = {};
+      D3[g2] = M4;
+      var p2 = "$isDayjsObject", S4 = function(t4) {
+        return t4 instanceof _2 || !(!t4 || !t4[p2]);
+      }, w3 = function t4(e4, n3, r3) {
+        var i4;
+        if (!e4) return g2;
+        if ("string" == typeof e4) {
+          var s5 = e4.toLowerCase();
+          D3[s5] && (i4 = s5), n3 && (D3[s5] = n3, i4 = s5);
+          var u4 = e4.split("-");
+          if (!i4 && u4.length > 1) return t4(u4[0]);
+        } else {
+          var a5 = e4.name;
+          D3[a5] = e4, i4 = a5;
         }
-      }, m5.endOf = function(t4) {
-        return this.startOf(t4, false);
-      }, m5.$set = function(t4, e4) {
-        var n3, o3 = b3.p(t4), f3 = "set" + (this.$u ? "UTC" : ""), l3 = (n3 = {}, n3[a4] = f3 + "Date", n3[d4] = f3 + "Date", n3[c3] = f3 + "Month", n3[h4] = f3 + "FullYear", n3[u3] = f3 + "Hours", n3[s4] = f3 + "Minutes", n3[i3] = f3 + "Seconds", n3[r2] = f3 + "Milliseconds", n3)[o3], $2 = o3 === a4 ? this.$D + (e4 - this.$W) : e4;
-        if (o3 === c3 || o3 === h4) {
-          var y5 = this.clone().set(d4, 1);
-          y5.$d[l3]($2), y5.init(), this.$d = y5.set(d4, Math.min(this.$D, y5.daysInMonth())).$d;
-        } else l3 && this.$d[l3]($2);
-        return this.init(), this;
-      }, m5.set = function(t4, e4) {
-        return this.clone().$set(t4, e4);
-      }, m5.get = function(t4) {
-        return this[b3.p(t4)]();
-      }, m5.add = function(r3, f3) {
-        var d5, l3 = this;
-        r3 = Number(r3);
-        var $2 = b3.p(f3), y5 = function(t4) {
-          var e4 = O3(l3);
-          return b3.w(e4.date(e4.date() + Math.round(t4 * r3)), l3);
-        };
-        if ($2 === c3) return this.set(c3, this.$M + r3);
-        if ($2 === h4) return this.set(h4, this.$y + r3);
-        if ($2 === a4) return y5(1);
-        if ($2 === o2) return y5(7);
-        var M6 = (d5 = {}, d5[s4] = e3, d5[u3] = n2, d5[i3] = t3, d5)[$2] || 1, m6 = this.$d.getTime() + r3 * M6;
-        return b3.w(m6, this);
-      }, m5.subtract = function(t4, e4) {
-        return this.add(-1 * t4, e4);
-      }, m5.format = function(t4) {
-        var e4 = this, n3 = this.$locale();
-        if (!this.isValid()) return n3.invalidDate || l2;
-        var r3 = t4 || "YYYY-MM-DDTHH:mm:ssZ", i4 = b3.z(this), s5 = this.$H, u4 = this.$m, a5 = this.$M, o3 = n3.weekdays, c4 = n3.months, f3 = n3.meridiem, h5 = function(t5, n4, i5, s6) {
-          return t5 && (t5[n4] || t5(e4, r3)) || i5[n4].slice(0, s6);
-        }, d5 = function(t5) {
-          return b3.s(s5 % 12 || 12, t5, "0");
-        }, $2 = f3 || function(t5, e5, n4) {
-          var r4 = t5 < 12 ? "AM" : "PM";
-          return n4 ? r4.toLowerCase() : r4;
-        };
-        return r3.replace(y4, function(t5, r4) {
-          return r4 || function(t6) {
-            switch (t6) {
-              case "YY":
-                return String(e4.$y).slice(-2);
-              case "YYYY":
-                return b3.s(e4.$y, 4, "0");
-              case "M":
-                return a5 + 1;
-              case "MM":
-                return b3.s(a5 + 1, 2, "0");
-              case "MMM":
-                return h5(n3.monthsShort, a5, c4, 3);
-              case "MMMM":
-                return h5(c4, a5);
-              case "D":
-                return e4.$D;
-              case "DD":
-                return b3.s(e4.$D, 2, "0");
-              case "d":
-                return String(e4.$W);
-              case "dd":
-                return h5(n3.weekdaysMin, e4.$W, o3, 2);
-              case "ddd":
-                return h5(n3.weekdaysShort, e4.$W, o3, 3);
-              case "dddd":
-                return o3[e4.$W];
-              case "H":
-                return String(s5);
-              case "HH":
-                return b3.s(s5, 2, "0");
-              case "h":
-                return d5(1);
-              case "hh":
-                return d5(2);
-              case "a":
-                return $2(s5, u4, true);
-              case "A":
-                return $2(s5, u4, false);
-              case "m":
-                return String(u4);
-              case "mm":
-                return b3.s(u4, 2, "0");
-              case "s":
-                return String(e4.$s);
-              case "ss":
-                return b3.s(e4.$s, 2, "0");
-              case "SSS":
-                return b3.s(e4.$ms, 3, "0");
-              case "Z":
-                return i4;
-            }
-            return null;
-          }(t5) || i4.replace(":", "");
-        });
-      }, m5.utcOffset = function() {
-        return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
-      }, m5.diff = function(r3, d5, l3) {
-        var $2, y5 = this, M6 = b3.p(d5), m6 = O3(r3), v3 = (m6.utcOffset() - this.utcOffset()) * e3, g3 = this - m6, D4 = function() {
-          return b3.m(y5, m6);
-        };
-        switch (M6) {
-          case h4:
-            $2 = D4() / 12;
-            break;
-          case c3:
-            $2 = D4();
-            break;
-          case f2:
-            $2 = D4() / 3;
-            break;
-          case o2:
-            $2 = (g3 - v3) / 6048e5;
-            break;
-          case a4:
-            $2 = (g3 - v3) / 864e5;
-            break;
-          case u3:
-            $2 = g3 / n2;
-            break;
-          case s4:
-            $2 = g3 / e3;
-            break;
-          case i3:
-            $2 = g3 / t3;
-            break;
-          default:
-            $2 = g3;
-        }
-        return l3 ? $2 : b3.a($2);
-      }, m5.daysInMonth = function() {
-        return this.endOf(c3).$D;
-      }, m5.$locale = function() {
-        return D3[this.$L];
-      }, m5.locale = function(t4, e4) {
-        if (!t4) return this.$L;
-        var n3 = this.clone(), r3 = w3(t4, e4, true);
-        return r3 && (n3.$L = r3), n3;
-      }, m5.clone = function() {
-        return b3.w(this.$d, this);
-      }, m5.toDate = function() {
-        return new Date(this.valueOf());
-      }, m5.toJSON = function() {
-        return this.isValid() ? this.toISOString() : null;
-      }, m5.toISOString = function() {
-        return this.$d.toISOString();
-      }, m5.toString = function() {
-        return this.$d.toUTCString();
-      }, M5;
-    }(), k3 = _2.prototype;
-    return O3.prototype = k3, [["$ms", r2], ["$s", i3], ["$m", s4], ["$H", u3], ["$W", a4], ["$M", c3], ["$y", h4], ["$D", d4]].forEach(function(t4) {
-      k3[t4[1]] = function(e4) {
-        return this.$g(e4, t4[0], t4[1]);
+        return !r3 && i4 && (g2 = i4), i4 || !r3 && g2;
+      }, O3 = function(t4, e4) {
+        if (S4(t4)) return t4.clone();
+        var n3 = "object" == typeof e4 ? e4 : {};
+        return n3.date = t4, n3.args = arguments, new _2(n3);
+      }, b3 = v2;
+      b3.l = w3, b3.i = S4, b3.w = function(t4, e4) {
+        return O3(t4, { locale: e4.$L, utc: e4.$u, x: e4.$x, $offset: e4.$offset });
       };
-    }), O3.extend = function(t4, e4) {
-      return t4.$i || (t4(e4, _2, O3), t4.$i = true), O3;
-    }, O3.locale = w3, O3.isDayjs = S4, O3.unix = function(t4) {
-      return O3(1e3 * t4);
-    }, O3.en = D3[g2], O3.Ls = D3, O3.p = {}, O3;
-  });
-})(dayjs_min);
-var dayjs_minExports = dayjs_min.exports;
+      var _2 = function() {
+        function M5(t4) {
+          this.$L = w3(t4.locale, null, true), this.parse(t4), this.$x = this.$x || t4.x || {}, this[p2] = true;
+        }
+        var m5 = M5.prototype;
+        return m5.parse = function(t4) {
+          this.$d = function(t5) {
+            var e4 = t5.date, n3 = t5.utc;
+            if (null === e4) return /* @__PURE__ */ new Date(NaN);
+            if (b3.u(e4)) return /* @__PURE__ */ new Date();
+            if (e4 instanceof Date) return new Date(e4);
+            if ("string" == typeof e4 && !/Z$/i.test(e4)) {
+              var r3 = e4.match($);
+              if (r3) {
+                var i4 = r3[2] - 1 || 0, s5 = (r3[7] || "0").substring(0, 3);
+                return n3 ? new Date(Date.UTC(r3[1], i4, r3[3] || 1, r3[4] || 0, r3[5] || 0, r3[6] || 0, s5)) : new Date(r3[1], i4, r3[3] || 1, r3[4] || 0, r3[5] || 0, r3[6] || 0, s5);
+              }
+            }
+            return new Date(e4);
+          }(t4), this.init();
+        }, m5.init = function() {
+          var t4 = this.$d;
+          this.$y = t4.getFullYear(), this.$M = t4.getMonth(), this.$D = t4.getDate(), this.$W = t4.getDay(), this.$H = t4.getHours(), this.$m = t4.getMinutes(), this.$s = t4.getSeconds(), this.$ms = t4.getMilliseconds();
+        }, m5.$utils = function() {
+          return b3;
+        }, m5.isValid = function() {
+          return !(this.$d.toString() === l2);
+        }, m5.isSame = function(t4, e4) {
+          var n3 = O3(t4);
+          return this.startOf(e4) <= n3 && n3 <= this.endOf(e4);
+        }, m5.isAfter = function(t4, e4) {
+          return O3(t4) < this.startOf(e4);
+        }, m5.isBefore = function(t4, e4) {
+          return this.endOf(e4) < O3(t4);
+        }, m5.$g = function(t4, e4, n3) {
+          return b3.u(t4) ? this[e4] : this.set(n3, t4);
+        }, m5.unix = function() {
+          return Math.floor(this.valueOf() / 1e3);
+        }, m5.valueOf = function() {
+          return this.$d.getTime();
+        }, m5.startOf = function(t4, e4) {
+          var n3 = this, r3 = !!b3.u(e4) || e4, f3 = b3.p(t4), l3 = function(t5, e5) {
+            var i4 = b3.w(n3.$u ? Date.UTC(n3.$y, e5, t5) : new Date(n3.$y, e5, t5), n3);
+            return r3 ? i4 : i4.endOf(a4);
+          }, $2 = function(t5, e5) {
+            return b3.w(n3.toDate()[t5].apply(n3.toDate("s"), (r3 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e5)), n3);
+          }, y5 = this.$W, M6 = this.$M, m6 = this.$D, v3 = "set" + (this.$u ? "UTC" : "");
+          switch (f3) {
+            case h4:
+              return r3 ? l3(1, 0) : l3(31, 11);
+            case c3:
+              return r3 ? l3(1, M6) : l3(0, M6 + 1);
+            case o2:
+              var g3 = this.$locale().weekStart || 0, D4 = (y5 < g3 ? y5 + 7 : y5) - g3;
+              return l3(r3 ? m6 - D4 : m6 + (6 - D4), M6);
+            case a4:
+            case d4:
+              return $2(v3 + "Hours", 0);
+            case u3:
+              return $2(v3 + "Minutes", 1);
+            case s4:
+              return $2(v3 + "Seconds", 2);
+            case i3:
+              return $2(v3 + "Milliseconds", 3);
+            default:
+              return this.clone();
+          }
+        }, m5.endOf = function(t4) {
+          return this.startOf(t4, false);
+        }, m5.$set = function(t4, e4) {
+          var n3, o3 = b3.p(t4), f3 = "set" + (this.$u ? "UTC" : ""), l3 = (n3 = {}, n3[a4] = f3 + "Date", n3[d4] = f3 + "Date", n3[c3] = f3 + "Month", n3[h4] = f3 + "FullYear", n3[u3] = f3 + "Hours", n3[s4] = f3 + "Minutes", n3[i3] = f3 + "Seconds", n3[r2] = f3 + "Milliseconds", n3)[o3], $2 = o3 === a4 ? this.$D + (e4 - this.$W) : e4;
+          if (o3 === c3 || o3 === h4) {
+            var y5 = this.clone().set(d4, 1);
+            y5.$d[l3]($2), y5.init(), this.$d = y5.set(d4, Math.min(this.$D, y5.daysInMonth())).$d;
+          } else l3 && this.$d[l3]($2);
+          return this.init(), this;
+        }, m5.set = function(t4, e4) {
+          return this.clone().$set(t4, e4);
+        }, m5.get = function(t4) {
+          return this[b3.p(t4)]();
+        }, m5.add = function(r3, f3) {
+          var d5, l3 = this;
+          r3 = Number(r3);
+          var $2 = b3.p(f3), y5 = function(t4) {
+            var e4 = O3(l3);
+            return b3.w(e4.date(e4.date() + Math.round(t4 * r3)), l3);
+          };
+          if ($2 === c3) return this.set(c3, this.$M + r3);
+          if ($2 === h4) return this.set(h4, this.$y + r3);
+          if ($2 === a4) return y5(1);
+          if ($2 === o2) return y5(7);
+          var M6 = (d5 = {}, d5[s4] = e3, d5[u3] = n2, d5[i3] = t3, d5)[$2] || 1, m6 = this.$d.getTime() + r3 * M6;
+          return b3.w(m6, this);
+        }, m5.subtract = function(t4, e4) {
+          return this.add(-1 * t4, e4);
+        }, m5.format = function(t4) {
+          var e4 = this, n3 = this.$locale();
+          if (!this.isValid()) return n3.invalidDate || l2;
+          var r3 = t4 || "YYYY-MM-DDTHH:mm:ssZ", i4 = b3.z(this), s5 = this.$H, u4 = this.$m, a5 = this.$M, o3 = n3.weekdays, c4 = n3.months, f3 = n3.meridiem, h5 = function(t5, n4, i5, s6) {
+            return t5 && (t5[n4] || t5(e4, r3)) || i5[n4].slice(0, s6);
+          }, d5 = function(t5) {
+            return b3.s(s5 % 12 || 12, t5, "0");
+          }, $2 = f3 || function(t5, e5, n4) {
+            var r4 = t5 < 12 ? "AM" : "PM";
+            return n4 ? r4.toLowerCase() : r4;
+          };
+          return r3.replace(y4, function(t5, r4) {
+            return r4 || function(t6) {
+              switch (t6) {
+                case "YY":
+                  return String(e4.$y).slice(-2);
+                case "YYYY":
+                  return b3.s(e4.$y, 4, "0");
+                case "M":
+                  return a5 + 1;
+                case "MM":
+                  return b3.s(a5 + 1, 2, "0");
+                case "MMM":
+                  return h5(n3.monthsShort, a5, c4, 3);
+                case "MMMM":
+                  return h5(c4, a5);
+                case "D":
+                  return e4.$D;
+                case "DD":
+                  return b3.s(e4.$D, 2, "0");
+                case "d":
+                  return String(e4.$W);
+                case "dd":
+                  return h5(n3.weekdaysMin, e4.$W, o3, 2);
+                case "ddd":
+                  return h5(n3.weekdaysShort, e4.$W, o3, 3);
+                case "dddd":
+                  return o3[e4.$W];
+                case "H":
+                  return String(s5);
+                case "HH":
+                  return b3.s(s5, 2, "0");
+                case "h":
+                  return d5(1);
+                case "hh":
+                  return d5(2);
+                case "a":
+                  return $2(s5, u4, true);
+                case "A":
+                  return $2(s5, u4, false);
+                case "m":
+                  return String(u4);
+                case "mm":
+                  return b3.s(u4, 2, "0");
+                case "s":
+                  return String(e4.$s);
+                case "ss":
+                  return b3.s(e4.$s, 2, "0");
+                case "SSS":
+                  return b3.s(e4.$ms, 3, "0");
+                case "Z":
+                  return i4;
+              }
+              return null;
+            }(t5) || i4.replace(":", "");
+          });
+        }, m5.utcOffset = function() {
+          return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
+        }, m5.diff = function(r3, d5, l3) {
+          var $2, y5 = this, M6 = b3.p(d5), m6 = O3(r3), v3 = (m6.utcOffset() - this.utcOffset()) * e3, g3 = this - m6, D4 = function() {
+            return b3.m(y5, m6);
+          };
+          switch (M6) {
+            case h4:
+              $2 = D4() / 12;
+              break;
+            case c3:
+              $2 = D4();
+              break;
+            case f2:
+              $2 = D4() / 3;
+              break;
+            case o2:
+              $2 = (g3 - v3) / 6048e5;
+              break;
+            case a4:
+              $2 = (g3 - v3) / 864e5;
+              break;
+            case u3:
+              $2 = g3 / n2;
+              break;
+            case s4:
+              $2 = g3 / e3;
+              break;
+            case i3:
+              $2 = g3 / t3;
+              break;
+            default:
+              $2 = g3;
+          }
+          return l3 ? $2 : b3.a($2);
+        }, m5.daysInMonth = function() {
+          return this.endOf(c3).$D;
+        }, m5.$locale = function() {
+          return D3[this.$L];
+        }, m5.locale = function(t4, e4) {
+          if (!t4) return this.$L;
+          var n3 = this.clone(), r3 = w3(t4, e4, true);
+          return r3 && (n3.$L = r3), n3;
+        }, m5.clone = function() {
+          return b3.w(this.$d, this);
+        }, m5.toDate = function() {
+          return new Date(this.valueOf());
+        }, m5.toJSON = function() {
+          return this.isValid() ? this.toISOString() : null;
+        }, m5.toISOString = function() {
+          return this.$d.toISOString();
+        }, m5.toString = function() {
+          return this.$d.toUTCString();
+        }, M5;
+      }(), k3 = _2.prototype;
+      return O3.prototype = k3, [["$ms", r2], ["$s", i3], ["$m", s4], ["$H", u3], ["$W", a4], ["$M", c3], ["$y", h4], ["$D", d4]].forEach(function(t4) {
+        k3[t4[1]] = function(e4) {
+          return this.$g(e4, t4[0], t4[1]);
+        };
+      }), O3.extend = function(t4, e4) {
+        return t4.$i || (t4(e4, _2, O3), t4.$i = true), O3;
+      }, O3.locale = w3, O3.isDayjs = S4, O3.unix = function(t4) {
+        return O3(1e3 * t4);
+      }, O3.en = D3[g2], O3.Ls = D3, O3.p = {}, O3;
+    });
+  })(dayjs_min);
+  return dayjs_min.exports;
+}
+var dayjs_minExports = requireDayjs_min();
 const dayjs = /* @__PURE__ */ getDefaultExportFromCjs(dayjs_minExports);
 var he = { exports: {} };
 (function(module, exports) {
   !function(Y3, M4) {
-    module.exports = M4(dayjs_minExports);
+    module.exports = M4(requireDayjs_min());
   }(commonjsGlobal, function(Y3) {
     function M4(Y4) {
       return Y4 && "object" == typeof Y4 && "default" in Y4 ? Y4 : { default: Y4 };
@@ -44758,4 +44740,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-CtXV6vBN.js.map
+//# sourceMappingURL=index-Dm_Mqn0z.js.map
