@@ -7,16 +7,11 @@ const authRoutes = require('./api/routes/auth');
 const custumerRoutes = require('./api/routes/costumer');
 const workerRoutes = require('./api/routes/worker');
 const managerRoutes = require('./api/routes/manager');
-
-
 dotenv.config();
 const app = express();
 
-// Middleware
 app.use(express.json());
 app.use(cors());
-
-// MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
