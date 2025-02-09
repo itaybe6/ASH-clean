@@ -80,7 +80,8 @@
   max-height: 1600px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
   margin-top: 280px;
-  margin-right: 50px
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 .search-list-container .JobOptionMobile {
   position: relative !important;
@@ -96,14 +97,14 @@
 
 .date-picker-container889{
   position: absolute;
-  top:203px;
+  top:205px;
   left:10%;
   z-index: 999;
 }
 
 .CustomToggleButton82{
   position: absolute;
-  top:24%;
+  top:205px;
   left:25%;
 
 }

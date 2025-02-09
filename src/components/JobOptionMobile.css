@@ -23,16 +23,14 @@
   /* גובה שורות אוטומטי */
   grid-auto-rows: auto;
   /* רווח בין התאים */
-  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;  background-color: #fff;
   margin-bottom: 16px;
   padding: 16px;
   direction: rtl;
   text-align: center;
   font-family: var(--font-heebo);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .joboptionmobile > div {
@@ -52,4 +50,6 @@
   padding: 10px;
   margin-top: 10px;
   cursor: pointer;
+  font-family: 'Heebo';
+  font-weight: 600;
 }
