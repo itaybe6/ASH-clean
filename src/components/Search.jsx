@@ -6,7 +6,6 @@ import "./Search.css";
 const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
   const [imageData, setImageData] = useState(null);
   const [showModal, setShowModal] = useState(false);
-console.log(worker)
   const handleViewImage = async () => {
     try {
       // נניח שהנתיב בשרת: GET /worker/cleanings/:id/image
