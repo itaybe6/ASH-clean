@@ -60,12 +60,12 @@ const ManagerEditProfileIphone = () => {
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
 
       <div className="manager-edit-profile-mobil-child" />
-      <div className="div106">הגדרות</div>
+      <div className="div1065">הגדרות</div>
       <div className="div107">לפתיחת סניפים נוספים יש לפנות למנהל האתר</div>
       <div className="component-parent">
         <button className="rectangle-parent416" onClick={handleUpdateDetails}>
           <div className="component-child18" />
-          <b className="b50">עדכן פרטים</b>
+          <b className="b5059">עדכן פרטים</b>
         </button>
         <input
           className="group-child82"
