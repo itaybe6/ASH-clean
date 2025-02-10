@@ -151,7 +151,7 @@
   margin: 0 !important;
   top: calc(50% - 2347px);
   height: 237px;
-  object-fit: fill;
+  object-fit: contain;
   z-index: 9;
 }
 .homepage-mobile-item {
