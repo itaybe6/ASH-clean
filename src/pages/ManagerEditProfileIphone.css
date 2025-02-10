@@ -10,7 +10,7 @@
   z-index: 0;
 }
 
-.div106 {
+.div1065 {
   width: 73px;
   position: absolute;
   margin: 0 !important;
@@ -44,13 +44,13 @@
   border-radius: var(--br-smi);
   background-color: var(--color-darkorange-200);
 }
-.b50 {
+.b5059 {
   position: absolute;
   height: 55.83%;
   width: 82.73%;
   top: 21.11%;
   left: 8.26%;
-  font-size: var(--font-size-xl);
+  font-size: 15px;
   display: flex;
   font-family: var(--font-heebo);
   color: var(--color-white);

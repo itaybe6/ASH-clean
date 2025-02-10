@@ -262,6 +262,7 @@
   text-align: center;
   top: 8px;
     left: calc(29% - 98.5px);
+    z-index: 9;
 }
 
 .branches-container {
@@ -336,7 +337,7 @@
   .branches-container {
     width: 225%;
     left: 2.5%;
-    top: -600%;
+    top: 55px;
     height: auto;
     gap: 10px;
     position: absolute;
