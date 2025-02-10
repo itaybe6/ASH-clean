@@ -2,9 +2,7 @@ const Branch = require('../models/branch');
 const Employee = require('../models/employee');
 const Customer = require('../models/costumer');
 const Cleaning = require('../models/cleaning')
-
 const bcrypt = require('bcrypt');
-
 
 //2 admin add a new worker
 const addRegularEmployee = async (req, res) => {
