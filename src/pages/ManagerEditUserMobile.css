@@ -15,11 +15,14 @@
   position: absolute;
   margin: 0 !important;
   top: 220px;
-  left: calc(40% - 100.5px);
+  left: calc(50% - 100.5px);
   line-height: 146.39%;
   font-weight: 500;
   display: inline-block;
   z-index: 3;
+  font-family: 'Heebo';
+  font-weight: 300;
+  transform: translateX(-48px);
 }
 .div107 {
   width: 276px;
@@ -48,7 +51,7 @@
 .b50 {
   position: absolute;
   height: 55.83%;
-  width: 82.73%;
+  width: max-content;
   top: 21.11%;
   left: 8.26%;
   font-size: var(--font-size-xl);
@@ -66,7 +69,7 @@
   background-color: transparent;
   position: absolute;
   width: 42.31%;
-  top: 403px;
+  top: 325px;
   right: 0%;
   left: 57.69%;
   height: 36px;

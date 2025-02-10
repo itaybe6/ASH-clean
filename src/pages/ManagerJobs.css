@@ -227,9 +227,12 @@
   /* אפשר להוריד/להחליף פרמטרים נוספים שהיו ב-Search.css */
   margin: 0;
   padding: 16px;
-  border: 1px solid #ccc; /* לדוגמה מסגרת */
+  border: 1px;
   border-radius: 8px;
   background-color: #fff;
+  font-weight: 400;
+  font-family: 'Heebo';
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .date-picker-container88{
   position: absolute;
