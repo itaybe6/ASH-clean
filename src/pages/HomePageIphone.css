@@ -146,7 +146,7 @@
   z-index: 8;
 }
 .hands-holding-cleaning-tools-s-icon {
-  width: 353px;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 2347px);
@@ -159,7 +159,7 @@
   width: 100.25%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 2131px);
+  top: calc(50% - 2134px);
   right: 0%;
   left: -0.25%;
   background-color: var(--color-white);
