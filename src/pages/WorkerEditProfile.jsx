@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const WorkerEditProfile = () => {
   const [fullName, setFullName] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -16,10 +15,7 @@ const WorkerEditProfile = () => {
   const { token } = useContext(AuthContext);
 
   const handleUpdate = async () => {
-    if (newPassword !== confirmNewPassword) {
-      alert("הסיסמאות אינן תואמות.");
-      return;
-    }
+  
     try {
       const employeeId = token.id; 
       const res = await axios.put(`${apiUrl}/worker/updateDetails/${employeeId}`, {
@@ -45,9 +41,7 @@ const WorkerEditProfile = () => {
 
   return (
     <div className="worker-edit-profile">
-     
-     
-     
+
       <div className="frame-container">
         <div className="parent29">
           <div className="div125">הגדרות</div>
@@ -71,13 +65,6 @@ const WorkerEditProfile = () => {
           type="password"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
-        />
-        <input
-          className="group-child99"
-          placeholder="אמת סיסמא חדשה"
-          type="password"
-          value={confirmNewPassword}
-          onChange={(e) => setConfirmNewPassword(e.target.value)}
         />
         <input
           className="group-child100"

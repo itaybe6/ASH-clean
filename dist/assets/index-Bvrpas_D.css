@@ -1557,8 +1557,8 @@
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     max-width: 400px;
-    width: 90%;
-    max-height: 93%;
+    width: 330px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2366,14 +2366,13 @@ top: 0px;
   border: none;
   padding: 0;
   background-color: transparent;
-  width: 30%;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: 56%;
-  left: 43%;
+  left: 62%;
   height: 52px;
   z-index: 7;
-  transform: translateX(11%);
 }
 .group-child17 {
   position: absolute;
@@ -2500,7 +2499,7 @@ top: 0px;
 .manager-add-worker {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -6348,7 +6347,7 @@ top: 0px;
 .worker-future-jobs {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -8302,7 +8301,7 @@ top: 0px;
 .client-future-jobs {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -11170,8 +11169,8 @@ top: 0px;
 
 .div96 {
   position: absolute;
-  top: 0px;
-  left: calc(50% - 87px);
+  top: 50px;
+  left: 132px;
   line-height: 146.39%;
   font-weight: 500;
   display: inline-block;
@@ -11199,12 +11198,12 @@ top: 0px;
 .vector-icon40 {
   position: absolute;
   width: 100%;
-  top: calc(50% - 26px);
-  right: 0%;
-  left: 0%;
+  top: -95px;
+  right: -39px;
   max-width: 100%;
   overflow: hidden;
   height: 52px;
+  transform: translateX(-18px);
 }
 .vector-wrapper32 {
   cursor: pointer;
@@ -11230,6 +11229,8 @@ top: 0px;
   bottom: 85.49%;
   left: 68.23%;
   border-radius: var(--br-smi);
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .div98 {
   position: absolute;
@@ -11252,6 +11253,8 @@ top: 0px;
   bottom: 54.63%;
   left: 0%;
   border-radius: var(--br-smi);
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child71 {
   border: none;
@@ -11278,6 +11281,8 @@ top: 0px;
   bottom: 85.49%;
   left: 34.11%;
   border-radius: var(--br-smi);
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child73 {
   border: none;
@@ -11291,9 +11296,11 @@ top: 0px;
   bottom: 85.49%;
   left: 0%;
   border-radius: var(--br-smi);
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-parent16 {
-  width: 50.49%;
+  width: 55%;
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 162px);
@@ -11425,7 +11432,7 @@ top: 0px;
 .manager-edit-profile {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -11456,7 +11463,7 @@ top: 0px;
   width: 300px;
   position: absolute;
   margin: 0 !important;
-  top: 220px;
+  top: 240px;
   left: calc(50% - 100.5px);
   line-height: 146.39%;
   font-weight: 500;
@@ -11718,7 +11725,7 @@ top: 0px;
     font-family: 'Heebo';
 }
 .rectangle-parent80 {
-  width: 55.97%;
+  width: 62%;
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 163px);
@@ -11754,16 +11761,14 @@ top: 0px;
   width: 9.24%;
   position: absolute;
   margin: 0 !important;
-  right: 32.29%;
+  right: 26.29%;
   bottom: 471px;
-  left: 58.47%;
   height: 52px;
   z-index: 5;
 }
 .div220 {
   position: absolute;
   top: 57px;
-  left: calc(50% - 168px);
   line-height: 146.39%;
   font-weight: 300;
   display: inline-block;
@@ -11772,7 +11777,6 @@ top: 0px;
 .b87 {
   position: absolute;
   top: 9px;
-  left: calc(50% - 74px);
   font-size: var(--font-size-17xl);
   line-height: 146.39%;
 }
@@ -11788,9 +11792,12 @@ top: 0px;
   position: absolute;
   margin: 0 !important;
   top: 251px;
-  left: calc(50% - 81px);
   height: 80px;
   z-index: 6;
+  display: flex;
+  justify-content: flex-end;
+  right: 30%;
+  transform: translateX(20%);
 }
 .group-child182 {
   position: absolute;
@@ -11910,7 +11917,7 @@ top: 0px;
 .manager-add-branch {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -11925,7 +11932,10 @@ top: 0px;
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
-.manager-add-branch-mobile-child {
+
+.parentop{
+  height: 50px;
+}.manager-add-branch-mobile-child {
   width: 100%;
   position: absolute;
   margin: 0 !important;
@@ -11948,6 +11958,8 @@ top: 0px;
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child184 {
   border: none;
@@ -11960,6 +11972,8 @@ top: 0px;
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child185 {
   border: none;
@@ -11972,6 +11986,8 @@ top: 0px;
   left: 0%;
   border-radius: var(--br-4xs);
   height: 44px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .rectangle-parent83 {
   width: 64.63%;
@@ -12014,9 +12030,8 @@ top: 0px;
   position: absolute;
   margin: 0 !important;
   right: 15.27%;
-  bottom: 262.3px;
+  bottom: 280px;
   left: 47.07%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 39.7px;
   z-index: 4;
 }
@@ -12334,15 +12349,15 @@ left: -100px;
   background-color: transparent;
   width: 133px;
   position: absolute;
-  top:500px;
-  left: calc(50% + 300px);
+  top: 390px;
   height: 52px;
   z-index: 7;
+  right: 499px;
 }
 .manager-add-job-to-worker {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -12585,11 +12600,11 @@ right: 900px;
   width: 37.66%;
   position: absolute;
   margin: 0 !important;
-  right: 15.27%;
+  right: 49.27%;
   bottom: 350.3px;
-  left: 30.07%;
   height: 39.7px;
   z-index: 4;
+  top: 46.5%;
 }
 .input-row5 {
   display: flex;
@@ -12614,8 +12629,8 @@ right: 900px;
 }
 .date-picker-container5{
   position: absolute;
-  top:380px;
-  left:30%;
+    top: 381px;
+    left: 56%;
 }
 
 .group-child192 {

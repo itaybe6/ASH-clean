@@ -42664,17 +42664,12 @@ const WorkerEditProfileMobile = () => {
 const WorkerEditProfile = () => {
   const [fullName, setFullName] = reactExports.useState("");
   const [newPassword, setNewPassword] = reactExports.useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = reactExports.useState("");
   const [phoneNumber, setPhoneNumber] = reactExports.useState("");
   const [city, setCity] = reactExports.useState("");
   const apiUrl2 = "http://localhost:5000";
   const navigate = useNavigate();
   const { token: token2 } = reactExports.useContext(AuthContext);
   const handleUpdate = async () => {
-    if (newPassword !== confirmNewPassword) {
-      alert("הסיסמאות אינן תואמות.");
-      return;
-    }
     try {
       const employeeId = token2.id;
       const res = await axios.put(`${apiUrl2}/worker/updateDetails/${employeeId}`, {
@@ -42724,16 +42719,6 @@ const WorkerEditProfile = () => {
         type: "password",
         value: newPassword,
         onChange: (e3) => setNewPassword(e3.target.value)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "input",
-      {
-        className: "group-child99",
-        placeholder: "אמת סיסמא חדשה",
-        type: "password",
-        value: confirmNewPassword,
-        onChange: (e3) => setConfirmNewPassword(e3.target.value)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -44249,48 +44234,50 @@ const ManagerAddBranch = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-add-branch", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-add-branch-child" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "manager-add-branch-item", alt: "", src: "/line-21.svg" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent80", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child178",
-          placeholder: "שם סניף",
-          type: "text",
-          value: branchName,
-          onChange: handleBranchNameChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child179",
-          placeholder: "מספר פלאפון",
-          type: "tel",
-          value: phoneNumber,
-          onChange: handlePhoneNumberChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child180",
-          placeholder: "כתובת סניף",
-          type: "text",
-          value: branchAddress,
-          onChange: handleBranchAddressChange,
-          required: true
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent81", onClick: handleAddBranch, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child181" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b86", children: "הוספה" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent51", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div220", children: "אנא מלא את הפרטים למטה כדי להוסיף סניף" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b87", children: "הוספת סניף" })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parentop", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent80", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "input",
+          {
+            className: "group-child178",
+            placeholder: "שם סניף",
+            type: "text",
+            value: branchName,
+            onChange: handleBranchNameChange,
+            required: true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "input",
+          {
+            className: "group-child179",
+            placeholder: "מספר פלאפון",
+            type: "tel",
+            value: phoneNumber,
+            onChange: handlePhoneNumberChange,
+            required: true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "input",
+          {
+            className: "group-child180",
+            placeholder: "כתובת סניף",
+            type: "text",
+            value: branchAddress,
+            onChange: handleBranchAddressChange,
+            required: true
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent81", onClick: handleAddBranch, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child181" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b86", children: "הוספה" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent51", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div220", children: "אנא מלא את הפרטים למטה כדי להוסיף סניף" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b87", children: "הוספת סניף" })
+      ] })
     ] })
   ] });
 };
@@ -44788,4 +44775,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-QLaKAQgw.js.map
+//# sourceMappingURL=index-DAkW6po6.js.map
