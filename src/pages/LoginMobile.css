@@ -53,6 +53,8 @@
   border-radius: var(--br-xl);
   height: 46px;
   z-index: 3;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .login-mobile-item {
   border: none;
@@ -68,6 +70,8 @@
   border-radius: var(--br-xl);
   height: 46px;
   z-index: 4;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .vector-icon77 {
   position: absolute;
