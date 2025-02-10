@@ -42,6 +42,7 @@
   z-index: 3;
 }
 .icon40 {
+  cursor: pointer;
   width: 154px;
   position: absolute;
   margin: 0 !important;

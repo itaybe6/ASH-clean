@@ -19,6 +19,9 @@ const AccessibilityDesktop = () => {
       navigate(`/clientJobs/${user.id}/`);
     }
   }
+  const homepage = () => {
+    navigate("/homepage");
+  };
   return (
     <div className="accessibility-desktop">
       <img
@@ -29,7 +32,7 @@ const AccessibilityDesktop = () => {
       <div className="accessibility-desktop-item" />
       <div className="div187">הצהרת נגישות</div>
       <div className="accessibility-desktop-inner" />
-      <img className="icon40" alt="" src="/-04-11@2x.png" />
+      <img className="icon40" alt="" src="/-04-11@2x.png" onClick={homepage} />
       <div className="div188">
         כל הזכויות שמורות לעש ניקיון ואחזקה בע”מ 2025
       </div>
@@ -112,11 +115,14 @@ const AccessibilityDesktop = () => {
           <div className="group-child138" />
           <b className="b69">אזור אישי</b>
         </button>
-        <button className="group-parent32">
-          <img className="group-child139" alt="" src="/group-842.svg" />
-          <img className="group-child140" alt="" src="/group-841.svg" />
-        </button>
+
+          <button className="group-parent32" onClick={() => window.location.href = "tel:+972501234567"} >
+            <img className="group-child139" alt="" src="/group-842.svg" />
+            <img className="group-child140" alt="" src="/group-841.svg" />
+          </button>
+
       </div>
+
     </div>
   );
 };

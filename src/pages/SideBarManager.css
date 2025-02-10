@@ -32,6 +32,7 @@
   height: 52px;
 }
 .icon60 {
+  cursor: pointer;
   position: absolute;
   top: 50px;
   right: 40px;

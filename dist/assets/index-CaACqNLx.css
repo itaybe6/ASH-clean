@@ -9029,6 +9029,7 @@ top: 0px;
   z-index: 3;
 }
 .icon40 {
+  cursor: pointer;
   width: 154px;
   position: absolute;
   margin: 0 !important;
@@ -12545,6 +12546,7 @@ right: 900px;
   height: 52px;
 }
 .icon59 {
+  cursor: pointer;
   position: absolute;
   top: 50px;
   right: 40px;
@@ -12656,6 +12658,7 @@ right: 900px;
   height: 52px;
 }
 .icon58 {
+  cursor: pointer;
   position: absolute;
   top: 50px;
   right: 40px;
@@ -12800,6 +12803,7 @@ right: 900px;
   height: 52px;
 }
 .icon60 {
+  cursor: pointer;
   position: absolute;
   top: 50px;
   right: 40px;

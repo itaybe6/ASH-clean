@@ -27,10 +27,11 @@ const AccessibilityIphone = () => {
           <div className="div195">אזור אישי</div>
           <img className="mdiaccount-icon" alt="" src="/mdiaccount.svg" />
         </button>
-        <button className="group-parent34">
-          <img className="group-child142" alt="" src="/group-84.svg" />
-          <img className="group-child143" alt="" src="/group-851.svg" />
-        </button>
+          <button className="group-parent34" onClick={() => window.location.href = "tel:+972501234567"} >
+            <img className="group-child142" alt="" src="/group-84.svg" />
+            <img className="group-child143" alt="" src="/group-851.svg" />
+          </button>
+
       </div>
       <img className="icon42" alt="" src="/-02-16@2x.png" />
       <div className="accessibility-iphone-child" />

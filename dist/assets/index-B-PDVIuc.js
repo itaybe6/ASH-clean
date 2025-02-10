@@ -10816,7 +10816,7 @@ const FrameComponent = ({ className = "" }) => {
     } else if (token2.role == "Regular") {
       navigate("/worker-edit-profile");
     } else {
-      navigate(`/clientJobs/${user.id}/`);
+      navigate(`/clientJobs/${token2.id}/`);
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: `homepage-mobile-inner2 ${className}`, onClick: login, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent71", children: [
@@ -43582,6 +43582,9 @@ const AccessibilityDesktop = () => {
       navigate(`/clientJobs/${user.id}/`);
     }
   };
+  const homepage = () => {
+    navigate("/homepage");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "accessibility-desktop", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -43594,7 +43597,7 @@ const AccessibilityDesktop = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "accessibility-desktop-item" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div187", children: "הצהרת נגישות" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "accessibility-desktop-inner" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon40", alt: "", src: "/-04-11@2x.png" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon40", alt: "", src: "/-04-11@2x.png", onClick: homepage }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div188", children: "כל הזכויות שמורות לעש ניקיון ואחזקה בע”מ 2025" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ashoffice14gmailcom-parent", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ashoffice14gmailcom", children: [
@@ -43632,7 +43635,7 @@ const AccessibilityDesktop = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child138" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b69", children: "אזור אישי" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent32", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent32", onClick: () => window.location.href = "tel:+972501234567", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child139", alt: "", src: "/group-842.svg" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child140", alt: "", src: "/group-841.svg" })
       ] })
@@ -43661,7 +43664,7 @@ const AccessibilityIphone = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div195", children: "אזור אישי" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mdiaccount-icon", alt: "", src: "/mdiaccount.svg" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent34", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent34", onClick: () => window.location.href = "tel:+972501234567", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child142", alt: "", src: "/group-84.svg" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child143", alt: "", src: "/group-851.svg" })
       ] })
@@ -44704,4 +44707,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-CDW25Uaa.js.map
+//# sourceMappingURL=index-B-PDVIuc.js.map
