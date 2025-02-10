@@ -99,29 +99,32 @@ const AccessibilityDesktop = () => {
       </div>
       <img className="icon41" alt="" src="/-02-15@2x.png" />
       <div className="grouping1447">
-      <button className="wrapper16" onClick={() => window.location.href = '/#about'}>
-        <div className="div191" >אודות</div>
-      </button>
-      <button className="wrapper17" onClick={() => window.location.href = '/#testimonials'}>
-        <div className="div192">לקוחות ממליצים</div>
-      </button>
-      <button className="wrapper18" onClick={() => window.location.href = '/#services'}>
-        <div className="div191" >שירותים</div>
-      </button>
-      <button className="wrapper19">
-        <div className="div194">הצהרת נגישות</div>
-      </button>
+        <button className="wrapper16" onClick={() => window.location.href = '/#about'}>
+          <div className="div191" >אודות</div>
+        </button>
+        <button className="wrapper17" onClick={() => window.location.href = '/#testimonials'}>
+          <div className="div192">לקוחות ממליצים</div>
+        </button>
+        <button className="wrapper18" onClick={() => window.location.href = '/#services'}>
+          <div className="div191" >שירותים</div>
+        </button>
+        <button className="wrapper19">
+          <div className="div194">הצהרת נגישות</div>
+        </button>
+        <button className="wrapper18" onClick={() => window.location.href = '/'}>
+          <div className="div191" >דף בית</div>
+        </button>
       </div>
-      
+
       <div className="group-parent31">
         <button className="rectangle-parent66" onClick={toLogin} >
           <div className="group-child138" />
           <b className="b69">אזור אישי</b>
         </button>
-          <button className="group-parent32" onClick={() => window.location.href = "tel:+972527488779"} >
-            <img className="group-child139" alt="" src="/group-842.svg" />
-            <img className="group-child140" alt="" src="/group-841.svg" />
-          </button>
+        <button className="group-parent32" onClick={() => window.location.href = "tel:+972527488779"} >
+          <img className="group-child139" alt="" src="/group-842.svg" />
+          <img className="group-child140" alt="" src="/group-841.svg" />
+        </button>
 
       </div>
 

@@ -72,7 +72,7 @@ const HomePageIphone = () => {
 
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+        <input className="component-inner" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <button className="rectangle-parent" onClick={sendEmail}>
           <div className="group-child" />
           <b className="b4">שליחה</b>
@@ -88,7 +88,7 @@ const HomePageIphone = () => {
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+        <input className="component-inner" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <button className="rectangle-parent" onClick={sendEmail}>
           <div className="group-child" />
           <b className="b4">שליחה</b>
@@ -217,7 +217,7 @@ const HomePageIphone = () => {
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+        <input className="component-inner" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <button className="rectangle-parent" onClick={sendEmail}>
           <div className="group-child" />
           <b className="b4">שליחה</b>

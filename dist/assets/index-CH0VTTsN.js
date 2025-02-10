@@ -10998,7 +10998,7 @@ const HomePageIphone = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div1", children: "השאירו פרטים ונחזיר לכם את הברק!" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-child", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-item", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent", onClick: sendEmail, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b4", children: "שליחה" })
@@ -11014,7 +11014,7 @@ const HomePageIphone = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div1", children: "השאירו פרטים ונחזיר לכם את הברק!" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-child", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-item", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent", onClick: sendEmail, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b4", children: "שליחה" })
@@ -11107,7 +11107,7 @@ const HomePageIphone = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div1", children: "השאירו פרטים ונחזיר לכם את הברק!" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-child", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-item", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent", onClick: sendEmail, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b4", children: "שליחה" })
@@ -43652,7 +43652,8 @@ const AccessibilityDesktop = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper16", onClick: () => window.location.href = "/#about", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "אודות" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper17", onClick: () => window.location.href = "/#testimonials", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div192", children: "לקוחות ממליצים" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", onClick: () => window.location.href = "/#services", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "שירותים" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div194", children: "הצהרת נגישות" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div194", children: "הצהרת נגישות" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", onClick: () => window.location.href = "/", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "דף בית" }) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent31", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent66", onClick: toLogin, children: [
@@ -43866,7 +43867,8 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: access, children: "הצהרת נגישות" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("testimonials"), children: "לקוחות ממליצים" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("about"), children: "אודות" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("services"), children: "שירותים" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("services"), children: "שירותים" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => window.location.href = "/", children: "דף בית " })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper69", onClick: toLogin, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon78", alt: "", src: "/vector27.svg" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "homepage-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent35", onClick: () => window.location.href = "tel:+972527488779", children: [
@@ -43972,7 +43974,7 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper70", onClick: sendEmail, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon79", alt: "", src: "/vector28.svg" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead1" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child165", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child166", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child166", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child167", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div213", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "הניקיון המושלם" }),
@@ -43992,7 +43994,7 @@ const HomePage = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child169", alt: "", src: "/line-2.svg" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child170", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child171", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child172", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child172", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent79", onClick: sendEmail, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child173" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b85", children: "שליחה" })
@@ -44008,7 +44010,7 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent40", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper71", onClick: sendEmail, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon80", alt: "", src: "/vector28.svg" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child175", pplaceholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child176", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child176", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child177", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div215", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "הניקיון המושלם" }),
@@ -44781,4 +44783,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-QSXYQ6vm.js.map
+//# sourceMappingURL=index-CH0VTTsN.js.map

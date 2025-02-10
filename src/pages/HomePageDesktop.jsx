@@ -105,6 +105,7 @@ const HomePage = () => {
         <button className="button" onClick={() => scrollToSection('testimonials')} >לקוחות ממליצים</button>
         <button className="button" onClick={() => scrollToSection('about')}>אודות</button>
         <button className="button" onClick={() => scrollToSection('services')}>שירותים</button>
+        <button className="button" onClick={() => window.location.href = '/'}>דף בית </button>
       </div>
       <button className="vector-wrapper69" onClick={toLogin}>
         <img className="vector-icon78" alt="" src="/vector27.svg" />
@@ -246,7 +247,7 @@ const HomePage = () => {
         </button>
         <section id="lead1"></section>
         <input className="group-child165" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        <input className="group-child166" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+        <input className="group-child166" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <input className="group-child167" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <div className="div213">
           <p className="p23">הניקיון המושלם</p>
@@ -269,7 +270,7 @@ const HomePage = () => {
           <img className="group-child169" alt="" src="/line-2.svg" />
           <input className="group-child170" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           <input className="group-child171" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-          <input className="group-child172" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+          <input className="group-child172" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
           <button className="rectangle-parent79" onClick={sendEmail} >
             <div className="group-child173" />
             <b className="b85">שליחה</b>
@@ -287,7 +288,7 @@ const HomePage = () => {
             <img className="vector-icon80" alt="" src="/vector28.svg" />
           </button>
           <input className="group-child175" pplaceholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-          <input className="group-child176" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
+          <input className="group-child176" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
           <input className="group-child177" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           <div className="div215">
             <p className="p23">הניקיון המושלם</p>
