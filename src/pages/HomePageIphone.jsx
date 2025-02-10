@@ -39,7 +39,7 @@ const HomePageIphone = () => {
       <img className="test-02-2-icon" alt="" src="/test02-2@2x.png" />
       <img className="icon" alt="" src="/-02-1@2x.png" />
       <FrameComponent />
-      <button className="group-parent">
+      <button className="group-parent" onClick={() => window.location.href = "tel:+972527488779"}>
         <img className="frame-child" alt="" src="/group-84.svg" />
         <img className="frame-item" alt="" src="/group-85.svg" />
       </button>

@@ -115,8 +115,7 @@ const AccessibilityDesktop = () => {
           <div className="group-child138" />
           <b className="b69">אזור אישי</b>
         </button>
-
-          <button className="group-parent32" onClick={() => window.location.href = "tel:+972501234567"} >
+          <button className="group-parent32" onClick={() => window.location.href = "tel:+972527488779"} >
             <img className="group-child139" alt="" src="/group-842.svg" />
             <img className="group-child140" alt="" src="/group-841.svg" />
           </button>

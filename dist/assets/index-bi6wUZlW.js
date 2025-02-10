@@ -10966,7 +10966,7 @@ const HomePageIphone = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "test-02-2-icon", alt: "", src: "/test02-2@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon", alt: "", src: "/-02-1@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FrameComponent, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent", onClick: () => window.location.href = "tel:+972527488779", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "frame-child", alt: "", src: "/group-84.svg" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "frame-item", alt: "", src: "/group-85.svg" })
     ] }),
@@ -43635,7 +43635,7 @@ const AccessibilityDesktop = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child138" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b69", children: "אזור אישי" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent32", onClick: () => window.location.href = "tel:+972501234567", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent32", onClick: () => window.location.href = "tel:+972527488779", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child139", alt: "", src: "/group-842.svg" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child140", alt: "", src: "/group-841.svg" })
       ] })
@@ -43664,7 +43664,7 @@ const AccessibilityIphone = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div195", children: "אזור אישי" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mdiaccount-icon", alt: "", src: "/mdiaccount.svg" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent34", onClick: () => window.location.href = "tel:+972501234567", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group-parent34", onClick: () => window.location.href = "tel:+972527488779", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child142", alt: "", src: "/group-84.svg" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child143", alt: "", src: "/group-851.svg" })
       ] })
@@ -43830,7 +43830,7 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", children: "שירותים" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper69", onClick: toLogin, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon78", alt: "", src: "/vector27.svg" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "homepage-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent35", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "homepage-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent35", onClick: () => window.location.href = "tel:+972527488779", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "frame-child7", alt: "", src: "/group-842.svg" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "frame-child8", alt: "", src: "/group-82.svg" })
     ] }) }),
@@ -44707,4 +44707,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-DNo4iPAE.js.map
+//# sourceMappingURL=index-bi6wUZlW.js.map

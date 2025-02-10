@@ -93,7 +93,7 @@ const HomePage = () => {
         <img className="vector-icon78" alt="" src="/vector27.svg" />
       </button>
       <button className="homepage-inner">
-        <div className="group-parent35">
+        <div className="group-parent35" onClick={() => window.location.href = "tel:+972527488779"}>
           <img className="frame-child7" alt="" src="/group-842.svg" />
           <img className="frame-child8" alt="" src="/group-82.svg" />
         </div>

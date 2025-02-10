@@ -27,9 +27,7 @@ const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
     try {
         const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
         if (!confirmDelete) return;
-
         const response = await axios.delete(`${apiUrl}/manager/delete-cleaning/${id}`);
-
         if (response.status === 200) {
             alert("הניקיון נמחק בהצלחה!");
         } else {

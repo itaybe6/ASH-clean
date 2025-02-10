@@ -27,7 +27,7 @@ const AccessibilityIphone = () => {
           <div className="div195">אזור אישי</div>
           <img className="mdiaccount-icon" alt="" src="/mdiaccount.svg" />
         </button>
-          <button className="group-parent34" onClick={() => window.location.href = "tel:+972501234567"} >
+          <button className="group-parent34" onClick={() => window.location.href = "tel:+972527488779"} >
             <img className="group-child142" alt="" src="/group-84.svg" />
             <img className="group-child143" alt="" src="/group-851.svg" />
           </button>
