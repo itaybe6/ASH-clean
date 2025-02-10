@@ -9,19 +9,19 @@ direction: rtl;
 }
 
 .header-container h2 {
-  font-size: 34px;
+  font-size: 26px;
   margin: 0;
   font-weight: 600;
 }
 
 .header-container p {
   margin: 4px 0 0 0;
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
 }
 .header-mobile {
   position: absolute;  /* מבטיח שהכותרת תישאר קבועה */
-  top: 90px !important;        /* מצמיד את הכותרת לראש המסך */
+  top: 105px !important;        /* מצמיד את הכותרת לראש המסך */
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;     
