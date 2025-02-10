@@ -45,8 +45,8 @@
     flex-direction: column;
     align-items: center;
     animation: scaleIn 0.3s ease forwards;
-    left: 15%;
-    top: 5%;
+    left: 37%;
+    top: 30%;
   }
   
   /* כפתור X: עגול, עם צבע רקע אדום בולט */
@@ -86,3 +86,11 @@
   .img2964{
     z-index: 10000;
   }
+
+
+  @media screen and (max-width: 768px) {
+    .modal-content {
+        left: 5%;
+        top: 30%;
+    }
+}
