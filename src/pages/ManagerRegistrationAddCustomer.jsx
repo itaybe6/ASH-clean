@@ -10,7 +10,6 @@ const ManagerRegistrationAddCustomer = () => {
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,7 +20,6 @@ const ManagerRegistrationAddCustomer = () => {
   const handleCityChange = (e) => setCity(e.target.value);
   const handleAddressChange = (e) => setAddress(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
   const handleContinue = (e) => {
     e.preventDefault();
@@ -32,7 +30,6 @@ const ManagerRegistrationAddCustomer = () => {
       city,
       address,
       password,
-      confirmPassword
     };
     sessionStorage.setItem("userData", JSON.stringify(userData));
     navigate("/manager-registration-add-branches");
@@ -50,7 +47,6 @@ const ManagerRegistrationAddCustomer = () => {
       setCity(parsedData.city || "");
       setAddress(parsedData.address || "");
       setPassword(parsedData.password || "");
-      setConfirmPassword(parsedData.confirmPassword || "");
     }
   }, []); // רץ פעם אחת כשהקומפוננט נטען
 

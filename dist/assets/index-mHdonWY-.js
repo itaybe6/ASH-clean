@@ -10685,9 +10685,7 @@ const ManagerRegistrationAddB = () => {
         city: userData.city,
         branches
       };
-      console.log(userDataToSend);
       const response = await axios.post(`${apiUrl2}/manager/add-customer`, userDataToSend);
-      console.log("Success Add Customer");
       alert("לקוח נוסף בהצלחה");
       navigate("/homepage");
     } catch (error) {
@@ -39016,8 +39014,7 @@ const ManagerAddWorker = () => {
     fullName: "",
     phone: "",
     city: "",
-    password: "",
-    verification: ""
+    password: ""
   });
   const navigate = useNavigate();
   const handleChange = (e3) => {
@@ -39025,10 +39022,6 @@ const ManagerAddWorker = () => {
   };
   const handleSubmit = async (e3) => {
     e3.preventDefault();
-    if (formData.password !== formData.verification) {
-      alert("❌ הסיסמאות לא תואמות!");
-      return;
-    }
     const workerData = {
       fullName: formData.fullName,
       phone: formData.phone,
@@ -39561,7 +39554,6 @@ const ManagerRegistrationAddCustomer = () => {
   const [city, setCity] = reactExports.useState("");
   const [address, setAddress] = reactExports.useState("");
   const [password, setPassword] = reactExports.useState("");
-  const [confirmPassword, setConfirmPassword] = reactExports.useState("");
   const navigate = useNavigate();
   const handleBusinessNameChange = (e3) => setBusinessName(e3.target.value);
   const handleFullNameChange = (e3) => setFullName(e3.target.value);
@@ -39577,8 +39569,7 @@ const ManagerRegistrationAddCustomer = () => {
       phoneNumber,
       city,
       address,
-      password,
-      confirmPassword
+      password
     };
     sessionStorage.setItem("userData", JSON.stringify(userData));
     navigate("/manager-registration-add-branches");
@@ -39593,7 +39584,6 @@ const ManagerRegistrationAddCustomer = () => {
       setCity(parsedData.city || "");
       setAddress(parsedData.address || "");
       setPassword(parsedData.password || "");
-      setConfirmPassword(parsedData.confirmPassword || "");
     }
   }, []);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-registration-add-c", children: [
@@ -39691,8 +39681,7 @@ const ManagerAddWorkerIphone = () => {
     fullName: "",
     phone: "",
     city: "",
-    password: "",
-    verification: ""
+    password: ""
   });
   const navigate = useNavigate();
   const handleChange = (e3) => {
@@ -39700,10 +39689,6 @@ const ManagerAddWorkerIphone = () => {
   };
   const handleSubmit = async (e3) => {
     e3.preventDefault();
-    if (formData.password !== formData.verification) {
-      alert("❌ הסיסמאות לא תואמות!");
-      return;
-    }
     const workerData = {
       fullName: formData.fullName,
       phone: formData.phone,
@@ -39763,7 +39748,6 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const [address, setAddress] = reactExports.useState("");
   const [phoneNumber, setPhoneNumber] = reactExports.useState("");
   const [password, setPassword] = reactExports.useState("");
-  const [confirmPassword, setConfirmPassword] = reactExports.useState("");
   const [displayMenu, setDisplayMenu] = reactExports.useState(false);
   const navigate = useNavigate();
   const handleBusinessNameChange = (e3) => setBusinessName(e3.target.value);
@@ -39780,8 +39764,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
       phoneNumber,
       city,
       address,
-      password,
-      confirmPassword
+      password
     };
     sessionStorage.setItem("userData", JSON.stringify(userData));
     navigate("/manager-registration-add-branches");
@@ -39796,7 +39779,6 @@ const ManagerRegistrationAddCustomerMobile = () => {
       setCity(parsedData.city || "");
       setAddress(parsedData.address || "");
       setPassword(parsedData.password || "");
-      setConfirmPassword(parsedData.confirmPassword || "");
     }
   }, []);
   const menu = () => {
@@ -39920,12 +39902,6 @@ const ManagerEditProfileIphone = () => {
   const handleCityChange = (e3) => setCity(e3.target.value);
   const navigate = useNavigate();
   const handleUpdateDetails = async () => {
-    if (newPassword != confirmNewPassword) {
-      alert("סיסמאות לא תואמות");
-      setNewPassword("");
-      setConfirmNewPassword("");
-      return;
-    }
     try {
       const response = await axios.put(
         `${apiUrl2}/manager/update`,
@@ -40018,7 +39994,6 @@ const ManagerRegistrationAddBranchesMobile = () => {
   const [displayMenu, setDisplayMenu] = reactExports.useState(false);
   const handleAddUser = async () => {
     const userData = JSON.parse(sessionStorage.getItem("userData"));
-    console.log(userData);
     try {
       const userDataToSend = {
         fullName: userData.fullName,
@@ -40031,7 +40006,6 @@ const ManagerRegistrationAddBranchesMobile = () => {
       };
       console.log(userDataToSend);
       const response = await axios.post(`${apiUrl2}/manager/add-customer`, userDataToSend);
-      console.log("Success Add Customer");
       alert("לקוח נוסף בהצלחה");
     } catch (error) {
       console.error("Error Add Customer", error.response ? error.response.data : error.message);
@@ -43626,10 +43600,12 @@ const AccessibilityDesktop = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf", children: "דואר אלקטרוני: ash.office14@gmail.com" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon41", alt: "", src: "/-02-15@2x.png" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper16", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "אודות" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper17", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div192", children: "לקוחות ממליצים" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "שירותים" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div194", children: "הצהרת נגישות" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grouping1447", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper16", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "אודות" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper17", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div192", children: "לקוחות ממליצים" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "שירותים" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div194", children: "הצהרת נגישות" }) })
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent31", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent66", onClick: toLogin, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child138" }),
@@ -44066,21 +44042,15 @@ const ManagerEditUserMobile = () => {
   const [phoneNumber, setPhoneNumber] = reactExports.useState("");
   const [city, setCity] = reactExports.useState("");
   const apiUrl2 = "http://localhost:5000";
+  const [displayMenu, setDisplayMenu] = reactExports.useState(false);
   const handleFullNameChange = (e3) => setFullName(e3.target.value);
   const handleNewPasswordChange = (e3) => setNewPassword(e3.target.value);
   const handlePhoneNumberChange = (e3) => setPhoneNumber(e3.target.value);
   const handleCityChange = (e3) => setCity(e3.target.value);
-  const [displayMenu, setDisplayMenu] = reactExports.useState(false);
   const navigate = useNavigate();
   const { id: id2, type } = useParams();
   const handleUpdateDetails = async (e3) => {
     e3.preventDefault();
-    if (newPassword != confirmNewPassword) {
-      alert("סיסמאות לא תואמות");
-      setNewPassword("");
-      setConfirmNewPassword("");
-      return;
-    }
     const updatedData = {
       type,
       fullName,
@@ -44707,4 +44677,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-BxyvBcw4.js.map
+//# sourceMappingURL=index-mHdonWY-.js.map

@@ -9,9 +9,7 @@ const bcrypt = require('bcrypt');
 //2 admin add a new worker
 const addRegularEmployee = async (req, res) => {
     try {
-        console.log(req.body)
         const { phone, password, fullName, city } = req.body; // הוספת קליטת העיר מהבקשה
-
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 

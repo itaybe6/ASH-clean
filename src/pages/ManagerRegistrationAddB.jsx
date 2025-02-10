@@ -28,11 +28,7 @@ const ManagerRegistrationAddB = () => {
         city: userData.city,
         branches: branches,
       };
-      console.log(userDataToSend);
-
       const response = await axios.post(`${apiUrl}/manager/add-customer`, userDataToSend);
-
-      console.log("Success Add Customer");
       alert("לקוח נוסף בהצלחה")
       navigate('/homepage')
     } catch (error) {

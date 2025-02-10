@@ -19,19 +19,12 @@ const ManagerEditProfileIphone = () => {
 
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
-  const handleConfirmNewPasswordChange = (e) => setConfirmNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
   const navigate = useNavigate();
 
 
   const handleUpdateDetails = async () => {
-    if (newPassword != confirmNewPassword) {
-      alert("סיסמאות לא תואמות");
-      setNewPassword("");
-      setConfirmNewPassword("");
-      return;
-    }
     try {
       const response = await axios.put(
         `${apiUrl}/manager/update`,

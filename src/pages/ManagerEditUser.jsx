@@ -11,16 +11,12 @@ const ManagerEditUser = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
-
-
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
-
   const navigate = useNavigate();
   const { id ,type } = useParams(); // קבלת ה-ID מה-URL
-
   const handleUpdate = async (e) => {
     e.preventDefault();
     const updatedData = {

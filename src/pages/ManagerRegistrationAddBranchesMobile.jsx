@@ -16,9 +16,9 @@ const ManagerRegistrationAddBranchesMobile = () => {
   const [branches, setBranches] = useState([]);
   const navigate = useNavigate();
   const [displayMenu, setDisplayMenu] = useState(false)
+
   const handleAddUser = async () => {
     const userData = JSON.parse(sessionStorage.getItem("userData"));
-    console.log(userData);
     try {
       const userDataToSend = {
         fullName: userData.fullName,
@@ -30,10 +30,7 @@ const ManagerRegistrationAddBranchesMobile = () => {
         branches: branches,
       };
       console.log(userDataToSend);
-
       const response = await axios.post(`${apiUrl}/manager/add-customer`, userDataToSend);
-
-      console.log("Success Add Customer");
       alert("לקוח נוסף בהצלחה")
     } catch (error) {
       console.error("Error Add Customer", error.response ? error.response.data : error.message);

@@ -10,11 +10,8 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [displayMenu, setDisplayMenu] = useState(false)
-
   const navigate = useNavigate();
-
 
   const handleBusinessNameChange = (e) => setBusinessName(e.target.value);
   const handleFullNameChange = (e) => setFullName(e.target.value);
@@ -22,7 +19,6 @@ const ManagerRegistrationAddCustomerMobile = () => {
   const handleAddressChange = (e) => setAddress(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
 
   const handleContinue = (e) => {
     e.preventDefault();
@@ -33,7 +29,6 @@ const ManagerRegistrationAddCustomerMobile = () => {
       city,
       address,
       password,
-      confirmPassword
     };
     sessionStorage.setItem("userData", JSON.stringify(userData));
     navigate("/manager-registration-add-branches");
@@ -50,7 +45,6 @@ const ManagerRegistrationAddCustomerMobile = () => {
       setCity(parsedData.city || "");
       setAddress(parsedData.address || "");
       setPassword(parsedData.password || "");
-      setConfirmPassword(parsedData.confirmPassword || "");
     }
   }, []); // רץ פעם אחת כשהקומפוננט נטען
 

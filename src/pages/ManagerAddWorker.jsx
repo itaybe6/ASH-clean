@@ -10,7 +10,6 @@ const ManagerAddWorker = () => {
     phone: "",
     city: "",
     password: "",
-    verification: "",
   });
 
   const navigate = useNavigate();
@@ -21,12 +20,6 @@ const ManagerAddWorker = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (formData.password !== formData.verification) {
-      alert("❌ הסיסמאות לא תואמות!");
-      return;
-    }
-
     const workerData = {
       fullName: formData.fullName,
       phone: formData.phone,
