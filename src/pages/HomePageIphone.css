@@ -150,9 +150,8 @@
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 2347px);
-  left: calc(50% - 176.5px);
   height: 237px;
-  object-fit: cover;
+  object-fit: fill;
   z-index: 9;
 }
 .homepage-mobile-item {
