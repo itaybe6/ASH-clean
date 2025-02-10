@@ -16,7 +16,6 @@ const ClientContactUs = () => {
     const scrollAnimElements = document.querySelectorAll(
       "[data-animate-on-scroll]"
     );
-    
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {

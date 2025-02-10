@@ -6,11 +6,11 @@ import "./JobOptionMobile.css";
 const JobOptionMobile = ({ branch, worker, bussiness, date, status, id}) => {
   const [imageData, setImageData] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleViewImage = async () => {
     try {
-      // נניח שהנתיב בשרת: GET /worker/cleanings/:id/image
-      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id}/image`);
+      const response = await axios.get(`${apiUrl}/manager/cleanings/${id}/image`);
       if (response.data.image) {
         setImageData(response.data.image);
         setShowModal(true);
@@ -28,7 +28,7 @@ const JobOptionMobile = ({ branch, worker, bussiness, date, status, id}) => {
         const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
         if (!confirmDelete) return;
 
-        const response = await axios.delete(`http://localhost:5000/manager/delete-cleaning/${id}`);
+        const response = await axios.delete(`${apiUrl}/manager/delete-cleaning/${id}`);
 
         if (response.status === 200) {
             alert("הניקיון נמחק בהצלחה!");

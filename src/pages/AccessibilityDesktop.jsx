@@ -27,16 +27,8 @@ const AccessibilityDesktop = () => {
         <div className="vector-parent2">
           <img className="group-child133" alt="" src="/line-1.svg" />
           <input className="group-child134" placeholder="שם מלא" type="text" />
-          <input
-            className="group-child135"
-            placeholder="מספר פלאפון"
-            type="tel"
-          />
-          <input
-            className="group-child136"
-            placeholder="בחירת שירות"
-            type="text"
-          />
+          <input  className="group-child135"  placeholder="מספר פלאפון"  type="tel"  />
+          <input  className="group-child136"  placeholder="בחירת שירות"  type="text"  />
           <button className="rectangle-parent65">
             <div className="group-child137" />
             <b className="b68">שליחה</b>

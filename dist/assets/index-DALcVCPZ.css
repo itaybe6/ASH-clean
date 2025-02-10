@@ -2891,20 +2891,13 @@ top: 0px;
 /* זהו ה־"כרטיס" עצמו: רקע לבן, הצללה, שוליים מעוגלים וכו’. */
 .customeroptionmobile-child {
   background-color: var(--color-white);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-xl);
-  border: 1px solid var(--color-whitesmoke-400);
-
-  /* רוחב קשיח לדוגמה – אפשר להגדיל/להקטין בהתאם */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  border-radius: var(--br-xl);
   width: 300px;
-
-  /* כדי למרכז או לתת מרווח פנימי */
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
-
   font-family: var(--font-heebo);
-  direction: ltr; /* אם התוכן בעברית */
+  direction: ltr; 
 }
 
 /* כל שורה בטבלה (3 שורות) */
@@ -2956,6 +2949,7 @@ top: 0px;
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: var(--font-size-base);
+  font-family: 'Heebo';
 }
 
 /* כפתור עבודות */
@@ -2967,10 +2961,11 @@ top: 0px;
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: var(--font-size-base);
+  font-family: 'Heebo';
 }
 .manager-display-customers-mo-child {
   width: 100%;
-  position: absolute;
+  position: fixed;
   margin: 0 !important;
   right: 0%;
   left: 0%;
@@ -8900,6 +8895,8 @@ top: 0px;
   border-radius: var(--br-xl);
   height: 46px;
   z-index: 3;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .login-mobile-item {
   border: none;
@@ -8915,6 +8912,8 @@ top: 0px;
   border-radius: var(--br-xl);
   height: 46px;
   z-index: 4;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .vector-icon77 {
   position: absolute;
@@ -12917,7 +12916,7 @@ direction: rtl;
   text-align: right !important; 
   direction: rtl !important;  /* יישור לימין */
   z-index: 9 !important;  /* מבטיח שהכותרת תמיד תישאר למעלה */
-  padding: 15px 20px !important; /* ריווח פנימי */
+  padding: 15px 35px !important; /* ריווח פנימי */
   background: transparent !important; /* רקע שקוף */
   box-shadow: none !important; /* מבטל צל */
   height: auto !important; /* מבטיח שהכותרת לא תשתנה בגובה */

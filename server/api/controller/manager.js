@@ -130,14 +130,16 @@ const getCleaningsByBranch = async (req, res) => {
 const getCleaningsByEmployee = async (req, res) => {
     try {
         const { workerId } = req.params;
-
-        // שליפת העובד עם רשימת הנקיונות, כולל פרטי הסניף (שם + כתובת)
         const employee = await Employee.findById(workerId)
             .populate({
                 path: "cleaningSchedules",
                 populate: {
                     path: "branch",
-                    select: "name address", // שליפת שם הסניף והכתובת בלבד
+                    select: "name address customer", 
+                    populate: {
+                        path: 'customer',
+                        select: 'businessName'
+                    }
                 },
             });
 

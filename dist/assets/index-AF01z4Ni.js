@@ -11120,9 +11120,10 @@ function ImageModal({ image, onClose }) {
 const Search = ({ className = "", worker, status, branch, date, bussiness, id: id2 }) => {
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
+  const apiUrl2 = "http://localhost:5000";
   const handleViewImage = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id2}/image`);
+      const response = await axios.get(`${apiUrl2}/manager/cleanings/${id2}/image`);
       if (response.data.image) {
         setImageData(response.data.image);
         setShowModal(true);
@@ -11138,7 +11139,7 @@ const Search = ({ className = "", worker, status, branch, date, bussiness, id: i
     try {
       const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
       if (!confirmDelete) return;
-      const response = await axios.delete(`http://localhost:5000/manager/delete-cleaning/${id2}`);
+      const response = await axios.delete(`${apiUrl2}/manager/delete-cleaning/${id2}`);
       if (response.status === 200) {
         alert("הניקיון נמחק בהצלחה!");
       } else {
@@ -38814,9 +38815,10 @@ const ManagerJobs = () => {
 const JobOptionMobile = ({ branch, worker, bussiness, date, status, id: id2 }) => {
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
+  const apiUrl2 = "http://localhost:5000";
   const handleViewImage = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id2}/image`);
+      const response = await axios.get(`${apiUrl2}/manager/cleanings/${id2}/image`);
       if (response.data.image) {
         setImageData(response.data.image);
         setShowModal(true);
@@ -38832,7 +38834,7 @@ const JobOptionMobile = ({ branch, worker, bussiness, date, status, id: id2 }) =
     try {
       const confirmDelete = window.confirm("האם אתה בטוח שברצונך למחוק את הניקיון?");
       if (!confirmDelete) return;
-      const response = await axios.delete(`http://localhost:5000/manager/delete-cleaning/${id2}`);
+      const response = await axios.delete(`${apiUrl2}/manager/delete-cleaning/${id2}`);
       if (response.status === 200) {
         alert("הניקיון נמחק בהצלחה!");
       } else {
@@ -41939,11 +41941,12 @@ const WorkerJobSucMobile = ({ nameb, address, time, id: id2, setOk }) => {
 };
 const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done }) => {
   const [ok2, setOk] = reactExports.useState(false);
+  const apiUrl2 = "http://localhost:5000";
   const handleCancelCleaning = async () => {
     try {
       const confirmDelete = window.confirm("האם אתה בטוח שברצונך לבטל את העבודה ?");
       if (!confirmDelete) return;
-      const response = await axios.put(`http://localhost:5000/worker/cleanings/${id2}/cancel`);
+      const response = await axios.put(`${apiUrl2}/worker/cleanings/${id2}/cancel`);
       if (response.status === 200) {
         alert("ניקיון עבר למצב - לא נעשה");
         console.log(response);
@@ -42361,7 +42364,6 @@ const WorkerFutureJobsMobile = () => {
         const response = await axios.get(`${apiUrl2}/manager/${id2}/WorkerCleanings`);
         setCleanings(response.data);
         setFilteredCleanings(response.data);
-        console.log(cleanings);
       } catch (error) {
         console.error("שגיאה בשליפת ניקיונות:", error);
       }
@@ -42402,8 +42404,8 @@ const WorkerFutureJobsMobile = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jobs-list-container", children: filteredCleanings.map((job) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       FetureJobWorkerMobile,
       {
-        nameb: job.branch.name,
-        address: job.branch.address,
+        nameb: job.branch.customer.businessName,
+        address: job.branch.name,
         time: dayjs(job.dateTime).format("DD/MM/YYYY"),
         id: job._id,
         done: job.done
@@ -42451,11 +42453,12 @@ const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk }) => {
 };
 const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
   const [ok2, setOk] = reactExports.useState(false);
+  const apiUrl2 = "http://localhost:5000";
   const handleCancelCleaning = async () => {
     try {
       const confirmDelete = window.confirm("האם אתה בטוח שברצונך לבטל את העבודה ?");
       if (!confirmDelete) return;
-      const response = await axios.put(`http://localhost:5000/worker/cleanings/${id2}/cancel`);
+      const response = await axios.put(`${apiUrl2}/worker/cleanings/${id2}/cancel`);
       if (response.status === 200) {
         alert("ניקיון עבר למצב - לא נעשה");
         console.log(response);
@@ -42495,7 +42498,6 @@ const WorkerFutureJobs = () => {
         const response = await axios.get(`${apiUrl2}/manager/${id2}/WorkerCleanings`);
         setCleanings(response.data);
         setFilteredCleanings(response.data);
-        console.log(cleanings);
       } catch (error) {
         console.error("שגיאה בשליפת ניקיונות:", error);
       }
@@ -42523,8 +42525,8 @@ const WorkerFutureJobs = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jobs-list-container2", children: filteredCleanings.length > 0 ? filteredCleanings.map((job) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       FetureJobWorker,
       {
-        nameb: job.branch.name,
-        address: job.branch.address,
+        nameb: job.branch.customer.businessName,
+        address: job.branch.name,
         time: dayjs(job.dateTime).format("DD/MM/YYYY"),
         id: job._id,
         done: job.done
@@ -43088,9 +43090,10 @@ const FutureJobClient = ({ namew, done, bname, date, active = false, id: id2 }) 
   const formattedDate = dayjs(date).format("DD/MM/YYYY");
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
+  const apiUrl2 = "http://localhost:5000";
   const handleViewImage = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id2}/image`);
+      const response = await axios.get(`${apiUrl2}/manager/cleanings/${id2}/image`);
       if (response.data.image) {
         setImageData(response.data.image);
         setShowModal(true);
@@ -43318,9 +43321,10 @@ const FutureJobClientMobile = ({ namew = "", date = "", done = "", active = fals
   const formattedDate = dayjs(date).format("DD/MM/YYYY");
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
+  const apiUrl2 = "http://localhost:5000";
   const handleViewImage = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id2}/image`);
+      const response = await axios.get(`${apiUrl2}/manager/cleanings/${id2}/image`);
       if (response.data.image) {
         setImageData(response.data.image);
         setShowModal(true);
@@ -43590,22 +43594,8 @@ const AccessibilityDesktop = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "vector-parent2", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child133", alt: "", src: "/line-1.svg" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child134", placeholder: "שם מלא", type: "text" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            className: "group-child135",
-            placeholder: "מספר פלאפון",
-            type: "tel"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            className: "group-child136",
-            placeholder: "בחירת שירות",
-            type: "text"
-          }
-        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child135", placeholder: "מספר פלאפון", type: "tel" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child136", placeholder: "בחירת שירות", type: "text" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent65", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child137" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b68", children: "שליחה" })
@@ -44736,4 +44726,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-Jx0w7d6C.js.map
+//# sourceMappingURL=index-AF01z4Ni.js.map

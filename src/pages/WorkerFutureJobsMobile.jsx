@@ -36,7 +36,6 @@ const WorkerFutureJobsMobile = () => {
         const response = await axios.get(`${apiUrl}/manager/${id}/WorkerCleanings`);
         setCleanings(response.data);
         setFilteredCleanings(response.data)
-        console.log(cleanings)
       } catch (error) {
         console.error("שגיאה בשליפת ניקיונות:", error);
       }
@@ -84,13 +83,12 @@ const WorkerFutureJobsMobile = () => {
         />
       </div>
 
-      {/* כאן מפעילים את הרכיב עבור כל עבודה */}
       <div className="jobs-list-container">
         {filteredCleanings.map((job) => (
           <FetureJobWorkerMobile
             key={job._id}
-            nameb={job.branch.name}
-            address={job.branch.address}
+            nameb={job.branch.customer.businessName}
+            address={job.branch.name}
             time={dayjs(job.dateTime).format("DD/MM/YYYY")}
             id={job._id}
             done={job.done}

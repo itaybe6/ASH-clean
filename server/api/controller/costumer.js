@@ -124,8 +124,8 @@ const sendContactEmail = async (req, res) => {
         },
     });
     const mailOptions = {
-        from: "bokobzadir@gmail.com",
-        to: "ash.office14@gmail.com", 
+        from: "itaybenyair99@gmail.com",
+        to: "bokobzadir@gmail.com", 
         subject: "פנייה חדשה מהאתר",
         text: `שם מלא: ${fullName}\nטלפון: ${phoneNumber}\nעיר: ${city}\n\nהודעה:\n${message}`,
     };

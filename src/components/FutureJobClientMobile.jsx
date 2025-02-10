@@ -8,11 +8,12 @@ const FutureJobClientMobile = ({namew = "",date = "",done = "",active = false, i
   const formattedDate = dayjs(date).format("DD/MM/YYYY");
   const [imageData, setImageData] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleViewImage = async () => {
     try {
       // נניח שהנתיב בשרת: GET /worker/cleanings/:id/image
-      const response = await axios.get(`http://localhost:5000/manager/cleanings/${id}/image`);
+      const response = await axios.get(`${apiUrl}/manager/cleanings/${id}/image`);
       if (response.data.image) {
         setImageData(response.data.image);
         setShowModal(true);

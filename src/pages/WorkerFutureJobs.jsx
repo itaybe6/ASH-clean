@@ -24,7 +24,6 @@ const WorkerFutureJobs = () => {
         const response = await axios.get(`${apiUrl}/manager/${id}/WorkerCleanings`);
         setCleanings(response.data);
         setFilteredCleanings(response.data)
-        console.log(cleanings)
       } catch (error) {
         console.error("שגיאה בשליפת ניקיונות:", error);
       }
@@ -38,21 +37,14 @@ const WorkerFutureJobs = () => {
   useEffect(() => {
     const filterCleanings = () => {
       let filtered = [...cleanings];
-
-      // מסנן לפי מצב עבודה (בוצע / לא בוצע)
       filtered = filtered.filter(cleaning => Boolean(cleaning.done) === Boolean(active));
-
-      // מסנן לפי תאריך אם נבחר תאריך מסוים
       if (selectedDate) {
         const formattedSelectedDate = dayjs(selectedDate).format("YYYY-MM-DD");
         filtered = filtered.filter(cleaning =>
           dayjs(cleaning.dateTime).format("YYYY-MM-DD") === formattedSelectedDate
         );
       }
-
-      // **ממיין את הרשימה לפי תאריך מהקרוב לרחוק**
       filtered.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
-
       setFilteredCleanings(filtered);
     };
 
@@ -75,8 +67,8 @@ const WorkerFutureJobs = () => {
           filteredCleanings.map((job) => (
             <FetureJobWorker
               key={job._id}
-              nameb={job.branch.name}
-              address={job.branch.address}
+              nameb={job.branch.customer.businessName}
+              address={job.branch.name}
               time={dayjs(job.dateTime).format("DD/MM/YYYY")}
               id={job._id}
               done={job.done}

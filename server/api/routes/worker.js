@@ -7,7 +7,7 @@ const { getCleaningsByEmployee, getAllCustomers,
      } = require('../controller/worker');
 
 
-const upload = multer(); // מחסן זמני בזיכרון, יש גם אופציות לאחסון בדיסק
+const upload = multer(); 
 
 const { isAuthenticated } = require('../middleware/authMiddleware');
 
@@ -16,16 +16,9 @@ router.put('/cleanings/:cleaningId', upload.single('image'), updateCleaningWithI
 
 
 
-
-
-
-
-
-// 1 fecth cleaning for worker
 router.get('/:employeeId/cleanings', isAuthenticated, getCleaningsByEmployee);
 
 
-// 3 worker upload img and change the status of the blecmimg
 
 
 // 4 get all the customers

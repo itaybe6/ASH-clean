@@ -5,13 +5,14 @@ import axios from "axios";
 
 const FetureJobWorker = ({ nameb, address,time,id , done}) => {
   const [ok,setOk] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleCancelCleaning = async () => {
     try {
         const confirmDelete = window.confirm("האם אתה בטוח שברצונך לבטל את העבודה ?");
         if (!confirmDelete) return;
 
-        const response = await axios.put(`http://localhost:5000/worker/cleanings/${id}/cancel`);
+        const response = await axios.put(`${apiUrl}/worker/cleanings/${id}/cancel`);
 
         if (response.status === 200) {
             alert("ניקיון עבר למצב - לא נעשה");
