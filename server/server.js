@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const path = require('path'); 
+const path = require('path');
 const authRoutes = require('./api/routes/auth');
 const costumerRoutes = require('./api/routes/costumer');
 const workerRoutes = require('./api/routes/worker');
@@ -23,7 +23,7 @@ app.use('/auth', authRoutes);
 app.use('/manager', managerRoutes);
 app.use('/costumer', costumerRoutes);
 app.use('/worker', workerRoutes);
-const clientBuildPath = path.join(__dirname, '../dist'); 
+const clientBuildPath = path.join(__dirname, '../dist');
 app.use(express.static(clientBuildPath));
 app.get('*', (req, res) => {
   res.sendFile(path.join(clientBuildPath, 'index.html'));

@@ -10719,7 +10719,7 @@ const ManagerRegistrationAddB = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-registration-add-b-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "vector-parent1", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon44", alt: "", src: "/vector19.svg" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b46", children: "הוספת משתמש - לקוח" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div102", children: "אנא מלא את הפרטים למטה כדי להוסיף סניף" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div102", children: "אנא מלא את הפרטים למטה   " })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent18", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent19", children: [
@@ -10958,6 +10958,12 @@ const HomePageIphone = () => {
       alert("שגיאה בחיבור לשרת");
     }
   };
+  const scrollToSection = (id2) => {
+    const element = document.getElementById(id2);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "homepage-mobile", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "homepage-mobile-child", alt: "", src: "/group-356.svg" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "test-02-1-icon", alt: "", src: "/test02-1@2x.png" }),
@@ -10973,7 +10979,7 @@ const HomePageIphone = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b1", children: "ברמה אחרת!" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div", children: "כשזה מגיע לניקיון, אנחנו לא משאירים סימן." }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b2", children: "לחץ כאן לניקיון מושלם!" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper", onClick: () => scrollToSection("lead1"), children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b2", children: "לחץ כאן לניקיון מושלם!" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
@@ -10990,6 +10996,7 @@ const HomePageIphone = () => {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div1", children: "השאירו פרטים ונחזיר לכם את הברק!" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-child", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead1" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-item", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent", onClick: sendEmail, children: [
@@ -11004,6 +11011,7 @@ const HomePageIphone = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p", children: "בדרך אליכם!" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div1", children: "השאירו פרטים ונחזיר לכם את הברק!" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead2" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-child", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-item", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "component-inner", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
@@ -11021,7 +11029,7 @@ const HomePageIphone = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon4", alt: "", src: "/--1@2x.png" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "jack-kuba-1", alt: "", src: "/jack-kuba-1@2x.png" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-container", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-container", onClick: () => scrollToSection("lead2"), children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "frame-inner" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b7", children: "לחץ כאן לניקיון מושלם!" })
     ] }),
@@ -11036,7 +11044,7 @@ const HomePageIphone = () => {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div5", children: 'עש - ניקיון ואחזקה בע"מ, שהוקמה בשנת 2021, מובילה את תחום ניקוי חלונות ושלטים בישראל עם שירות מקצועי, חדשני ויעיל בפריסה ארצית. אנו עובדים בשיתוף פעולה עם רשתות קמעונאיות מובילות בפריסה ארצית, ומציעים מגוון שירותים כמו ניקיון חלונות ראווה, ניקוי לוחות סולריים, חיפוי מבנים, ניקוי בגובה (סנפלינג ובמות הרמה) וניקוי בשיטת אוסמוזה הפוכה. עם מעל 1000 לקוחות מרוצים, צוות מיומן ושירות אדיב וזמין, אנו דואגים שהחלונות והשלטים שלכם יבריקו וישדרו מקצועיות ויוקרה – כי "חלון נקי הוא הראי של העסק!"' })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "frame", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b2", children: "לחץ כאן לניקיון מושלם!" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "frame", onClick: () => scrollToSection("lead3"), children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b2", children: "לחץ כאן לניקיון מושלם!" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "homepage-mobile-inner" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rectangle-div" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon5", alt: "", src: "/-04-1@2x.png" }),
@@ -11104,6 +11112,7 @@ const HomePageIphone = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b4", children: "שליחה" })
       ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead3" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "line-icon", alt: "", src: "/line-2.svg" })
     ] })
   ] });
@@ -39591,7 +39600,7 @@ const ManagerRegistrationAddCustomer = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-registration-add-c-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "vector-group", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon34", alt: "", src: "/vector19.svg" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b40", children: "הוספת משתמש - לקוח" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div86", children: "אנא מלא את הפרטים למטה כדי להוסיף סניף" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div86", children: "אנא מלא את הפרטים למטה" })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39792,7 +39801,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-registration-add-c-child1" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-registration-add-c-inner1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent24", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b44", children: "הוספת משתמש - לקוח" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div9333", children: "אנא מלא את הפרטים למטה כדי להוסיף עובד" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div9333", children: "אנא מלא את הפרטים למטה" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child60", alt: "", src: "/group-404.svg" })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon21", alt: "", src: "/-02-11@2x.png" }),
@@ -39924,12 +39933,12 @@ const ManagerEditProfileIphone = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-edit-profile-mobil", children: [
     displayMenu ? /* @__PURE__ */ jsxRuntimeExports.jsx(MobileMenuManager, { isOpen: displayMenu, closeMenu }) : null,
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-edit-profile-mobil-child" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div106", children: "הגדרות" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div1065", children: "הגדרות" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div107", children: "לפתיחת סניפים נוספים יש לפנות למנהל האתר" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "component-parent", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent416", onClick: handleUpdateDetails, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "component-child18" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b50", children: "עדכן פרטים" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b5059", children: "עדכן פרטים" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "input",
@@ -40034,10 +40043,8 @@ const ManagerRegistrationAddBranchesMobile = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-registration-add-b1", children: [
     displayMenu ? /* @__PURE__ */ jsxRuntimeExports.jsx(MobileMenuManager, { isOpen: displayMenu, closeMenu }) : null,
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-registration-add-b-child1" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div109", children: "שלום (שם מנהל)" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div110", children: "התחברות אחרונה 24/02/2025 בשעה 14:53" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b51", children: "הוספת משתמש - לקוח" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div111", children: "אנא מלא את הפרטים למטה כדי להוסיף עובד" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div111", children: "אנא מלא את הפרטים למטה" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
@@ -43777,6 +43784,12 @@ const HomePage = () => {
   const access = () => {
     navigate("/accessibility");
   };
+  const scrollToSection = (id2) => {
+    const element = document.getElementById(id2);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "homepage", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "test-02-3-wrapper", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "test-02-3-icon", alt: "", src: "/test02-3@2x.png" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "test-02-4-wrapper", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "test-02-4-icon", alt: "", src: "/test02-4@2x.png" }) }),
@@ -43795,15 +43808,15 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b72", children: `ניקיון חלונות ` }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b73", children: "ברמה אחרת!" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent70", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent70", onClick: () => scrollToSection("lead1"), children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "frame-child6" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b74", children: "לחץ כאן לניקיון מושלם!" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent45", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: access, children: "הצהרת נגישות" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", children: "לקוחות ממליצים" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", children: "אודות" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", children: "שירותים" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("testimonials"), children: "לקוחות ממליצים" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("about"), children: "אודות" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "button", onClick: () => scrollToSection("services"), children: "שירותים" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper69", onClick: toLogin, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon78", alt: "", src: "/vector27.svg" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "homepage-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent35", onClick: () => window.location.href = "tel:+972527488779", children: [
@@ -43831,12 +43844,13 @@ const HomePage = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "homepage-child2" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div202", children: "עש ניקיון ואחזקה בע”מ מתמחה בפתרונות ניקיון לעסקים, עם דגש על איכות, שירות מקצועי ותוצאות ללא פשרות. אנו גאים לעבוד עם רשתות קמעונאיות בפריסה ארצית ולהציע שירותים מותאמים אישית, כמו ניקוי חלונות, שילוט והסרת מדבקות – הכל כדי שהעסק שלכם יבריק וייראה במיטבו." }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b75", children: "מה אנחנו עושים?" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent71", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent71", onClick: () => scrollToSection("lead2"), children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child150" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b76", children: "לחץ כאן לניקיון מושלם!" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "homepage-child3" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent36", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "services" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent72", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child151" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b77", children: "ניקיון חלונות ראווה" }),
@@ -43883,8 +43897,9 @@ const HomePage = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "ברוכים הבאים" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p25", children: 'לע.ש - ניקיון ואחזקה בע"מ' })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "about" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div210", children: 'עש - ניקיון ואחזקה בע"מ, שהוקמה בשנת 2021, מובילה את תחום ניקוי חלונות ושלטים בישראל עם שירות מקצועי, חדשני ויעיל בפריסה ארצית. אנו עובדים בשיתוף פעולה עם רשתות קמעונאיות מובילות בפריסה ארצית, ומציעים מגוון שירותים כמו ניקיון חלונות ראווה, ניקוי לוחות סולריים, חיפוי מבנים, ניקוי בגובה (סנפלינג ובמות הרמה) וניקוי בשיטת אוסמוזה הפוכה. עם מעל 1000 לקוחות מרוצים, צוות מיומן ושירות אדיב וזמין, אנו דואגים שהחלונות והשלטים שלכם יבריקו וישדרו מקצועיות ויוקרה – כי "חלון נקי הוא הראי של העסק!"' }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent78", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent78", onClick: () => scrollToSection("lead3"), children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child163" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b83", children: "לחץ כאן לניקיון מושלם!" })
     ] }),
@@ -43898,12 +43913,14 @@ const HomePage = () => {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "homepage-child4" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "testimonials" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Component2, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mask-group-icon1", alt: "", src: "/mask-group@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon50", alt: "", src: "/-04-1-1@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent37", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "component-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child164" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper70", onClick: sendEmail, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon79", alt: "", src: "/vector28.svg" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead1" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child165", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child166", placeholder: "בחירת שירות", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child167", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
@@ -43913,7 +43930,10 @@ const HomePage = () => {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent38", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rectangle-frame", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child168" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-frame", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child168" })
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent48", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { className: "b84", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p23", children: "הניקיון המושלם" }),
@@ -43931,7 +43951,10 @@ const HomePage = () => {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent39", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "instance-wrapper", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child174" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "instance-wrapper", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "lead3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child174" })
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent40", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper71", onClick: sendEmail, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon80", alt: "", src: "/vector28.svg" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child175", pplaceholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
@@ -44301,7 +44324,19 @@ const ManagerAddJobToWorker = () => {
   const [selectedBranch, setSelectedBranch] = reactExports.useState(null);
   const [selectedDate, setSelectedDate] = reactExports.useState(null);
   const apiUrl2 = "http://localhost:5000";
+  const [employeeName, setEmployeeName] = reactExports.useState("");
   const { id: id2 } = useParams();
+  reactExports.useEffect(() => {
+    const fetchEmployee = async () => {
+      try {
+        const response = await axios.get(`${apiUrl2}/worker/${id2}/details`);
+        setEmployeeName(response.data.fullName);
+      } catch (error) {
+        console.error("Error fetching employee:", error);
+      }
+    };
+    fetchEmployee();
+  }, [id2]);
   reactExports.useEffect(() => {
     const fetchBusinesses = async () => {
       try {
@@ -44351,7 +44386,10 @@ const ManagerAddJobToWorker = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-add-job-to-worker", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "manager-add-job-to-worker-child" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "form-container", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "form-title", children: "הוספת עבודה" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "form-title", children: [
+        "הוספת עבודה ל",
+        employeeName.fullName
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "form-subtitle", children: "מלא את כל הפרטים כדי להוסיף עבודה" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "input-row", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -44392,6 +44430,7 @@ const ManagerAddJobToWorkerMobile = () => {
   const [selectedDate, setSelectedDate] = reactExports.useState(null);
   const [displayMenu, setDisplayMenu] = reactExports.useState(false);
   const apiUrl2 = "http://localhost:5000";
+  const [employeeName, setEmployeeName] = reactExports.useState("");
   const { id: id2 } = useParams();
   reactExports.useEffect(() => {
     const fetchBusinesses = async () => {
@@ -44420,6 +44459,17 @@ const ManagerAddJobToWorkerMobile = () => {
       setBranches([]);
     }
   }, [selectedBusiness]);
+  reactExports.useEffect(() => {
+    const fetchEmployee = async () => {
+      try {
+        const response = await axios.get(`${apiUrl2}/worker/${id2}/details`);
+        setEmployeeName(response.data);
+      } catch (error) {
+        console.error("Error fetching employee:", error);
+      }
+    };
+    fetchEmployee();
+  }, [id2]);
   const menu = () => {
     setDisplayMenu(!displayMenu);
   };
@@ -44451,7 +44501,10 @@ const ManagerAddJobToWorkerMobile = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon21", alt: "", src: "/-02-11@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper31", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon38", alt: "", src: "/vector10.svg", onClick: menu }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent25", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div92", children: `הוספת עבודה ` }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div92", children: [
+        "הוספת עבודה ל",
+        employeeName.fullName
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div93", children: "מלא את כל הפרטים כדי להוסיף עבודה" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-container", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "input-row5", children: [
@@ -44677,4 +44730,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-mHdonWY-.js.map
+//# sourceMappingURL=index-D6OpF3fx.js.map

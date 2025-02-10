@@ -30,7 +30,6 @@ const WorkerJobSucMobile = ({ nameb, address, time, id , setOk}) => {
   };
   return (
     <div className="worker-job-suc-mobile">
-      {/* כפתור סגירה */}
       <button className="close-button" onClick={() => setOk(false)}>
         ✖
       </button>

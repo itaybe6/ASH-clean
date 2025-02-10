@@ -15,6 +15,7 @@ const ManagerAddJobToWorkerMobile = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [displayMenu, setDisplayMenu] = useState(false)
   const apiUrl = import.meta.env.VITE_API_URL;
+  const [employeeName, setEmployeeName] = useState('');
 
   const { id } = useParams()
   useEffect(() => {
@@ -48,6 +49,19 @@ const ManagerAddJobToWorkerMobile = () => {
       setBranches([]);
     }
   }, [selectedBusiness]);
+
+  useEffect(() => {
+    const fetchEmployee = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/worker/${id}/details`);
+        setEmployeeName(response.data);
+      } catch (error) {
+        console.error('Error fetching employee:', error);
+      }
+    };
+
+    fetchEmployee();
+  }, [id]);
 
   const menu = () => {
     setDisplayMenu(!displayMenu)
@@ -85,10 +99,10 @@ const ManagerAddJobToWorkerMobile = () => {
       <div className="manager-add-job-to-worker-mo-child" />
       <img className="icon21" alt="" src="/-02-11@2x.png" />
       <button className="vector-wrapper31">
-        <img className="vector-icon38" alt="" src="/vector10.svg" onClick={menu}/>
+        <img className="vector-icon38" alt="" src="/vector10.svg" onClick={menu} />
       </button>
       <div className="parent25">
-        <div className="div92">{`הוספת עבודה `}</div>
+        <div className="div92">הוספת עבודה ל{employeeName.fullName}</div>
         <div className="div93">מלא את כל הפרטים כדי להוסיף עבודה</div>
       </div>
       <div className="form-container">

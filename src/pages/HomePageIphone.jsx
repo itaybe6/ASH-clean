@@ -31,7 +31,12 @@ const HomePageIphone = () => {
       alert('שגיאה בחיבור לשרת');
     }
   };
-
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="homepage-mobile">
       <img className="homepage-mobile-child" alt="" src="/group-356.svg" />
@@ -48,7 +53,7 @@ const HomePageIphone = () => {
         <b className="b1">ברמה אחרת!</b>
       </div>
       <div className="div">כשזה מגיע לניקיון, אנחנו לא משאירים סימן.</div>
-      <button className="wrapper">
+      <button className="wrapper" onClick={() => scrollToSection('lead1')}>
         <b className="b2">לחץ כאן לניקיון מושלם!</b>
       </button>
       <img
@@ -65,6 +70,7 @@ const HomePageIphone = () => {
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
   
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}/>
+        <section id="lead1"></section>
         <input className="component-item"  placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         <input className="component-inner"  placeholder="בחירת שירות"  type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <button className="rectangle-parent" onClick={sendEmail}>
@@ -79,6 +85,7 @@ const HomePageIphone = () => {
           <p className="p">בדרך אליכם!</p>
         </b>
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
+        <section id="lead2"></section>
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
@@ -96,7 +103,7 @@ const HomePageIphone = () => {
         <img className="icon4" alt="" src="/--1@2x.png" />
         <img className="jack-kuba-1" alt="" src="/jack-kuba-1@2x.png" />
       </div>
-      <button className="rectangle-container">
+      <button className="rectangle-container" onClick={() => scrollToSection('lead2')}>
         <div className="frame-inner" />
         <b className="b7">לחץ כאן לניקיון מושלם!</b>
       </button>
@@ -125,7 +132,7 @@ const HomePageIphone = () => {
           העסק!"
         </div>
       </div>
-      <button className="frame">
+      <button className="frame" onClick={() => scrollToSection('lead3')}>
         <b className="b2">לחץ כאן לניקיון מושלם!</b>
       </button>
       <div className="homepage-mobile-inner" />
@@ -215,6 +222,7 @@ const HomePageIphone = () => {
           <div className="group-child" />
           <b className="b4">שליחה</b>
         </button>
+        <section id="lead3"></section>
         <img className="line-icon" alt="" src="/line-2.svg" />
       </div>
     </div>

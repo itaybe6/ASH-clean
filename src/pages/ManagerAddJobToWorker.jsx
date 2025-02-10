@@ -12,8 +12,23 @@ const ManagerAddJobToWorker = () => {
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const apiUrl = import.meta.env.VITE_API_URL;
+  const [employeeName, setEmployeeName] = useState('');
 
   const { id } = useParams();
+
+  useEffect(() => {
+    const fetchEmployee = async () => {
+        try {
+            const response = await axios.get(`${apiUrl}/worker/${id}/details`);
+            setEmployeeName(response.data.fullName);
+        } catch (error) {
+            console.error('Error fetching employee:', error);
+        }
+    };
+
+    fetchEmployee();
+}, [id]);
+
   useEffect(() => {
     const fetchBusinesses = async () => {
       try {
@@ -74,7 +89,7 @@ const ManagerAddJobToWorker = () => {
 
         {/* אזור הוספת העבודה */}
         <div className="form-container">
-          <h3 className="form-title">הוספת עבודה</h3>
+          <h3 className="form-title">הוספת עבודה ל{employeeName.fullName}</h3>
           <p className="form-subtitle">מלא את כל הפרטים כדי להוסיף עבודה</p>
 
           <div className="input-row">

@@ -52,6 +52,12 @@ const HomePage = () => {
 
   const access = () => { navigate('/accessibility') }
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="homepage">
       <div className="test-02-3-wrapper">
@@ -79,15 +85,15 @@ const HomePage = () => {
         <b className="b72">{`ניקיון חלונות `}</b>
         <b className="b73">ברמה אחרת!</b>
       </div>
-      <button className="rectangle-parent70">
+      <button className="rectangle-parent70" onClick={() => scrollToSection('lead1')}>
         <div className="frame-child6" />
         <b className="b74">לחץ כאן לניקיון מושלם!</b>
       </button>
       <div className="parent45">
         <button className="button" onClick={access}>הצהרת נגישות</button>
-        <button className="button">לקוחות ממליצים</button>
-        <button className="button">אודות</button>
-        <button className="button">שירותים</button>
+        <button className="button" onClick={() => scrollToSection('testimonials')} >לקוחות ממליצים</button>
+        <button className="button" onClick={() => scrollToSection('about')}>אודות</button>
+        <button className="button" onClick={() => scrollToSection('services')}>שירותים</button>
       </div>
       <button className="vector-wrapper69" onClick={toLogin}>
         <img className="vector-icon78" alt="" src="/vector27.svg" />
@@ -123,12 +129,13 @@ const HomePage = () => {
         – הכל כדי שהעסק שלכם יבריק וייראה במיטבו.
       </div>
       <b className="b75">מה אנחנו עושים?</b>
-      <button className="rectangle-parent71">
+      <button className="rectangle-parent71" onClick={() => scrollToSection('lead2')} >
         <div className="group-child150" />
         <b className="b76">לחץ כאן לניקיון מושלם!</b>
       </button>
       <div className="homepage-child3" />
       <div className="group-parent36">
+        <section id="services"></section>
         <div className="rectangle-parent72">
           <div className="group-child151" />
           <b className="b77">ניקיון חלונות ראווה</b>
@@ -189,6 +196,7 @@ const HomePage = () => {
         <p className="p23">ברוכים הבאים</p>
         <p className="p25">לע.ש - ניקיון ואחזקה בע"מ</p>
       </div>
+      <section id="about"></section>
       <div className="div210">
         עש - ניקיון ואחזקה בע"מ, שהוקמה בשנת 2021, מובילה את תחום ניקוי חלונות
         ושלטים בישראל עם שירות מקצועי, חדשני ויעיל בפריסה ארצית. אנו עובדים
@@ -198,7 +206,7 @@ const HomePage = () => {
         לקוחות מרוצים, צוות מיומן ושירות אדיב וזמין, אנו דואגים שהחלונות והשלטים
         שלכם יבריקו וישדרו מקצועיות ויוקרה – כי "חלון נקי הוא הראי של העסק!"
       </div>
-      <button className="rectangle-parent78">
+      <button className="rectangle-parent78" onClick={() => scrollToSection('lead3')}>
         <div className="group-child163" />
         <b className="b83">לחץ כאן לניקיון מושלם!</b>
       </button>
@@ -214,6 +222,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="homepage-child4" />
+      <section id="testimonials"></section>
       <Component2 />
       <img className="mask-group-icon1" alt="" src="/mask-group@2x.png" />
       <img className="icon50" alt="" src="/-04-1-1@2x.png" />
@@ -224,6 +233,7 @@ const HomePage = () => {
         <button className="vector-wrapper70" onClick={sendEmail}>
           <img className="vector-icon79" alt="" src="/vector28.svg" />
         </button>
+        <section id="lead1"></section>
         <input className="group-child165" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         <input className="group-child166" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <input className="group-child167" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
@@ -232,11 +242,15 @@ const HomePage = () => {
           <p className="p23">בדרך אליכם!</p>
         </div>
       </div>
+
       <div className="group-parent38">
         <div className="rectangle-frame">
+        <section id="lead2"></section>
+
           <div className="group-child168" />
         </div>
         <div className="parent48">
+
           <b className="b84">
             <p className="p23">הניקיון המושלם</p>
             <p className="p23">בדרך אליכם!</p>
@@ -244,7 +258,7 @@ const HomePage = () => {
           <img className="group-child169" alt="" src="/line-2.svg" />
           <input className="group-child170" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           <input className="group-child171" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-          <input  className="group-child172"  placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)}  />
+          <input className="group-child172" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
           <button className="rectangle-parent79" onClick={sendEmail} >
             <div className="group-child173" />
             <b className="b85">שליחה</b>
@@ -254,14 +268,15 @@ const HomePage = () => {
       </div>
       <div className="group-parent39">
         <div className="instance-wrapper">
+        <section id="lead3"></section>
           <div className="group-child174" />
         </div>
         <div className="group-parent40">
           <button className="vector-wrapper71" onClick={sendEmail}>
             <img className="vector-icon80" alt="" src="/vector28.svg" />
           </button>
-          <input  className="group-child175"  pplaceholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}  />
-          <input  className="group-child176"  placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)}  />
+          <input className="group-child175" pplaceholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+          <input className="group-child176" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
           <input className="group-child177" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           <div className="div215">
             <p className="p23">הניקיון המושלם</p>

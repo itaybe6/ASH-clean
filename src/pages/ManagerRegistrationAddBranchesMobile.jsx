@@ -63,10 +63,8 @@ const ManagerRegistrationAddBranchesMobile = () => {
     <div className="manager-registration-add-b1">
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
       <div className="manager-registration-add-b-child1" />
-      <div className="div109">שלום (שם מנהל)</div>
-      <div className="div110">התחברות אחרונה 24/02/2025 בשעה 14:53</div>
       <b className="b51">הוספת משתמש - לקוח</b>
-      <div className="div111">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
+      <div className="div111">אנא מלא את הפרטים למטה</div>
       <img
         className="icbaseline-person-icon1"
         alt=""

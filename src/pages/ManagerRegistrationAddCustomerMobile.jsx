@@ -64,7 +64,7 @@ const ManagerRegistrationAddCustomerMobile = () => {
       <div className="manager-registration-add-c-inner1">
         <div className="parent24">
           <b className="b44">הוספת משתמש - לקוח</b>
-          <div className="div9333">אנא מלא את הפרטים למטה כדי להוסיף עובד</div>
+          <div className="div9333">אנא מלא את הפרטים למטה</div>
           <img className="group-child60" alt="" src="/group-404.svg" />
         </div>
       </div>

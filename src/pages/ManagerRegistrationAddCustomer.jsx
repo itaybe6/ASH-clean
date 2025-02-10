@@ -59,7 +59,7 @@ const ManagerRegistrationAddCustomer = () => {
         <div className="vector-group">
           <img className="vector-icon34" alt="" src="/vector19.svg" />
           <b className="b40">הוספת משתמש - לקוח</b>
-          <div className="div86">אנא מלא את הפרטים למטה כדי להוסיף סניף</div>
+          <div className="div86">אנא מלא את הפרטים למטה</div>
         </div>
       </div>
       <div className="group-parent12">

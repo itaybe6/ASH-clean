@@ -66,7 +66,7 @@ const ManagerRegistrationAddB = () => {
         <div className="vector-parent1">
           <img className="vector-icon44" alt="" src="/vector19.svg" />
           <b className="b46">הוספת משתמש - לקוח</b>
-          <div className="div102">אנא מלא את הפרטים למטה כדי להוסיף סניף</div>
+          <div className="div102">אנא מלא את הפרטים למטה   </div>
         </div>
       </div>
     
