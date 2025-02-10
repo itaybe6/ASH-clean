@@ -1,9 +1,11 @@
 import Component2 from "../components/Component2";
 import "./HomePageDesktop.css";
 import { useNavigate } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext ,useEffect} from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
+import { useLocation } from 'react-router-dom';
+
 import axios from "axios";
 
 const HomePage = () => {
@@ -13,6 +15,7 @@ const HomePage = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [service, setService] = useState('');
   const apiUrl = import.meta.env.VITE_API_URL;
+  const location = useLocation();
 
 
   const toLogin = () => {
@@ -58,6 +61,14 @@ const HomePage = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  useEffect(() => {
+    if (location.hash) {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}, [location]);
   return (
     <div className="homepage">
       <div className="test-02-3-wrapper">

@@ -99,14 +99,14 @@ const AccessibilityDesktop = () => {
       </div>
       <img className="icon41" alt="" src="/-02-15@2x.png" />
       <div className="grouping1447">
-      <button className="wrapper16">
-        <div className="div191">אודות</div>
+      <button className="wrapper16" onClick={() => window.location.href = '/#about'}>
+        <div className="div191" >אודות</div>
       </button>
-      <button className="wrapper17">
+      <button className="wrapper17" onClick={() => window.location.href = '/#testimonials'}>
         <div className="div192">לקוחות ממליצים</div>
       </button>
-      <button className="wrapper18">
-        <div className="div191">שירותים</div>
+      <button className="wrapper18" onClick={() => window.location.href = '/#services'}>
+        <div className="div191" >שירותים</div>
       </button>
       <button className="wrapper19">
         <div className="div194">הצהרת נגישות</div>

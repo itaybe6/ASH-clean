@@ -23,7 +23,6 @@ const ManagerAddJobToWorkerMobile = () => {
       try {
         const response = await axios.get(`${apiUrl}/manager/getAll`);
         setBusinesses(response.data);
-        console.log(businesses)
 
       } catch (error) {
         console.error("שגיאה בשליפת עסקים:", error);

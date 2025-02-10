@@ -64,15 +64,15 @@ const HomePageIphone = () => {
       <div className="homepage-mobile-item" />
       <div className="group">
         <b className="b3">
+          <section id="lead1"></section>
           <p className="p">הניקיון המושלם</p>
           <p className="p">בדרך אליכם!</p>
         </b>
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
-  
-        <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}/>
-        <section id="lead1"></section>
-        <input className="component-item"  placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-        <input className="component-inner"  placeholder="בחירת שירות"  type="text" value={service} onChange={(e) => setService(e.target.value)} />
+
+        <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+        <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+        <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <button className="rectangle-parent" onClick={sendEmail}>
           <div className="group-child" />
           <b className="b4">שליחה</b>
@@ -80,12 +80,12 @@ const HomePageIphone = () => {
         <img className="line-icon" alt="" src="/line-2.svg" />
       </div>
       <div className="container">
+      <section id="lead2"></section>
         <b className="b3">
           <p className="p">הניקיון המושלם</p>
           <p className="p">בדרך אליכם!</p>
         </b>
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
-        <section id="lead2"></section>
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
@@ -216,8 +216,8 @@ const HomePageIphone = () => {
         </b>
         <div className="div1">השאירו פרטים ונחזיר לכם את הברק!</div>
         <input className="component-child" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
-        <input  className="component-item"  placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}  />
-        <input  className="component-inner"  placeholder="בחירת שירות"  type="text" value={service} onChange={(e) => setService(e.target.value)} />
+        <input className="component-item" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+        <input className="component-inner" placeholder="בחירת שירות" type="text" value={service} onChange={(e) => setService(e.target.value)} />
         <button className="rectangle-parent" onClick={sendEmail}>
           <div className="group-child" />
           <b className="b4">שליחה</b>
