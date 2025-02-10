@@ -5540,63 +5540,6 @@ top: 0px;
     font-family: 'Heebo';
   }
 }
-/* ===== מאפיינים כלליים של הכרטיס ===== */
-.feturejobworkermobile {
-  position: relative; /* מוודא שהכפתור בפנים יכול להיות absolute */
-  width: 100%; /* מתפרס בצורה רספונסיבית */
-  max-width: 400px; /* מונע התרחבות יתר במסכים גדולים */
-  min-width: 300px;
-  margin: 8px auto; /* מרווח בין הכרטיסים ומרכז אותם */
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px; /* מעגל פינות */
-  background-color: #fff; /* רקע לבן */
-  padding: 1.5rem 1rem; /* רווח פנימי */
-  direction: rtl; /* כתיבה מימין לשמאל */
-  text-align: right; /* מיושר לימין */
-  font-family: "Heebo", sans-serif; 
-  color: #333;
-  display: block; /* מוודא שהוא לא נעלם */
-  min-height: 120px; /* גובה מינימלי כדי שהוא לא ייעלם */
-  
-}
-
-/* ===== הכפתור הכתום (ממוקם באופן אבסולוטי בפינת הכרטיס) ===== */
-.exec-button {
-  position: absolute;
-  top: 45px;        /* המרחק מהחלק העליון של הכרטיס */
-  left: 15px;       /* בפינה השמאלית (אם רוצים בפינה הימנית, החליפו ל right:10px) */
-  background-color: #f97316; /* או var(--color-darkorange-200) */
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 0.4rem 0.8rem;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  font-size: 0.9rem;
-  line-height: 1.;
-  font-family: 'Heebo';
-  width: 80px;
-
-}
-
-/* ===== כותרת העבודה (bold, גדול) ===== */
-.title {
-  font-size: 1rem;    /* מתאים לכותרת בינונית */
-  font-weight: bold;
-  color: #000;        /* שחור */
-}
-
-/* ===== כתובת העבודה (קטן יותר) ===== */
-.address {
-  font-size: 0.9rem;
-  color: #555; 
-}
-
-/* ===== שעת/תאריך העבודה (עוד יותר קטן) ===== */
-.time {
-  font-size: 0.85rem;
-  color: #777;
-}
 /* Overlay שמכסה את כל המסך */
 
 /* חלון המודאל */
@@ -5686,7 +5629,110 @@ top: 0px;
     transform: scale(1);
   }
 }
-.mobile-menu-worker-child {
+/* ===== מאפיינים כלליים של הכרטיס ===== */
+.feturejobworkermobile {
+  position: relative;
+  /* מוודא שהכפתור בפנים יכול להיות absolute */
+  width: 100%;
+  /* מתפרס בצורה רספונסיבית */
+  max-width: 400px;
+  /* מונע התרחבות יתר במסכים גדולים */
+  min-width: 300px;
+  margin: 8px auto;
+  /* מרווח בין הכרטיסים ומרכז אותם */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  /* מעגל פינות */
+  background-color: #fff;
+  /* רקע לבן */
+  padding: 1.5rem 1rem;
+  /* רווח פנימי */
+  direction: rtl;
+  /* כתיבה מימין לשמאל */
+  text-align: right;
+  /* מיושר לימין */
+  font-family: "Heebo", sans-serif;
+  color: #333;
+  display: block;
+  /* מוודא שהוא לא נעלם */
+  min-height: 120px;
+  /* גובה מינימלי כדי שהוא לא ייעלם */
+
+}
+
+.exec-button {
+  position: absolute;
+  top: 45px;
+  left: 15px;
+  background-color: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.;
+  font-family: 'Heebo';
+  width: 80px;
+
+}
+
+.exec-button1 {
+  position: absolute;
+  top: 22px;
+  left: 15px;
+  background-color: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.;
+  font-family: 'Heebo';
+  width: 80px;
+}
+.exec-button2 {
+  position: absolute;
+  top: 65px;
+  left: 15px;
+  background-color: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.;
+  font-family: 'Heebo';
+  width: 80px;
+
+}
+
+/* ===== כותרת העבודה (bold, גדול) ===== */
+.title {
+  font-size: 1rem;
+  /* מתאים לכותרת בינונית */
+  font-weight: bold;
+  color: #000;
+  /* שחור */
+}
+
+/* ===== כתובת העבודה (קטן יותר) ===== */
+.address {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== שעת/תאריך העבודה (עוד יותר קטן) ===== */
+.time {
+  font-size: 0.85rem;
+  color: #777;
+}.mobile-menu-worker-child {
   position: absolute;
   width: 71.5%;
   top: calc(50% - 426px);

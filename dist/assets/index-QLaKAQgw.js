@@ -41922,6 +41922,8 @@ const WorkerJobSucMobile = ({ nameb, address, time, id: id2, setOk }) => {
 };
 const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done }) => {
   const [ok2, setOk] = reactExports.useState(false);
+  const [imageData, setImageData] = reactExports.useState(null);
+  const [showModal, setShowModal] = reactExports.useState(false);
   const apiUrl2 = "http://localhost:5000";
   const handleCancelCleaning = async () => {
     try {
@@ -41939,14 +41941,36 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done }) => {
       alert("שגיאה במחיקת ניקיון");
     }
   };
+  const handleViewImage = async () => {
+    try {
+      const response = await axios.get(`${apiUrl2}/manager/cleanings/${id2}/image`);
+      if (response.data.image) {
+        setImageData(response.data.image);
+        setShowModal(true);
+      } else {
+        alert("לא נמצאה תמונה לניקיון זה");
+      }
+    } catch (error) {
+      console.error("שגיאה בשליפת התמונה:", error);
+      alert("שגיאה בשליפת התמונה");
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feturejobworkermobile", children: [
     ok2 && /* @__PURE__ */ jsxRuntimeExports.jsx(WorkerJobSucMobile, { nameb, address, time, id: id2, setOk }),
-    done ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button", onClick: handleCancelCleaning, children: "ביטול" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button", onClick: () => {
-      setOk(true);
-    }, children: "ביצוע" }),
+    done ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button1", onClick: handleCancelCleaning, children: "ביטול" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button2", onClick: handleViewImage, children: "הצג תמונה" })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button", onClick: () => setOk(true), children: "ביצוע" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "title", children: nameb }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "address", children: address }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "time", children: time })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "time", children: time }),
+    showModal && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ImageModal,
+      {
+        image: imageData,
+        onClose: () => setShowModal(false)
+      }
+    )
   ] });
 };
 const MobileMenuWorker = ({ closeMenu, isOpen }) => {
@@ -42435,6 +42459,8 @@ const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk }) => {
 const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
   const [ok2, setOk] = reactExports.useState(false);
   const apiUrl2 = "http://localhost:5000";
+  const [imageData, setImageData] = reactExports.useState(null);
+  const [showModal, setShowModal] = reactExports.useState(false);
   const handleCancelCleaning = async () => {
     try {
       const confirmDelete = window.confirm("האם אתה בטוח שברצונך לבטל את העבודה ?");
@@ -42451,6 +42477,20 @@ const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
       alert("שגיאה במחיקת ניקיון");
     }
   };
+  const handleViewImage = async () => {
+    try {
+      const response = await axios.get(`${apiUrl2}/manager/cleanings/${id2}/image`);
+      if (response.data.image) {
+        setImageData(response.data.image);
+        setShowModal(true);
+      } else {
+        alert("לא נמצאה תמונה לניקיון זה");
+      }
+    } catch (error) {
+      console.error("שגיאה בשליפת התמונה:", error);
+      alert("שגיאה בשליפת התמונה");
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feture-job-worker-card", children: [
     ok2 && /* @__PURE__ */ jsxRuntimeExports.jsx(WorkerJobSuc, { nameb, address, time, id: id2, setOk }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feture-job-worker-details", children: [
@@ -42461,7 +42501,17 @@ const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
         time
       ] })
     ] }),
-    done ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "feture-job-worker-button", onClick: handleCancelCleaning, children: "ביטול" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "feture-job-worker-button", onClick: () => {
+    showModal && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ImageModal,
+      {
+        image: imageData,
+        onClose: () => setShowModal(false)
+      }
+    ),
+    done ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "feture-job-worker-button", onClick: handleCancelCleaning, children: "ביטול" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "feture-job-worker-button", onClick: handleViewImage, children: "הצג תמונה" })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "feture-job-worker-button", onClick: () => {
       setOk(true);
     }, children: "ביצוע" })
   ] });
@@ -43759,7 +43809,7 @@ const HomePage = () => {
     } else if (token2.role == "Regular") {
       navigate("/worker-edit-profile");
     } else {
-      navigate(`/clientJobs/${user.id}/`);
+      navigate(`/clientJobs/${token2.id}/`);
     }
   };
   const sendEmail = async () => {
@@ -44738,4 +44788,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-BC47oqBg.js.map
+//# sourceMappingURL=index-QLaKAQgw.js.map

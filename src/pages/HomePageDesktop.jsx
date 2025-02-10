@@ -29,7 +29,7 @@ const HomePage = () => {
       navigate("/worker-edit-profile");
     }
     else {
-      navigate(`/clientJobs/${user.id}/`);
+      navigate(`/clientJobs/${token.id}/`);
     }
   }
   const sendEmail = async () => {

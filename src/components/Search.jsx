@@ -55,7 +55,6 @@ const Search = ({className = "",worker,status,branch,date,bussiness,id,}) => {
         ביטול עבודה
       </button>
 
-      {/* מציגים את ImageModal רק אם showModal=true */}
       {showModal && (
         <ImageModal
           image={imageData} 
