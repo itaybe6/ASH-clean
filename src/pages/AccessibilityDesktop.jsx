@@ -98,6 +98,7 @@ const AccessibilityDesktop = () => {
         <p className="pdf">דואר אלקטרוני: ash.office14@gmail.com</p>
       </div>
       <img className="icon41" alt="" src="/-02-15@2x.png" />
+      <div className="grouping1447">
       <button className="wrapper16">
         <div className="div191">אודות</div>
       </button>
@@ -110,6 +111,8 @@ const AccessibilityDesktop = () => {
       <button className="wrapper19">
         <div className="div194">הצהרת נגישות</div>
       </button>
+      </div>
+      
       <div className="group-parent31">
         <button className="rectangle-parent66" onClick={toLogin} >
           <div className="group-child138" />

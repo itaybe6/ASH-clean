@@ -38,7 +38,7 @@
   bottom: 23px;
   left: 0%;
   background-color: var(--color-royalblue);
-  height: 148px;
+  height: 120px;
   z-index: 3;
 }
 .icon40 {
@@ -82,7 +82,7 @@
   text-decoration: underline;
   font-weight: 600;
   display: inline-block;
-  width: 122px;
+  width: max-content;
   height: 28px;
 }
 .ashoffice14gmailcom-parent {
@@ -400,4 +400,8 @@
   font-size: var(--font-size-5xl);
   color: var(--color-white);
   font-family: var(--font-heebo);
+  direction: rtl;
+}
+
+.grouping1447{
 }
