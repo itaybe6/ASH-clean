@@ -15,8 +15,8 @@ const ManagerAddBranch = () => {
   const handleBranchNameChange = (e) => setBranchName(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleBranchAddressChange = (e) => setBranchAddress(e.target.value);
-  const { id } = useParams(); 
-  
+  const { id } = useParams();
+
   const handleAddBranch = async () => {
     try {
       const response = await axios.post(`${apiUrl}/manager/addBranch/${id}`, {
@@ -41,42 +41,45 @@ const ManagerAddBranch = () => {
     <div className="manager-add-branch">
       <div className="manager-add-branch-child" />
       <img className="manager-add-branch-item" alt="" src="/line-21.svg" />
-      <div className="rectangle-parent80">
-        <input
-          className="group-child178"
-          placeholder="שם סניף"
-          type="text"
-          value={branchName}
-          onChange={handleBranchNameChange}
-          required
-        />
-        <input
-          className="group-child179"
-          placeholder="מספר פלאפון"
-          type="tel"
-          value={phoneNumber}
-          onChange={handlePhoneNumberChange}
-          required
-        />
-        <input
-          className="group-child180"
-          placeholder="כתובת סניף"
-          type="text"
-          value={branchAddress}
-          onChange={handleBranchAddressChange}
-          required
-        />
-      </div>
-      <button className="rectangle-parent81" onClick={handleAddBranch}>
-        <div className="group-child181" />
-        <b className="b86">הוספה</b>
-      </button>
-      <div className="parent51">
-        <div className="div220">אנא מלא את הפרטים למטה כדי להוסיף סניף</div>
-        <b className="b87">הוספת סניף</b>
+      <div className="parentop">
+        <div className="rectangle-parent80">
+          <input
+            className="group-child178"
+            placeholder="שם סניף"
+            type="text"
+            value={branchName}
+            onChange={handleBranchNameChange}
+            required
+          />
+          <input
+            className="group-child179"
+            placeholder="מספר פלאפון"
+            type="tel"
+            value={phoneNumber}
+            onChange={handlePhoneNumberChange}
+            required
+          />
+          <input
+            className="group-child180"
+            placeholder="כתובת סניף"
+            type="text"
+            value={branchAddress}
+            onChange={handleBranchAddressChange}
+            required
+          />
+        </div>
+        <button className="rectangle-parent81" onClick={handleAddBranch}>
+          <div className="group-child181" />
+          <b className="b86">הוספה</b>
+        </button>
+        <div className="parent51">
+          <div className="div220">אנא מלא את הפרטים למטה כדי להוסיף סניף</div>
+          <b className="b87">הוספת סניף</b>
 
+        </div>
       </div>
-    
+
+
     </div>
   );
 };

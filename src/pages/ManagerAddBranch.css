@@ -60,7 +60,7 @@
     font-family: 'Heebo';
 }
 .rectangle-parent80 {
-  width: 55.97%;
+  width: 62%;
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 163px);
@@ -96,16 +96,14 @@
   width: 9.24%;
   position: absolute;
   margin: 0 !important;
-  right: 32.29%;
+  right: 26.29%;
   bottom: 471px;
-  left: 58.47%;
   height: 52px;
   z-index: 5;
 }
 .div220 {
   position: absolute;
   top: 57px;
-  left: calc(50% - 168px);
   line-height: 146.39%;
   font-weight: 300;
   display: inline-block;
@@ -114,7 +112,6 @@
 .b87 {
   position: absolute;
   top: 9px;
-  left: calc(50% - 74px);
   font-size: var(--font-size-17xl);
   line-height: 146.39%;
 }
@@ -130,9 +127,12 @@
   position: absolute;
   margin: 0 !important;
   top: 251px;
-  left: calc(50% - 81px);
   height: 80px;
   z-index: 6;
+  display: flex;
+  justify-content: flex-end;
+  right: 30%;
+  transform: translateX(20%);
 }
 .group-child182 {
   position: absolute;
@@ -252,7 +252,7 @@
 .manager-add-branch {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -266,4 +266,8 @@
   font-size: var(--font-size-base);
   color: var(--color-black);
   font-family: var(--font-heebo);
+}
+
+.parentop{
+  height: 50px;
 }

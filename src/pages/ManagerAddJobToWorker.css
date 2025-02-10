@@ -219,15 +219,15 @@ left: -100px;
   background-color: transparent;
   width: 133px;
   position: absolute;
-  top:500px;
-  left: calc(50% + 300px);
+  top: 390px;
   height: 52px;
   z-index: 7;
+  right: 499px;
 }
 .manager-add-job-to-worker {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
