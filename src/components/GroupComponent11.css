@@ -41,6 +41,7 @@
   display: inline-block;
   width: 205px;
   height: 132px;
+  direction: rtl;
 }
 .group-child19136 {
   position: absolute;

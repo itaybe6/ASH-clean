@@ -36,7 +36,7 @@
   z-index: 2;
 }
 .icon {
-  width: 136px;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: 29px;
@@ -544,6 +544,7 @@
   display: inline-block;
   width: 229px;
   height: 66px;
+  direction: rtl;
 }
 .ellipse-div {
   position: absolute;
@@ -575,6 +576,7 @@
   display: inline-block;
   width: 232px;
   height: 63px;
+  direction: rtl;
 }
 .group-child2 {
   position: absolute;
@@ -615,6 +617,7 @@
   display: inline-block;
   width: 232px;
   height: 44px;
+  direction: rtl;
 }
 .group-icon {
   position: absolute;
@@ -644,6 +647,7 @@
   display: inline-block;
   width: 232px;
   height: 63px;
+  direction: rtl;
 }
 .group-child5 {
   position: absolute;
@@ -673,6 +677,7 @@
   display: inline-block;
   width: 232px;
   height: 63px;
+  direction: rtl;
 }
 .group-child7 {
   position: absolute;
