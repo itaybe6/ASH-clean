@@ -668,7 +668,7 @@
   top: calc(50% + 484px);
   left: calc(50% - 558px);
   display: inline-block;
-  height: 315px;
+  height: 395px;
   flex-shrink: 0;
   z-index: 23;
 }
@@ -730,7 +730,7 @@
   z-index: 26;
 }
 .div212 {
-  width: 122px;
+  width: max-content;
   position: relative;
   text-decoration: underline;
   font-weight: 600;
@@ -753,7 +753,7 @@
   bottom: 61px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
   z-index: 27;
   font-size: var(--font-size-xl);
@@ -840,6 +840,8 @@
   left: 34.98%;
   border-radius: var(--br-smi);
   height: 65px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child166 {
   border: none;
@@ -852,6 +854,8 @@
   left: 13.11%;
   border-radius: var(--br-smi);
   height: 65px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child167 {
   border: none;
@@ -864,6 +868,8 @@
   left: 56.51%;
   border-radius: var(--br-smi);
   height: 65px;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .div213 {
   position: absolute;
@@ -936,6 +942,8 @@
   left: 8.79%;
   border-radius: var(--br-smi);
   height: 63.8px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child171 {
   border: none;
@@ -948,6 +956,8 @@
   left: 8.79%;
   border-radius: var(--br-smi);
   height: 63.8px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child172 {
   border: none;
@@ -960,6 +970,8 @@
   left: 8.94%;
   border-radius: var(--br-smi);
   height: 63.8px;
+  padding: 10px;
+ font-family: 'Heebo';
 }
 .group-child173 {
   position: absolute;
@@ -1075,6 +1087,8 @@
   left: 34.23%;
   border-radius: var(--br-smi);
   height: 65px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child176 {
   border: none;
@@ -1087,6 +1101,8 @@
   left: 11.35%;
   border-radius: var(--br-smi);
   height: 65px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child177 {
   border: none;
@@ -1099,6 +1115,8 @@
   left: 57.1%;
   border-radius: var(--br-smi);
   height: 65px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .div215 {
   position: absolute;

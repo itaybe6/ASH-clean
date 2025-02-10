@@ -141,7 +141,7 @@
   bottom: 0px;
   left: 0%;
   background-color: var(--color-royalblue);
-  height: 219px;
+  height: 125px;
   z-index: 6;
 }
 .icon43 {
@@ -298,4 +298,5 @@
   font-size: var(--font-size-13xl);
   color: var(--color-white);
   font-family: var(--font-heebo);
+  direction: rtl;
 }

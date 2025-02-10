@@ -90,6 +90,7 @@
   line-height: 146.39%;
   display: inline-block;
   margin-top: -10px;
+  direction: rtl;
 }
 .parent {
   margin: 0 !important;
@@ -104,7 +105,7 @@
   font-size: var(--font-size-17xl);
 }
 .div {
-  width: 287px;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: 196px;
@@ -115,6 +116,7 @@
   height: 24px;
   flex-shrink: 0;
   z-index: 7;
+  direction: rtl;
 }
 .b2 {
   position: relative;
@@ -122,6 +124,7 @@
   font-family: var(--font-heebo);
   color: var(--color-white);
   text-align: left;
+  direction: rtl;
 }
 .wrapper {
   cursor: pointer;
@@ -192,6 +195,8 @@
   border-radius: var(--br-smi);
   height: 43px;
   z-index: 2;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .component-item {
   border: none;
@@ -202,6 +207,8 @@
   border-radius: var(--br-smi);
   height: 43px;
   z-index: 3;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .component-inner {
   border: none;
@@ -212,6 +219,8 @@
   border-radius: var(--br-smi);
   height: 43px;
   z-index: 4;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child {
   position: absolute;
@@ -276,6 +285,7 @@
   padding: var(--padding-9xl) var(--padding-mid);
   gap: var(--gap-2xs);
   z-index: 11;
+  direction: rtl;
 }
 .container {
   width: 280px;
@@ -297,6 +307,7 @@
   padding: var(--padding-9xl) var(--padding-mid);
   gap: var(--gap-2xs);
   z-index: 12;
+  direction: rtl;
 }
 .icon1 {
   width: 161.7px;
@@ -363,6 +374,7 @@
   color: var(--color-white);
   text-align: left;
   z-index: 1;
+  direction: rtl;
 }
 .rectangle-container {
   cursor: pointer;
@@ -386,6 +398,7 @@
   position: relative;
   width: 280px;
   left: 5%;
+  direction: rtl;
 }
 .div3 {
   width: 285px;
@@ -393,6 +406,7 @@
   font-size: var(--font-size-xl);
   text-align: right;
   display: inline-block;
+  direction: rtl;
 }
 .parent1 {
   margin: 0 !important;
@@ -423,6 +437,7 @@
   display: inline-block;
   height: 469px;
   flex-shrink: 0;
+  direction: rtl;
 }
 .parent2 {
   margin: 0 !important;
@@ -740,7 +755,7 @@
   height: 42.6px;
   flex-shrink: 0;
   z-index: 3;
-  left: -26%;
+  left: 23%;
 }
 .group-container {
   align-self: stretch;
@@ -798,6 +813,7 @@
   padding: var(--padding-9xl) var(--padding-mid);
   gap: var(--gap-2xs);
   z-index: 26;
+  direction: rtl;
 }
 .homepage-mobile {
   width: 100%;
