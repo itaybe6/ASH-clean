@@ -177,14 +177,13 @@
   border: none;
   padding: 0;
   background-color: transparent;
-  width: 30%;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: 56%;
-  left: 43%;
+  left: 62%;
   height: 52px;
   z-index: 7;
-  transform: translateX(11%);
 }
 .group-child17 {
   position: absolute;
@@ -311,7 +310,7 @@
 .manager-add-worker {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;

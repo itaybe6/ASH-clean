@@ -12,8 +12,8 @@
 
 .div96 {
   position: absolute;
-  top: 0px;
-  left: calc(50% - 87px);
+  top: 50px;
+  left: 132px;
   line-height: 146.39%;
   font-weight: 500;
   display: inline-block;
@@ -41,12 +41,12 @@
 .vector-icon40 {
   position: absolute;
   width: 100%;
-  top: calc(50% - 26px);
-  right: 0%;
-  left: 0%;
+  top: -95px;
+  right: -39px;
   max-width: 100%;
   overflow: hidden;
   height: 52px;
+  transform: translateX(-18px);
 }
 .vector-wrapper32 {
   cursor: pointer;
@@ -72,6 +72,8 @@
   bottom: 85.49%;
   left: 68.23%;
   border-radius: var(--br-smi);
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .div98 {
   position: absolute;
@@ -94,6 +96,8 @@
   bottom: 54.63%;
   left: 0%;
   border-radius: var(--br-smi);
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child71 {
   border: none;
@@ -120,6 +124,8 @@
   bottom: 85.49%;
   left: 34.11%;
   border-radius: var(--br-smi);
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-child73 {
   border: none;
@@ -133,9 +139,11 @@
   bottom: 85.49%;
   left: 0%;
   border-radius: var(--br-smi);
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .group-parent16 {
-  width: 50.49%;
+  width: 55%;
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 162px);
@@ -267,7 +275,7 @@
 .manager-edit-profile {
   width: 100%;
   position: relative;
-  background-color: var(--color-white);
+  background-color: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;

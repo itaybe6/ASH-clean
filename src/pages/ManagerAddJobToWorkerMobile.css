@@ -199,11 +199,11 @@
   width: 37.66%;
   position: absolute;
   margin: 0 !important;
-  right: 15.27%;
+  right: 49.27%;
   bottom: 350.3px;
-  left: 30.07%;
   height: 39.7px;
   z-index: 4;
+  top: 46.5%;
 }
 .input-row5 {
   display: flex;
@@ -228,7 +228,7 @@
 }
 .date-picker-container5{
   position: absolute;
-  top:380px;
-  left:30%;
+    top: 381px;
+    left: 56%;
 }
 
