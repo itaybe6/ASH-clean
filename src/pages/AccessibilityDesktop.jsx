@@ -1,6 +1,24 @@
 import "./AccessibilityDesktop.css";
-
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const AccessibilityDesktop = () => {
+  const navigate = useNavigate();
+  const { token } = useContext(AuthContext);
+  const toLogin = () => {
+    if (!token) {
+      navigate("/login")
+    }
+    if (token.role == "Manager") {
+      navigate("/manager-display-users");
+    }
+    else if (token.role == "Regular") {
+      navigate("/worker-edit-profile");
+    }
+    else {
+      navigate(`/clientJobs/${user.id}/`);
+    }
+  }
   return (
     <div className="accessibility-desktop">
       <img
@@ -22,23 +40,7 @@ const AccessibilityDesktop = () => {
         </div>
         <div className="div189">לפניות נוספות</div>
       </div>
-      <div className="rectangle-parent64">
-        <div className="group-child132" />
-        <div className="vector-parent2">
-          <img className="group-child133" alt="" src="/line-1.svg" />
-          <input className="group-child134" placeholder="שם מלא" type="text" />
-          <input  className="group-child135"  placeholder="מספר פלאפון"  type="tel"  />
-          <input  className="group-child136"  placeholder="בחירת שירות"  type="text"  />
-          <button className="rectangle-parent65">
-            <div className="group-child137" />
-            <b className="b68">שליחה</b>
-          </button>
-          <div className="div190">
-            <p className="pdf">הניקיון המושלם</p>
-            <p className="pdf">בדרך אליכם!</p>
-          </div>
-        </div>
-      </div>
+
       <div className="pdf-container">
         <p className="pdf">
           חברתנו משקיעה משאבים רבים על מנת לספק לכל לקוחותינו שירות שוויוני,
@@ -83,7 +85,7 @@ const AccessibilityDesktop = () => {
         <p className="pdf">
           אנו ממשיכים במאמצים לשפר את נגישות האתר כחלק ממחויבותנו לאפשר שימוש בו
           עבור כלל האוכלוסייה כולל אנשים עם מוגבלויות. נשמח לקבל פניות לקבלת
-          מידע ו/או הצעות שיפור על מנת לשפר את נגישות האתר לשירות קהל הגולשים. 
+          מידע ו/או הצעות שיפור על מנת לשפר את נגישות האתר לשירות קהל הגולשים.
         </p>
         <p className="pdf">
           אם נתקלת בקושי לגלוש באתר או יש לך הערה בנושא, נשמח אם תיצור קשר באחת
@@ -106,7 +108,7 @@ const AccessibilityDesktop = () => {
         <div className="div194">הצהרת נגישות</div>
       </button>
       <div className="group-parent31">
-        <button className="rectangle-parent66">
+        <button className="rectangle-parent66" onClick={toLogin} >
           <div className="group-child138" />
           <b className="b69">אזור אישי</b>
         </button>

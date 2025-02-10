@@ -17,6 +17,9 @@ const SideBarWorekr = ({ user }) => {
     logout();
     navigate("/homepage"); 
   };
+  const homepage = () => {
+    navigate("/homepage"); 
+  };
   return (
     <div className="side-bar-worekr">
       <div className="rectangle-parent90">
@@ -24,7 +27,7 @@ const SideBarWorekr = ({ user }) => {
         <button className="vector-wrapper92" onClick={handleLogout}>
           <img className="vector-icon101" alt="" src="/vector8.svg" />
         </button>
-        <img className="icon59" alt="" src="/-02-13@2x.png" />
+        <img className="icon59" alt="" src="/-02-13@2x.png"  onClick={homepage}/>
       </div>
       <div className="side-bar-worekr-inner">
         <div className="group-parent48">

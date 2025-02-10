@@ -19,6 +19,9 @@ const SideBarManager = ({ user }) => {
     logout()
     navigate("/homepage"); 
   }
+  const homepage = () => {
+    navigate("/homepage"); 
+  };
   return (
     <div className="side-bar-manager">
       <div className="side-bar-manager-child" />
@@ -28,7 +31,7 @@ const SideBarManager = ({ user }) => {
       <button className="vector-wrapper95" onClick={handleLogout}>
         <img className="vector-icon104" alt="" src="/vector1.svg" />
       </button>
-      <img className="icon60" alt="" src="/-02-13@2x.png" />
+      <img className="icon60" alt="" src="/-02-13@2x.png" onClick={homepage}/>
       <div className="group-parent49">
         <button className="vector-wrapper96" onClick={edit}>
           <img className="vector-icon105" alt="" src="/vector2.svg" />

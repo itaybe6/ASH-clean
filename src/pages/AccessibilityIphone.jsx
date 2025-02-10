@@ -1,10 +1,28 @@
 import "./AccessibilityIphone.css";
-
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const AccessibilityIphone = () => {
+  const navigate = useNavigate();
+  const { token } = useContext(AuthContext);
+  const toLogin = () => {
+    if (!token) {
+      navigate("/login")
+    }
+    if (token.role == "Manager") {
+      navigate("/manager-display-users");
+    }
+    else if (token.role == "Regular") {
+      navigate("/worker-edit-profile");
+    }
+    else {
+      navigate(`/clientJobs/${user.id}/`);
+    }
+  }
   return (
     <div className="accessibility-iphone">
       <div className="group-parent33">
-        <button className="rectangle-parent67">
+        <button className="rectangle-parent67" onClick={toLogin}>
           <div className="group-child141" />
           <div className="div195">אזור אישי</div>
           <img className="mdiaccount-icon" alt="" src="/mdiaccount.svg" />
@@ -61,7 +79,7 @@ const AccessibilityIphone = () => {
         <p className="pdf1">
           אנו ממשיכים במאמצים לשפר את נגישות האתר כחלק ממחויבותנו לאפשר שימוש בו
           עבור כלל האוכלוסייה כולל אנשים עם מוגבלויות. נשמח לקבל פניות לקבלת
-          מידע ו/או הצעות שיפור על מנת לשפר את נגישות האתר לשירות קהל הגולשים. 
+          מידע ו/או הצעות שיפור על מנת לשפר את נגישות האתר לשירות קהל הגולשים.
         </p>
         <p className="pdf1">
           אם נתקלת בקושי לגלוש באתר או יש לך הערה בנושא, נשמח אם תיצור קשר באחת
@@ -76,30 +94,7 @@ const AccessibilityIphone = () => {
       <div className="div197">
         כל הזכויות שמורות לעש ניקיון ואחזקה בע”מ 2025
       </div>
-      <div className="rectangle-parent68">
-        <div className="group-child144" />
-        <b className="b70">
-          <p className="pdf1">הניקיון המושלם</p>
-          <p className="pdf1">בדרך אליכם!</p>
-        </b>
-        <img className="group-child145" alt="" src="/line-22.svg" />
-        <input
-          className="group-child146"
-          placeholder="בחירת שירות"
-          type="text"
-        />
-        <input
-          className="group-child147"
-          placeholder="מספר פלאפון"
-          type="text"
-        />
-        <input className="group-child148" placeholder="שם מלא" type="text" />
-        <button className="rectangle-parent69">
-          <div className="group-child149" />
-          <b className="b71">שליחה</b>
-        </button>
-        <div className="div198">השאירו פרטים ונחזיר לכם את הברק!</div>
-      </div>
+
     </div>
   );
 };

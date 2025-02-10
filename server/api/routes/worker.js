@@ -4,7 +4,7 @@ const router = express.Router();
 const { getCleaningsByEmployee, getAllCustomers,
      updateCleaningWithImage, getEmployeeById,
      updateEmployeeDetails, cancelCleaning 
-     } = require('../controller/worker');
+} = require('../controller/worker');
 
 
 const upload = multer(); 

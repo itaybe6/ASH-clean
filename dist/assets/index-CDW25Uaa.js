@@ -39951,7 +39951,7 @@ const ManagerEditProfileIphone = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div106", children: "הגדרות" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div107", children: "לפתיחת סניפים נוספים יש לפנות למנהל האתר" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "component-parent", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent41", onClick: handleUpdateDetails, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent416", onClick: handleUpdateDetails, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "component-child18" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b50", children: "עדכן פרטים" })
       ] }),
@@ -43568,6 +43568,20 @@ const LoginMobile = () => {
   ] });
 };
 const AccessibilityDesktop = () => {
+  const navigate = useNavigate();
+  const { token: token2 } = reactExports.useContext(AuthContext);
+  const toLogin = () => {
+    if (!token2) {
+      navigate("/login");
+    }
+    if (token2.role == "Manager") {
+      navigate("/manager-display-users");
+    } else if (token2.role == "Regular") {
+      navigate("/worker-edit-profile");
+    } else {
+      navigate(`/clientJobs/${user.id}/`);
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "accessibility-desktop", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -43588,23 +43602,6 @@ const AccessibilityDesktop = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf", children: "אימייל : ash.office14@gmail.com" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div189", children: "לפניות נוספות" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent64", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child132" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "vector-parent2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child133", alt: "", src: "/line-1.svg" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child134", placeholder: "שם מלא", type: "text" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child135", placeholder: "מספר פלאפון", type: "tel" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child136", placeholder: "בחירת שירות", type: "text" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent65", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child137" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b68", children: "שליחה" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div190", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf", children: "הניקיון המושלם" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf", children: "בדרך אליכם!" })
-        ] })
-      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pdf-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf", children: 'חברתנו משקיעה משאבים רבים על מנת לספק לכל לקוחותינו שירות שוויוני, מכובד, נגיש ומקצועי. בהתאם לחוק שוויון זכויות לאנשים עם מוגבלויות תשנ"ח- 1998 ולתקנות שהותקנו מכוחו, מושקעים מאמצים רבים בביצוע התאמות הנגישות הנדרשות על מנת שאדם בעל מוגבלות יוכל לקבל את השירותים הניתנים לכלל הלקוחות, באופן עצמאי ושוויוני.חשוב לציין, כי למרות מאמצנו להנגיש את כלל הדפים באתר, ייתכן ויתגלו חלקים או יכולות באתר שטרם הונגשו כדוגמת מסמכים בקובץ PDF ותמונות. אנו ממשיכים במאמצים לשפר את נגישות האתר כחלק ממחויבותנו לאפשר שימוש בו עבור כלל האוכלוסייה כולל אנשים עם מוגבלויות.' }),
@@ -43631,7 +43628,7 @@ const AccessibilityDesktop = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "שירותים" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div194", children: "הצהרת נגישות" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent31", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent66", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent66", onClick: toLogin, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child138" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b69", children: "אזור אישי" })
       ] }),
@@ -43643,9 +43640,23 @@ const AccessibilityDesktop = () => {
   ] });
 };
 const AccessibilityIphone = () => {
+  const navigate = useNavigate();
+  const { token: token2 } = reactExports.useContext(AuthContext);
+  const toLogin = () => {
+    if (!token2) {
+      navigate("/login");
+    }
+    if (token2.role == "Manager") {
+      navigate("/manager-display-users");
+    } else if (token2.role == "Regular") {
+      navigate("/worker-edit-profile");
+    } else {
+      navigate(`/clientJobs/${user.id}/`);
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "accessibility-iphone", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent33", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent67", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent67", onClick: toLogin, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child141" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div195", children: "אזור אישי" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mdiaccount-icon", alt: "", src: "/mdiaccount.svg" })
@@ -43680,37 +43691,7 @@ const AccessibilityIphone = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "tablercopyleft-icon", alt: "", src: "/tablercopyleft.svg" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "accessibility-iphone-item" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon43", alt: "", src: "/-04-11@2x.png" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div197", children: "כל הזכויות שמורות לעש ניקיון ואחזקה בע”מ 2025" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent68", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child144" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { className: "b70", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf1", children: "הניקיון המושלם" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "pdf1", children: "בדרך אליכם!" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child145", alt: "", src: "/line-22.svg" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child146",
-          placeholder: "בחירת שירות",
-          type: "text"
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child147",
-          placeholder: "מספר פלאפון",
-          type: "text"
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child148", placeholder: "שם מלא", type: "text" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent69", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child149" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b71", children: "שליחה" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div198", children: "השאירו פרטים ונחזיר לכם את הברק!" })
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div197", children: "כל הזכויות שמורות לעש ניקיון ואחזקה בע”מ 2025" })
   ] });
 };
 const Component2 = ({ className = "" }) => {
@@ -44084,7 +44065,6 @@ const ManagerEditUserMobile = () => {
   const apiUrl2 = "http://localhost:5000";
   const handleFullNameChange = (e3) => setFullName(e3.target.value);
   const handleNewPasswordChange = (e3) => setNewPassword(e3.target.value);
-  const handleConfirmNewPasswordChange = (e3) => setConfirmNewPassword(e3.target.value);
   const handlePhoneNumberChange = (e3) => setPhoneNumber(e3.target.value);
   const handleCityChange = (e3) => setCity(e3.target.value);
   const [displayMenu, setDisplayMenu] = reactExports.useState(false);
@@ -44152,17 +44132,6 @@ const ManagerEditUserMobile = () => {
           type: "password",
           value: newPassword,
           onChange: handleNewPasswordChange,
-          required: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "input",
-        {
-          className: "group-child84",
-          placeholder: "אמת סיסמא חדשה",
-          type: "password",
-          value: confirmNewPassword,
-          onChange: handleConfirmNewPasswordChange,
           required: true
         }
       ),
@@ -44556,11 +44525,14 @@ const SideBarWorekr = ({ user: user2 }) => {
     logout();
     navigate("/homepage");
   };
+  const homepage = () => {
+    navigate("/homepage");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "side-bar-worekr", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent90", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child192" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper92", onClick: handleLogout, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon101", alt: "", src: "/vector8.svg" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon59", alt: "", src: "/-02-13@2x.png" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon59", alt: "", src: "/-02-13@2x.png", onClick: homepage })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "side-bar-worekr-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent48", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "group-wrapper8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper93", onClick: setting, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon102", alt: "", src: "/vector2.svg" }) }) }),
@@ -44584,11 +44556,14 @@ const SideBarCustomers = ({ user: user2 }) => {
     logout();
     navigate("/homepage");
   };
+  const homepage = () => {
+    navigate("/homepage");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "side-bar-customers", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rectangle-parent89", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child191" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper89", onClick: handleLogout, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon98", alt: "", src: "/vector8.svg" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon58", alt: "", src: "/-02-13@2x.png" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon58", alt: "", src: "/-02-13@2x.png", onClick: homepage })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "side-bar-customers-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent46", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent47", children: [
@@ -44625,11 +44600,14 @@ const SideBarManager = ({ user: user2 }) => {
     logout();
     navigate("/homepage");
   };
+  const homepage = () => {
+    navigate("/homepage");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "side-bar-manager", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "side-bar-manager-child" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "side-bar-manager-inner", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "side-bar-manager-child" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper95", onClick: handleLogout, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon104", alt: "", src: "/vector1.svg" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon60", alt: "", src: "/-02-13@2x.png" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon60", alt: "", src: "/-02-13@2x.png", onClick: homepage }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent49", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper96", onClick: edit, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon105", alt: "", src: "/vector2.svg" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper97", onClick: jobs, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon106", alt: "", src: "/vector9.svg" }) }),
@@ -44726,4 +44704,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-AF01z4Ni.js.map
+//# sourceMappingURL=index-CDW25Uaa.js.map

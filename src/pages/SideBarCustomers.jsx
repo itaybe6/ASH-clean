@@ -19,6 +19,9 @@ const SideBarCustomers = ({ user }) => {
     logout();
     navigate("/homepage"); // מנווט לעמוד ההתחברות
   };
+  const homepage = () => {
+    navigate("/homepage"); 
+  };
   return (
     <div className="side-bar-customers">
       <div className="rectangle-parent89">
@@ -26,7 +29,7 @@ const SideBarCustomers = ({ user }) => {
         <button className="vector-wrapper89" onClick={handleLogout}>
           <img className="vector-icon98" alt="" src="/vector8.svg" />
         </button>
-        <img className="icon58" alt="" src="/-02-13@2x.png" />
+        <img className="icon58" alt="" src="/-02-13@2x.png" onClick={homepage}/>
       </div>
       <div className="side-bar-customers-inner">
         <div className="group-parent46">
