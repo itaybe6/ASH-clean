@@ -32,8 +32,6 @@ const ManagerDisplayUsersMobile = () => {
       })
       .catch((error) => console.error("Error fetching customers:", error));
   }, []);
-
-
   const addUser = () => {
     if (active) {
       navigate(`/manager-add-worker`)
@@ -42,28 +40,21 @@ const ManagerDisplayUsersMobile = () => {
       navigate(`/manager-add-customer`)
     }
   }
-
   const menu = () => {
     setDisplayMenu(!displayMenu)
   }
-  // פונקציית סגירת תפריט
   const closeMenu = () => {
     setDisplayMenu(false);
   };
-
   const filteredCustomers = customers.filter((customer) =>
     customer.businessName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
   const filteredWorkers = workers.filter((worker) =>
     worker.fullName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-
   return (
     <div className="manager-display-customers-mo">
       {displayMenu ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : null}
-
       <div className="manager-display-customers-mo-child" />
       <input
         className="manager-display-customers-item2"

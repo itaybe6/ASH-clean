@@ -8,45 +8,38 @@ const UserOptionMobile = ({ bname, numbranch, id, type }) => {
   const handleEditClick = () => {
     navigate(`/manager-edit-user/${id}/${type}`);
   };
-
   const nevigateJobs = () => {
-
     if (type == 'לקוח') {
-      navigate(`/clientJobs/${id}`);  
+      navigate(`/clientJobs/${id}`);
     }
     else {
       navigate(`/worker-future-jobs/${id}`);
     }
   }
   const handleAddClick = () => {
-    if(type == "לקוח"){
+    if (type == "לקוח") {
       navigate(`/manager-customer-add-branch/${id}`);
     }
     else {
       navigate(`/manager-add-job-to-worker/${id}`);
     }
   };
-
-
   return (
     <div className="customeroptionmobile">
-      {/* מעטפת הכרטיס */}
       <div className="customeroptionmobile-child">
-        {/* 3 שורות, בכל שורה 2 תאים */}
         <div className="customeroptionmobile-row">
           <div className="customeroptionmobile-cell left">{type}</div>
           <div className="customeroptionmobile-cell right">משתמש</div>
         </div>
-
         <div className="customeroptionmobile-row">
           <div className="customeroptionmobile-cell left">{bname}</div>
           <div className="customeroptionmobile-cell right">שם מלא</div>
         </div>
-
-        <div className="customeroptionmobile-row">
+        {type == 'לקוח' ? <div className="customeroptionmobile-row">
           <div className="customeroptionmobile-cell left">{numbranch}</div>
           <div className="customeroptionmobile-cell right">סניפים</div>
-        </div>
+        </div> : null}
+
 
         <div className="customeroptionmobile-actions">
           <button className="edit-btn" onClick={handleAddClick}>{text}</button>
