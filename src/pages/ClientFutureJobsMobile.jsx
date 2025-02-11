@@ -6,7 +6,8 @@ import axios from "axios";
 import "./ClientFutureJobsMobile.css";
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 const ClientFutureJobsMobile = () => {
   const [active, setActive] = useState(true);
@@ -83,17 +84,11 @@ const ClientFutureJobsMobile = () => {
     <div className="client-future-jobs-mobile">
       {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id={id} /> : null}
       <div className="client-future-jobs-mobile-child" />
-
       <img className="icon38" alt="" src="/-02-11@2x.png" />
       <div className="parent43">
         <div className="div182">לוח ניקיונות {selectedBranch ? selectedBranch.name : "בחר סניף"}</div>
         <div className="div183">כל הניקיונות האחרונים של הסניף שלך נרשמו כאן</div>
       </div>
-
-      <button className="rectangle-parent62" onClick={() => setDropdownOpen(!dropdownOpen)} >
-        <div className="group-child130" />
-        <b className="b67">בחירת סניף</b>
-      </button>
       <button className="group8737" onClick={editBranch}>
         <img className="vector-icon86" alt="" src="/vector11.svg" />
         <img className="vector-icon87" alt="" src="/vector12.svg" />
@@ -136,19 +131,15 @@ const ClientFutureJobsMobile = () => {
         />
       </div>
 
-      {dropdownOpen && (
-        <ul className="dropdown-menu3">
-          {branches.map((branch) => (
-            <li
-              key={branch._id}
-              className="dropdown-item3"
-              onClick={() => handleSelectBranch(branch)}
-            >
-              {branch.name}
-            </li>
-          ))}
-        </ul>
-      )}
+
+      <div className="dropdown-container85">
+        <Autocomplete
+          options={branches}
+          getOptionLabel={(branch) => branch.name}
+          onChange={(event, newValue) => handleSelectBranch(newValue)}
+          renderInput={(params) => <TextField {...params} label="בחר סניף" variant="outlined" fullWidth />}
+        />
+      </div>
       <button className="vector-wrapper67" onClick={menu}>
         <img className="vector-icon76" alt="" src="/vector10.svg" />
       </button>

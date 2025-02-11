@@ -43138,7 +43138,6 @@ const FutureJobClient = ({ namew, done, bname, date, active = false, id: id2 }) 
 };
 const ClientFutureJobs = () => {
   const [active, setActive] = reactExports.useState(true);
-  const [dropdownOpen, setDropdownOpen] = reactExports.useState(false);
   const [selectedBranch, setSelectedBranch] = reactExports.useState(null);
   const [branches, setBranches] = reactExports.useState([]);
   const [futureCleanings, setFutureCleanings] = reactExports.useState([]);
@@ -43223,22 +43222,18 @@ const ClientFutureJobs = () => {
         job._id
       );
     }) }) }),
-    dropdownOpen && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "dropdown-menu4", children: branches.map((branch) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "li",
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dropdown-container89", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Autocomplete,
       {
-        className: "dropdown-item4",
-        onClick: () => handleSelectBranch(branch),
-        children: branch.name
-      },
-      branch._id
-    )) }),
+        options: branches,
+        getOptionLabel: (branch) => branch.name,
+        onChange: (event, newValue) => handleSelectBranch(newValue),
+        renderInput: (params) => /* @__PURE__ */ jsxRuntimeExports.jsx(TextField, { ...params, label: "בחר סניף", variant: "outlined", fullWidth: true })
+      }
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group1737", onClick: editBranch, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon16", alt: "", src: "/vector11.svg" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon17", alt: "", src: "/vector12.svg" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent61", onClick: () => setDropdownOpen(!dropdownOpen), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child129" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b66", children: "בחירת סניף" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "CustomToggleButton1144", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CustomToggleButton,
@@ -43376,7 +43371,7 @@ const FutureJobClientMobile = ({ namew = "", date = "", done = "", active = fals
 };
 const ClientFutureJobsMobile = () => {
   const [active, setActive] = reactExports.useState(true);
-  const [dropdownOpen, setDropdownOpen] = reactExports.useState(false);
+  const [dropdownOpen, setDropdownOpen2] = reactExports.useState(false);
   const [selectedBranch, setSelectedBranch] = reactExports.useState(null);
   const [branches, setBranches] = reactExports.useState([]);
   const [cleanings, setCleanings] = reactExports.useState([]);
@@ -43422,7 +43417,7 @@ const ClientFutureJobsMobile = () => {
   }, [selectedBranch]);
   const handleSelectBranch = (branch) => {
     setSelectedBranch(branch);
-    setDropdownOpen(false);
+    setDropdownOpen2(false);
   };
   const menu = () => {
     setDisplayMenu(!displayMenu);
@@ -43444,10 +43439,6 @@ const ClientFutureJobsMobile = () => {
         selectedBranch ? selectedBranch.name : "בחר סניף"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div183", children: "כל הניקיונות האחרונים של הסניף שלך נרשמו כאן" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent62", onClick: () => setDropdownOpen(!dropdownOpen), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child130" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b67", children: "בחירת סניף" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "group8737", onClick: editBranch, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon86", alt: "", src: "/vector11.svg" }),
@@ -43490,15 +43481,15 @@ const ClientFutureJobsMobile = () => {
         name2: "עבודות עתידיות"
       }
     ) }),
-    dropdownOpen && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "dropdown-menu3", children: branches.map((branch) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "li",
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dropdown-container85", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Autocomplete,
       {
-        className: "dropdown-item3",
-        onClick: () => handleSelectBranch(branch),
-        children: branch.name
-      },
-      branch._id
-    )) }),
+        options: branches,
+        getOptionLabel: (branch) => branch.name,
+        onChange: (event, newValue) => handleSelectBranch(newValue),
+        renderInput: (params) => /* @__PURE__ */ jsxRuntimeExports.jsx(TextField, { ...params, label: "בחר סניף", variant: "outlined", fullWidth: true })
+      }
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper67", onClick: menu, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon76", alt: "", src: "/vector10.svg" }) })
   ] });
 };
@@ -44311,6 +44302,9 @@ const ManagerAddBranchMobile = () => {
       alert("Server error: " + (((_b = (_a = error.response) == null ? void 0 : _a.data) == null ? void 0 : _b.message) || error.message));
     }
   };
+  const menu = () => {
+    setDisplayMenu(!displayMenu);
+  };
   const closeMenu = () => {
     setDisplayMenu(false);
   };
@@ -44357,7 +44351,7 @@ const ManagerAddBranchMobile = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b89", children: "הוספה" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon55", alt: "", src: "/-02-11@2x.png" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper84", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon93", alt: "", src: "/vector10.svg" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper84", onClick: menu, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon93", alt: "", src: "/vector10.svg" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent53", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div223", children: "אנא מלא את הפרטים למטה כדי להוסיף סניף" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "b90", children: "הוספת סניף" })
@@ -44776,4 +44770,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-DWwtXyQC.js.map
+//# sourceMappingURL=index-DG_CXeBQ.js.map

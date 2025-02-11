@@ -349,7 +349,8 @@
   z-index: 1000;
   min-width: 250px;
   direction: rtl;
-  left: calc(55% - -25px)
+  left: calc(55% - -25px);
+  overflow-y: auto;
 }
 
 /* פריטים בתוך התפריט */
@@ -461,5 +462,19 @@
     width: 150px;
     height: 52px;
     transition: all 0.3s ease;
+}
+
+
+
+.dropdown-container89 {
+  width: 193px;
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
