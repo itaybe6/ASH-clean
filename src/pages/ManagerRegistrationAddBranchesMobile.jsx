@@ -29,9 +29,10 @@ const ManagerRegistrationAddBranchesMobile = () => {
         city: userData.city,
         branches: branches,
       };
-      console.log(userDataToSend);
       const response = await axios.post(`${apiUrl}/manager/add-customer`, userDataToSend);
-      alert("לקוח נוסף בהצלחה")
+      alert("לקוח נוסף בהצלחה");
+      navigate("/manager-display-users");
+
     } catch (error) {
       console.error("Error Add Customer", error.response ? error.response.data : error.message);
     }
