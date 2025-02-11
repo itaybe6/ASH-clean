@@ -98,7 +98,7 @@ const HomePageIphone = () => {
       </div>
       <div className="parent2">
         <div className="div4">
-          <p className="p">ברוכים הבאים לע.ש</p>
+          <p className="p">ברוכים הבאים לעש</p>
           <p className="p">ניקיון ואחזקה בע"מ</p>
         </div>
         <div className="div5">

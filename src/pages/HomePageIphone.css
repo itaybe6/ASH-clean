@@ -42,7 +42,7 @@
   top: 29px;
   right: 21px;
   height: 44px;
-  object-fit: cover;
+  object-fit: contain;
   z-index: 3;
 }
 .frame-child {

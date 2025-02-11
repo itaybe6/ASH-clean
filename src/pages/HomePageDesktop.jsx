@@ -185,7 +185,7 @@ const HomePage = () => {
       </div>
       <div className="div209">
         <p className="p23">ברוכים הבאים</p>
-        <p className="p25">לע.ש - ניקיון ואחזקה בע"מ</p>
+        <p className="p25">לעש - ניקיון ואחזקה בע"מ</p>
       </div>
       <div className="div210">
         עש - ניקיון ואחזקה בע"מ, שהוקמה בשנת 2021, מובילה את תחום ניקוי חלונות
