@@ -17,7 +17,6 @@ const ManagerRegistrationAddB = () => {
 
   const handleAddUser = async () => {
     const userData = JSON.parse(sessionStorage.getItem("userData"));
-    console.log(userData);
     try {
       const userDataToSend = {
         fullName: userData.fullName,
