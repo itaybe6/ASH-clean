@@ -84,6 +84,8 @@
   border-radius: var(--br-smi);
   height: 47px;
   z-index: 5;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .client-contact-us-child2 {
   border: none;
@@ -98,6 +100,8 @@
   border-radius: var(--br-smi);
   height: 47px;
   z-index: 6;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .client-contact-us-child3 {
   border: none;
@@ -112,6 +116,8 @@
   border-radius: var(--br-smi);
   height: 47px;
   z-index: 7;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .vector-icon58 {
   width: 133px;
@@ -256,6 +262,8 @@
   right: 0px;
   height: 1024px;
   z-index: 9;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .client-contact-us {
   width: 100%;
@@ -275,6 +283,7 @@
   font-size: var(--font-size-13xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  background-color: #fafafa;
 }
 .client-contact-us.animate {
   animation: 1s ease 0s 1 normal forwards fade-in;
