@@ -4,7 +4,7 @@ import WorkerJobSuc from "../pages/WorkerJobSuc";
 import ImageModal from "./ImageModal";
 import axios from "axios";
 
-const FetureJobWorker = ({ nameb, address, time, id, done ,workerId}) => {
+const FetureJobWorker = ({ nameb, address, time, id, done ,workerId , address2}) => {
   const [ok, setOk] = useState(false);
   const apiUrl = import.meta.env.VITE_API_URL;
   const [imageData, setImageData] = useState(null);
@@ -50,6 +50,7 @@ const FetureJobWorker = ({ nameb, address, time, id, done ,workerId}) => {
       <div className="feture-job-worker-details">
         <b className="feture-job-worker-title">{nameb}</b>
         <div className="feture-job-worker-address">{address}</div>
+        <div className="feture-job-worker-address">{address2}</div>
         <div className="feture-job-worker-time"> {time}</div>
       </div>
       {showModal && (

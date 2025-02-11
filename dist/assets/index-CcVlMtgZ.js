@@ -41920,7 +41920,7 @@ const WorkerJobSucMobile = ({ nameb, address, time, id: id2, setOk }) => {
     ] })
   ] });
 };
-const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done, workerId }) => {
+const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done, workerId, address2 }) => {
   const [ok2, setOk] = reactExports.useState(false);
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
@@ -41963,6 +41963,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done, workerId }
     ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button", onClick: () => setOk(true), children: "ביצוע" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "title", children: nameb }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "address", children: address }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "address", children: address2 }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "time", children: time }),
     showModal && /* @__PURE__ */ jsxRuntimeExports.jsx(
       ImageModal,
@@ -42414,7 +42415,8 @@ const WorkerFutureJobsMobile = () => {
         time: dayjs(job.dateTime).format("DD/MM/YYYY"),
         id: job._id,
         done: job.done,
-        workerId: id2
+        workerId: id2,
+        address2: job.branch.address
       },
       job._id
     )) })
@@ -42458,7 +42460,7 @@ const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk, workerId }) => {
     ] })
   ] });
 };
-const FetureJobWorker = ({ nameb, address, time, id: id2, done, workerId }) => {
+const FetureJobWorker = ({ nameb, address, time, id: id2, done, workerId, address2 }) => {
   const [ok2, setOk] = reactExports.useState(false);
   const apiUrl2 = "http://localhost:5000";
   const [imageData, setImageData] = reactExports.useState(null);
@@ -42498,6 +42500,7 @@ const FetureJobWorker = ({ nameb, address, time, id: id2, done, workerId }) => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feture-job-worker-details", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "feture-job-worker-title", children: nameb }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "feture-job-worker-address", children: address }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "feture-job-worker-address", children: address2 }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feture-job-worker-time", children: [
         " ",
         time
@@ -42563,7 +42566,8 @@ const WorkerFutureJobs = () => {
         time: dayjs(job.dateTime).format("DD/MM/YYYY"),
         id: job._id,
         done: job.done,
-        workerId: id2
+        workerId: id2,
+        address2: job.branch.address
       },
       job._id
     )) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "אין עבודות להצגה" }) }),
@@ -43521,7 +43525,6 @@ const LoginMobile = () => {
       } else {
         navigate(`/clientJobs/${user2.id}/`);
       }
-      alert("ההתחברות הושלמה בהצלחה");
     } catch (err) {
       if (((_b = err.response) == null ? void 0 : _b.status) === 401) {
         alert("שם משתמש או סיסמה לא נכונים");
@@ -44764,4 +44767,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-BtFeISKW.js.map
+//# sourceMappingURL=index-CcVlMtgZ.js.map

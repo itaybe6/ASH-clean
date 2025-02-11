@@ -48,7 +48,6 @@ const LoginMobile = () => {
       else {
         navigate(`/clientJobs/${user.id}/`);
       }
-      alert("ההתחברות הושלמה בהצלחה")
     } catch (err) {
       if (err.response?.status === 401) {
         alert("שם משתמש או סיסמה לא נכונים");

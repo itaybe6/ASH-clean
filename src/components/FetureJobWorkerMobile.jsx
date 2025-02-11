@@ -4,7 +4,7 @@ import WorkerJobSucMobile from "../pages/WorkerJobSucMobile";
 import axios from "axios";
 import "./FetureJobWorkerMobile.css";
 
-const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId}) => {
+const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId,address2}) => {
   const [ok, setOk] = useState(false);
   const [imageData, setImageData] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -58,6 +58,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId}) => {
 
       <div className="title">{nameb}</div>
       <div className="address">{address}</div>
+      <div className="address">{address2}</div>
       <div className="time">{time}</div>
       {showModal && (
         <ImageModal

@@ -93,6 +93,7 @@ const WorkerFutureJobsMobile = () => {
             id={job._id}
             done={job.done}
             workerId={id}
+            address2 = {job.branch.address}
 
           />
         ))}
