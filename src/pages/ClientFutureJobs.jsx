@@ -82,7 +82,7 @@ const ClientFutureJobs = () => {
                 date={job.dateTime}
                 done={job.done}
                 active={active}
-                bname={selectedBranch.name}
+                bname={selectedBranch ? selectedBranch.name : ""}
                 id={job._id}
               />
             ))
@@ -92,7 +92,7 @@ const ClientFutureJobs = () => {
                 namew={job.employee?.fullName}
                 date={job.dateTime}
                 done={job.done}
-                bname={selectedBranch.name}
+                bname={selectedBranch ? selectedBranch.name : ""}
                 active={active}
                 id={job._id}
               />

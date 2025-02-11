@@ -43204,7 +43204,7 @@ const ClientFutureJobs = () => {
           date: job.dateTime,
           done: job.done,
           active,
-          bname: selectedBranch.name,
+          bname: selectedBranch ? selectedBranch.name : "",
           id: job._id
         },
         job._id
@@ -43217,7 +43217,7 @@ const ClientFutureJobs = () => {
           namew: (_a = job.employee) == null ? void 0 : _a.fullName,
           date: job.dateTime,
           done: job.done,
-          bname: selectedBranch.name,
+          bname: selectedBranch ? selectedBranch.name : "",
           active,
           id: job._id
         },
@@ -44767,4 +44767,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-C3XKGMB8.js.map
+//# sourceMappingURL=index-DCc-XUnQ.js.map
