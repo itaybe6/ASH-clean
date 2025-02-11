@@ -335,7 +335,7 @@
 .manager-registration-add-c {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
