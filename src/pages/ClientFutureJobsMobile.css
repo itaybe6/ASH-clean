@@ -170,11 +170,11 @@
   background: white;
   border-radius: 10px;
   list-style: none;
-  width: 120px !important;  /* הגדלתי קצת את הרוחב */
+  width: 200px !important;  /* הגדלתי קצת את הרוחב */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   z-index: 1000 !important;
-  right: 10.5% !important;
+  right: 10% !important;
   top: 240px !important; /* תיקון כדי שה-dropdown לא יהיה קרוב מדי */
   padding: 5px 0; /* כדי להוסיף ריווח פנימי */
 }

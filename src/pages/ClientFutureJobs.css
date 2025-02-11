@@ -20,7 +20,7 @@
 
 .div168 {
   position: absolute;
-  top: 0px;
+  top: 15px;
   right: 30%;
   /* מצמיד את הכותרת לצד ימין */
   transform: none;
@@ -42,6 +42,7 @@
   overflow: visible;
   /* מונע חיתוך טקסט */
   margin-right: -120px;
+  font-size: 25px;
 }
 
 .div169 {
