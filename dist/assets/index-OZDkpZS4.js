@@ -38915,7 +38915,7 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
     }
     setTouchStartX(null);
   };
-  const transitionStyle = isDragging ? "none" : "transform 0.3s ease";
+  const transitionStyle = isDragging ? "none" : "transform 1s ease";
   const menuStyle = {
     transform: `translateX(${translate}px)`,
     transition: transitionStyle
@@ -44770,4 +44770,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-DG_CXeBQ.js.map
+//# sourceMappingURL=index-OZDkpZS4.js.map
