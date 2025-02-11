@@ -122,7 +122,7 @@
   width: 73.79%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 78.75px);
+  top: 325px;
   right: 13.23%;
   left: 12.98%;
   height: 158px;
@@ -135,7 +135,7 @@
   width: 73.79%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% + 93.25px);
+  top: 495px;
   right: 13.74%;
   left: 12.47%;
   border-radius: var(--br-4xs);
@@ -187,7 +187,7 @@
   width: 37.66%;
   position: absolute;
   margin: 0 !important;
-  top: calc(41% + 231.25px);
+  top: 550px;
   right: 13.23%;
   left: 49.11%;
   height: 39.7px;
