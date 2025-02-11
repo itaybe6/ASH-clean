@@ -10908,15 +10908,16 @@ const GroupComponent10 = ({ className = "" }) => {
 GroupComponent10.propTypes = {
   className: PropTypes.string
 };
+const newImage$1 = "/assets/126-BJ9Vr8mR.jpg";
 const GroupComponent11 = ({ className = "" }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `mask-group-container ${className}`, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mask-group-icon5", alt: "", src: "/mask-group@2x.png" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mask-group-icon5", alt: "", src: newImage$1 }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child190" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div261", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p57", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: `יוסי כהן, ` }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p57", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: `ריקי בי פארם ` }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p58", children: "בעל עסק בקניון" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div262", children: "לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שניקו לי את חלונות הראווה והשלטים, הלקוחות התחילו לשים לב לעסק הרבה יותר. שירות מהיר, אמין ומדויק – ממליץ לכל אחד!" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div262", children: "שירות ברמה הגבוהה ביותר! צוות הניקיון עשה עבודה יסודית על חלונות הסניפים והחזיר להם ברק אמיתי. מאז, הלקוחות מגיבים בצורה חיובית יותר, והצוות שלנו נהנה מסביבה נעימה ונקייה. בהחלט שווה כל שקל!" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child19136", alt: "", src: "/group-365.svg" })
   ] });
 };
@@ -38915,7 +38916,7 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
     }
     setTouchStartX(null);
   };
-  const transitionStyle = isDragging ? "none" : "transform 1s ease";
+  const transitionStyle = isDragging ? "none" : "transform 1.2s ease";
   const menuStyle = {
     transform: `translateX(${translate}px)`,
     transition: transitionStyle
@@ -39420,7 +39421,7 @@ const MobileMenuClient = ({ closeMenu, isOpen, id: id2 }) => {
     }
     setTouchStartX(null);
   };
-  const transitionStyle = isDragging ? "none" : "transform 0.3s ease";
+  const transitionStyle = isDragging ? "none" : "transform 1.2s ease";
   const menuStyle = {
     transform: `translateX(${translate}px)`,
     transition: transitionStyle
@@ -41884,7 +41885,7 @@ function imageCompression(e3, t3) {
 imageCompression.getDataUrlFromFile = getDataUrlFromFile, imageCompression.getFilefromDataUrl = getFilefromDataUrl, imageCompression.loadImage = loadImage, imageCompression.drawImageInCanvas = drawImageInCanvas, imageCompression.drawFileInCanvas = drawFileInCanvas, imageCompression.canvasToFile = canvasToFile, imageCompression.getExifOrientation = getExifOrientation, imageCompression.handleMaxWidthOrHeight = handleMaxWidthOrHeight, imageCompression.followExifOrientation = followExifOrientation, imageCompression.cleanupCanvasMemory = cleanupCanvasMemory, imageCompression.isAutoOrientationInBrowser = isAutoOrientationInBrowser, imageCompression.approximateBelowMaximumCanvasSizeOfBrowser = approximateBelowMaximumCanvasSizeOfBrowser, imageCompression.copyExifWithoutOrientation = copyExifWithoutOrientation, imageCompression.getBrowserName = getBrowserName, imageCompression.version = "2.0.2";
 const WorkerJobSucMobile = ({ nameb, address, time, id: id2, setOk }) => {
   const [selectedFile, setSelectedFile] = reactExports.useState(null);
-  const navigate = useNavigate();
+  useNavigate();
   const apiUrl2 = "http://localhost:5000";
   const handleFileSelect = (e3) => {
     if (e3.target.files[0]) {
@@ -41900,7 +41901,7 @@ const WorkerJobSucMobile = ({ nameb, address, time, id: id2, setOk }) => {
       formData.append("image", compressedFile);
       await axios.put(`${apiUrl2}/worker/cleanings/${id2}`, formData);
       alert("התמונה עודכנה בהצלחה!");
-      navigate("/homepage");
+      window.location.reload();
     } catch (err) {
       console.error("שגיאה בשליחה:", err);
     }
@@ -41919,7 +41920,7 @@ const WorkerJobSucMobile = ({ nameb, address, time, id: id2, setOk }) => {
     ] })
   ] });
 };
-const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done }) => {
+const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done, workerId }) => {
   const [ok2, setOk] = reactExports.useState(false);
   const [imageData, setImageData] = reactExports.useState(null);
   const [showModal, setShowModal] = reactExports.useState(false);
@@ -41931,7 +41932,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done }) => {
       const response = await axios.put(`${apiUrl2}/worker/cleanings/${id2}/cancel`);
       if (response.status === 200) {
         alert("ניקיון עבר למצב - לא נעשה");
-        console.log(response);
+        window.location.reload();
       } else {
         alert("שגיאה בשינוי סטטוס של ניקיון");
       }
@@ -41955,7 +41956,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id: id2, done }) => {
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feturejobworkermobile", children: [
-    ok2 && /* @__PURE__ */ jsxRuntimeExports.jsx(WorkerJobSucMobile, { nameb, address, time, id: id2, setOk }),
+    ok2 && /* @__PURE__ */ jsxRuntimeExports.jsx(WorkerJobSucMobile, { nameb, address, time, id: id2, setOk, workerId }),
     done ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button1", onClick: handleCancelCleaning, children: "ביטול" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "exec-button2", onClick: handleViewImage, children: "הצג תמונה" })
@@ -42024,7 +42025,7 @@ const MobileMenuWorker = ({ closeMenu, isOpen }) => {
     }
     setTouchStartX(null);
   };
-  const transitionStyle = isDragging ? "none" : "transform 0.3s ease";
+  const transitionStyle = isDragging ? "none" : "transform 1.2s ease";
   const menuStyle = {
     transform: `translateX(${translate}px)`,
     transition: transitionStyle
@@ -42412,15 +42413,16 @@ const WorkerFutureJobsMobile = () => {
         address: job.branch.name,
         time: dayjs(job.dateTime).format("DD/MM/YYYY"),
         id: job._id,
-        done: job.done
+        done: job.done,
+        workerId: id2
       },
       job._id
     )) })
   ] });
 };
-const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk }) => {
+const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk, workerId }) => {
   const [selectedFile, setSelectedFile] = reactExports.useState(null);
-  const navigate = useNavigate();
+  useNavigate();
   const apiUrl2 = "http://localhost:5000";
   const handleFileSelect = (e3) => {
     if (e3.target.files[0]) {
@@ -42436,7 +42438,8 @@ const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk }) => {
       formData.append("image", compressedFile);
       await axios.put(`${apiUrl2}/worker/cleanings/${id2}`, formData);
       alert("התמונה עודכנה בהצלחה!");
-      navigate("/homepage");
+      setOk(false);
+      window.location.reload();
     } catch (err) {
       console.error("שגיאה בשליחה:", err);
     }
@@ -42455,7 +42458,7 @@ const WorkerJobSuc = ({ nameb, address, time, id: id2, setOk }) => {
     ] })
   ] });
 };
-const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
+const FetureJobWorker = ({ nameb, address, time, id: id2, done, workerId }) => {
   const [ok2, setOk] = reactExports.useState(false);
   const apiUrl2 = "http://localhost:5000";
   const [imageData, setImageData] = reactExports.useState(null);
@@ -42467,7 +42470,7 @@ const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
       const response = await axios.put(`${apiUrl2}/worker/cleanings/${id2}/cancel`);
       if (response.status === 200) {
         alert("ניקיון עבר למצב - לא נעשה");
-        console.log(response);
+        window.location.reload();
       } else {
         alert("שגיאה בשינוי סטטוס של ניקיון");
       }
@@ -42491,7 +42494,7 @@ const FetureJobWorker = ({ nameb, address, time, id: id2, done }) => {
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feture-job-worker-card", children: [
-    ok2 && /* @__PURE__ */ jsxRuntimeExports.jsx(WorkerJobSuc, { nameb, address, time, id: id2, setOk }),
+    ok2 && /* @__PURE__ */ jsxRuntimeExports.jsx(WorkerJobSuc, { nameb, address, time, id: id2, setOk, workerId }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feture-job-worker-details", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("b", { className: "feture-job-worker-title", children: nameb }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "feture-job-worker-address", children: address }),
@@ -42559,7 +42562,8 @@ const WorkerFutureJobs = () => {
         address: job.branch.name,
         time: dayjs(job.dateTime).format("DD/MM/YYYY"),
         id: job._id,
-        done: job.done
+        done: job.done,
+        workerId: id2
       },
       job._id
     )) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "אין עבודות להצגה" }) }),
@@ -43161,9 +43165,7 @@ const ClientFutureJobs = () => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
         try {
-          const response = await axios.get(
-            `${apiUrl2}/customer/${selectedBranch._id}/cleanings`
-          );
+          const response = await axios.get(`${apiUrl2}/costumer/${selectedBranch._id}/cleanings`);
           const allCleanings = response.data;
           allCleanings.sort((a4, b3) => new Date(a4.dateTime) - new Date(b3.dateTime));
           setFutureCleanings(allCleanings.filter((c3) => c3.done == false));
@@ -43175,10 +43177,6 @@ const ClientFutureJobs = () => {
       fetchCleaning();
     }
   }, [selectedBranch]);
-  const handleSelectBranch = (branch) => {
-    setSelectedBranch(branch);
-    setDropdownOpen(false);
-  };
   const editBranch = () => {
     if (selectedBranch)
       navigate(`/manager-customer-edit-branch/${selectedBranch._id}`);
@@ -43227,7 +43225,7 @@ const ClientFutureJobs = () => {
       {
         options: branches,
         getOptionLabel: (branch) => branch.name,
-        onChange: (event, newValue) => handleSelectBranch(newValue),
+        onChange: (event, newValue) => setSelectedBranch(newValue),
         renderInput: (params) => /* @__PURE__ */ jsxRuntimeExports.jsx(TextField, { ...params, label: "בחר סניף", variant: "outlined", fullWidth: true })
       }
     ) }),
@@ -43371,7 +43369,7 @@ const FutureJobClientMobile = ({ namew = "", date = "", done = "", active = fals
 };
 const ClientFutureJobsMobile = () => {
   const [active, setActive] = reactExports.useState(true);
-  const [dropdownOpen, setDropdownOpen2] = reactExports.useState(false);
+  const [dropdownOpen, setDropdownOpen] = reactExports.useState(false);
   const [selectedBranch, setSelectedBranch] = reactExports.useState(null);
   const [branches, setBranches] = reactExports.useState([]);
   const [cleanings, setCleanings] = reactExports.useState([]);
@@ -43397,9 +43395,7 @@ const ClientFutureJobsMobile = () => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
         try {
-          const response = await axios.get(
-            `${apiUrl2}/customer/${selectedBranch._id}/cleanings`
-          );
+          const response = await axios.get(`${apiUrl2}/costumer/${selectedBranch._id}/cleanings`);
           const allCleanings = response.data;
           const sortByDate = (jobs) => {
             return jobs.sort(
@@ -43415,10 +43411,6 @@ const ClientFutureJobsMobile = () => {
       fetchCleaning();
     }
   }, [selectedBranch]);
-  const handleSelectBranch = (branch) => {
-    setSelectedBranch(branch);
-    setDropdownOpen2(false);
-  };
   const menu = () => {
     setDisplayMenu(!displayMenu);
   };
@@ -43486,7 +43478,7 @@ const ClientFutureJobsMobile = () => {
       {
         options: branches,
         getOptionLabel: (branch) => branch.name,
-        onChange: (event, newValue) => handleSelectBranch(newValue),
+        onChange: (event, newValue) => setSelectedBranch(newValue),
         renderInput: (params) => /* @__PURE__ */ jsxRuntimeExports.jsx(TextField, { ...params, label: "בחר סניף", variant: "outlined", fullWidth: true })
       }
     ) }),
@@ -43634,10 +43626,10 @@ const AccessibilityDesktop = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon41", alt: "", src: "/-02-15@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grouping1447", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper16", onClick: () => window.location.href = "/#about", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "אודות" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper17", onClick: () => window.location.href = "/#testimonials", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div192", children: "לקוחות ממליצים" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper17", onClick: () => window.location.href = "/#testimonials", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "לקוחות ממליצים" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", onClick: () => window.location.href = "/#services", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "שירותים" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div194", children: "הצהרת נגישות" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper18", onClick: () => window.location.href = "/", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "דף בית" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper19", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "הצהרת נגישות" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "wrapper23", onClick: () => window.location.href = "/", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div191", children: "דף בית" }) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent31", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "rectangle-parent66", onClick: toLogin, children: [
@@ -43706,6 +43698,7 @@ const AccessibilityIphone = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div197", children: "כל הזכויות שמורות לעש ניקיון ואחזקה בע”מ 2025" })
   ] });
 };
+const newImage2 = "/assets/127-BTNP68xQ.jpg";
 const Component2 = ({ className = "" }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `component-1 ${className}`, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div362", children: [
@@ -43735,15 +43728,15 @@ const Component2 = ({ className = "" }) => {
         {
           className: "mask-group-icon6",
           alt: "",
-          src: "/mask-group-1@2x.png"
+          src: newImage$1
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child229" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div366", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p61", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: `יוסי כהן, ` }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p61", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: `ריקי בי פארם` }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p68", children: "בעל עסק בקניון" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div367", children: "לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שניקו לי את חלונות הראווה והשלטים, הלקוחות התחילו לשים לב לעסק הרבה יותר. שירות מהיר, אמין ומדויק – ממליץ לכל אחד!" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div367", children: "שירות ברמה הגבוהה ביותר! צוות הניקיון עשה עבודה יסודית על חלונות הסניפים והחזיר להם ברק אמיתי. מאז, הלקוחות מגיבים בצורה חיובית יותר, והצוות שלנו נהנה מסביבה נעימה ונקייה. בהחלט שווה כל שקל!" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child230", alt: "", src: "/group-365.svg" })
     ] }) }) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "component-1-child", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "frame-wrapper14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "frame-wrapper13", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mask-group-parent1", children: [
@@ -43752,15 +43745,15 @@ const Component2 = ({ className = "" }) => {
         {
           className: "mask-group-icon6",
           alt: "",
-          src: "/mask-group-1@2x.png"
+          src: newImage2
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child229" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div366", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p61", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: `יוסי כהן, ` }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p61", children: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: `אביחי טו גו` }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "p68", children: "בעל עסק בקניון" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div367", children: "לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שניקו לי את חלונות הראווה והשלטים, הלקוחות התחילו לשים לב לעסק הרבה יותר. שירות מהיר, אמין ומדויק – ממליץ לכל אחד!" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "div367", children: "לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שהצוות טיפל בחלונות הראווה והחנות, המקום נראה חדש לגמרי. הלקוחות שמו לב מיד והשירות היה מהיר, יסודי ואמין. ממליץ בחום!" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "group-child230", alt: "", src: "/group-365.svg" })
     ] }) }) }) })
   ] });
@@ -43768,6 +43761,7 @@ const Component2 = ({ className = "" }) => {
 Component2.propTypes = {
   className: PropTypes.string
 };
+const newImage = "/assets/125-BXpUzaUP.jpg";
 const HomePage = () => {
   const navigate = useNavigate();
   const { token: token2 } = reactExports.useContext(AuthContext);
@@ -43951,7 +43945,7 @@ const HomePage = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "homepage-child4" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "testimonials" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Component2, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mask-group-icon1", alt: "", src: "/mask-group@2x.png" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "mask-group-icon1", alt: "", src: newImage }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "icon50", alt: "", src: "/-04-1-1@2x.png" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent37", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "component-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "group-child164" }) }),
@@ -44770,4 +44764,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-OZDkpZS4.js.map
+//# sourceMappingURL=index-BtFeISKW.js.map

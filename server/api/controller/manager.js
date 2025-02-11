@@ -145,8 +145,6 @@ const getCleaningsByEmployee = async (req, res) => {
     }
 };
 
-
-
 // add cleaning for the worker schedule
 const addCleaningForEmployee = async (req, res) => {
     try {
@@ -181,7 +179,6 @@ const addCleaningForEmployee = async (req, res) => {
         res.status(500).json({ message: 'Error adding cleaning schedule', error });
     }
 };
-
 
 //edit personal details
 const updateManagerDetails = async (req, res) => {

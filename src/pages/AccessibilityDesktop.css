@@ -236,8 +236,8 @@
 }
 .div191 {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 13px;
+  left: -29px;
   font-size: var(--font-size-5xl);
   font-weight: 300;
   font-family: var(--font-heebo);
@@ -253,7 +253,7 @@
   position: absolute;
   margin: 0 !important;
   top: 37px;
-  left: 1050px;
+  left: 1055px;
   height: 35px;
   z-index: 10;
 }
@@ -278,7 +278,7 @@
   position: absolute;
   margin: 0 !important;
   top: 37px;
-  left: 850px;
+  left: 878px;
   height: 35px;
   z-index: 11;
 }
@@ -316,7 +316,20 @@
   position: absolute;
   margin: 0 !important;
   top: 37px;
-  left: 665px;
+  left: 729px;
+  height: 35px;
+  z-index: 13;
+}
+.wrapper23 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 185px;
+  position: absolute;
+  margin: 0 !important;
+  top: 36px;
+  left:647px;
   height: 35px;
   z-index: 13;
 }

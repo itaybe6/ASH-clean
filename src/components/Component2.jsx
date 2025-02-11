@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import "./Component2.css";
+import newImage from '../imges/126.jpg';
+import newImage2 from '../imges/127.jpg';
 
 const Component2 = ({ className = "" }) => {
   return (
@@ -40,19 +42,17 @@ const Component2 = ({ className = "" }) => {
               <img
                 className="mask-group-icon6"
                 alt=""
-                src="/mask-group-1@2x.png"
+                src={newImage}
               />
               <div className="group-child229" />
               <div className="div366">
                 <p className="p61">
-                  <b>{`יוסי כהן, `}</b>
+                  <b>{`ריקי בי פארם`}</b>
                 </p>
                 <p className="p68">בעל עסק בקניון</p>
               </div>
               <div className="div367">
-                לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שניקו לי את
-                חלונות הראווה והשלטים, הלקוחות התחילו לשים לב לעסק הרבה יותר.
-                שירות מהיר, אמין ומדויק – ממליץ לכל אחד!
+              שירות ברמה הגבוהה ביותר! צוות הניקיון עשה עבודה יסודית על חלונות הסניפים והחזיר להם ברק אמיתי. מאז, הלקוחות מגיבים בצורה חיובית יותר, והצוות שלנו נהנה מסביבה נעימה ונקייה. בהחלט שווה כל שקל!
               </div>
               <img className="group-child230" alt="" src="/group-365.svg" />
             </div>
@@ -66,19 +66,17 @@ const Component2 = ({ className = "" }) => {
               <img
                 className="mask-group-icon6"
                 alt=""
-                src="/mask-group-1@2x.png"
+                src={newImage2}
               />
               <div className="group-child229" />
               <div className="div366">
                 <p className="p61">
-                  <b>{`יוסי כהן, `}</b>
+                  <b>{`אביחי טו גו`}</b>
                 </p>
                 <p className="p68">בעל עסק בקניון</p>
               </div>
               <div className="div367">
-                לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שניקו לי את
-                חלונות הראווה והשלטים, הלקוחות התחילו לשים לב לעסק הרבה יותר.
-                שירות מהיר, אמין ומדויק – ממליץ לכל אחד!
+                לא האמנתי כמה הבדל ניקיון מקצועי יכול לעשות! אחרי שהצוות טיפל בחלונות הראווה והחנות, המקום נראה חדש לגמרי. הלקוחות שמו לב מיד והשירות היה מהיר, יסודי ואמין. ממליץ בחום!
               </div>
               <img className="group-child230" alt="" src="/group-365.svg" />
             </div>

@@ -4,7 +4,7 @@ import imageCompression from 'browser-image-compression';
 import "./WorkerJobSuc.css";
 import { useNavigate } from 'react-router-dom';
 
-const WorkerJobSuc = ({ nameb, address,time,id , setOk}) => {
+const WorkerJobSuc = ({ nameb, address,time,id , setOk , workerId}) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const navigate = useNavigate();  
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -15,6 +15,7 @@ const WorkerJobSuc = ({ nameb, address,time,id , setOk}) => {
       setSelectedFile(e.target.files[0]);
     }
   };
+
   const handleUpload = async () => {
     if (!selectedFile) return;
     try {
@@ -24,8 +25,8 @@ const WorkerJobSuc = ({ nameb, address,time,id , setOk}) => {
       formData.append('image', compressedFile);
       await axios.put(`${apiUrl}/worker/cleanings/${id}`, formData);
       alert('התמונה עודכנה בהצלחה!');
-      navigate("/homepage")
-
+      setOk(false)
+      window.location.reload();
     } catch (err) {
       console.error('שגיאה בשליחה:', err);
     }

@@ -3486,7 +3486,7 @@ top: 0px;
 .manager-edit-branch {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -7027,6 +7027,8 @@ top: 0px;
   border-radius: var(--br-smi);
   height: 47px;
   z-index: 5;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .client-contact-us-child2 {
   border: none;
@@ -7041,6 +7043,8 @@ top: 0px;
   border-radius: var(--br-smi);
   height: 47px;
   z-index: 6;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .client-contact-us-child3 {
   border: none;
@@ -7055,6 +7059,8 @@ top: 0px;
   border-radius: var(--br-smi);
   height: 47px;
   z-index: 7;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .vector-icon58 {
   width: 133px;
@@ -7199,6 +7205,8 @@ top: 0px;
   right: 0px;
   height: 1024px;
   z-index: 9;
+  padding: 10px;
+    font-family: 'Heebo';
 }
 .client-contact-us {
   width: 100%;
@@ -7218,6 +7226,7 @@ top: 0px;
   font-size: var(--font-size-13xl);
   color: var(--color-black);
   font-family: var(--font-heebo);
+  background-color: #fafafa;
 }
 .client-contact-us.animate {
   animation: 1s ease 0s 1 normal forwards fade-in;
@@ -8020,7 +8029,7 @@ top: 0px;
 
 .div168 {
   position: absolute;
-  top: 0px;
+  top: 15px;
   right: 30%;
   /* מצמיד את הכותרת לצד ימין */
   transform: none;
@@ -8042,6 +8051,7 @@ top: 0px;
   overflow: visible;
   /* מונע חיתוך טקסט */
   margin-right: -120px;
+  font-size: 25px;
 }
 
 .div169 {
@@ -8467,15 +8477,17 @@ top: 0px;
 
 
 .dropdown-container89 {
-  width: 193px;
+  width: 200px;
   position: absolute;
-  top: 30%;
-  left: 42%;
-  transform: translate(-50%, -50%);
+  top: 170px;
+  left: 59%;
   background-color: white;
   padding: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  direction: 'rtl' ;
+  transform: translateX(17px);
+
 }
 
 .vector-icon74 {
@@ -8878,11 +8890,11 @@ top: 0px;
   background: white;
   border-radius: 10px;
   list-style: none;
-  width: 120px !important;  /* הגדלתי קצת את הרוחב */
+  width: 200px !important;  /* הגדלתי קצת את הרוחב */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   z-index: 1000 !important;
-  right: 10.5% !important;
+  right: 10% !important;
   top: 240px !important; /* תיקון כדי שה-dropdown לא יהיה קרוב מדי */
   padding: 5px 0; /* כדי להוסיף ריווח פנימי */
 }
@@ -8947,13 +8959,15 @@ top: 0px;
 .dropdown-container85 {
   width: 193px;
   position: absolute;
-  top: 30%;
-  left: 42%;
+  top: 29%;
+  left: 65%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 10px;
+  padding: 0px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  direction: 'rtl' ;
+
 }
 
 .icon39 {
@@ -9339,8 +9353,8 @@ top: 0px;
 }
 .div191 {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 13px;
+  left: -29px;
   font-size: var(--font-size-5xl);
   font-weight: 300;
   font-family: var(--font-heebo);
@@ -9356,7 +9370,7 @@ top: 0px;
   position: absolute;
   margin: 0 !important;
   top: 37px;
-  left: 1050px;
+  left: 1055px;
   height: 35px;
   z-index: 10;
 }
@@ -9381,7 +9395,7 @@ top: 0px;
   position: absolute;
   margin: 0 !important;
   top: 37px;
-  left: 850px;
+  left: 878px;
   height: 35px;
   z-index: 11;
 }
@@ -9419,7 +9433,20 @@ top: 0px;
   position: absolute;
   margin: 0 !important;
   top: 37px;
-  left: 665px;
+  left: 729px;
+  height: 35px;
+  z-index: 13;
+}
+.wrapper23 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 185px;
+  position: absolute;
+  margin: 0 !important;
+  top: 36px;
+  left:647px;
   height: 35px;
   z-index: 13;
 }

@@ -4,7 +4,7 @@ import WorkerJobSuc from "../pages/WorkerJobSuc";
 import ImageModal from "./ImageModal";
 import axios from "axios";
 
-const FetureJobWorker = ({ nameb, address, time, id, done }) => {
+const FetureJobWorker = ({ nameb, address, time, id, done ,workerId}) => {
   const [ok, setOk] = useState(false);
   const apiUrl = import.meta.env.VITE_API_URL;
   const [imageData, setImageData] = useState(null);
@@ -18,7 +18,8 @@ const FetureJobWorker = ({ nameb, address, time, id, done }) => {
 
       if (response.status === 200) {
         alert("ניקיון עבר למצב - לא נעשה");
-        console.log(response)
+        window.location.reload();
+
       } else {
         alert("שגיאה בשינוי סטטוס של ניקיון");
       }
@@ -44,7 +45,7 @@ const FetureJobWorker = ({ nameb, address, time, id, done }) => {
   };
   return (
     <div className="feture-job-worker-card">
-      {ok && <WorkerJobSuc nameb={nameb} address={address} time={time} id={id} setOk={setOk} />}
+      {ok && <WorkerJobSuc nameb={nameb} address={address} time={time} id={id} setOk={setOk} workerId={workerId}/>}
 
       <div className="feture-job-worker-details">
         <b className="feture-job-worker-title">{nameb}</b>

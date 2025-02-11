@@ -22,7 +22,7 @@ const WorkerJobSucMobile = ({ nameb, address, time, id , setOk}) => {
       formData.append('image', compressedFile);
       await axios.put(`${apiUrl}/worker/cleanings/${id}`, formData);
       alert('התמונה עודכנה בהצלחה!');
-      navigate("/homepage")
+      window.location.reload();
 
     } catch (err) {
       console.error('שגיאה בשליחה:', err);

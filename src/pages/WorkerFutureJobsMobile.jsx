@@ -92,6 +92,8 @@ const WorkerFutureJobsMobile = () => {
             time={dayjs(job.dateTime).format("DD/MM/YYYY")}
             id={job._id}
             done={job.done}
+            workerId={id}
+
           />
         ))}
       </div>

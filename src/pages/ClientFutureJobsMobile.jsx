@@ -41,11 +41,8 @@ const ClientFutureJobsMobile = () => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
         try {
-          const response = await axios.get(
-            `${apiUrl}/customer/${selectedBranch._id}/cleanings`
-          );
+          const response = await axios.get( `${apiUrl}/costumer/${selectedBranch._id}/cleanings`  );
           const allCleanings = response.data;
-
           const sortByDate = (jobs) => {
             return jobs.sort((a, b) =>
               new Date(a.dateTime.split("/").reverse().join("-")) -
@@ -62,12 +59,6 @@ const ClientFutureJobsMobile = () => {
     }
   }, [selectedBranch]);
 
-
-
-  const handleSelectBranch = (branch) => {
-    setSelectedBranch(branch);
-    setDropdownOpen(false);
-  };
 
   const menu = () => {
     setDisplayMenu(!displayMenu)
@@ -134,9 +125,9 @@ const ClientFutureJobsMobile = () => {
 
       <div className="dropdown-container85">
         <Autocomplete
-          options={branches}
+         options={branches}
           getOptionLabel={(branch) => branch.name}
-          onChange={(event, newValue) => handleSelectBranch(newValue)}
+          onChange={(event, newValue) => setSelectedBranch(newValue)}
           renderInput={(params) => <TextField {...params} label="בחר סניף" variant="outlined" fullWidth />}
         />
       </div>

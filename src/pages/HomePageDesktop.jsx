@@ -5,6 +5,7 @@ import { useContext ,useEffect} from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
 import { useLocation } from 'react-router-dom';
+import newImage from '../imges/125.jpg';
 
 import axios from "axios";
 
@@ -236,7 +237,7 @@ const HomePage = () => {
       <div className="homepage-child4" />
       <section id="testimonials"></section>
       <Component2 />
-      <img className="mask-group-icon1" alt="" src="/mask-group@2x.png" />
+      <img className="mask-group-icon1" alt="" src={newImage} />
       <img className="icon50" alt="" src="/-04-1-1@2x.png" />
       <div className="group-parent37">
         <div className="component-container">

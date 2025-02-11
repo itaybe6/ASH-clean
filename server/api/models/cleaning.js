@@ -17,11 +17,11 @@ const cleaningSchema = new mongoose.Schema({
     },
     done: {
         type: Boolean,
-        default: false // ערך דיפולטיבי הוא false
+        default: false 
     },
     image: {
-        type: String, // נתיב לתמונה או URL
-        default: null // ברירת מחדל אם לא מועברת תמונה
+        type: String, 
+        default: null 
     }
 });
 

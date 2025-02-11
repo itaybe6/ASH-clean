@@ -4,7 +4,7 @@ import WorkerJobSucMobile from "../pages/WorkerJobSucMobile";
 import axios from "axios";
 import "./FetureJobWorkerMobile.css";
 
-const FetureJobWorkerMobile = ({ nameb, address, time, id, done }) => {
+const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId}) => {
   const [ok, setOk] = useState(false);
   const [imageData, setImageData] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +19,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id, done }) => {
 
       if (response.status === 200) {
         alert("ניקיון עבר למצב - לא נעשה");
-        console.log(response)
+        window.location.reload();
       } else {
         alert("שגיאה בשינוי סטטוס של ניקיון");
       }
@@ -45,7 +45,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id, done }) => {
   };
   return (
     <div className="feturejobworkermobile">
-      {ok && <WorkerJobSucMobile nameb={nameb} address={address} time={time} id={id} setOk={setOk} />}
+      {ok && <WorkerJobSucMobile nameb={nameb} address={address} time={time} id={id} setOk={setOk} workerId={workerId}/>}
 
       {done ? (
         <>

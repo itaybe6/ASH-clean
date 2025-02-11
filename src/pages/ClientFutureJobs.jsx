@@ -38,12 +38,9 @@ const ClientFutureJobs = () => {
     if (selectedBranch) {
       const fetchCleaning = async () => {
         try {
-          const response = await axios.get(
-            `${apiUrl}/customer/${selectedBranch._id}/cleanings`
-          );
+          const response = await axios.get( `${apiUrl}/costumer/${selectedBranch._id}/cleanings` );
           const allCleanings = response.data;
 
-          // ממיינים את הניקיונות לפי תאריך (מהקרוב לרחוק)
           allCleanings.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
 
           setFutureCleanings(allCleanings.filter((c) => c.done == false));
@@ -57,10 +54,7 @@ const ClientFutureJobs = () => {
     }
   }, [selectedBranch]);
 
-  const handleSelectBranch = (branch) => {
-    setSelectedBranch(branch);
-    setDropdownOpen(false);
-  };
+
 
   const editBranch = () => {
     if (selectedBranch)
@@ -110,7 +104,7 @@ const ClientFutureJobs = () => {
         <Autocomplete
           options={branches}
           getOptionLabel={(branch) => branch.name}
-          onChange={(event, newValue) => handleSelectBranch(newValue)}
+          onChange={(event, newValue) => setSelectedBranch(newValue)}
           renderInput={(params) => <TextField {...params} label="בחר סניף" variant="outlined" fullWidth />}
         />
       </div>
