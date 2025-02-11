@@ -60,7 +60,7 @@ const MobileMenuManager = ({ closeMenu, isOpen }) => {
 
   const transitionStyle = isDragging
     ? 'none'
-    : 'transform 1s ease';
+    : 'transform 1.2s ease';
 
   const menuStyle = {
     transform: `translateX(${translate}px)`,
