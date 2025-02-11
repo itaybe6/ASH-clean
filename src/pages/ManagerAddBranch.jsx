@@ -27,7 +27,7 @@ const ManagerAddBranch = () => {
 
       if (response.status === 201) {
         alert("Branch added successfully!");
-        navigate(-1);
+        navigate('/manager-display-users');
 
       } else {
         alert("Error: " + response.data.message);

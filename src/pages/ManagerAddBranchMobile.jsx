@@ -28,7 +28,7 @@ const ManagerAddBranchMobile = () => {
 
       if (response.status === 201) {
         alert("Branch added successfully!");
-        navigate(-1);
+        navigate('/manager-display-users');
       } else {
         alert("Error: " + response.data.message);
       }
@@ -82,7 +82,7 @@ const ManagerAddBranchMobile = () => {
         <b className="b89">הוספה</b>
       </button>
       <img className="icon55" alt="" src="/-02-11@2x.png" />
-      <button className="vector-wrapper84">
+      <button className="vector-wrapper84" onClick={menu}>
         <img className="vector-icon93" alt="" src="/vector10.svg" />
       </button>
       <div className="parent53">

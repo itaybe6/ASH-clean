@@ -357,7 +357,7 @@
 .manager-registration-add-b {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -553,6 +553,7 @@
 }
 .p53 {
   margin: 0;
+  direction: rtl;
 }
 .div259 {
   position: absolute;
@@ -635,6 +636,7 @@
   display: inline-block;
   width: 205px;
   height: 132px;
+  direction: rtl;
 }
 .group-child19136 {
   position: absolute;
@@ -721,13 +723,13 @@
   z-index: 2;
 }
 .icon {
-  width: 136px;
+  width: max-content;
   position: absolute;
   margin: 0 !important;
   top: 29px;
   right: 21px;
   height: 44px;
-  object-fit: cover;
+  object-fit: contain;
   z-index: 3;
 }
 .frame-child {
@@ -1229,6 +1231,7 @@
   display: inline-block;
   width: 229px;
   height: 66px;
+  direction: rtl;
 }
 .ellipse-div {
   position: absolute;
@@ -1260,6 +1263,7 @@
   display: inline-block;
   width: 232px;
   height: 63px;
+  direction: rtl;
 }
 .group-child2 {
   position: absolute;
@@ -1300,6 +1304,7 @@
   display: inline-block;
   width: 232px;
   height: 44px;
+  direction: rtl;
 }
 .group-icon {
   position: absolute;
@@ -1329,6 +1334,7 @@
   display: inline-block;
   width: 232px;
   height: 63px;
+  direction: rtl;
 }
 .group-child5 {
   position: absolute;
@@ -1358,6 +1364,7 @@
   display: inline-block;
   width: 232px;
   height: 63px;
+  direction: rtl;
 }
 .group-child7 {
   position: absolute;
@@ -2041,7 +2048,7 @@
 }
 .vector-icon861 {
   position: absolute;
-  bottom: 75px;
+  bottom: 200px;
   left: calc(50% - 66.5px);
   width: 133px;
 }
@@ -3080,7 +3087,6 @@ top: 0px;
   left: 5px;
   display: inline-block;
   width: 29px;
-  height: 37px;
 }
 
 .group-parent77 {
@@ -3727,7 +3733,7 @@ top: 0px;
 
 .vector-icon872525 {
   position: absolute;
-  top: calc(50% - 26px);
+  top: -200px;
   left: calc(50% - 66.5px);
   width: 133px;
   height: 52px;
@@ -4184,7 +4190,7 @@ top: 0px;
 .manager-registration-add-c {
   width: 100%;
   position: relative;
-  background: linear-gradient(#fff, #fff), #fff;
+  background: #fafafa;
   height: 1024px;
   overflow: hidden;
   display: flex;
@@ -4323,7 +4329,7 @@ top: 0px;
   width: 73.79%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% - 78.75px);
+  top: 325px;
   right: 13.23%;
   left: 12.98%;
   height: 158px;
@@ -4336,7 +4342,7 @@ top: 0px;
   width: 73.79%;
   position: absolute;
   margin: 0 !important;
-  top: calc(50% + 93.25px);
+  top: 495px;
   right: 13.74%;
   left: 12.47%;
   border-radius: var(--br-4xs);
@@ -4388,7 +4394,7 @@ top: 0px;
   width: 37.66%;
   position: absolute;
   margin: 0 !important;
-  top: calc(41% + 231.25px);
+  top: 550px;
   right: 13.23%;
   left: 49.11%;
   height: 39.7px;
@@ -5742,7 +5748,7 @@ top: 0px;
 }
 .vector-icon81 {
   position: absolute;
-  top: calc(50% - 26px);
+  top: -200px;
   left: calc(50% - 66.5px);
   width: 133px;
   height: 52px;
@@ -7828,6 +7834,8 @@ top: 0px;
   left: 0%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child123 {
   border: none;
@@ -7840,6 +7848,8 @@ top: 0px;
   left: 0%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .group-child124 {
   border: none;
@@ -7852,6 +7862,8 @@ top: 0px;
   left: 0%;
   border-radius: var(--br-smi);
   height: 47px;
+  padding: 10px;
+  font-family: 'Heebo';
 }
 .rectangle-textarea {
   border: none;
@@ -7864,6 +7876,9 @@ top: 0px;
   right: 0%;
   left: 0%;
   border-radius: var(--br-smi);
+  font-family: 'Heebo';
+  direction: rtl;
+  padding: 10px;
 }
 .component-child4 {
   position: absolute;
@@ -7897,7 +7912,6 @@ top: 0px;
   top: calc(50% + 198px);
   right: 25.64%;
   left: 25.64%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 52px;
 }
 .rectangle-parent55 {
@@ -8710,10 +8724,10 @@ top: 0px;
 }
 .div182 {
   position: absolute;
-  top: 335px;
+  top: 345px;
   left: auto;
   line-height: 146.39%;
-  font-weight: 500;
+  font-weight: 700;
   width:100%;
   display: flex;
   justify-content: flex-end;
@@ -8722,6 +8736,7 @@ top: 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 .div183 {
   position: relative;
@@ -8734,6 +8749,7 @@ top: 0px;
   width: 100%;
   text-align: right;
   padding: 10px 24px;
+  font-size: 15px;
 }
 .parent43 {
   width: 100%;
@@ -12457,6 +12473,7 @@ right: 900px;
   display: inline-block;
   width: 354.4px;
   font-family: 'Heebo';
+  font-size: 20px;
 }
 .div93 {
   position: absolute;
