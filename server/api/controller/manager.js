@@ -37,13 +37,10 @@ const addCustomer = async (req, res) => {
             businessName,
             address,
             city,
-            branches, // מערך הסניפים שמתקבל מהלקוח (כולל מספרי טלפון)
+            branches, 
         } = req.body;
-        console.log(password)
-
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
-
         const newCustomer = new Customer({
             fullName,
             phone: phoneNumber,
@@ -55,14 +52,12 @@ const addCustomer = async (req, res) => {
         });
 
         const savedCustomer = await newCustomer.save();
-        console.log("✅ לקוח נשמר בהצלחה:", savedCustomer);
-
         for (const branch of branches) {
             try {
                 const newBranch = new Branch({
                     customer: savedCustomer._id,
                     address: branch.branchAddress,
-                    phone: branch.phoneNumber,
+                    phone: branch.phoneNumber || " ",
                     name: branch.branchName,
                     cleaningSchedules: [],
                 });

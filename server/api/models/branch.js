@@ -16,7 +16,7 @@ const branchSchema = new mongoose.Schema({
     },
     phone: {
         type: String,
-        required: true
+        required: false
     },
     name: {
         type: String,
