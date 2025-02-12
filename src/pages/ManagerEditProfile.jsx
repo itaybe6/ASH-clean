@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
+import LogoCarousel from "../components/LogoCarousel";
 
 const ManagerEditProfile = () => {
   const [fullName, setFullName] = useState("");
@@ -12,30 +13,22 @@ const ManagerEditProfile = () => {
   const [city, setCity] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
   const { token } = useContext(AuthContext);
-
-
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
-
   const navigate = useNavigate();
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-
- 
     try {
       const response = await axios.put(
         `${apiUrl}/manager/update`,
         { fullName, phoneNumber, city, newPassword },
-        { headers: { Authorization: `Bearer ${token.id}` } } 
-
+        { headers: { Authorization: `Bearer ${token.id}` } }
       );
-
       alert(response.data.message);
       navigate("/login");
-
     } catch (error) {
       console.error("Error updating manager:", error);
       alert("שגיאה בעדכון הפרטים");
@@ -52,9 +45,8 @@ const ManagerEditProfile = () => {
 
   return (
     <div className="manager-edit-profile14">
-      
       <div className="group-parent167">
-        <button className="vector-wrapper32"  onClick={handleUpdate}>
+        <button className="vector-wrapper32" onClick={handleUpdate}>
           <img className="vector-icon407" alt="" src="/vector20.svg" />
         </button>
         <input
@@ -74,7 +66,7 @@ const ManagerEditProfile = () => {
           onChange={handleNewPasswordChange}
           required
         />
-      
+
         <input
           className="group-child727"
           placeholder="מספר פלאפון"
@@ -92,8 +84,10 @@ const ManagerEditProfile = () => {
           required
         />
       </div>
-    
-     
+
+      < LogoCarousel />
+
+
     </div>
   );
 };

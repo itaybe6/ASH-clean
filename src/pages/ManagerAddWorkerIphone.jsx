@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import MobileMenuManager from "./MobileMenuManager";
+import Swal from 'sweetalert2';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ManagerAddWorkerIphone = () => {
@@ -29,8 +30,16 @@ const ManagerAddWorkerIphone = () => {
       const response = await axios.post(`${apiUrl}/manager/add-worker`, workerData);
 
       if (response.status === 201) {
-        alert("✅ עובד נוסף בהצלחה!");
-        navigate("/manager-display-users");
+        Swal.fire({
+          title: '🎉 עובד נוסף!',
+          text: 'העובד נוסף בהצלחה למערכת.',
+          icon: 'success',
+          heightAuto: false, 
+          confirmButtonText: 'אישור',
+          confirmButtonColor: '#28a745',
+          timer: 3000
+      });  
+      navigate("/manager-display-users");
       } else {
         alert("❌ שגיאה: " + response.data.message);
       }

@@ -38,6 +38,7 @@ const Login = () => {
       const user = parseJwt(res.data.token);
       setToken(user);  
       setRole(user.role || "customer");
+      
       localStorage.setItem("token", res.data.token);
       if(user.role == "Manager"){
         navigate("/manager-display-users");

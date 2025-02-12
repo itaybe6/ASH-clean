@@ -1,12 +1,12 @@
 import Component2 from "../components/Component2";
 import "./HomePageDesktop.css";
 import { useNavigate } from 'react-router-dom';
-import { useContext ,useEffect} from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import newImage from '../imges/125.jpg';
-
+import LogoCarousel from "../components/LogoCarousel";
 import axios from "axios";
 
 const HomePage = () => {
@@ -64,12 +64,12 @@ const HomePage = () => {
   };
   useEffect(() => {
     if (location.hash) {
-        const element = document.getElementById(location.hash.substring(1));
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-}, [location]);
+  }, [location]);
   return (
     <div className="homepage">
       <div className="test-02-3-wrapper">
@@ -119,12 +119,7 @@ const HomePage = () => {
       </button>
       <div className="homepage-item" />
       <div className="parent46">
-        <img className="icon46" alt="" src="/-1@2x.png" />
-        <img className="icon47" alt="" src="/-1-1@2x.png" />
-        <img className="icon48" alt="" src="/-1-2@2x.png" />
-        <img className="il-makiage-11" alt="" src="/il-makiage-1@2x.png" />
-        <img className="icon49" alt="" src="/--1@2x.png" />
-        <img className="jack-kuba-11" alt="" src="/jack-kuba-1@2x.png" />
+        <LogoCarousel />
       </div>
       <img className="homepage-child1" alt="" src="/group-302.svg" />
       <div className="hands-holding-cleaning-tools-s-wrapper">
@@ -207,11 +202,11 @@ const HomePage = () => {
       </div>
       <div className="div209">
         <p className="p23">ברוכים הבאים</p>
-        <p className="p25">לעש - ניקיון ואחזקה בע"מ</p>
+        <p className="p25">לעש ניקיון ואחזקה בע"מ</p>
       </div>
       <section id="about"></section>
       <div className="div210">
-        עש - ניקיון ואחזקה בע"מ, שהוקמה בשנת 2021, מובילה את תחום ניקוי חלונות
+        עש ניקיון ואחזקה בע"מ, שהוקמה בשנת 2021, מובילה את תחום ניקוי חלונות
         ושלטים בישראל עם שירות מקצועי, חדשני ויעיל בפריסה ארצית. אנו עובדים
         בשיתוף פעולה עם רשתות קמעונאיות מובילות בפריסה ארצית, ומציעים מגוון
         שירותים כמו ניקיון חלונות ראווה, ניקוי לוחות סולריים, חיפוי מבנים, ניקוי
@@ -258,7 +253,7 @@ const HomePage = () => {
 
       <div className="group-parent38">
         <div className="rectangle-frame">
-        <section id="lead2"></section>
+          <section id="lead2"></section>
 
           <div className="group-child168" />
         </div>
@@ -281,7 +276,7 @@ const HomePage = () => {
       </div>
       <div className="group-parent39">
         <div className="instance-wrapper">
-        <section id="lead3"></section>
+          <section id="lead3"></section>
           <div className="group-child174" />
         </div>
         <div className="group-parent40">
