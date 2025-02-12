@@ -944,11 +944,11 @@
 }
 .line-icon {
   width: 130px;
-  position: absolute;
+  position: absolute !important;;
   margin: 0 !important;
-  top: calc(50% - 59.5px);
-  left: calc(50% - 65px);
-  max-height: 100%;
+  top: 29px !important;;
+  right: 21px !important;;
+  height: 44px !important;;
   object-fit: contain;
   z-index: 6;
 }
