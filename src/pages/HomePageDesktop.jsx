@@ -101,11 +101,11 @@ const HomePage = () => {
         <b className="b74">לחץ כאן לניקיון מושלם!</b>
       </button>
       <div className="parent45">
+        <button className="button" onClick={() => window.location.href = '/'}>דף בית </button>
         <button className="button" onClick={access}>הצהרת נגישות</button>
         <button className="button" onClick={() => scrollToSection('testimonials')} >לקוחות ממליצים</button>
         <button className="button" onClick={() => scrollToSection('about')}>אודות</button>
         <button className="button" onClick={() => scrollToSection('services')}>שירותים</button>
-        <button className="button" onClick={() => window.location.href = '/'}>דף בית </button>
       </div>
       <button className="vector-wrapper69" onClick={toLogin}>
         <img className="vector-icon78" alt="" src="/vector27.svg" />
@@ -117,7 +117,7 @@ const HomePage = () => {
         </div>
       </button>
       <div className="homepage-item" />
-  
+
       <img className="homepage-child1" alt="" src="/group-302.svg" />
       <div className="hands-holding-cleaning-tools-s-wrapper">
         <img
