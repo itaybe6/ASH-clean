@@ -84,10 +84,6 @@ const ManagerEditProfile = () => {
           required
         />
       </div>
-
-      < LogoCarousel />
-
-
     </div>
   );
 };

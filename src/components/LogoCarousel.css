@@ -1,8 +1,11 @@
 .logo-carousel {
   width: 80%;
   margin: auto;
-  height: 100px; /* הוסף גובה */
+  height: 120px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-slide {
@@ -11,7 +14,8 @@
   align-items: center;
 }
 
-.logo-image {
-  max-width: 100%;
+.logo-slide img {
+  width: 100px; /* או לפי הצורך */
   height: auto;
+  object-fit: contain;
 }

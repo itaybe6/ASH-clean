@@ -30,15 +30,7 @@ const ManagerAddWorkerIphone = () => {
       const response = await axios.post(`${apiUrl}/manager/add-worker`, workerData);
 
       if (response.status === 201) {
-        Swal.fire({
-          title: '🎉 עובד נוסף!',
-          text: 'העובד נוסף בהצלחה למערכת.',
-          icon: 'success',
-          heightAuto: false, 
-          confirmButtonText: 'אישור',
-          confirmButtonColor: '#28a745',
-          timer: 3000
-      });  
+  
       navigate("/manager-display-users");
       } else {
         alert("❌ שגיאה: " + response.data.message);
