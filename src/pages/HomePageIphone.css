@@ -36,13 +36,13 @@
   z-index: 2;
 }
 .icon89 {
-  width: max-content;
+  width: 150px;
   position: absolute !important;;
   margin: 0 !important;
   top: 29px !important;;
   right: 21px !important;;
   height: 44px !important;;
-  object-fit: cover;
+  object-fit: contain;
   z-index: 3;
 }
 .frame-child {
