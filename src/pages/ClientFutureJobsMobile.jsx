@@ -1,24 +1,25 @@
 import FutureJobClientMobile from "../components/FutureJobClientMobile";
 import CustomToggleButton from "../components/CustomToggleButton";
 import MobileMenuClient from "./MobileMenuClient";
+import MobileMenuManager from "./MobileMenuManager";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ClientFutureJobsMobile.css";
-import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const ClientFutureJobsMobile = () => {
   const [active, setActive] = useState(true);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [branches, setBranches] = useState([]);
-  const [cleanings, setCleanings] = useState([]);
   const [displayMenu, setDisplayMenu] = useState(false)
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
-
+  const { token } = useContext(AuthContext);
   const { id } = useParams();
   const [futureCleanings, setFutureCleanings] = useState([]);
   const [completedCleanings, setCompletedCleanings] = useState([]);
@@ -67,13 +68,14 @@ const ClientFutureJobsMobile = () => {
   const closeMenu = () => {
     setDisplayMenu(false);
   };
+  const menuComponent = token.role === "Manager" ? <MobileMenuManager isOpen={displayMenu} closeMenu={closeMenu} /> : <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id={id} />;
   const editBranch = () => {
     if (selectedBranch)
       navigate(`/manager-customer-edit-branch/${selectedBranch._id}`);
   }
   return (
     <div className="client-future-jobs-mobile">
-      {displayMenu ? <MobileMenuClient isOpen={displayMenu} closeMenu={closeMenu} id={id} /> : null}
+      {displayMenu && menuComponent}
       <div className="client-future-jobs-mobile-child" />
       <img className="icon38" alt="" src="/-02-11@2x.png" />
       <div className="parent43">

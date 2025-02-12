@@ -374,8 +374,7 @@
   width: 100%; /* מבטיח שהרשימה תמלא את כל הרוחב של ההורה */
   max-width: 1000px;
   min-width: 600px;
-  max-height: 550px; /* גובה מקסימלי לפני הופעת גלילה */
-  height: auto;
+  height: 550px;
   overflow-x: visible; /* מונע חיתוך אופקי */
   overflow-y: auto; /* מאפשר גלילה אנכית */
   text-align: center;
