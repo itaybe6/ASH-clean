@@ -9,8 +9,8 @@
 }
 .vector-icon84 {
   position: absolute;
-  top: calc(50% - 18.8px);
-  left: calc(50% - 72.35px);
+  top: 290px;
+  right: 10px;
   width: 144.7px;
   height: 37.6px;
 }
@@ -27,8 +27,8 @@
 }
 .vector-icon85 {
   position: absolute;
-  top: calc(50% - 23.5px);
-  left: calc(50% - 73.9px);
+  top: 180px;
+  right: 0;;
   width: 147.8px;
   height: 47px;
 }
@@ -74,13 +74,13 @@
 .group-parent42 {
   position: absolute;
   top: calc(50% - 187px);
-  left: calc(50% - 47.5px);
+  left: calc(50% - 50.5px);
   width: 207px;
   height: 161.3px;
 }
 .vector-icon861 {
   position: absolute;
-  bottom: 200px;
+  bottom: 105px;
   left: calc(50% - 66.5px);
   width: 133px;
 }

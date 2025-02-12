@@ -6,7 +6,6 @@ import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import newImage from '../imges/125.jpg';
-import LogoCarousel from "../components/LogoCarousel";
 import axios from "axios";
 
 const HomePage = () => {
@@ -119,7 +118,6 @@ const HomePage = () => {
       </button>
       <div className="homepage-item" />
       <div className="parent46">
-        <LogoCarousel />
       </div>
       <img className="homepage-child1" alt="" src="/group-302.svg" />
       <div className="hands-holding-cleaning-tools-s-wrapper">
