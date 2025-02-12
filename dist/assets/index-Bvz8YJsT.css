@@ -723,13 +723,13 @@
   object-fit: contain;
   z-index: 2;
 }
-.icon {
+.icon89 {
   width: max-content;
-  position: absolute;
+  position: absolute !important;;
   margin: 0 !important;
-  top: 29px;
-  right: 21px;
-  height: 44px;
+  top: 29px !important;;
+  right: 21px !important;;
+  height: 44px !important;;
   object-fit: contain;
   z-index: 3;
 }
