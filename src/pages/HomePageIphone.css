@@ -344,17 +344,14 @@
   height: 161.7px;
   object-fit: cover;
 }
-.frame-div {
-  margin: 0 !important;
+.frame-div33 {
   position: absolute;
-  top: 857px;
-  left: calc(50% - 674.5px);
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  gap: 43px;
-  z-index: 13;
+  width: 100%;
+  height: 60px;
+  top: 874px;
 }
 .frame-inner {
   width: 168px;

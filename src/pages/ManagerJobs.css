@@ -217,7 +217,9 @@
   gap: 15px; /* רווח בין הכרטיסים */
   max-height: 500px; /* גובה מקסימלי */
   overflow-y: auto;   /* גלילה אנכית */
-  margin-right: 280px
+  margin-right: 280px;
+  width: 72%;
+
 }
 
 .search-list-container5 .search {

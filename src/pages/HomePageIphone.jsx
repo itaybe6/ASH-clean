@@ -4,7 +4,7 @@ import Component3 from "../components/Component3";
 import "./HomePageIphone.css";
 import { useState } from "react";
 import axios from "axios";
-
+import LogoCarousel from "../components/LogoCarousel";
 const HomePageIphone = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const [fullName, setFullName] = useState('');
@@ -95,13 +95,13 @@ const HomePageIphone = () => {
         </button>
         <img className="line-icon" alt="" src="/line-2.svg" />
       </div>
-      <div className="frame-div">
-        <img className="icon1" alt="" src="/-1@2x.png" />
-        <img className="icon2" alt="" src="/-11@2x.png" />
-        <img className="icon3" alt="" src="/-12@2x.png" />
-        <img className="il-makiage-1" alt="" src="/il-makiage-1@2x.png" />
-        <img className="icon4" alt="" src="/--1@2x.png" />
-        <img className="jack-kuba-1" alt="" src="/jack-kuba-1@2x.png" />
+
+      <div className="frame-div33">
+       
+       <LogoCarousel />
+
+
+
       </div>
       <button className="rectangle-container" onClick={() => scrollToSection('lead2')}>
         <div className="frame-inner" />

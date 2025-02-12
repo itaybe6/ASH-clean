@@ -4,7 +4,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import { useParams } from "react-router-dom";
 import CustomDatePicker from "../components/CustomDatePicker";
 import MobileMenuManager from "./MobileMenuManager";
-
+import Swal from 'sweetalert2';
 import axios from "axios";
 
 const ManagerAddJobToWorkerMobile = () => {
@@ -80,8 +80,22 @@ const ManagerAddJobToWorkerMobile = () => {
         branch: selectedBranch._id,
         dateTime: selectedDate,
       });
-      alert("ניקיון נוסף בהצלחה!");
-      setSelectedBusiness(null)
+
+      Swal.fire({
+        title: '🎉 ניקיון נוסף!',
+        text: 'ניקיון נוסף בהצלחה!',
+        icon: 'success',
+        position: 'top',
+        confirmButtonText: 'מעולה!',
+        confirmButtonColor: '#28a745',
+        showClass: {
+            popup: 'animate__animated animate__zoomIn animate__slow'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__zoomOut animate__slow'
+        }
+    });
+          setSelectedBusiness(null)
       setSelectedBranch(null)
       setSelectedDate(null)
     } catch (error) {

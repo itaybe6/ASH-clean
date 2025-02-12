@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import newImage from '../imges/125.jpg';
 import axios from "axios";
-
+import LogoCarousel from "../components/LogoCarousel";
 const HomePage = () => {
   const navigate = useNavigate();
   const { token } = useContext(AuthContext);
@@ -117,8 +117,7 @@ const HomePage = () => {
         </div>
       </button>
       <div className="homepage-item" />
-      <div className="parent46">
-      </div>
+  
       <img className="homepage-child1" alt="" src="/group-302.svg" />
       <div className="hands-holding-cleaning-tools-s-wrapper">
         <img
@@ -289,6 +288,10 @@ const HomePage = () => {
             <p className="p23">בדרך אליכם!</p>
           </div>
         </div>
+      </div>
+
+      <div className="parent46">
+        <LogoCarousel />
       </div>
     </div>
   );

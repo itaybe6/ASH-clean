@@ -105,10 +105,10 @@ const AccessibilityDesktop = () => {
         <button className="wrapper17" onClick={() => window.location.href = '/#testimonials'}>
           <div className="div191">לקוחות ממליצים</div>
         </button>
-        <button className="wrapper18" onClick={() => window.location.href = '/#services'}>
+        <button className="wrapper19" onClick={() => window.location.href = '/#services'}>
           <div className="div191" >שירותים</div>
         </button>
-        <button className="wrapper19">
+        <button className="wrapper18">
           <div className="div191">הצהרת נגישות</div>
         </button>
         <button className="wrapper23" onClick={() => window.location.href = '/'}>

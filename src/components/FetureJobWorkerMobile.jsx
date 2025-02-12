@@ -3,8 +3,9 @@ import ImageModal from "./ImageModal";
 import WorkerJobSucMobile from "../pages/WorkerJobSucMobile";
 import axios from "axios";
 import "./FetureJobWorkerMobile.css";
+import Swal from 'sweetalert2';
 
-const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId,address2}) => {
+const FetureJobWorkerMobile = ({ nameb, address, time, id, done, workerId, address2 }) => {
   const [ok, setOk] = useState(false);
   const [imageData, setImageData] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -18,7 +19,21 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId,addres
       const response = await axios.put(`${apiUrl}/worker/cleanings/${id}/cancel`);
 
       if (response.status === 200) {
-        alert("ניקיון עבר למצב - לא נעשה");
+        Swal.fire({
+          title: ' ניקיון בוטל',
+          text: 'הניקיון עבר למצב - לא נעשה',
+          icon: 'success',
+          position: 'top',
+          confirmButtonText: 'מעולה!',
+          confirmButtonColor: '#28a745',
+          showClass: {
+            popup: 'animate__animated animate__zoomIn animate__slow'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__zoomOut animate__slow'
+          }
+        });
+
         window.location.reload();
       } else {
         alert("שגיאה בשינוי סטטוס של ניקיון");
@@ -45,7 +60,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId,addres
   };
   return (
     <div className="feturejobworkermobile">
-      {ok && <WorkerJobSucMobile nameb={nameb} address={address} time={time} id={id} setOk={setOk} workerId={workerId}/>}
+      {ok && <WorkerJobSucMobile nameb={nameb} address={address} time={time} id={id} setOk={setOk} workerId={workerId} />}
 
       {done ? (
         <>
@@ -62,7 +77,7 @@ const FetureJobWorkerMobile = ({ nameb, address, time, id, done ,workerId,addres
       <div className="time">{time}</div>
       {showModal && (
         <ImageModal
-          image={imageData} 
+          image={imageData}
           onClose={() => setShowModal(false)}
         />
       )}
