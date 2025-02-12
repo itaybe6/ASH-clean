@@ -11796,7 +11796,29 @@ top: 0px;
   color: var(--color-black);
   font-family: var(--font-heebo);
 }
-.manager-add-branch-child {
+
+
+.vector-wrapper76 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 20px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 256px);
+  left: 185px;
+  height: 24px;
+  z-index: 12;
+}
+
+.vector-icon46 {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 230%;
+  width: 20px;
+  height: 24px;
+}.manager-add-branch-child {
   width: 79.17%;
   position: absolute;
   margin: 0 !important;
