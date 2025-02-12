@@ -3,6 +3,7 @@ import axios from 'axios';
 import imageCompression from 'browser-image-compression';
 import { useNavigate } from 'react-router-dom';
 import "./WorkerJobSucMobile.css";
+import Swal from 'sweetalert2';
 
 const WorkerJobSucMobile = ({ nameb, address, time, id , setOk}) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -21,7 +22,20 @@ const WorkerJobSucMobile = ({ nameb, address, time, id , setOk}) => {
       const formData = new FormData();
       formData.append('image', compressedFile);
       await axios.put(`${apiUrl}/worker/cleanings/${id}`, formData);
-      alert('התמונה עודכנה בהצלחה!');
+       Swal.fire({
+              title: 'עדכון עבודה הושלם',
+              text: 'הפעולה בוצעה בהצלחה',
+              icon: 'success',
+              position: 'top',
+              confirmButtonText: 'מעולה!',
+              confirmButtonColor: '#28a745',
+              showClass: {
+                  popup: 'animate__animated animate__zoomIn animate__slow'
+              },
+              hideClass: {
+                  popup: 'animate__animated animate__zoomOut animate__slow'
+              }
+          });
       window.location.reload();
 
     } catch (err) {

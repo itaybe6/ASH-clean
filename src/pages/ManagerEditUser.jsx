@@ -3,6 +3,7 @@ import "./ManagerEditUser.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ManagerEditUser = () => {
   // הגדרת state לכל שדה קלט
@@ -47,7 +48,20 @@ const ManagerEditUser = () => {
   const deleteCustomer = async () => {
     try {
       const response = await axios.delete(`${apiUrl}/manager/delete-customer/${id}`);
-      console.log('✅ מחיקה הצליחה:', response.data.message);
+      Swal.fire({
+        title: 'מחיקת לקוח הצליחה',
+        text: 'הפעולה בוצעה בהצלחה',
+        icon: 'success',
+        position: 'top',
+        confirmButtonText: 'מעולה!',
+        confirmButtonColor: '#28a745',
+        showClass: {
+          popup: 'animate__animated animate__zoomIn animate__slow'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__zoomOut animate__slow'
+        }
+      });
       navigate(`/manager-display-users`)
     } catch (error) {
       console.error('❌ שגיאה במחיקת הלקוח:', error.response?.data?.error || error.message);
@@ -57,14 +71,26 @@ const ManagerEditUser = () => {
 
   const deleteEmployee = async () => {
     try {
-        const response = await axios.delete(`${apiUrl}/manager/delete-employee/${id}`);
-        console.log('✅ מחיקת עובד הצליחה:', response.data.message);
-        navigate(`/manager-display-users`)
+      const response = await axios.delete(`${apiUrl}/manager/delete-employee/${id}`);
+      Swal.fire({
+        title: 'מחיקת עובד הצליחה',
+        text: 'הפעולה בוצעה בהצלחה',
+        icon: 'success',
+        position: 'top',
+        confirmButtonText: 'מעולה!',
+        confirmButtonColor: '#28a745',
+        showClass: {
+          popup: 'animate__animated animate__zoomIn animate__slow'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__zoomOut animate__slow'
+        }
+      }); navigate(`/manager-display-users`)
     } catch (error) {
-        console.error('❌ שגיאה במחיקת עובד:', error.response?.data?.error || error.message);
-        navigate(`/manager-display-users`)
+      console.error('❌ שגיאה במחיקת עובד:', error.response?.data?.error || error.message);
+      navigate(`/manager-display-users`)
     }
-};
+  };
 
   const deleteUser = async () => {
     const isConfirmed = window.confirm('האם אתה בטוח שברצונך לבצע פעולה זו ?');
