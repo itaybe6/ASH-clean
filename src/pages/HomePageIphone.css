@@ -42,7 +42,7 @@
   top: 29px !important;;
   right: 21px !important;;
   height: 44px !important;;
-  object-fit: contain;
+  object-fit: cover;
   z-index: 3;
 }
 .frame-child {
@@ -256,11 +256,11 @@
 }
 .line-icon {
   width: 130px;
-  position: absolute !important;;
+  position: absolute;
   margin: 0 !important;
-  top: 29px !important;;
-  right: 21px !important;;
-  height: 44px !important;;
+  top: calc(50% - 59.5px);
+  left: calc(50% - 65px);
+  max-height: 100%;
   object-fit: contain;
   z-index: 6;
 }
