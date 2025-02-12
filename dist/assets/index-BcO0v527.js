@@ -43996,7 +43996,7 @@ const HomePage = () => {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group-parent40", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper71", onClick: sendEmail, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon80", alt: "", src: "/vector28.svg" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child175", pplaceholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child175", placeholder: "מספר פלאפון", type: "tel", value: phoneNumber, onChange: (e3) => setPhoneNumber(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child176", placeholder: "עיר", type: "text", value: service, onChange: (e3) => setService(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "group-child177", placeholder: "שם מלא", type: "text", value: fullName, onChange: (e3) => setFullName(e3.target.value) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "div215", children: [
@@ -44039,6 +44039,38 @@ const ManagerEditUser = () => {
     } catch (error) {
       console.error("Error updating user:", error);
       alert("שגיאה בעדכון הנתונים");
+    }
+  };
+  const deleteCustomer = async () => {
+    var _a, _b;
+    try {
+      const response = await axios.delete(`${apiUrl2}/manager/delete-customer/${id2}`);
+      console.log("✅ מחיקה הצליחה:", response.data.message);
+      navigate(`/manager-display-users`);
+    } catch (error) {
+      console.error("❌ שגיאה במחיקת הלקוח:", ((_b = (_a = error.response) == null ? void 0 : _a.data) == null ? void 0 : _b.error) || error.message);
+      navigate(`/manager-display-users`);
+    }
+  };
+  const deleteEmployee = async () => {
+    var _a, _b;
+    try {
+      const response = await axios.delete(`${apiUrl2}/manager/delete-employee/${id2}`);
+      console.log("✅ מחיקת עובד הצליחה:", response.data.message);
+      navigate(`/manager-display-users`);
+    } catch (error) {
+      console.error("❌ שגיאה במחיקת עובד:", ((_b = (_a = error.response) == null ? void 0 : _a.data) == null ? void 0 : _b.error) || error.message);
+      navigate(`/manager-display-users`);
+    }
+  };
+  const deleteUser = async () => {
+    const isConfirmed = window.confirm("האם אתה בטוח שברצונך לבצע פעולה זו ?");
+    if (isConfirmed) {
+      if (type == "לקוח") {
+        deleteCustomer();
+      } else {
+        deleteEmployee();
+      }
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "manager-edit-profile", children: [
@@ -44094,7 +44126,8 @@ const ManagerEditUser = () => {
           required: true
         }
       )
-    ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "vector-wrapper75", onClick: deleteUser, children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: "vector-icon45", alt: "", src: "/vector17.svg" }) })
   ] });
 };
 const ManagerEditUserMobile = () => {
@@ -44773,4 +44806,4 @@ root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(AuthProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
   ] }) }) })
 );
-//# sourceMappingURL=index-_aQ9eV89.js.map
+//# sourceMappingURL=index-BcO0v527.js.map

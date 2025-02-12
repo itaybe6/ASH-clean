@@ -16,38 +16,74 @@ const ManagerEditUser = () => {
   const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
   const handleCityChange = (e) => setCity(e.target.value);
   const navigate = useNavigate();
-  const { id ,type } = useParams(); // קבלת ה-ID מה-URL
+  const { id, type } = useParams();
+
+
+
   const handleUpdate = async (e) => {
     e.preventDefault();
     const updatedData = {
-        type,
-        fullName,
-        phoneNumber,
-        city,
+      type,
+      fullName,
+      phoneNumber,
+      city,
     };
     try {
-        const response = await axios.put(`${apiUrl}/manager/editUser/${id}`, updatedData);
-
-        if (response.status === 200) {
-            alert('הפרטים עודכנו בהצלחה');
-            console.log('Updated User:', response.data);
-            navigate(`/manager-display-users`)
-        } else {
-            alert('שגיאה: ' + response.data.message);
-        }
+      const response = await axios.put(`${apiUrl}/manager/editUser/${id}`, updatedData);
+      if (response.status === 200) {
+        alert('הפרטים עודכנו בהצלחה');
+        console.log('Updated User:', response.data);
+        navigate(`/manager-display-users`)
+      } else {
+        alert('שגיאה: ' + response.data.message);
+      }
     } catch (error) {
-        console.error('Error updating user:', error);
-        alert('שגיאה בעדכון הנתונים');
+      console.error('Error updating user:', error);
+      alert('שגיאה בעדכון הנתונים');
     }
 
   };
+
+  const deleteCustomer = async () => {
+    try {
+      const response = await axios.delete(`${apiUrl}/manager/delete-customer/${id}`);
+      console.log('✅ מחיקה הצליחה:', response.data.message);
+      navigate(`/manager-display-users`)
+    } catch (error) {
+      console.error('❌ שגיאה במחיקת הלקוח:', error.response?.data?.error || error.message);
+      navigate(`/manager-display-users`)
+    }
+  };
+
+  const deleteEmployee = async () => {
+    try {
+        const response = await axios.delete(`${apiUrl}/manager/delete-employee/${id}`);
+        console.log('✅ מחיקת עובד הצליחה:', response.data.message);
+        navigate(`/manager-display-users`)
+    } catch (error) {
+        console.error('❌ שגיאה במחיקת עובד:', error.response?.data?.error || error.message);
+        navigate(`/manager-display-users`)
+    }
+};
+
+  const deleteUser = async () => {
+    const isConfirmed = window.confirm('האם אתה בטוח שברצונך לבצע פעולה זו ?');
+    if (isConfirmed) {
+      if (type == 'לקוח') {
+        deleteCustomer();
+      }
+      else {
+        deleteEmployee();
+      }
+    }
+  }
   return (
     <div className="manager-edit-profile">
       <div className="manager-edit-profile-child" />
       <div className="parent25">
         <div className="div96">עריכת פרטי משתמש</div>      </div>
       <div className="group-parent16">
-        <button className="vector-wrapper32"  onClick={handleUpdate}>
+        <button className="vector-wrapper32" onClick={handleUpdate}>
           <img className="vector-icon40" alt="" src="/vector20.svg" />
         </button>
         <input
@@ -67,7 +103,7 @@ const ManagerEditUser = () => {
           onChange={handleNewPasswordChange}
           required
         />
-      
+
         <input
           className="group-child72"
           placeholder="מספר פלאפון"
@@ -85,8 +121,11 @@ const ManagerEditUser = () => {
           required
         />
       </div>
-   
-     
+
+      <button className="vector-wrapper75" onClick={deleteUser}>
+        <img className="vector-icon45" alt="" src="/vector17.svg" />
+      </button>
+
     </div>
   );
 };

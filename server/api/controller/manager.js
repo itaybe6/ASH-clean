@@ -395,19 +395,67 @@ const deleteCleaning = async (req, res) => {
 };
 
 
+// delete client - delte all his branches + delete all the cleanings of the branches + update the worker list 
+const deleteCustomerById = async (req, res) => {
+    try {
+        const { customerId } = req.params;
+        const customer = await Customer.findById(customerId);
+        if (!customer) {
+            return res.status(404).json({ message: 'הלקוח לא נמצא' });
+        }
+        const branchIds = customer.branches; 
+        const deletedCleanings = await Cleaning.find({ branch: { $in: branchIds } }).select('_id');
+        const cleaningIds = deletedCleanings.map(cleaning => cleaning._id);
+        await Cleaning.deleteMany({ _id: { $in: cleaningIds } });
+        await Branch.deleteMany({ _id: { $in: branchIds } });
+        await Customer.findByIdAndDelete(customerId);
+        await Employee.updateMany(
+            { cleanings: { $in: cleaningIds } }, 
+            { $pull: { cleanings: { $in: cleaningIds } } }
+        );
+        res.status(200).json({ message: 'הלקוח וכל הנתונים הקשורים אליו נמחקו בהצלחה' });
+
+    } catch (error) {
+        console.error('❌ שגיאה במחיקת לקוח:', error);
+        res.status(500).json({ error: 'שגיאה במחיקת לקוח' });
+    }
+};
 
 
 
+// manager delete employee - delete employee + delete all the cleaning of the employee
+const deleteEmployeeById = async (req, res) => {
+    try {
+        const { employeeId } = req.params;
+        const employee = await Employee.findById(employeeId);
+        if (!employee) {
+            return res.status(404).json({ message: 'העובד לא נמצא' });
+        }
+        const cleanings = await Cleaning.find({ employee: employeeId }).select('_id');
+        const cleaningIds = cleanings.map(cleaning => cleaning._id);
+        await Cleaning.deleteMany({ _id: { $in: cleaningIds } });
+        await Branch.updateMany(
+            { cleaningSchedules: { $in: cleaningIds } }, 
+            { $pull: { cleaningSchedules: { $in: cleaningIds } } }
+        );
+        await Employee.findByIdAndDelete(employeeId);
+        res.status(200).json({ message: 'העובד וכל הניקיונות שלו נמחקו בהצלחה' });
+    } catch (error) {
+        console.error('❌ שגיאה במחיקת העובד:', error);
+        res.status(500).json({ error: 'שגיאה במחיקת העובד' });
+    }
+};
 
 
 module.exports = {
     addRegularEmployee
-    , getAllCustomers, addCustomer,
+    ,getAllCustomers, addCustomer,
     getBranchesByCustomer, getCleaningsByBranch,
     updateManagerDetails, addCleaningForEmployee,
     getAllWorkers, managerEditUser,
     addBranchToCustomer, updateBranch,
     getCleaningsByEmployee, getAllCleanings
     , getImgCleaning, deleteBranchById,
-    deleteCleaning
+    deleteCleaning , deleteCustomerById,
+    deleteEmployeeById
 };

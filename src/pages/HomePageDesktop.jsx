@@ -288,7 +288,7 @@ const HomePage = () => {
           <button className="vector-wrapper71" onClick={sendEmail}>
             <img className="vector-icon80" alt="" src="/vector28.svg" />
           </button>
-          <input className="group-child175" pplaceholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+          <input className="group-child175" placeholder="מספר פלאפון" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
           <input className="group-child176" placeholder="עיר" type="text" value={service} onChange={(e) => setService(e.target.value)} />
           <input className="group-child177" placeholder="שם מלא" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           <div className="div215">
